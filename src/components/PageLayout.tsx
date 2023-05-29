@@ -25,12 +25,20 @@ const PageContent = styled.div`
 interface PageLayoutProps {
   image?: IGatsbyImageData | null;
   title?: string;
+  subtitle?: string;
 }
+
+const Subtitle = styled.h2`
+  color: #666;
+  font-size: 1.2em;
+  padding-bottom: 16px;
+`;
 
 export const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
   children,
   image,
   title,
+  subtitle,
 }) => {
   return (
     <>
@@ -43,6 +51,11 @@ export const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
               {title && (
                 <div>
                   <Heading.H1>{title}</Heading.H1>
+                </div>
+              )}
+              {subtitle && (
+                <div>
+                  <Subtitle>{subtitle}</Subtitle>
                 </div>
               )}
               <div />

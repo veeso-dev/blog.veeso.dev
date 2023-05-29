@@ -23,6 +23,10 @@ const Metadata = styled.div`
   }
 `;
 
+const Body = styled.div`
+  padding: 24px 0;
+`;
+
 const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
   data,
   children,
@@ -36,14 +40,17 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
     <PageLayout
       image={featuredImage}
       title={data.mdx?.frontmatter?.title ?? undefined}
+      subtitle={data.mdx?.frontmatter?.subtitle ?? undefined}
     >
       <MainContent>
         <Metadata>
           <span>{data.mdx?.frontmatter?.date}</span>
           <span>—</span>
-          <span>{readingTime(data.mdx?.body)} min read</span>
+          <span>{readingTime(data.mdx?.body ?? "")} min read</span>
         </Metadata>
-        <MDXProvider components={components}>{children}</MDXProvider>
+        <Body>
+          <MDXProvider components={components}>{children}</MDXProvider>
+        </Body>
         <ShareButtons
           url={url}
           author={data.mdx?.frontmatter?.author ?? ""}
@@ -65,6 +72,7 @@ export const query = graphql`
       frontmatter {
         title
         author
+        subtitle
         date(formatString: "MMMM DD, YYYY")
         featuredImage {
           childImageSharp {

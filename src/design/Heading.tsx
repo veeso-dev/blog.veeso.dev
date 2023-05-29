@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const H1 = styled.h1`
   font-size: 2em;
-  line-height: 2.2em;
+  line-height: 1.4em;
 `;
 
 const H2 = styled.h2`
