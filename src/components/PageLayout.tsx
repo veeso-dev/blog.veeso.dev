@@ -1,5 +1,24 @@
-import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import React from "react";
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
+import styled from "styled-components";
+import Heading from "../design/Heading";
+
+const Main = styled.main`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const PageContent = styled.div`
+  margin: 0 24px;
+  width: 100%;
+  max-width: 680px;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
+`;
 
 interface PageLayoutProps {
   image?: IGatsbyImageData | null;
@@ -12,22 +31,21 @@ export const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
   title,
 }) => {
   return (
-    <main className="font-sans font-light">
-      {image && (
-        <div className="relative mb-12 flex h-96 items-center justify-center">
-          <GatsbyImage image={image} alt="" className="absolute inset-0" />
-          {title && (
-            <div className="z-20 mx-auto max-w-5xl">
-              <h1 className="text-4xl font-bold text-white sm:text-5xl">
-                {title}
-              </h1>
-            </div>
-          )}
-          {/* Darken the background image a little so the text shows up better */}
-          <div className="absolute inset-0 z-10 bg-gray-900 opacity-30" />
-        </div>
-      )}
-      <div className="mx-auto mb-12 max-w-5xl">{children}</div>
-    </main>
+    <Main>
+      <PageContent>
+        {image && (
+          <div>
+            <GatsbyImage image={image} alt="" className="absolute inset-0" />
+            {title && (
+              <div>
+                <Heading.H1>{title}</Heading.H1>
+              </div>
+            )}
+            <div />
+          </div>
+        )}
+        <div className="mx-auto mb-12 max-w-5xl">{children}</div>
+      </PageContent>
+    </Main>
   );
 };

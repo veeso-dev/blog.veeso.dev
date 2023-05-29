@@ -5,11 +5,13 @@ import React from "react";
 import { PageLayout } from "../components/PageLayout";
 import { CustomHead } from "../components/CustomHead";
 import { components, MainContent } from "../components/mdx-components";
+import ShareButtons from "../components/ShareButtons";
 
 const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
   data,
   children,
 }) => {
+  const url = typeof window !== "undefined" ? window.location.href : "";
   const featuredImage = data.mdx?.frontmatter?.featuredImage
     ? getImage(data.mdx.frontmatter.featuredImage.childImageSharp)
     : null;
@@ -20,12 +22,18 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
       title={data.mdx?.frontmatter?.title ?? undefined}
     >
       <MainContent>
-        <div className="mb-8">
-          <span className="text-sm font-thin">
+        <div>
+          <span>
             By {data.mdx?.frontmatter?.author} on {data.mdx?.frontmatter?.date}
           </span>
         </div>
         <MDXProvider components={components}>{children}</MDXProvider>
+        <ShareButtons
+          url={url}
+          author={data.mdx?.frontmatter?.author ?? ""}
+          title={data.mdx?.frontmatter?.title ?? ""}
+          description={data.mdx?.excerpt ?? ""}
+        />
       </MainContent>
     </PageLayout>
   );
