@@ -22,11 +22,17 @@
     "gatsby-plugin-google-gtag": "^5.10.0",
     "gatsby-plugin-image": "^3.10.0",
     "gatsby-plugin-mdx": "^5.10.0",
+    "gatsby-plugin-page-creator": "^5.10.0",
     "gatsby-plugin-sharp": "^5.10.0",
     "gatsby-plugin-sitemap": "^6.10.0",
     "gatsby-plugin-styled-components": "^6.10.0",
+    "gatsby-remark-copy-linked-files": "^6.10.0",
+    "gatsby-remark-images": "^7.10.0",
+    "gatsby-remark-prismjs": "^7.10.0",
     "gatsby-source-filesystem": "^5.10.0",
+    "gatsby-transformer-remark": "^6.10.0",
     "gatsby-transformer-sharp": "^5.10.0",
+    "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.11"
@@ -35,6 +41,7 @@
     "@types/node": "^18.16.13",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
+    "@types/styled-components": "^5.1.26",
     "typescript": "^5.0.4"
   }
 }
