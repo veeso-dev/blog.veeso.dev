@@ -8,10 +8,6 @@ const config: GatsbyConfig = {
     siteUrl: `https://blog.veeso.dev`,
     navigation: [
       {
-        name: "About",
-        path: "/about",
-      },
-      {
         name: "Blog",
         path: "/blog",
       },

@@ -2,6 +2,8 @@ import React from "react";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import styled from "styled-components";
 import Heading from "../design/Heading";
+import Footer from "./Footer";
+import Topbar from "./Topbar";
 
 const Main = styled.main`
   align-items: center;
@@ -31,21 +33,25 @@ export const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
   title,
 }) => {
   return (
-    <Main>
-      <PageContent>
-        {image && (
-          <div>
-            <GatsbyImage image={image} alt="" className="absolute inset-0" />
-            {title && (
-              <div>
-                <Heading.H1>{title}</Heading.H1>
-              </div>
-            )}
-            <div />
-          </div>
-        )}
-        <div className="mx-auto mb-12 max-w-5xl">{children}</div>
-      </PageContent>
-    </Main>
+    <>
+      <Main>
+        <PageContent>
+          <Topbar />
+          {image && (
+            <div>
+              <GatsbyImage image={image} alt="" className="absolute inset-0" />
+              {title && (
+                <div>
+                  <Heading.H1>{title}</Heading.H1>
+                </div>
+              )}
+              <div />
+            </div>
+          )}
+          <div className="mx-auto mb-12 max-w-5xl">{children}</div>
+        </PageContent>
+      </Main>
+      <Footer />
+    </>
   );
 };

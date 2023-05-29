@@ -10,6 +10,7 @@ import {
 } from "react-share";
 
 const Container = styled.div`
+  color: #606060;
   display: flex;
   flex-direction: row;
   gap: 24px;

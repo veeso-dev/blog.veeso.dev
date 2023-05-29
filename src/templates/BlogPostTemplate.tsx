@@ -1,11 +1,27 @@
 import { MDXProvider } from "@mdx-js/react";
 import { graphql, HeadFC, PageProps } from "gatsby";
+import styled from "styled-components";
 import { getImage } from "gatsby-plugin-image";
 import React from "react";
+
 import { PageLayout } from "../components/PageLayout";
 import { CustomHead } from "../components/CustomHead";
 import { components, MainContent } from "../components/mdx-components";
 import ShareButtons from "../components/ShareButtons";
+
+const readingTime = (text: string): number => {
+  const wpm = 225;
+  const words = text.trim().split(/\s+/).length;
+
+  return Math.ceil(words / wpm);
+};
+
+const Metadata = styled.div`
+  span {
+    color: #888;
+    padding-right: 8px;
+  }
+`;
 
 const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
   data,
@@ -22,11 +38,11 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
       title={data.mdx?.frontmatter?.title ?? undefined}
     >
       <MainContent>
-        <div>
-          <span>
-            By {data.mdx?.frontmatter?.author} on {data.mdx?.frontmatter?.date}
-          </span>
-        </div>
+        <Metadata>
+          <span>{data.mdx?.frontmatter?.date}</span>
+          <span>—</span>
+          <span>{readingTime(data.mdx?.body)} min read</span>
+        </Metadata>
         <MDXProvider components={components}>{children}</MDXProvider>
         <ShareButtons
           url={url}
@@ -44,7 +60,8 @@ export default BlogPostTemplate;
 export const query = graphql`
   query BlogPost($id: String!) {
     mdx(id: { eq: $id }) {
-      excerpt(pruneLength: 159)
+      excerpt(pruneLength: 160)
+      body
       frontmatter {
         title
         author
