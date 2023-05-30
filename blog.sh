@@ -25,7 +25,7 @@ start() {
   info "starting blog"
   screen -S blog -d -m yarn serve
   sleep 1
-  PID=$(ps aux | grep "SCREEN -S blog" | awk '{print $2}')
+  PID=$(ps aux | grep "SCREEN -S blog" | head -n 1 | awk '{print $2}')
   echo "$PID" > $PIDFILE
   info "blog started with PID $PID"
 
