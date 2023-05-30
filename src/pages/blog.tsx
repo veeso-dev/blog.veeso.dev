@@ -21,22 +21,24 @@ const Blog: React.FC<PageProps> = ({
     allMdx: { nodes },
   },
 }) => {
-  const posts = nodes.map((node) => (
-    <PostLink
-      key={node.slug}
-      link={`/blog/${node.frontmatter?.slug}`}
-      title={node.frontmatter.title}
-      excerpt={node.excerpt}
-      body={node.body}
-      date={node.frontmatter.date}
-      subtitle={node.frontmatter.subtitle}
-      image={
-        node.frontmatter?.featuredImage
-          ? getImage(node.frontmatter?.featuredImage.childImageSharp)
-          : undefined
-      }
-    />
-  ));
+  const posts = nodes
+    .sort((a, b) => (a.frontmatter.date > b.frontmatter.date ? -1 : 1))
+    .map((node) => (
+      <PostLink
+        key={node.slug}
+        link={`/blog/${node.frontmatter?.slug}`}
+        title={node.frontmatter.title}
+        excerpt={node.excerpt}
+        body={node.body}
+        date={node.frontmatter.date}
+        subtitle={node.frontmatter.subtitle}
+        image={
+          node.frontmatter?.featuredImage
+            ? getImage(node.frontmatter?.featuredImage.childImageSharp)
+            : undefined
+        }
+      />
+    ));
 
   return (
     <PageLayout>
@@ -61,7 +63,7 @@ export const pageQuery = graphql`
           slug
           title
           subtitle
-          date(formatString: "MMMM DD, YYYY")
+          date(formatString: "YYYY-MM-DD")
           featuredImage {
             childImageSharp {
               gatsbyImageData(layout: CONSTRAINED)

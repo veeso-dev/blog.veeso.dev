@@ -9,8 +9,13 @@ import { getImage } from "gatsby-plugin-image";
 import Heading from "../design/Heading";
 
 const LatestPosts = styled.div`
-  display: flex;
-  flex-direction: row;
+  column-gap: 8px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  @media screen and (max-width: 640px) {
+    grid-template-columns: 100%;
+  }
 `;
 
 const IndexPage: React.FC<PageProps> = ({
@@ -19,7 +24,8 @@ const IndexPage: React.FC<PageProps> = ({
   },
 }) => {
   const posts = nodes
-    .slice(0, 3)
+    .sort((a, b) => (a.frontmatter.date > b.frontmatter.date ? -1 : 1))
+    .slice(0, 4)
     .map((node) => (
       <PostLink
         key={node.slug}
@@ -54,13 +60,13 @@ export const pageQuery = graphql`
     allMdx {
       nodes {
         id
-        excerpt(pruneLength: 256)
+        excerpt(pruneLength: 128)
         body
         frontmatter {
           slug
           title
           subtitle
-          date(formatString: "MMMM DD, YYYY")
+          date(formatString: "YYYY-MM-DD")
           featuredImage {
             childImageSharp {
               gatsbyImageData(layout: CONSTRAINED)

@@ -1,5 +1,5 @@
 import { MDXProvider } from "@mdx-js/react";
-import { graphql, HeadFC, PageProps } from "gatsby";
+import { graphql, HeadFC, Link, PageProps } from "gatsby";
 import styled from "styled-components";
 import { getImage } from "gatsby-plugin-image";
 import React from "react";
@@ -19,6 +19,36 @@ const Metadata = styled.div`
 
 const Body = styled.div`
   padding: 24px 0;
+`;
+
+const Footer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+const Buttons = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: center;
+`;
+
+const Button = styled.button`
+  border-radius: 8px;
+  border: 0;
+  font-size: 1.2em;
+  margin: 16px 0;
+  padding: 16px;
+
+  a {
+    color: #444;
+    text-decoration: none;
+  }
+
+  :hover {
+    background-color: #ddd;
+  }
 `;
 
 const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
@@ -45,12 +75,19 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
         <Body>
           <MDXProvider components={components}>{children}</MDXProvider>
         </Body>
-        <ShareButtons
-          url={url}
-          author={data.mdx?.frontmatter?.author ?? ""}
-          title={data.mdx?.frontmatter?.title ?? ""}
-          description={data.mdx?.excerpt ?? ""}
-        />
+        <Footer>
+          <Buttons>
+            <Button>
+              <Link to={"/blog"}>Discover more</Link>
+            </Button>
+          </Buttons>
+          <ShareButtons
+            url={url}
+            author={data.mdx?.frontmatter?.author ?? ""}
+            title={data.mdx?.frontmatter?.title ?? ""}
+            description={data.mdx?.excerpt ?? ""}
+          />
+        </Footer>
       </MainContent>
     </PageLayout>
   );
