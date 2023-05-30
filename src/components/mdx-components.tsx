@@ -63,7 +63,7 @@ const ListElement = styled.li`
 `;
 
 const Anchor = styled.a`
-  color: black;
+  color: rgb(183, 58, 181);
   text-decoration: underline;
 `;
 

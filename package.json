@@ -17,10 +17,12 @@
   },
   "dependencies": {
     "@mdx-js/react": "^2.3.0",
+    "animate.css": "^4.1.1",
     "babel-plugin-styled-components": "^2.1.3",
     "gatsby": "^5.10.0",
     "gatsby-plugin-google-gtag": "^5.10.0",
     "gatsby-plugin-image": "^3.10.0",
+    "gatsby-plugin-manifest": "^5.10.0",
     "gatsby-plugin-mdx": "^5.10.0",
     "gatsby-plugin-page-creator": "^5.10.0",
     "gatsby-plugin-sharp": "^5.10.0",

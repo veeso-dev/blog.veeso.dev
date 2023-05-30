@@ -6,6 +6,7 @@ import { readingTime } from "../utils/utils";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 
 interface Props {
+  className?: string;
   link: string;
   title: string;
   excerpt: string;
@@ -43,7 +44,7 @@ const PostLink = (props: Props) => {
     </Preview>
   ) : undefined;
   return (
-    <Container>
+    <Container className={props.className}>
       {preview}
       <Heading.H2>
         <LLink to={props.link}>{props.title}</LLink>

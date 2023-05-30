@@ -7,6 +7,7 @@ import { PageLayout } from "../components/PageLayout";
 import PostLink from "../components/PostLink";
 import { getImage } from "gatsby-plugin-image";
 import Heading from "../design/Heading";
+import Bio from "../components/Bio";
 
 const LatestPosts = styled.div`
   column-gap: 8px;
@@ -28,7 +29,8 @@ const IndexPage: React.FC<PageProps> = ({
     .slice(0, 4)
     .map((node) => (
       <PostLink
-        key={node.slug}
+        key={node.id}
+        className="animate__animated animate__fadeIn animate__slow"
         link={`/blog/${node.frontmatter?.slug}`}
         title={node.frontmatter.title}
         excerpt={node.excerpt}
@@ -42,11 +44,13 @@ const IndexPage: React.FC<PageProps> = ({
         }
       />
     ));
-
   return (
     <PageLayout>
-      <Heading.H1>Latest Posts</Heading.H1>
-      <LatestPosts>{posts}</LatestPosts>
+      <Bio />
+      <div>
+        <Heading.H1>Latest Posts</Heading.H1>
+        <LatestPosts>{posts}</LatestPosts>
+      </div>
     </PageLayout>
   );
 };
