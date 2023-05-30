@@ -23,7 +23,7 @@ completed() {
 start() {
   yarn && yarn build
   info "starting blog"
-  yarn serve &
+  screen -S blog -d -m yarn serve
   PID="$!"
   echo "$PID" > $PIDFILE
   info "blog started with PID $PID"
