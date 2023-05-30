@@ -5,15 +5,40 @@ import Heading from "../design/Heading";
 import Footer from "./Footer";
 import Topbar from "./Topbar";
 
-const Main = styled.main`
+const Page = styled.main`
+  background: linear-gradient(
+    60deg,
+    rgb(183, 58, 181) 0%,
+    rgb(0, 71, 193) 100%
+  );
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 3em 0;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+`;
+
+const PageContainer = styled.div`
+  align-items: center;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: fit-content;
+
+  @media (max-width: 768px) {
+    border-radius: 0;
+  }
 `;
 
 const PageContent = styled.div`
-  margin: 0 24px;
+  margin: 24px;
   max-width: 680px;
   width: auto;
 
@@ -43,28 +68,34 @@ export const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
 }) => {
   return (
     <>
-      <Main>
-        <PageContent>
-          <Topbar />
-          {image && (
-            <div>
-              <GatsbyImage image={image} alt="" className="absolute inset-0" />
-              {title && (
-                <div>
-                  <Heading.H1>{title}</Heading.H1>
-                </div>
-              )}
-              {subtitle && (
-                <div>
-                  <Subtitle>{subtitle}</Subtitle>
-                </div>
-              )}
-              <div />
-            </div>
-          )}
-          <div className="mx-auto mb-12 max-w-5xl">{children}</div>
-        </PageContent>
-      </Main>
+      <Page>
+        <PageContainer>
+          <PageContent>
+            <Topbar />
+            {image && (
+              <div>
+                <GatsbyImage
+                  image={image}
+                  alt=""
+                  className="absolute inset-0"
+                />
+                {title && (
+                  <div>
+                    <Heading.H1>{title}</Heading.H1>
+                  </div>
+                )}
+                {subtitle && (
+                  <div>
+                    <Subtitle>{subtitle}</Subtitle>
+                  </div>
+                )}
+                <div />
+              </div>
+            )}
+            <div className="mx-auto mb-12 max-w-5xl">{children}</div>
+          </PageContent>
+        </PageContainer>
+      </Page>
       <Footer />
     </>
   );
