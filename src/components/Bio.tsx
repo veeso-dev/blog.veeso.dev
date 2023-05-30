@@ -10,6 +10,10 @@ const Container = styled.div`
   justify-content: space-between;
   gap: 24px;
   padding: 32px;
+
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+  }
 `;
 
 const ImgCol = styled.div`

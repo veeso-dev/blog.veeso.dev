@@ -14,11 +14,12 @@ const Main = styled.main`
 
 const PageContent = styled.div`
   margin: 0 24px;
-  width: 100%;
   max-width: 680px;
+  width: auto;
 
   @media (max-width: 768px) {
     max-width: 100%;
+    padding: 8px;
   }
 `;
 
