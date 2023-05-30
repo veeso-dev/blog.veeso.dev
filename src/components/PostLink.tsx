@@ -32,6 +32,10 @@ const Preview = styled.div`
   padding: 24px 0;
 `;
 
+const LLink = styled(Link)`
+  color: black;
+`;
+
 const PostLink = (props: Props) => {
   const preview = props.image ? (
     <Preview>
@@ -42,7 +46,7 @@ const PostLink = (props: Props) => {
     <Container>
       {preview}
       <Heading.H2>
-        <Link to={props.link}>{props.title}</Link>
+        <LLink to={props.link}>{props.title}</LLink>
       </Heading.H2>
       <Heading.H3>{props.subtitle}</Heading.H3>
       <Excerpt>{props.excerpt}</Excerpt>

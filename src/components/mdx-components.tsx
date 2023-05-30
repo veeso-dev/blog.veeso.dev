@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { Highlight, themes } from "prism-react-renderer";
+import { onlyText } from "react-children-utilities";
 
 const H1 = styled.h1`
   color: #101010;
@@ -71,6 +73,34 @@ const ImgContainer = styled.div`
   justify-content: center;
 `;
 
+const Pre = (props: React.HTMLProps<HTMLPreElement>) => {
+  const singleChild = React.Children.only(props.children) as React.ReactElement;
+
+  const className = singleChild.props.className || "";
+  const matches = className.match(/language-(?<lang>.*)/);
+
+  const lang =
+    matches && matches.groups && matches.groups.lang ? matches.groups.lang : "";
+
+  let code = onlyText(props.children).trim();
+
+  return (
+    <Highlight code={code} language={lang} theme={themes.github}>
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+        <pre className={className} style={{ ...style, padding: "20px" }}>
+          {tokens.map((line, i) => (
+            <div key={i} {...getLineProps({ line, key: i })}>
+              {line.map((token, key) => (
+                <span key={key} {...getTokenProps({ token, key })} />
+              ))}
+            </div>
+          ))}
+        </pre>
+      )}
+    </Highlight>
+  );
+};
+
 export const MainContent = styled.article``;
 
 interface ImageProps {
@@ -97,4 +127,5 @@ export const components = {
   a: Anchor,
   blockquote: Blockquote,
   img: Image,
+  pre: Pre,
 };
