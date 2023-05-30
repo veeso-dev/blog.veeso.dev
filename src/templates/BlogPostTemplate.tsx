@@ -8,13 +8,7 @@ import { PageLayout } from "../components/PageLayout";
 import { CustomHead } from "../components/CustomHead";
 import { components, MainContent } from "../components/mdx-components";
 import ShareButtons from "../components/ShareButtons";
-
-const readingTime = (text: string): number => {
-  const wpm = 225;
-  const words = text.trim().split(/\s+/).length;
-
-  return Math.ceil(words / wpm);
-};
+import { readingTime } from "../utils/utils";
 
 const Metadata = styled.div`
   span {

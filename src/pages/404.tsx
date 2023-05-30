@@ -1,50 +1,64 @@
 import * as React from "react";
-import { Link, HeadFC, PageProps } from "gatsby";
+import styled from "styled-components";
 import "../styles/global.css";
 
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-};
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-};
+import { PageLayout } from "../components/PageLayout";
+import { Link } from "gatsby";
 
-const paragraphStyles = {
-  marginBottom: 48,
-};
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-};
+const Container = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const Text404 = styled.h1`
+  color: #444;
+  font-size: 15em;
+
+  @media screen and (max-width: 640px) {
+    font-size: 5em;
+  }
+`;
+
+const Subtitle = styled.h2`
+  color: #666;
+  font-size: 5em;
+
+  @media screen and (max-width: 640px) {
+    font-size: 2em;
+  }
+`;
+
+const Goback = styled.h3`
+  color: #222;
+  font-size: 2em;
+  line-height: 3em;
+
+  @media screen and (max-width: 640px) {
+    font-size: 1.5em;
+  }
+
+  a {
+    color: #222;
+    text-decoration: none;
+  }
+`;
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+    <PageLayout>
+      <Container>
+        <Text404>404</Text404>
+        <Subtitle>Page not found</Subtitle>
+        <Goback>
+          <Link to="/">Go back to home</Link>
+        </Goback>
+      </Container>
+    </PageLayout>
   );
 };
 
 export default NotFoundPage;
 
-export const Head: HeadFC = () => <title>Not found</title>;
+export const Head: HeadFC = () => <title>Page Not found</title>;

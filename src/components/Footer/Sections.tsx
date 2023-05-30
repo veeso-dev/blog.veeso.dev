@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import CONTACTS from "../../data/contacts";
 import Heading from "../../design/Heading";
+import { Link } from "gatsby";
 
 const Container = styled.div`
   align-items: start;
@@ -32,14 +33,19 @@ const Uri = styled.a`
   width: fit-content;
 `;
 
+const LLink = styled(Link)`
+  display: block;
+  padding: 8px 0;
+  text-decoration: none;
+  width: fit-content;
+`;
+
 const Sections = () => (
   <Container>
     <Section>
       <Heading.H2>Site</Heading.H2>
       <Links>
-        <Uri href="https://blog.veeso.dev" target="_blank">
-          Home
-        </Uri>
+        <LLink to="/">Home</LLink>
         <Uri href="https://www.veeso.dev" target="_blank">
           Veeso
         </Uri>

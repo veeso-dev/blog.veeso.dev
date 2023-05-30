@@ -4,7 +4,6 @@ import { Link } from "gatsby";
 
 import Socials from "./Topbar/Socials";
 import Heading from "../design/Heading";
-import { Link as LinkIcon } from "react-feather";
 
 const Header = styled.div`
   align-items: start;
@@ -64,11 +63,18 @@ const Href = styled.a`
   }
 `;
 
+const UnstyledLink = styled(Link)`
+  color: inherit;
+  text-decoration: none;
+`;
+
 const DesktopTopbar = () => {
   return (
     <Header>
       <HeaderTop>
-        <Heading.H1>Christian Visintin</Heading.H1>
+        <Heading.H1>
+          <UnstyledLink to={"/"}>Christian Visintin</UnstyledLink>
+        </Heading.H1>
       </HeaderTop>
       <HeaderBot>
         <HeaderBotLeft>
