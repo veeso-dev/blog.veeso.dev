@@ -6,11 +6,7 @@ import Footer from "./Footer";
 import Topbar from "./Topbar";
 
 const Page = styled.main`
-  background: linear-gradient(
-    60deg,
-    rgb(183, 58, 181) 0%,
-    rgb(0, 71, 193) 100%
-  );
+  background: #31363b;
   align-items: center;
   display: flex;
   flex-direction: column;

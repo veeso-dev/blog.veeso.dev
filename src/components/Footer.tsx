@@ -5,8 +5,7 @@ import CONTACTS from "../data/contacts";
 import Sections from "./Footer/Sections";
 
 const Container = styled.div`
-  background: #1e2331;
-  border-top: 4px solid darkviolet;
+  background: #31363b;
   color: white;
   margin: 0;
   padding: 24px;

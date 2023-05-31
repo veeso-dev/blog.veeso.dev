@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 
 import Socials from "./Topbar/Socials";
 import Heading from "../design/Heading";
+import LogoImg from "../images/logo.webp";
 
 const Header = styled.div`
   align-items: start;
@@ -15,7 +16,9 @@ const Header = styled.div`
 `;
 
 const HeaderTop = styled.div`
+  align-items: center;
   display: flex;
+  gap: 24px;
 `;
 
 const HeaderBot = styled.div`
@@ -68,10 +71,19 @@ const UnstyledLink = styled(Link)`
   text-decoration: none;
 `;
 
+const Logo = styled.div`
+  img {
+    height: 64px;
+  }
+`;
+
 const DesktopTopbar = () => {
   return (
     <Header>
       <HeaderTop>
+        <Logo>
+          <img src={LogoImg} alt="logo" />
+        </Logo>
         <Heading.H1>
           <UnstyledLink to={"/"}>Christian Visintin</UnstyledLink>
         </Heading.H1>
