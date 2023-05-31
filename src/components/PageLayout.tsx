@@ -39,7 +39,7 @@ const PageContainer = styled.div`
 
 const PageContent = styled.div`
   margin: 24px;
-  max-width: 680px;
+  max-width: 768px;
   width: auto;
 
   @media (max-width: 768px) {
