@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import { Link, Twitter, Linkedin, GitHub } from "react-feather";
+import { Twitter, Linkedin, GitHub, Rss } from "react-feather";
 
 import CONTACTS from "../../data/contacts";
 
@@ -35,6 +35,9 @@ const Socials = () => {
       </Social>
       <Social href={CONTACTS.linkedin} target="_blank">
         <Linkedin />
+      </Social>
+      <Social href={"/rss.xml"} target="_blank">
+        <Rss />
       </Social>
     </SiteSocials>
   );
