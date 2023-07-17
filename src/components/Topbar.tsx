@@ -82,7 +82,9 @@ const DesktopTopbar = () => {
     <Header>
       <HeaderTop>
         <Logo>
-          <img src={LogoImg} alt="logo" />
+          <UnstyledLink to={"/"}>
+            <img src={LogoImg} alt="logo" />
+          </UnstyledLink>
         </Logo>
         <Heading.H1>
           <UnstyledLink to={"/"}>Christian Visintin</UnstyledLink>

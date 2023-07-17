@@ -9,13 +9,13 @@ const H1 = styled.h1`
 
 const H2 = styled.h2`
   color: #101010;
-  font-size: 1.5em;
+  font-size: 1.8em;
   line-height: 2em;
 `;
 
 const H3 = styled.h3`
   color: #101010;
-  font-size: 1.2em;
+  font-size: 1.4em;
   line-height: 1.5em;
 `;
 
@@ -53,6 +53,7 @@ const OrderedList = styled.ol`
   color: #202020;
 
   > li {
+    line-height: 1.5em;
     padding: 4px;
   }
 `;
@@ -71,6 +72,10 @@ const ImgContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  img {
+    max-height: 256px;
+  }
 `;
 
 const Pre = (props: React.HTMLProps<HTMLPreElement>) => {
