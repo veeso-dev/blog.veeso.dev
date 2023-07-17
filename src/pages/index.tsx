@@ -1,23 +1,13 @@
-import * as React from "react";
-import styled from "styled-components";
-import "../styles/global.css";
-import { graphql, HeadFC, PageProps } from "gatsby";
+import * as React from 'react';
+import '../styles/global.css';
+import { graphql, HeadFC, PageProps } from 'gatsby';
 
-import { PageLayout } from "../components/PageLayout";
-import PostLink from "../components/PostLink";
-import { getImage } from "gatsby-plugin-image";
-import Heading from "../design/Heading";
-import Bio from "../components/Bio";
-
-const LatestPosts = styled.div`
-  column-gap: 8px;
-  display: grid;
-  grid-template-columns: 50% 50%;
-
-  @media screen and (max-width: 640px) {
-    grid-template-columns: 100%;
-  }
-`;
+import { PageLayout } from '../components/PageLayout';
+import PostLink from '../components/PostLink';
+import { getImage } from 'gatsby-plugin-image';
+import Heading from '../components/shared/Heading';
+import Bio from '../components/Bio';
+import Container from '../components/shared/Container';
 
 const IndexPage: React.FC<PageProps> = ({
   data: {
@@ -49,7 +39,9 @@ const IndexPage: React.FC<PageProps> = ({
       <Bio />
       <div>
         <Heading.H1>Latest Posts</Heading.H1>
-        <LatestPosts>{posts}</LatestPosts>
+        <Container.Container className="grid grid-cols-2 gap-x-4 sm:grid-cols-1">
+          {posts}
+        </Container.Container>
       </div>
     </PageLayout>
   );

@@ -1,15 +1,15 @@
 ---
-date: "2023-01-25 00:00:00"
-slug: "dev-horror-story-1-an-android-nightmare"
-title: "Dev Horror Story #1 — An Android Nightmare"
-subtitle: "A journey into one of my most painful development: a Wear Os App"
-author: "Christian Visintin"
+date: '2023-01-25 00:00:00'
+slug: 'dev-horror-story-1-an-android-nightmare'
+title: 'Dev Horror Story #1 — An Android Nightmare'
+subtitle: 'A journey into one of my most painful development: a Wear Os App'
+author: 'Christian Visintin'
 featuredImage: ./featured.jpeg
 ---
 
 ## Preamble
 
-*Reflecting on our Android perception*
+_Reflecting on our Android perception_
 
 Let's jump back to the 2010s, I was still a student at the high school and there was a feud between iOS and Android users. Everybody used to point out what made one of the two operating systems better than the other, even if we all knew that basically, the actual turning point was if you could or not afford an iPhone.
 

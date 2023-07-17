@@ -1,45 +1,26 @@
-import * as React from "react";
-import styled from "styled-components";
-import { Twitter, Linkedin, GitHub, Rss } from "react-feather";
+import * as React from 'react';
+import { Twitter, Linkedin, GitHub, Rss } from 'react-feather';
 
-import CONTACTS from "../../data/contacts";
-
-const SiteSocials = styled.div`
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  gap: 32px;
-  padding: 0 32px;
-`;
-
-const Social = styled.a`
-  color: #606060;
-  display: block;
-  padding: 8px 0;
-  text-decoration: none;
-  transition: 0.5s;
-
-  :hover {
-    color: #202020;
-  }
-`;
+import CONTACTS from '../../data/contacts';
+import Container from '../shared/Container';
+import Link from '../shared/Link';
 
 const Socials = () => {
   return (
-    <SiteSocials>
-      <Social href={CONTACTS.github} target="_blank">
+    <Container.Flex className="items-center justify-between gap-8 ph-8">
+      <Link.IconLink href={CONTACTS.github} target="_blank">
         <GitHub />
-      </Social>
-      <Social href={CONTACTS.twitter} target="_blank">
+      </Link.IconLink>
+      <Link.IconLink href={CONTACTS.twitter} target="_blank">
         <Twitter />
-      </Social>
-      <Social href={CONTACTS.linkedin} target="_blank">
+      </Link.IconLink>
+      <Link.IconLink href={CONTACTS.linkedin} target="_blank">
         <Linkedin />
-      </Social>
-      <Social href={"/rss.xml"} target="_blank">
+      </Link.IconLink>
+      <Link.IconLink href={'/rss.xml'} target="_blank">
         <Rss />
-      </Social>
-    </SiteSocials>
+      </Link.IconLink>
+    </Container.Flex>
   );
 };
 

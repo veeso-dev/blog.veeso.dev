@@ -1,9 +1,9 @@
 ---
-date: "2023-07-17 12:00:00"
-slug: "why-you-should-and-should-not-do-open-source"
-title: "Why you should (and should not) do open-source"
-subtitle: "As an experienced open-source developer, I want to tell you why you should do open-source, with all the cons though"
-author: "Christian Visintin"
+date: '2023-07-17 12:00:00'
+slug: 'why-you-should-and-should-not-do-open-source'
+title: 'Why you should (and should not) do open-source'
+subtitle: 'As an experienced open-source developer, I want to tell you why you should do open-source, with all the cons though'
+author: 'Christian Visintin'
 featuredImage: ./featured.jpeg
 ---
 
@@ -25,7 +25,7 @@ The project is actually trash and wrong in many aspects, indeed after a few year
 
 But after that, I started to work on many other projects, which didn't go well actually, until I started to work on [termscp](https://github.com/veeso/termscp). **termscp** has been a **game changer** in my open source career, not only because the project is actually good and has become popular (it got even mentioned in different geek podcasts), but also because it was the starting point for many other projects. Basically, most of my popular projects used to be modules of termscp that at a certain time, I decided to migrate as standalone libraries.
 
-Once I thought that expecting donations from open-source projects was somehow *wrong*. But after all those hours spent working on termscp I finally decided to start raising donations for my work. I still remember the first time someone decided to donate me 2 €. It felt so **good**, even if it was just 2 euros (tax excl. So it became like 1.42 € eventually).
+Once I thought that expecting donations from open-source projects was somehow _wrong_. But after all those hours spent working on termscp I finally decided to start raising donations for my work. I still remember the first time someone decided to donate me 2 €. It felt so **good**, even if it was just 2 euros (tax excl. So it became like 1.42 € eventually).
 
 ![cool](./cool.gif)
 
@@ -96,7 +96,7 @@ Listen, I know what you're gonna say
 YES, I do know. **BUT** listen to me. There are mainly two problems here:
 
 1. **You need money to live**. I don't have an exact number, but I think that **less than 0.1% of your users will donate at least 1$**. That's the sad truth, not even mentioning that these donations may not be periodic, so they might be one-time donations. So basically if you want to make it a job, **you need supporters who donate monthly** and let's say that **backers are 1 out of 10.000**, how many users will you need to get a decent salary from your donations? Not to mention that the salary must be convenient compared to your current job. In addition, to start accumulating backers, you'll need **a lot of time**, which probably you don't have if you already work for a private company. So good luck with that.
-2. **You depend on your users**. What does it mean? It means that if you used to do open-source because that made you able to do whatever you want, now you need to satisfy your community. **Your community will expect you to fix bugs, implement their feature requests**, and provide them with new software made to satisfy them. **And if you don't satisfy them, they will stop backing you**, which means no more money. So, if you reach this point, **does it even make any sense to do open-source anymore?** Are you still *free*?
+2. **You depend on your users**. What does it mean? It means that if you used to do open-source because that made you able to do whatever you want, now you need to satisfy your community. **Your community will expect you to fix bugs, implement their feature requests**, and provide them with new software made to satisfy them. **And if you don't satisfy them, they will stop backing you**, which means no more money. So, if you reach this point, **does it even make any sense to do open-source anymore?** Are you still _free_?
 
 ![think about it meme](./think-about-it.gif)
 

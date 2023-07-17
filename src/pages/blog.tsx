@@ -1,20 +1,12 @@
-import * as React from "react";
-import styled from "styled-components";
-import "../styles/global.css";
-import { graphql, HeadFC, PageProps } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
+import * as React from 'react';
+import '../styles/global.css';
+import { graphql, HeadFC, PageProps } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 
-import { PageLayout } from "../components/PageLayout";
-import PostLink from "../components/PostLink";
-import Heading from "../design/Heading";
-
-const PostList = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  padding: 24px;
-`;
+import { PageLayout } from '../components/PageLayout';
+import PostLink from '../components/PostLink';
+import Heading from '../components/shared/Heading';
+import Container from '../components/shared/Container';
 
 const Blog: React.FC<PageProps> = ({
   data: {
@@ -43,7 +35,9 @@ const Blog: React.FC<PageProps> = ({
   return (
     <PageLayout>
       <Heading.H1>Blog Posts</Heading.H1>
-      <PostList>{posts}</PostList>
+      <Container.FlexCols className="items-center justify-start p-2">
+        {posts}
+      </Container.FlexCols>
     </PageLayout>
   );
 };

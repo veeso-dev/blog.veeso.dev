@@ -1,102 +1,76 @@
-import * as React from "react";
-import styled from "styled-components";
+import * as React from 'react';
 
-import CONTACTS from "../../data/contacts";
-import Heading from "../../design/Heading";
-import { Link } from "gatsby";
-
-const Container = styled.div`
-  align-items: start;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: space-between;
-  padding: 24px;
-
-  @media screen and (max-width: 640px) {
-    flex-direction: column;
-  }
-`;
-
-const Section = styled.div`
-  flex: 1;
-`;
-
-const Links = styled.div`
-  padding: 16px 0 0 16px;
-`;
-
-const Uri = styled.a`
-  display: block;
-  padding: 8px 0;
-  text-decoration: none;
-  width: fit-content;
-`;
-
-const LLink = styled(Link)`
-  display: block;
-  padding: 8px 0;
-  text-decoration: none;
-  width: fit-content;
-`;
+import CONTACTS from '../../data/contacts';
+import Link from './Sections/Link';
+import Container from '../shared/Container';
+import Section from './Sections/Section';
+import Links from './Sections/Links';
+import Title from './Sections/Title';
 
 const Sections = () => (
-  <Container>
+  <Container.FlexResponsiveRow className="flex-wrap items-start gap-4 justify-between p-4">
     <Section>
-      <Heading.H2>Site</Heading.H2>
+      <Title>Site</Title>
       <Links>
-        <LLink to="/">Home</LLink>
-        <Uri href="https://www.veeso.dev" target="_blank">
-          Veeso
-        </Uri>
-        <Uri href="https://termscp.veeso.dev" target="_blank">
+        <Link.Link href={'https://blog.veeso.dev'} target="_blank">
+          Home
+        </Link.Link>
+        <Link.Link href={'https://www.veeso.dev'} target="_blank">
+          veeso.dev
+        </Link.Link>
+        <Link.Link href="https://termscp.veeso.dev" target="_blank">
           termscp
-        </Uri>
-        <Uri href="https://opentapo.veeso.dev" target="_blank">
+        </Link.Link>
+        <Link.Link href="https://opentapo.veeso.dev" target="_blank">
           OpenTapo
-        </Uri>
+        </Link.Link>
       </Links>
     </Section>
     <Section>
-      <Heading.H2>Social</Heading.H2>
+      <Title className="text-white">Social</Title>
       <Links>
-        <Uri href={CONTACTS.github} target="_blank">
+        <Link.Link href={CONTACTS.github} target="_blank">
           Github
-        </Uri>
-        <Uri href={CONTACTS.linkedin} target="_blank">
+        </Link.Link>
+        <Link.Link href={CONTACTS.linkedin} target="_blank">
           LinkedIn
-        </Uri>
-        <Uri href={CONTACTS.linktree} target="_blank">
+        </Link.Link>
+        <Link.Link href={CONTACTS.linktree} target="_blank">
           Linktree
-        </Uri>
-        <Uri href={CONTACTS.twitter} target="_blank">
+        </Link.Link>
+        <Link.Link href={CONTACTS.twitter} target="_blank">
           Twitter
-        </Uri>
+        </Link.Link>
       </Links>
     </Section>
     <Section>
-      <Heading.H2>Contacts</Heading.H2>
+      <Title className="text-white">Contacts</Title>
       <Links>
-        <Uri href={`mailto:${CONTACTS.email}`}>{CONTACTS.email}</Uri>
-        <Uri href={CONTACTS.phoneNumberHref}>{CONTACTS.phoneNumber}</Uri>
-        <Uri href={CONTACTS.telegram}>Telegram</Uri>
-        <Uri href={CONTACTS.whatsapp}>Whatsapp</Uri>
+        <Link.Link href={`mailto:${CONTACTS.email}`}>
+          {CONTACTS.email}
+        </Link.Link>
+        <Link.Link href={CONTACTS.phoneNumberHref}>
+          {CONTACTS.phoneNumber}
+        </Link.Link>
+        <Link.Link href={CONTACTS.telegram}>Telegram</Link.Link>
+        <Link.Link href={CONTACTS.whatsapp}>Whatsapp</Link.Link>
       </Links>
     </Section>
     <Section>
-      <Heading.H2>Legal</Heading.H2>
+      <Title className="text-white">Legal</Title>
       <Links>
-        <Uri href="https://veeso.dev/en/privacy" target="_blank">
+        <Link.Link href={'https://veeso.dev/en/privacy'} target="_blank">
           Privacy
-        </Uri>
-        <Uri href="https://veeso.dev/en/cookie-policy" target="_blank">
+        </Link.Link>
+        <Link.Link href={'https://veeso.dev/en/cookie-policy'} target="_blank">
           Cookie Policy
-        </Uri>
-        <Uri href="https://veeso.dev/en/contacts" target="_blank">
+        </Link.Link>
+        <Link.Link href={'https://veeso.dev/en/contacts'} target="_blank">
           Contacts
-        </Uri>
+        </Link.Link>
       </Links>
     </Section>
-  </Container>
+  </Container.FlexResponsiveRow>
 );
+
 export default Sections;

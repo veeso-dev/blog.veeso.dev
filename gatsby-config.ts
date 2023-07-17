@@ -1,68 +1,68 @@
-import type { GatsbyConfig } from "gatsby";
+import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Christian Visintin | Blog`,
     description: `I'm a dev and rustacean writing about my dev misadventures and give unneeded opinions on many topics involving technology and development`,
-    author: "Christian Visintin",
+    author: 'Christian Visintin',
     siteUrl: `https://blog.veeso.dev`,
     navigation: [
       {
-        name: "Blog",
-        path: "/blog",
+        name: 'Blog',
+        path: '/blog',
       },
     ],
   },
   graphqlTypegen: true,
   plugins: [
-    "gatsby-plugin-styled-components",
-    "gatsby-plugin-image",
-    "gatsby-plugin-sitemap",
-    "gatsby-remark-images",
-    "gatsby-remark-copy-linked-files",
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
+    'gatsby-plugin-postcss',
+    'gatsby-plugin-image',
+    'gatsby-plugin-sitemap',
+    'gatsby-remark-images',
+    'gatsby-remark-copy-linked-files',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: "src/images/favicon-96x96.png",
+        icon: 'src/images/favicon-96x96.png',
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: 'images',
+        path: './src/images/',
       },
-      __key: "images",
+      __key: 'images',
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        name: 'pages',
+        path: './src/pages/',
       },
-      __key: "pages",
+      __key: 'pages',
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "pages",
-        path: "./src/blog/",
+        name: 'pages',
+        path: './src/blog/',
       },
-      __key: "blog",
+      __key: 'blog',
     },
     {
       options: {
         path: `${__dirname}/src/blog`,
       },
-      resolve: "gatsby-plugin-page-creator",
+      resolve: 'gatsby-plugin-page-creator',
     },
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         // your google analytics tracking id
-        trackingIds: ["G-P1G1JW9N1R"],
+        trackingIds: ['G-P1G1JW9N1R'],
         gtagConfig: {
           anonymize_ip: true,
           cookie_expires: 86400 * 7,
@@ -74,12 +74,12 @@ const config: GatsbyConfig = {
       },
     },
     {
-      resolve: "gatsby-plugin-mdx",
+      resolve: 'gatsby-plugin-mdx',
       options: {
-        extensions: [".md", ".mdx"],
+        extensions: ['.md', '.mdx'],
         gatsbyRemarkPlugins: [
-          "gatsby-remark-images",
-          "gatsby-remark-copy-linked-files",
+          'gatsby-remark-images',
+          'gatsby-remark-copy-linked-files',
         ],
       },
     },
@@ -107,11 +107,11 @@ const config: GatsbyConfig = {
                   date: edge.node.frontmatter.date,
                   url:
                     site.siteMetadata.siteUrl +
-                    "/blog" +
+                    '/blog' +
                     edge.node.frontmatter.slug,
                   guid:
                     site.siteMetadata.siteUrl +
-                    "/blog" +
+                    '/blog' +
                     edge.node.frontmatter.slug,
                 });
               });
@@ -134,13 +134,13 @@ const config: GatsbyConfig = {
                 }
               }
             `,
-            output: "/rss.xml",
-            title: "Christian Visintin Blog",
+            output: '/rss.xml',
+            title: 'Christian Visintin Blog',
             // optional configuration to insert feed reference in pages:
             // if `string` is used, it will be used to create RegExp and then test if pathname of
             // current page satisfied this regular expression;
             // if not provided or `undefined`, all pages will have feed reference inserted
-            match: "^/blog/",
+            match: '^/blog/',
           },
         ],
       },

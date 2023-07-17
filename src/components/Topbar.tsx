@@ -1,107 +1,48 @@
-import * as React from "react";
-import styled from "styled-components";
-import { Link } from "gatsby";
+import * as React from 'react';
+import { Link } from 'gatsby';
 
-import Socials from "./Topbar/Socials";
-import Heading from "../design/Heading";
-import LogoImg from "../images/logo.webp";
-
-const Header = styled.div`
-  align-items: start;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  top: 0;
-  width: 100%;
-`;
-
-const HeaderTop = styled.div`
-  align-items: center;
-  display: flex;
-  gap: 24px;
-`;
-
-const HeaderBot = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-`;
-
-const HeaderBotLeft = styled.div`
-  display: flex;
-  gap: 24px;
-`;
-
-const HeaderBotRight = styled.div`
-  align-items: end;
-  display: flex;
-  justify-content: space-between;
-`;
-
-const TopbarLink = styled(Link)`
-  color: #606060;
-  font-size: 1.2em;
-  text-decoration: none;
-  transition: 0.5s;
-
-  :hover {
-    color: #202020;
-    cursor: pointer;
-    text-decoration: underline;
-  }
-`;
-
-const Href = styled.a`
-  color: #606060;
-  font-size: 1.2em;
-  text-decoration: none;
-  transition: 0.5s;
-
-  :hover {
-    color: #202020;
-    cursor: pointer;
-    text-decoration: underline;
-  }
-`;
-
-const UnstyledLink = styled(Link)`
-  color: inherit;
-  text-decoration: none;
-`;
-
-const Logo = styled.div`
-  img {
-    height: 64px;
-  }
-`;
+import Socials from './Topbar/Socials';
+import Heading from './shared/Heading';
+import SharedLink from './shared/Link';
+import LogoImg from '../images/logo.webp';
+import Container from './shared/Container';
 
 const DesktopTopbar = () => {
   return (
-    <Header>
-      <HeaderTop>
-        <Logo>
-          <UnstyledLink to={"/"}>
-            <img src={LogoImg} alt="logo" />
-          </UnstyledLink>
-        </Logo>
+    <Container.FlexCols className="items-start justify-between w-full top-0">
+      <Container.Flex className="gap-4 items-center">
+        <div>
+          <Link className="text-brand no-underline" to={'/'}>
+            <img className="h-[64px]" src={LogoImg} alt="logo" />
+          </Link>
+        </div>
         <Heading.H1>
-          <UnstyledLink to={"/"}>Christian Visintin</UnstyledLink>
+          <Link className="text-brand no-underline text-left" to={'/'}>
+            Christian Visintin
+          </Link>
         </Heading.H1>
-      </HeaderTop>
-      <HeaderBot>
-        <HeaderBotLeft>
-          <TopbarLink to={"/blog"}>Blog</TopbarLink>
-          <Href href={"https://www.veeso.dev/"} target="_blank">
+      </Container.Flex>
+      <Container.FlexResponsiveRow className="items-center justify-between w-full sm:items-start sm:gap-4">
+        <Container.Flex className="gap-4">
+          <Link
+            className="text-gray-500 no-underline text-xl transition-[0.5s] hover:text-brand hover:underline cursor-pointer"
+            to={'/blog'}
+          >
+            Blog
+          </Link>
+          <SharedLink.Default
+            className="text-gray-500 no-underline text-xl transition-[0.5s] hover:text-brand hover:underline cursor-pointer"
+            href={'https://www.veeso.dev/'}
+            target="_blank"
+          >
             About
-          </Href>
-        </HeaderBotLeft>
-        <HeaderBotRight>
+          </SharedLink.Default>
+        </Container.Flex>
+        <Container.Flex className="justify-self-end items-end justify-between">
           <Socials />
-        </HeaderBotRight>
-      </HeaderBot>
-    </Header>
+        </Container.Flex>
+      </Container.FlexResponsiveRow>
+    </Container.FlexCols>
   );
 };
 

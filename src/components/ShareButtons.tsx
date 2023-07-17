@@ -1,22 +1,14 @@
-import * as React from "react";
-import styled from "styled-components";
-import { Facebook, Twitter, Linkedin, Send, Phone } from "react-feather";
+import * as React from 'react';
+import { Facebook, Twitter, Linkedin, Send, Phone } from 'react-feather';
 import {
   FacebookShareButton,
   LinkedinShareButton,
   TwitterShareButton,
   TelegramShareButton,
   WhatsappShareButton,
-} from "react-share";
+} from 'react-share';
 
-const Container = styled.div`
-  color: #606060;
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
-  justify-content: end;
-  margin: 32px 0;
-`;
+import Container from './shared/Container';
 
 interface Props {
   url: string;
@@ -28,7 +20,7 @@ interface Props {
 const ShareButtons = (props: Props) => {
   const title = `${props.title} by ${props.author}`;
   return (
-    <Container>
+    <Container.FlexRow className="text-brand gap-8 justify-end my-10">
       <FacebookShareButton url={props.url} quote={props.description}>
         <Facebook />
       </FacebookShareButton>
@@ -48,7 +40,7 @@ const ShareButtons = (props: Props) => {
       <WhatsappShareButton url={props.url} title={title}>
         <Phone />
       </WhatsappShareButton>
-    </Container>
+    </Container.FlexRow>
   );
 };
 

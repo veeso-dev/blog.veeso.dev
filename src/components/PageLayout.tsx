@@ -1,60 +1,16 @@
-import React from "react";
-import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
-import styled from "styled-components";
-import Heading from "../design/Heading";
-import Footer from "./Footer";
-import Topbar from "./Topbar";
+import React from 'react';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
-const Page = styled.main`
-  background: #31363b;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 3em 0;
-
-  @media (max-width: 768px) {
-    padding: 0;
-  }
-`;
-
-const PageContainer = styled.div`
-  align-items: center;
-  background-color: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: fit-content;
-
-  @media (max-width: 768px) {
-    border-radius: 0;
-  }
-`;
-
-const PageContent = styled.div`
-  margin: 24px;
-  max-width: 768px;
-  width: auto;
-
-  @media (max-width: 768px) {
-    max-width: 100%;
-    padding: 8px;
-  }
-`;
+import Heading from './shared/Heading';
+import Footer from './Footer';
+import Topbar from './Topbar';
+import Container from './shared/Container';
 
 interface PageLayoutProps {
   image?: IGatsbyImageData | null;
   title?: string;
   subtitle?: string;
 }
-
-const Subtitle = styled.h2`
-  color: #666;
-  font-size: 1.2em;
-  padding-bottom: 16px;
-`;
 
 export const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
   children,
@@ -64,34 +20,38 @@ export const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
 }) => {
   return (
     <>
-      <Page>
-        <PageContainer>
-          <PageContent>
+      <main className="bg-brand flex flex-col items-center justify-center py-4 sm:py-0">
+        <Container.FlexCols className="items-center bg-white rounded shadow-xl justify-center w-fit sm:rounded-none">
+          <Container.Container className="m-4 max-w-screen-md w-auto sm:max-w-full p-2">
             <Topbar />
             {image && (
               <div>
                 <GatsbyImage
                   image={image}
                   alt=""
-                  className="absolute inset-0"
+                  className="m-8 rounded inset-0"
                 />
                 {title && (
                   <div>
-                    <Heading.H1>{title}</Heading.H1>
+                    <Heading.H1 className="text-left sm:text-center">
+                      {title}
+                    </Heading.H1>
                   </div>
                 )}
                 {subtitle && (
                   <div>
-                    <Subtitle>{subtitle}</Subtitle>
+                    <Heading.H2 className="p-4 sm:text-md">
+                      {subtitle}
+                    </Heading.H2>
                   </div>
                 )}
                 <div />
               </div>
             )}
             <div className="mx-auto mb-12 max-w-5xl">{children}</div>
-          </PageContent>
-        </PageContainer>
-      </Page>
+          </Container.Container>
+        </Container.FlexCols>
+      </main>
       <Footer />
     </>
   );

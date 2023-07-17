@@ -1,9 +1,11 @@
-import * as React from "react";
-import styled from "styled-components";
-import { Link } from "gatsby";
-import Heading from "../design/Heading";
-import { readingTime } from "../utils/utils";
-import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
+import * as React from 'react';
+import { Link } from 'gatsby';
+
+import Heading from './shared/Heading';
+import { readingTime } from '../utils/utils';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import Container from './shared/Container';
+import Paragraph from './shared/Paragraph';
 
 interface Props {
   className?: string;
@@ -16,45 +18,30 @@ interface Props {
   image?: IGatsbyImageData;
 }
 
-const Container = styled.div`
-  padding: 8px;
-  border-bottom: 1px solid #ccc;
-`;
-
-const Excerpt = styled.p`
-  color: #222;
-`;
-
-const Date = styled.p`
-  color: #444;
-`;
-
-const Preview = styled.div`
-  padding: 24px 0;
-`;
-
-const LLink = styled(Link)`
-  color: black;
-`;
-
 const PostLink = (props: Props) => {
   const preview = props.image ? (
-    <Preview>
-      <GatsbyImage image={props.image} alt="" className="absolute inset-0" />
-    </Preview>
+    <Container.Container className="py-2">
+      <GatsbyImage
+        image={props.image}
+        alt=""
+        className="rounded shadow-xl inset-0"
+      />
+    </Container.Container>
   ) : undefined;
   return (
-    <Container className={props.className}>
+    <Container.Container className={`${props.className} p-2 border-b`}>
       {preview}
       <Heading.H2>
-        <LLink to={props.link}>{props.title}</LLink>
+        <Link to={props.link} className="text-brand">
+          {props.title}
+        </Link>
       </Heading.H2>
       <Heading.H3>{props.subtitle}</Heading.H3>
-      <Excerpt>{props.excerpt}</Excerpt>
-      <Date>
-        Published on {props.date} — {readingTime(props.body)} min read{" "}
-      </Date>
-    </Container>
+      <Paragraph.Leading>{props.excerpt}</Paragraph.Leading>
+      <Paragraph.Default className="text-gray-400">
+        Published on {props.date} — {readingTime(props.body)} min read{' '}
+      </Paragraph.Default>
+    </Container.Container>
   );
 };
 

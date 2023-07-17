@@ -1,9 +1,9 @@
 ---
-date: "2023-03-20 00:00:00"
-slug: "for-a-sustainable-open-source-community-start-pointing-the-finger-at-the-mirror"
-title: "For a sustainable open-source community, start pointing the finger at the mirror"
+date: '2023-03-20 00:00:00'
+slug: 'for-a-sustainable-open-source-community-start-pointing-the-finger-at-the-mirror'
+title: 'For a sustainable open-source community, start pointing the finger at the mirror'
 subtitle: "A reflection on how we're all part of the problem in open-source"
-author: "Christian Visintin"
+author: 'Christian Visintin'
 featuredImage: ./featured.jpeg
 ---
 
@@ -52,7 +52,7 @@ which makes our projects somewhat “unreliable”. We’re not providing a serv
 
 Basically open-source is the opposite of a contract: whereas the contract requires you to get the project working and done and you get paid for that, the open-source license doesn’t bind you to any obligation and so companies don’t have to pay for your work.
 
-*So, the case is closed and it’s okay not to pay open-source devs, right?* **Of course not.**
+_So, the case is closed and it’s okay not to pay open-source devs, right?_ **Of course not.**
 
 The problem is that unfortunately (or not) every project, **no matter if open-source or commercial**, totally relies on thousands of thousands of open-source projects. And we as developers ignore that.
 

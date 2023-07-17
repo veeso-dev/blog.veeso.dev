@@ -1,60 +1,23 @@
-import * as React from "react";
-import styled from "styled-components";
-import "../styles/global.css";
+import * as React from 'react';
+import '../styles/global.css';
 
-import { PageLayout } from "../components/PageLayout";
-import { Link } from "gatsby";
-
-const Container = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`;
-
-const Text404 = styled.h1`
-  color: #444;
-  font-size: 15em;
-
-  @media screen and (max-width: 640px) {
-    font-size: 5em;
-  }
-`;
-
-const Subtitle = styled.h2`
-  color: #666;
-  font-size: 5em;
-
-  @media screen and (max-width: 640px) {
-    font-size: 2em;
-  }
-`;
-
-const Goback = styled.h3`
-  color: #222;
-  font-size: 2em;
-  line-height: 3em;
-
-  @media screen and (max-width: 640px) {
-    font-size: 1.5em;
-  }
-
-  a {
-    color: #222;
-    text-decoration: none;
-  }
-`;
+import { PageLayout } from '../components/PageLayout';
+import { Link } from 'gatsby';
+import Container from '../components/shared/Container';
+import Heading from '../components/shared/Heading';
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
     <PageLayout>
-      <Container>
-        <Text404>404</Text404>
-        <Subtitle>Page not found</Subtitle>
-        <Goback>
+      <Container.FlexCols className="items-center justify-center">
+        <Heading.H1 className="text-4xl text-brand sm:text-3xl">404</Heading.H1>
+        <Heading.H2 className="text-3xl text-brand sm:text-2xl">
+          Page not found
+        </Heading.H2>
+        <Heading.H3 className="text-brand">
           <Link to="/">Go back to home</Link>
-        </Goback>
-      </Container>
+        </Heading.H3>
+      </Container.FlexCols>
     </PageLayout>
   );
 };
