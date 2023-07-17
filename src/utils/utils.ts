@@ -14,7 +14,12 @@ const THEME_DARK = 'theme-dark';
 const THEME_LIGHT = 'theme-light';
 
 export const getTheme = (): Theme => {
-  const theme = localStorage.getItem('theme');
+  let theme = undefined;
+
+  // get from storage (client)
+  if (typeof window !== 'undefined') {
+    theme = localStorage.getItem('theme');
+  }
 
   if (!theme) {
     return window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -22,12 +27,17 @@ export const getTheme = (): Theme => {
       : Theme.LIGHT;
   }
 
-  return theme === THEME_DARK ? Theme.DARK : Theme.LIGHT;
+  return Theme.LIGHT;
 };
 
 export const setTheme = (theme: Theme) => {
   const themeName = theme === Theme.DARK ? THEME_DARK : THEME_LIGHT;
-  localStorage.setItem('theme', themeName);
+
+  // save to storage (client)
+  if (typeof window !== 'undefined') {
+    localStorage.setItem('theme', themeName);
+  }
+
   if (themeName === 'theme-dark') {
     document.documentElement.classList.add('dark');
   } else {
