@@ -13,7 +13,9 @@ const Ordered = (props: React.HTMLProps<HTMLOListElement>) => (
 );
 
 const Item = (props: React.HTMLProps<HTMLLIElement>) => (
-  <li className="text-lg py-2 text-gray-600">{props.children}</li>
+  <li className="text-lg py-2 text-gray-600 dark:text-gray-200">
+    {props.children}
+  </li>
 );
 
 export default {

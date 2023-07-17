@@ -32,13 +32,13 @@ const PostLink = (props: Props) => {
     <Container.Container className={`${props.className} p-2 border-b`}>
       {preview}
       <Heading.H2>
-        <Link to={props.link} className="text-brand">
+        <Link to={props.link} className="text-brand dark:text-gray-200">
           {props.title}
         </Link>
       </Heading.H2>
       <Heading.H3>{props.subtitle}</Heading.H3>
       <Paragraph.Leading>{props.excerpt}</Paragraph.Leading>
-      <Paragraph.Default className="text-gray-400">
+      <Paragraph.Default className="text-gray-400 dark:text-gray-200">
         Published on {props.date} — {readingTime(props.body)} min read{' '}
       </Paragraph.Default>
     </Container.Container>

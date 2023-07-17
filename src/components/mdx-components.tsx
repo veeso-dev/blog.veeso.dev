@@ -5,6 +5,7 @@ import Heading from './shared/Heading';
 import Paragraph from './shared/Paragraph';
 import List from './shared/List';
 import Link from './shared/Link';
+import { Theme, getTheme } from '../utils/utils';
 
 const Blockquote = (props: React.HTMLProps<HTMLQuoteElement>) => (
   <blockquote className="text-gray-500 border-l-4 ml-4 pl-4" {...props}>
@@ -29,8 +30,10 @@ const Pre = (props: React.HTMLProps<HTMLPreElement>) => {
 
   const code = onlyText(props.children).trim();
 
+  const theme = getTheme() === Theme.DARK ? themes.vsDark : themes.github;
+
   return (
-    <Highlight code={code} language={lang} theme={themes.github}>
+    <Highlight code={code} language={lang} theme={theme}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre className={className} style={{ ...style, padding: '20px' }}>
           {tokens.map((line, i) => (

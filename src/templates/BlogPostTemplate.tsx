@@ -28,11 +28,11 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
     >
       <MainContent>
         <Container.Container>
-          <span className="text-gray-400 pr-2">
+          <span className="text-gray-400 dark:text-gray-300 pr-2">
             {data.mdx?.frontmatter?.date}
           </span>
-          <span className="text-gray-400 pr-2">—</span>
-          <span className="text-gray-400 pr-2">
+          <span className="text-gray-400 dark:text-gray-300 pr-2">—</span>
+          <span className="text-gray-400 dark:text-gray-300 pr-2">
             {readingTime(data.mdx?.body ?? '')} min read
           </span>
         </Container.Container>
@@ -42,7 +42,7 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
         <Container.FlexRow className="justify-between">
           <Container.FlexRow className="items-center justify-center">
             <Link
-              className="font-medium text-lg text-brand underline hover:no-underline"
+              className="font-medium text-lg text-brand dark:text-gray-300 underline hover:no-underline"
               to={'/blog'}
             >
               Discover more
