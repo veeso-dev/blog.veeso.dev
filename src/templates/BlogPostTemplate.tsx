@@ -9,7 +9,6 @@ import { components, MainContent } from '../components/mdx-components';
 import ShareButtons from '../components/ShareButtons';
 import { readingTime } from '../utils/utils';
 import Container from '../components/shared/Container';
-import Button from '../components/shared/Button';
 
 const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
   data,
