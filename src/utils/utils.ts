@@ -14,12 +14,11 @@ const THEME_DARK = 'theme-dark';
 const THEME_LIGHT = 'theme-light';
 
 export const getTheme = (): Theme => {
-  let theme = undefined;
-
-  // get from storage (client)
-  if (typeof window !== 'undefined') {
-    theme = localStorage.getItem('theme');
+  if (typeof window === 'undefined') {
+    return Theme.LIGHT;
   }
+
+  const theme = localStorage.getItem('theme');
 
   if (!theme) {
     return window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -27,7 +26,7 @@ export const getTheme = (): Theme => {
       : Theme.LIGHT;
   }
 
-  return Theme.LIGHT;
+  return theme === THEME_DARK ? Theme.DARK : Theme.LIGHT;
 };
 
 export const setTheme = (theme: Theme) => {
@@ -38,7 +37,7 @@ export const setTheme = (theme: Theme) => {
     localStorage.setItem('theme', themeName);
   }
 
-  if (themeName === 'theme-dark') {
+  if (themeName === THEME_DARK) {
     document.documentElement.classList.add('dark');
   } else {
     document.documentElement.classList.remove('dark');
