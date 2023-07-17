@@ -2,6 +2,7 @@ import { MDXProvider } from '@mdx-js/react';
 import { graphql, HeadFC, Link, PageProps } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
+import '../styles/global.css';
 
 import { PageLayout } from '../components/PageLayout';
 import { CustomHead } from '../components/CustomHead';
