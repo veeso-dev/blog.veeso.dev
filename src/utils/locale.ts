@@ -37,6 +37,10 @@ const getForcedLanguage = (): Language | undefined => {
 };
 
 export const getNavigatorLanguage = (): Language => {
+  if (typeof window === 'undefined') {
+    return DEFAULT_LANGUAGE;
+  }
+
   const forcedLanguage = getForcedLanguage();
 
   if (forcedLanguage) {
