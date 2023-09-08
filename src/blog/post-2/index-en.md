@@ -5,6 +5,7 @@ title: 'How Rust Nation ‘23 changed my POV on the Rust community'
 subtitle: "A retrospective of Rust Nation '23"
 author: 'Christian Visintin'
 featuredImage: ./featured.jpeg
+lang: en
 ---
 
 ## About Rust Nation '23

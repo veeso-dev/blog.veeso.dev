@@ -5,6 +5,7 @@ title: 'For a sustainable open-source community, start pointing the finger at th
 subtitle: "A reflection on how we're all part of the problem in open-source"
 author: 'Christian Visintin'
 featuredImage: ./featured.jpeg
+lang: en
 ---
 
 ## Preamble

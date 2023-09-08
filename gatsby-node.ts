@@ -1,5 +1,7 @@
-import { CreatePagesArgs } from "gatsby";
-import path from "path";
+import { CreatePagesArgs, useStaticQuery } from 'gatsby';
+import path from 'path';
+import { useSiteMetadata } from './src/hooks/use-site-metadata';
+import { getPostRoute } from './src/utils/route';
 
 exports.createPages = async ({
   graphql,
@@ -8,38 +10,39 @@ exports.createPages = async ({
 }: CreatePagesArgs) => {
   const { createPage } = actions;
 
-  const BlogPostTemplate = path.resolve("./src/templates/BlogPostTemplate.tsx");
+  const BlogPostTemplate = path.resolve('./src/templates/BlogPostTemplate.tsx');
 
-  const result = await graphql<Queries.GatsbyNodeCreatePagesQuery>(
-    `
-      query GatsbyNodeCreatePages {
-        allMdx {
-          nodes {
-            id
-            frontmatter {
-              slug
-            }
-            internal {
-              contentFilePath
-            }
+  const result = await graphql<Queries.GatsbyNodeCreatePagesQuery>(`
+    query GatsbyNodeCreatePages {
+      allMdx {
+        nodes {
+          id
+          frontmatter {
+            slug
+            lang
+          }
+          internal {
+            contentFilePath
           }
         }
       }
-    `
-  );
+    }
+  `);
 
   if (result.errors) {
     reporter.panicOnBuild(
-      "There was an error loading the MDX result",
-      result.errors
+      'There was an error loading the MDX result',
+      result.errors,
     );
   }
 
   result.data?.allMdx.nodes.forEach((node) => {
-    createPage({
-      path: `/blog/${node.frontmatter?.slug}`,
-      component: `${BlogPostTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
-      context: { id: node.id },
-    });
+    if (node.frontmatter?.lang && node.frontmatter?.slug) {
+      createPage({
+        path: getPostRoute(node.frontmatter?.lang, node.frontmatter?.slug),
+        component: `${BlogPostTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+        context: { id: node.id, lang: node.frontmatter?.lang },
+      });
+    }
   });
 };

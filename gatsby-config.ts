@@ -12,6 +12,7 @@ const config: GatsbyConfig = {
         path: '/blog',
       },
     ],
+    languages: ['en', 'it'],
   },
   graphqlTypegen: true,
   plugins: [
@@ -22,6 +23,13 @@ const config: GatsbyConfig = {
     'gatsby-remark-copy-linked-files',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyDefault: 'en',
+        useLangKeyLayout: false,
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

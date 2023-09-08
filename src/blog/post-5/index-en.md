@@ -5,6 +5,7 @@ title: 'Why you should (and should not) do open-source'
 subtitle: 'As an experienced open-source developer, I want to tell you why you should do open-source, with all the cons though'
 author: 'Christian Visintin'
 featuredImage: ./featured.jpeg
+lang: en
 ---
 
 ## Preamble

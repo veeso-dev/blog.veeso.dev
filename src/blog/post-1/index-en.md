@@ -5,6 +5,7 @@ title: 'Dev Horror Story #1 — An Android Nightmare'
 subtitle: 'A journey into one of my most painful development: a Wear Os App'
 author: 'Christian Visintin'
 featuredImage: ./featured.jpeg
+lang: en
 ---
 
 ## Preamble

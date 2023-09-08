@@ -7,18 +7,22 @@ import { PageLayout } from '../components/PageLayout';
 import PostLink from '../components/PostLink';
 import Heading from '../components/shared/Heading';
 import Container from '../components/shared/Container';
+import { getPostRoute } from '../utils/route';
+import { getNavigatorLanguage } from '../utils/locale';
 
 const Blog: React.FC<PageProps> = ({
   data: {
     allMdx: { nodes },
   },
 }) => {
+  const currentLanguage = getNavigatorLanguage();
   const posts = nodes
     .sort((a, b) => (a.frontmatter.date > b.frontmatter.date ? -1 : 1))
+    .filter((node) => node.frontmatter.lang === currentLanguage)
     .map((node) => (
       <PostLink
         key={node.slug}
-        link={`/blog/${node.frontmatter?.slug}`}
+        link={getPostRoute(currentLanguage, node.frontmatter?.slug)}
         title={node.frontmatter.title}
         excerpt={node.excerpt}
         body={node.body}
@@ -63,6 +67,7 @@ export const pageQuery = graphql`
               gatsbyImageData(layout: CONSTRAINED)
             }
           }
+          lang
         }
         internal {
           contentFilePath
