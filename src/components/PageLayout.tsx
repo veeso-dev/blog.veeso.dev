@@ -1,10 +1,12 @@
 import React from 'react';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import { IntlProvider } from 'react-intl';
 
-import Heading from './shared/Heading';
+import TRANSLATIONS, { getNavigatorLanguage } from '../utils/locale';
+import Heading from './reusable/Heading';
 import Footer from './Footer';
 import Topbar from './Topbar';
-import Container from './shared/Container';
+import Container from './reusable/Container';
 import { getTheme, setTheme } from '../utils/utils';
 
 interface PageLayoutProps {
@@ -24,8 +26,10 @@ export const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
     setTheme(getTheme());
   }, []);
 
+  const language = getNavigatorLanguage();
+
   return (
-    <>
+    <IntlProvider locale={language} messages={TRANSLATIONS[language]}>
       <main className="bg-brand flex flex-col items-center justify-center py-4 sm:py-0">
         <Container.FlexCols className="items-center bg-white dark:bg-brand text-brand dark:text-white rounded shadow-xl justify-center w-fit sm:rounded-none">
           <Container.Container className="m-4 max-w-screen-md w-auto sm:max-w-full p-2">
@@ -59,6 +63,6 @@ export const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
         </Container.FlexCols>
       </main>
       <Footer />
-    </>
+    </IntlProvider>
   );
 };

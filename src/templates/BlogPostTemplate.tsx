@@ -9,7 +9,8 @@ import { CustomHead } from '../components/CustomHead';
 import { components, MainContent } from '../components/mdx-components';
 import ShareButtons from '../components/ShareButtons';
 import { readingTime } from '../utils/utils';
-import Container from '../components/shared/Container';
+import Container from '../components/reusable/Container';
+import RichTextFormattedMessage from '../components/reusable/RichTextFormattedMessage';
 
 const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
   data,
@@ -45,7 +46,7 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
               className="font-medium text-lg text-brand dark:text-gray-300 underline hover:no-underline"
               to={'/blog'}
             >
-              Discover more
+              <RichTextFormattedMessage id={'footer.post.discoverMore'} />
             </Link>
           </Container.FlexRow>
           <ShareButtons

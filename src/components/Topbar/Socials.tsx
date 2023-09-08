@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Twitter, Linkedin, GitHub, Rss } from 'react-feather';
 
 import CONTACTS from '../../data/contacts';
-import Link from '../shared/Link';
+import Link from '../reusable/Link';
 
 const Socials = () => {
   return (

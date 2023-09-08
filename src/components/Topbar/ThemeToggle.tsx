@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Sun, Moon } from 'react-feather';
 import { Theme, getTheme, setTheme } from '../../utils/utils';
-import Link from '../shared/Link';
+import Link from '../reusable/Link';
 
 const ThemeToggle = () => {
   const [theme, setStateTheme] = React.useState(getTheme());

@@ -1,0 +1,15 @@
+{
+  "home": {
+    "brief": "I'm Christian Visintin. I live in Udine, Italy. I'm a freelance software engineer. I'm also an open-source developer. On this blog I write about my dev misadventures and give unneeded opinions on many topics involving technology and development",
+    "latestPosts": "Latest Posts"
+  },
+  "footer": {
+    "site": "Site",
+    "social": "Social",
+    "contacts": "Contacts",
+    "legal": "Legal"
+  },
+  "post": {
+    "discoverMore": "Discover more"
+  }
+}

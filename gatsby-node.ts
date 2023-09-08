@@ -1,13 +1,10 @@
-import { CreatePagesArgs, useStaticQuery } from 'gatsby';
+import { CreatePagesArgs } from 'gatsby';
 import path from 'path';
-import { useSiteMetadata } from './src/hooks/use-site-metadata';
 import { getPostRoute } from './src/utils/route';
 
-exports.createPages = async ({
-  graphql,
-  actions,
-  reporter,
-}: CreatePagesArgs) => {
+exports.createPages = async (
+  { graphql, actions, reporter }: CreatePagesArgs,
+) => {
   const { createPage } = actions;
 
   const BlogPostTemplate = path.resolve('./src/templates/BlogPostTemplate.tsx');

@@ -3,8 +3,8 @@ import '../styles/global.css';
 
 import { PageLayout } from '../components/PageLayout';
 import { Link } from 'gatsby';
-import Container from '../components/shared/Container';
-import Heading from '../components/shared/Heading';
+import Container from '../components/reusable/Container';
+import Heading from '../components/reusable/Heading';
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (

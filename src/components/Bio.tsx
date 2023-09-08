@@ -1,9 +1,9 @@
 import React from 'react';
 
 import Avatar from '../images/avatar.webp';
-import Container from './shared/Container';
-import Link from './shared/Link';
-import Paragraph from './shared/Paragraph';
+import Container from './reusable/Container';
+import Paragraph from './reusable/Paragraph';
+import RichTextFormattedMessage from './reusable/RichTextFormattedMessage';
 
 const Bio = () => (
   <Container.FlexResponsiveRow className="items-center justify-between gap-8 p-10">
@@ -16,14 +16,7 @@ const Bio = () => (
     </div>
     <Container.Container className="flex-1">
       <Paragraph.Brand className="text-brand">
-        I'm Christian Visintin. I live in Udine, Italy. I'm a software engineer
-        at{' '}
-        <Link.Paragraph href="https://bitfinity.network/">
-          Finity Technologies
-        </Link.Paragraph>{' '}
-        where I work as a Rust developer. I'm also an open-source developer and
-        freelancer. On this blog I write about my dev misadventures and give
-        unneeded opinions on many topics involving technology and development
+        <RichTextFormattedMessage id={'home.brief'} />
       </Paragraph.Brand>
     </Container.Container>
   </Container.FlexResponsiveRow>

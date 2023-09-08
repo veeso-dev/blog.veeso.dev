@@ -1,8 +1,24 @@
+import { flatten } from 'flat';
+
+import ItTranslations from '../locales/it.json';
+import EnTranslations from '../locales/en.json';
+
 export const LANG_ENGLISH = 'en';
 export const LANG_ITALIAN = 'it';
 
 export type Language = typeof LANG_ITALIAN | typeof LANG_ENGLISH;
 const DEFAULT_LANGUAGE = LANG_ENGLISH;
+
+export interface Translations {
+  it: Record<string, string>;
+  en: Record<string, string>;
+  [key: string]: Record<string, string>;
+}
+
+const TRANSLATIONS: Translations = {
+  it: flatten(ItTranslations),
+  en: flatten(EnTranslations),
+};
 
 export const getPureNavigatorLanguage = (): Language => {
   let lang = navigator.language;
@@ -52,3 +68,5 @@ export const getNavigatorLanguage = (): Language => {
 
 const languageSupported = (lang: string): boolean =>
   [LANG_ITALIAN, LANG_ENGLISH].includes(lang);
+
+export default TRANSLATIONS;

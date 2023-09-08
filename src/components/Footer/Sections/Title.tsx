@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Heading from '../../shared/Heading';
+import Heading from '../../reusable/Heading';
 
 const Title = (props: React.HTMLProps<HTMLHeadingElement>) => (
   <Heading.H2 className="text-white py-4 font-normal">

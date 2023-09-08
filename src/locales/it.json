@@ -1,0 +1,15 @@
+{
+  "home": {
+    "brief": "Sono Christian Visintin. Vivo a Udine, Italia. Sono un software engineer freelance. Sono anche uno sviluppatore open-source. In questo blog scrivo delle mie disavventure di sviluppo e esprimo opinioni non richieste su molti argomenti legati alla tecnologia e allo sviluppo.",
+    "latestPosts": "Ultimi Articoli"
+  },
+  "footer": {
+    "site": "Sito",
+    "social": "Social",
+    "contacts": "Contatti",
+    "legal": "Legal"
+  },
+  "post": {
+    "discoverMore": "Scopri di più"
+  }
+}

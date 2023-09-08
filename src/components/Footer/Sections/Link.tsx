@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import SharedLink from '../../shared/Link';
+import SharedLink from '../../reusable/Link';
 
 const Link = (props: React.HTMLProps<HTMLAnchorElement>) => (
   <SharedLink.Default

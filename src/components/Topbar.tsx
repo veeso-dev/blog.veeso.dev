@@ -2,10 +2,10 @@ import * as React from 'react';
 import { Link } from 'gatsby';
 
 import Socials from './Topbar/Socials';
-import Heading from './shared/Heading';
-import SharedLink from './shared/Link';
+import Heading from './reusable/Heading';
+import SharedLink from './reusable/Link';
 import LogoImg from '../images/logo.webp';
-import Container from './shared/Container';
+import Container from './reusable/Container';
 import ThemeToggle from './Topbar/ThemeToggle';
 
 const DesktopTopbar = () => {

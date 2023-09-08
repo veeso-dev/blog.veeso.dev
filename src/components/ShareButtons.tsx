@@ -8,7 +8,7 @@ import {
   WhatsappShareButton,
 } from 'react-share';
 
-import Container from './shared/Container';
+import Container from './reusable/Container';
 
 interface Props {
   url: string;

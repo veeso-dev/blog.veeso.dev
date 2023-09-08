@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 
-import Heading from './shared/Heading';
+import Heading from './reusable/Heading';
 import { readingTime } from '../utils/utils';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
-import Container from './shared/Container';
-import Paragraph from './shared/Paragraph';
+import Container from './reusable/Container';
+import Paragraph from './reusable/Paragraph';
 
 interface Props {
   className?: string;

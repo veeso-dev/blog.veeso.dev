@@ -1,10 +1,10 @@
 import React from 'react';
 import { Highlight, themes } from 'prism-react-renderer';
 import { onlyText } from 'react-children-utilities';
-import Heading from './shared/Heading';
-import Paragraph from './shared/Paragraph';
-import List from './shared/List';
-import Link from './shared/Link';
+import Heading from './reusable/Heading';
+import Paragraph from './reusable/Paragraph';
+import List from './reusable/List';
+import Link from './reusable/Link';
 import { Theme, getTheme } from '../utils/utils';
 
 const Blockquote = (props: React.HTMLProps<HTMLQuoteElement>) => (

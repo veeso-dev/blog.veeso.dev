@@ -5,8 +5,8 @@ import { getImage } from 'gatsby-plugin-image';
 
 import { PageLayout } from '../components/PageLayout';
 import PostLink from '../components/PostLink';
-import Heading from '../components/shared/Heading';
-import Container from '../components/shared/Container';
+import Heading from '../components/reusable/Heading';
+import Container from '../components/reusable/Container';
 import { getPostRoute } from '../utils/route';
 import { getNavigatorLanguage } from '../utils/locale';
 

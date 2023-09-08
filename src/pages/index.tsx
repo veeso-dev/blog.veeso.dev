@@ -5,11 +5,12 @@ import { graphql, HeadFC, PageProps } from 'gatsby';
 import { PageLayout } from '../components/PageLayout';
 import PostLink from '../components/PostLink';
 import { getImage } from 'gatsby-plugin-image';
-import Heading from '../components/shared/Heading';
+import Heading from '../components/reusable/Heading';
 import Bio from '../components/Bio';
-import Container from '../components/shared/Container';
+import Container from '../components/reusable/Container';
 import { getPostRoute } from '../utils/route';
 import { getNavigatorLanguage } from '../utils/locale';
+import RichTextFormattedMessage from '../components/reusable/RichTextFormattedMessage';
 
 const IndexPage: React.FC<PageProps> = ({
   data: {
@@ -42,7 +43,9 @@ const IndexPage: React.FC<PageProps> = ({
     <PageLayout>
       <Bio />
       <div>
-        <Heading.H1>Latest Posts</Heading.H1>
+        <Heading.H1>
+          <RichTextFormattedMessage id={'home.latestPosts'} />
+        </Heading.H1>
         <Container.Container className="grid grid-cols-2 gap-x-4 sm:grid-cols-1">
           {posts}
         </Container.Container>
