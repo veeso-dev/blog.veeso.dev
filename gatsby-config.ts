@@ -18,11 +18,41 @@ const config: GatsbyConfig = {
   plugins: [
     'gatsby-plugin-postcss',
     'gatsby-plugin-image',
-    'gatsby-plugin-sitemap',
     'gatsby-remark-images',
     'gatsby-remark-copy-linked-files',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        filterPages: ({ path }) => {
+          return (
+            !path.endsWith('.md') &&
+            !path.endsWith('.mdx') &&
+            !path.endsWith('index-it/') &&
+            !path.endsWith('index-en/') &&
+            !path.endsWith('index.it') &&
+            !path.endsWith('index.en')
+          );
+        },
+        serialize: ({ path }) => {
+          // Estrai la lingua dal percorso della pagina
+          const lang = path.split('/')[2];
+          if (lang) {
+            return {
+              url: `https://blog.veeso.dev${path}`,
+              priority: 0.7,
+              links: [{ lang, url: `https://blog.veeso.dev${path}` }],
+            };
+          } else {
+            return {
+              url: `https://blog.veeso.dev${path}`,
+              priority: 0.7,
+            };
+          }
+        },
+      },
+    },
     {
       resolve: 'gatsby-plugin-i18n',
       options: {
@@ -115,11 +145,13 @@ const config: GatsbyConfig = {
                   date: edge.node.frontmatter.date,
                   url:
                     site.siteMetadata.siteUrl +
-                    '/blog' +
+                    '/blog/' +
+                    edge.node.frontmatter.lang +
                     edge.node.frontmatter.slug,
                   guid:
                     site.siteMetadata.siteUrl +
-                    '/blog' +
+                    '/blog/' +
+                    edge.node.frontmatter.lang +
                     edge.node.frontmatter.slug,
                 });
               });
@@ -136,6 +168,7 @@ const config: GatsbyConfig = {
                         title
                         date
                         slug
+                        lang
                       }
                     }
                   }
