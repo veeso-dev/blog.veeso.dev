@@ -1,5 +1,5 @@
 ---
-date: '2023-07-17 12:00:00'
+date: '2023-09-14 16:00:00'
 slug: 'why-you-should-and-should-not-do-open-source'
 title: 'Perché dovresti (e non dovresti) fare sviluppo open-source'
 subtitle: "Come sviluppatore con molta esperienza pregressa nell'open-source, voglio spiegare perché dovresti fare sviluppo open-source (con i suoi contro, però)"
