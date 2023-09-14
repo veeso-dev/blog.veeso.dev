@@ -149,6 +149,7 @@ const config: GatsbyConfig = {
                       site.siteMetadata.siteUrl +
                       '/blog/' +
                       edge.node.frontmatter.lang +
+                      '/' +
                       edge.node.frontmatter.slug,
                     guid:
                       site.siteMetadata.siteUrl +
@@ -156,28 +157,37 @@ const config: GatsbyConfig = {
                       edge.node.frontmatter.lang +
                       '/' +
                       edge.node.frontmatter.slug,
-                    lang: edge.node.frontmatter.lang,
+                    custom_elements: [
+                      {
+                        preview: `https://blog.veeso.dev${edge.node.frontmatter.featuredImage.childImageSharp.fluid.src}`,
+                      },
+                    ],
                   });
                 });
             },
             query: `
-              {
-                allMdx(
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                ) {
-                  edges {
-                    node {
-                      excerpt(pruneLength: 256)
-                      frontmatter {
-                        title
-                        date
-                        slug
-                        lang
+            {
+              allMdx(sort: {frontmatter: {date: DESC}}) {
+                edges {
+                  node {
+                    excerpt(pruneLength: 256)
+                    frontmatter {
+                      title
+                      date
+                      slug
+                      lang
+                      featuredImage {
+                        childImageSharp {
+                          fluid(maxWidth: 1200) {
+                            src
+                          }
+                        }
                       }
                     }
                   }
                 }
               }
+            }
             `,
             output: '/rss/it.xml',
             title: 'Christian Visintin Blog',
@@ -199,6 +209,7 @@ const config: GatsbyConfig = {
                       site.siteMetadata.siteUrl +
                       '/blog/' +
                       edge.node.frontmatter.lang +
+                      '/' +
                       edge.node.frontmatter.slug,
                     guid:
                       site.siteMetadata.siteUrl +
@@ -206,28 +217,37 @@ const config: GatsbyConfig = {
                       edge.node.frontmatter.lang +
                       '/' +
                       edge.node.frontmatter.slug,
-                    lang: edge.node.frontmatter.lang,
+                    custom_elements: [
+                      {
+                        preview: `https://blog.veeso.dev${edge.node.frontmatter.featuredImage.childImageSharp.fluid.src}`,
+                      },
+                    ],
                   });
                 });
             },
             query: `
-              {
-                allMdx(
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                ) {
-                  edges {
-                    node {
-                      excerpt(pruneLength: 256)
-                      frontmatter {
-                        title
-                        date
-                        slug
-                        lang
+            {
+              allMdx(sort: {frontmatter: {date: DESC}}) {
+                edges {
+                  node {
+                    excerpt(pruneLength: 256)
+                    frontmatter {
+                      title
+                      date
+                      slug
+                      lang
+                      featuredImage {
+                        childImageSharp {
+                          fluid(maxWidth: 1200) {
+                            src
+                          }
+                        }
                       }
                     }
                   }
                 }
               }
+            }
             `,
             output: '/rss/en.xml',
             title: 'Christian Visintin Blog',
