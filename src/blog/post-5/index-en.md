@@ -107,6 +107,10 @@ Another sad truth. But you need to accept that **most of people are ungrateful f
 
 Oh, and not only that, but in most of the cases your users will make you **waste a lot of time** in getting these issues fixed. Maybe you've prepared that **beautiful template for issues and PRs**, well forget that. Based on my experience **about 40% of users that open an issue, will just blank your template and provide you with an insufficient amount of information about their issue**. In **5% of the case the issue title was empty**, **20% of the times the description was empty** and in 10% of the cases **the title was totally misleading**.
 
+I'm talking about things like this:
+
+![average issue be like](./issue.webp)
+
 And after struggling with that, in the remote case there was actually an issue with your software, you close the issue, release the new version and **you'll never hear back from them 90% of the times**. Not for an appreciation nor for a feedback. Good, right?
 
 ![middle finger gif](./car-break.gif)
