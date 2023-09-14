@@ -11,6 +11,7 @@ import ShareButtons from '../components/ShareButtons';
 import { readingTime } from '../utils/utils';
 import Container from '../components/reusable/Container';
 import RichTextFormattedMessage from '../components/reusable/RichTextFormattedMessage';
+import { FormattedDate } from 'react-intl';
 
 const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
   data,
@@ -29,12 +30,20 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
     >
       <MainContent>
         <Container.Container>
-          <span className="text-gray-400 dark:text-gray-300 pr-2">
-            {data.mdx?.frontmatter?.date}
-          </span>
+          {data.mdx?.frontmatter?.date && (
+            <span className="text-gray-400 dark:text-gray-300 pr-2">
+              <FormattedDate
+                year="numeric"
+                month="long"
+                day="2-digit"
+                value={data.mdx?.frontmatter?.date}
+              />
+            </span>
+          )}
           <span className="text-gray-400 dark:text-gray-300 pr-2">—</span>
           <span className="text-gray-400 dark:text-gray-300 pr-2">
-            {readingTime(data.mdx?.body ?? '')} min read
+            {readingTime(data.mdx?.body ?? '')}{' '}
+            <RichTextFormattedMessage id={'post.readingTime'} />
           </span>
         </Container.Container>
         <Container.Container className="py-4">
@@ -46,7 +55,7 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
               className="font-medium text-lg text-brand dark:text-gray-300 underline hover:no-underline"
               to={'/blog'}
             >
-              <RichTextFormattedMessage id={'footer.post.discoverMore'} />
+              <RichTextFormattedMessage id={'post.discoverMore'} />
             </Link>
           </Container.FlexRow>
           <ShareButtons

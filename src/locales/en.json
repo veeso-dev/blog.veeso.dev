@@ -10,6 +10,7 @@
     "legal": "Legal"
   },
   "post": {
-    "discoverMore": "Discover more"
+    "discoverMore": "Discover more",
+    "readingTime": "min read"
   }
 }
