@@ -25,16 +25,6 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        filterPages: ({ path }) => {
-          return (
-            !path.endsWith('.md') &&
-            !path.endsWith('.mdx') &&
-            !path.endsWith('index-it/') &&
-            !path.endsWith('index-en/') &&
-            !path.endsWith('index.it') &&
-            !path.endsWith('index.en')
-          );
-        },
         serialize: ({ path }) => {
           // Estrai la lingua dal percorso della pagina
           const lang = path.split('/')[2];
