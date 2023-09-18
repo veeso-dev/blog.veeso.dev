@@ -9,6 +9,8 @@ import Heading from '../components/reusable/Heading';
 import Container from '../components/reusable/Container';
 import { getPostRoute } from '../utils/route';
 import { getNavigatorLanguage } from '../utils/locale';
+import { useSiteMetadata } from '../hooks/use-site-metadata';
+import { CustomHead } from '../components/CustomHead';
 
 const Blog: React.FC<PageProps> = ({
   data: {
@@ -48,7 +50,19 @@ const Blog: React.FC<PageProps> = ({
 
 export default Blog;
 
-export const Head: HeadFC = () => <title>Blog</title>;
+export const Head: HeadFC = () => {
+  const metadata = useSiteMetadata();
+  const title = metadata.title ?? undefined;
+  const description = metadata.description ?? undefined;
+
+  return (
+    <CustomHead
+      title={title}
+      description={description}
+      lang={getNavigatorLanguage()}
+    />
+  );
+};
 
 export const pageQuery = graphql`
   query {

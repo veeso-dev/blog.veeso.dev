@@ -6,6 +6,7 @@ const config: GatsbyConfig = {
     description: `I'm a dev and rustacean writing about my dev misadventures and give unneeded opinions on many topics involving technology and development`,
     author: 'Christian Visintin',
     siteUrl: `https://blog.veeso.dev`,
+    twitterUsername: `@veeso_dev`,
     navigation: [
       {
         name: 'Blog',

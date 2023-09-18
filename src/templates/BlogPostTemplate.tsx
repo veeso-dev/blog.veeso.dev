@@ -82,6 +82,7 @@ export const query = graphql`
         author
         subtitle
         date(formatString: "MMMM DD, YYYY")
+        lang
         featuredImage {
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
@@ -102,6 +103,7 @@ export const Head: HeadFC<Queries.BlogPostQuery, unknown> = ({ data }) => {
       title={data.mdx?.frontmatter?.title || ''}
       description={data.mdx?.excerpt || ''}
       image={imageUrl}
+      lang={data.mdx?.frontmatter?.lang || 'en'}
       article
     />
   );

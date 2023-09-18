@@ -45,6 +45,7 @@ export const CustomHead: React.FC<React.PropsWithChildren<CustomHeadProps>> = ({
 
   return (
     <>
+      <html lang={lang} />
       <title>{title}</title>
       {!nonCanonical && <link rel="canonical" href={canonicalUrl} />}
       <meta name="description" content={description} />

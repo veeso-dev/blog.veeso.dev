@@ -11,6 +11,8 @@ import Container from '../components/reusable/Container';
 import { getPostRoute } from '../utils/route';
 import { getNavigatorLanguage } from '../utils/locale';
 import RichTextFormattedMessage from '../components/reusable/RichTextFormattedMessage';
+import { useSiteMetadata } from '../hooks/use-site-metadata';
+import { CustomHead } from '../components/CustomHead';
 
 const IndexPage: React.FC<PageProps> = ({
   data: {
@@ -56,7 +58,19 @@ const IndexPage: React.FC<PageProps> = ({
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Christian Visintin Blog</title>;
+export const Head: HeadFC = () => {
+  const metadata = useSiteMetadata();
+  const title = metadata.title ?? undefined;
+  const description = metadata.description ?? undefined;
+
+  return (
+    <CustomHead
+      title={title}
+      description={description}
+      lang={getNavigatorLanguage()}
+    />
+  );
+};
 
 export const pageQuery = graphql`
   query {
