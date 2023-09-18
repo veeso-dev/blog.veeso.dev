@@ -2,14 +2,14 @@ import * as React from 'react';
 import '../styles/global.css';
 
 import { PageLayout } from '../components/PageLayout';
-import { Link } from 'gatsby';
+import { HeadFC, Link, PageProps } from 'gatsby';
 import Container from '../components/reusable/Container';
 import Heading from '../components/reusable/Heading';
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
     <PageLayout>
-      <Container.FlexCols className="items-center justify-center">
+      <Container.FlexCols className="w-full p-24 items-center justify-center">
         <Heading.H1 className="text-4xl text-brand sm:text-3xl">404</Heading.H1>
         <Heading.H2 className="text-3xl text-brand sm:text-2xl">
           Page not found
