@@ -19,6 +19,7 @@
     "prettier:check": "prettier --config .prettierrc --check src/"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.8.1",
     "@mdx-js/react": "^2.3.0",
     "animate.css": "^4.1",
     "babel-plugin-styled-components": "^2.1",
@@ -49,7 +50,6 @@
     "eslint": "^8.48",
     "eslint-config-prettier": "^9",
     "gatsby-plugin-feed": "^5.12",
-    "gatsby-plugin-google-gtag": "^5.12",
     "gatsby-plugin-image": "^3.12",
     "gatsby-plugin-manifest": "^5.12",
     "gatsby-plugin-mdx": "^5.12",

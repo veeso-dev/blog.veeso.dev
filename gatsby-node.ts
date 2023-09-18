@@ -1,10 +1,17 @@
 import { CreatePagesArgs } from 'gatsby';
+import { copyLibFiles } from '@builder.io/partytown/utils';
 import path from 'path';
 import { getPostRoute } from './src/utils/route';
 
-exports.createPages = async (
-  { graphql, actions, reporter }: CreatePagesArgs,
-) => {
+exports.onPreBuild = async () => {
+  await copyLibFiles(path.join(__dirname, 'static', '~partytown'));
+};
+
+exports.createPages = async ({
+  graphql,
+  actions,
+  reporter,
+}: CreatePagesArgs) => {
   const { createPage } = actions;
 
   const BlogPostTemplate = path.resolve('./src/templates/BlogPostTemplate.tsx');

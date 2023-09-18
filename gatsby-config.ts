@@ -87,21 +87,6 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-plugin-page-creator',
     },
     {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        // your google analytics tracking id
-        trackingIds: ['G-P1G1JW9N1R'],
-        gtagConfig: {
-          anonymize_ip: true,
-          cookie_expires: 86400 * 7,
-        },
-        pluginConfig: {
-          // Puts tracking script in the head instead of the body
-          head: false,
-        },
-      },
-    },
-    {
       resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.md', '.mdx'],
