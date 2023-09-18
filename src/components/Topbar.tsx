@@ -4,9 +4,9 @@ import { Link } from 'gatsby';
 import Socials from './Topbar/Socials';
 import Heading from './reusable/Heading';
 import SharedLink from './reusable/Link';
-import LogoImg from '../images/logo.webp';
 import Container from './reusable/Container';
 import ThemeToggle from './Topbar/ThemeToggle';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const DesktopTopbar = () => {
   return (
@@ -14,7 +14,13 @@ const DesktopTopbar = () => {
       <Container.Flex className="gap-4 items-center">
         <div>
           <Link className="text-brand no-underline" to={'/'}>
-            <img className="h-[64px]" src={LogoImg} alt="logo" />
+            <StaticImage
+              height={64}
+              width={64}
+              src={'../images/logo.webp'}
+              loading="eager"
+              alt="logo"
+            />
           </Link>
         </div>
         <Heading.H1>

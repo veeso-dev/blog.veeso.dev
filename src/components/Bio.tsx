@@ -1,17 +1,18 @@
 import React from 'react';
 
-import Avatar from '../images/avatar.webp';
 import Container from './reusable/Container';
 import Paragraph from './reusable/Paragraph';
 import RichTextFormattedMessage from './reusable/RichTextFormattedMessage';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const Bio = () => (
   <Container.FlexResponsiveRow className="items-center justify-between gap-8 p-10">
     <div>
-      <img
+      <StaticImage
         className="rounded-full h-auto w-[128px]"
-        src={Avatar}
+        src={'../images/avatar.webp'}
         alt="a picture of me"
+        loading="eager"
       />
     </div>
     <Container.Container className="flex-1">

@@ -23,7 +23,8 @@ const PostLink = (props: Props) => {
     <Container.Container className="py-2">
       <GatsbyImage
         image={props.image}
-        alt=""
+        alt={props.subtitle}
+        loading="eager"
         className="rounded shadow-xl inset-0"
       />
     </Container.Container>

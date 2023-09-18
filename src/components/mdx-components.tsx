@@ -57,7 +57,7 @@ export const MainContent = (props: React.HTMLProps<HTMLDivElement>) => (
 
 const Image = (props: React.HTMLProps<HTMLImageElement>) => (
   <ImgContainer>
-    <img {...props} />
+    <img {...props} loading="lazy" />
   </ImgContainer>
 );
 
