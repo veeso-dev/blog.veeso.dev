@@ -22,23 +22,23 @@ const ShareButtons = (props: Props) => {
   return (
     <Container.FlexRow className="text-brand dark:text-gray-200 gap-8 justify-end my-10">
       <FacebookShareButton url={props.url} quote={props.description}>
-        <Facebook />
+        <Facebook className="transition-transform transform scale-100 hover:scale-125" />
       </FacebookShareButton>
       <TwitterShareButton url={props.url} title={title}>
-        <Twitter />
+        <Twitter className="transition-transform transform scale-100 hover:scale-125" />
       </TwitterShareButton>
       <LinkedinShareButton
         url={props.url}
         title={title}
         summary={props.description}
       >
-        <Linkedin />
+        <Linkedin className="transition-transform transform scale-100 hover:scale-125" />
       </LinkedinShareButton>
       <TelegramShareButton url={props.url} title={title}>
-        <Send />
+        <Send className="transition-transform transform scale-100 hover:scale-125" />
       </TelegramShareButton>
       <WhatsappShareButton url={props.url} title={title}>
-        <Phone />
+        <Phone className="transition-transform transform scale-100 hover:scale-125" />
       </WhatsappShareButton>
     </Container.FlexRow>
   );
