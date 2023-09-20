@@ -1,6 +1,8 @@
 import React from 'react';
+import { Check, Copy } from 'react-feather';
 import { Highlight, themes } from 'prism-react-renderer';
 import { onlyText } from 'react-children-utilities';
+
 import Heading from './reusable/Heading';
 import Paragraph from './reusable/Paragraph';
 import List from './reusable/List';
@@ -19,6 +21,31 @@ const ImgContainer = (props: React.HTMLProps<HTMLDivElement>) => (
   </div>
 );
 
+interface PreCopyButtonProps {
+  content: string;
+}
+
+const PreCopyButton = (props: PreCopyButtonProps) => {
+  const [copied, setCopied] = React.useState(false);
+
+  const onClick = () => {
+    if (typeof navigator === 'undefined') return;
+
+    navigator.clipboard.writeText(props.content).then(() => {
+      setCopied(true);
+    });
+  };
+
+  return (
+    <button
+      onClick={onClick}
+      className={`bg-inherit absolute right-4 top-4 rounded border-gray-500 border-2 p-2 hover:bg-gray-200 active:bg-gray-300`}
+    >
+      {(copied && <Check size={16} />) || <Copy size={16} />}
+    </button>
+  );
+};
+
 const Pre = (props: React.HTMLProps<HTMLPreElement>) => {
   const singleChild = React.Children.only(props.children) as React.ReactElement;
 
@@ -35,7 +62,11 @@ const Pre = (props: React.HTMLProps<HTMLPreElement>) => {
   return (
     <Highlight code={code} language={lang} theme={theme}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={{ ...style, padding: '20px' }}>
+        <pre
+          className={`${className} overflow-x-auto w-full relative`}
+          style={{ ...style, padding: '20px' }}
+        >
+          <PreCopyButton content={code} />
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (

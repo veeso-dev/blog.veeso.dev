@@ -25,7 +25,7 @@ const DesktopTopbar = () => {
         </div>
         <Heading.H1>
           <Link
-            className="text-brand dark:text-gray-200 no-underline text-left"
+            className="text-brand dark:text-gray-200 no-underline text-left sm:text-xl"
             to={'/'}
           >
             Christian Visintin

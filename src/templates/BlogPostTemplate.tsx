@@ -49,7 +49,7 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
         <Container.Container className="py-4">
           <MDXProvider components={components}>{children}</MDXProvider>
         </Container.Container>
-        <Container.FlexRow className="justify-between">
+        <Container.FlexResponsiveRow className="justify-between">
           <Container.FlexRow className="items-center justify-center">
             <Link
               className="font-medium text-lg text-brand dark:text-gray-300 underline hover:no-underline"
@@ -64,7 +64,7 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
             title={data.mdx?.frontmatter?.title ?? ''}
             description={data.mdx?.excerpt ?? ''}
           />
-        </Container.FlexRow>
+        </Container.FlexResponsiveRow>
       </MainContent>
     </PageLayout>
   );
