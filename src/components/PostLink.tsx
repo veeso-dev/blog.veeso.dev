@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 
 import Heading from './reusable/Heading';
 import { readingTime } from '../utils/utils';
@@ -20,20 +20,25 @@ interface Props {
 
 const PostLink = (props: Props) => {
   const preview = props.image ? (
-    <Container.Container className="py-2">
-      <GatsbyImage
-        image={props.image}
-        alt={props.subtitle}
-        loading="eager"
-        className="rounded shadow-xl inset-0"
-      />
+    <Container.Container className="py-2 transition-transform transform scale-100 hover:scale-105 cursor-pointer">
+      <Link to={props.link}>
+        <GatsbyImage
+          image={props.image}
+          alt={props.subtitle}
+          loading="eager"
+          className="rounded shadow-xl inset-0"
+        />
+      </Link>
     </Container.Container>
   ) : undefined;
   return (
     <Container.Container className={`${props.className} p-2 border-b`}>
       {preview}
       <Heading.H2>
-        <Link to={props.link} className="text-brand dark:text-gray-200">
+        <Link
+          to={props.link}
+          className="text-brand dark:text-gray-200 hover:underline"
+        >
           {props.title}
         </Link>
       </Heading.H2>
