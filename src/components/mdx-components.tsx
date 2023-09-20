@@ -92,8 +92,14 @@ const Image = (props: React.HTMLProps<HTMLImageElement>) => (
   </ImgContainer>
 );
 
+const PostLink = (props: React.HTMLProps<HTMLAnchorElement>) => (
+  <Link.Paragraph {...props} target="_blank">
+    {props.children}
+  </Link.Paragraph>
+);
+
 export const components = {
-  a: Link.Paragraph,
+  a: PostLink,
   blockquote: Blockquote,
   h1: Heading.H1,
   h2: Heading.H2,
