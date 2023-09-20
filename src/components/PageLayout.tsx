@@ -58,7 +58,7 @@ export const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
                 <div />
               </div>
             )}
-            <div className="mx-auto mb-12 max-w-5xl">{children}</div>
+            <div className="mx-auto mb-12">{children}</div>
           </Container.Container>
         </Container.FlexCols>
       </main>
