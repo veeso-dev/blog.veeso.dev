@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link, navigate } from 'gatsby';
+import { Link } from 'gatsby';
 
 import Heading from './reusable/Heading';
 import { readingTime } from '../utils/utils';

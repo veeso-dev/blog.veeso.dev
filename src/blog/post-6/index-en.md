@@ -142,30 +142,30 @@ Previously I had all of my applications wrapped around a `BrowserRouter` in a co
 
 ```tsx
 return (
-    <IntlProvider locale={language} messages={TRANSLATIONS[language]}>
-      <SeoEngine />
-      <React.Suspense fallback={<Fallback />}>
-        <Topbar path={pathname} menu={routesForPath()} />
-        <main>
-          <Routes>
-            <Route index path="/" element={<Home />} />
-            <Route path="/about-me" element={<About />} />
-            <Route path="/contacts" element={<Contacts />} />
-            <Route path="/cookie-policy" element={<CookiePolicy />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/products/:product" element={<ProductPage />} />
-            <Route path="/quote/:product" element={<Quote />} />
-            <Route path="/thank-you" element={<ThankYou />} />
-            {/* catch all */}
-            <Route path="/*" element={<NotFound />} />
-          </Routes>
-        </main>
-        <Footer />
-        {cookieBar}
-      </React.Suspense>
-    </IntlProvider>
-  );
+  <IntlProvider locale={language} messages={TRANSLATIONS[language]}>
+    <SeoEngine />
+    <React.Suspense fallback={<Fallback />}>
+      <Topbar path={pathname} menu={routesForPath()} />
+      <main>
+        <Routes>
+          <Route index path="/" element={<Home />} />
+          <Route path="/about-me" element={<About />} />
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:product" element={<ProductPage />} />
+          <Route path="/quote/:product" element={<Quote />} />
+          <Route path="/thank-you" element={<ThankYou />} />
+          {/* catch all */}
+          <Route path="/*" element={<NotFound />} />
+        </Routes>
+      </main>
+      <Footer />
+      {cookieBar}
+    </React.Suspense>
+  </IntlProvider>
+);
 ```
 
 As you can see my router didn't just route the page components based on the path, but also it wrapped the page content around the Topbar and the Footer and the Cookie bar as well (while SEOEngine is the component which does the react-helmet stuff).
@@ -303,7 +303,7 @@ To implement this we need to create a new file in our project root called `gatsb
 In our case we'll need to configure it to create our templated pages for our products.
 
 ```ts
-import { CreatePagesArgs } from 'gatsby'
+import { CreatePagesArgs } from 'gatsby';
 import path from 'path';
 
 import { QuoteSlug } from './src/js/data/quote';
@@ -377,7 +377,7 @@ This point is not super essential actually, indeed probably your site is already
 
 ![stonks](stonks.gif)
 
-Basically what we can do is just override the `Head` having some properties from Gatsby for our page directly with Gatsby. To do that I'm going to first rewrite my `SeoEngine`  component:
+Basically what we can do is just override the `Head` having some properties from Gatsby for our page directly with Gatsby. To do that I'm going to first rewrite my `SeoEngine` component:
 
 ```tsx
 const SeoEngine: React.FC<React.PropsWithChildren<Props>> = ({
@@ -536,7 +536,7 @@ return (
       hasCookieBar ? 'animate__animated animate__slideInUp' : 'hidden'
     } fixed z-50 right-0 left-0 w-full bottom-4`}
   >
-  ...
+    ...
   </Container.Container>
 );
 ```
@@ -554,12 +554,12 @@ Let's load the cookie on component mount I thought.
 const CookieBar = () => {
   const [hasCookieBar, setHasCookieBar] = React.useState(false);
   ...
-  
+
   React.useEffect(() => {
     initGaConsent(false, isAnalyticsCookiesConsentGiven());
     setHasCookieBar(!hasCookiePreferences());
   }, []);
-  
+
 ```
 
 It should work, right?
@@ -567,11 +567,11 @@ It should work, right?
 
 ```tsx
 React.useEffect(() => {
-    initGaConsent(false, isAnalyticsCookiesConsentGiven());
-    setTimeout(() => {
-      setHasCookieBar(!hasCookiePreferences());
-    }, 1000);
-  }, []);
+  initGaConsent(false, isAnalyticsCookiesConsentGiven());
+  setTimeout(() => {
+    setHasCookieBar(!hasCookiePreferences());
+  }, 1000);
+}, []);
 ```
 
 This will fix it, once for all.
@@ -662,7 +662,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
       }}
     />,
   ]);
-}
+};
 ```
 
 And there you go. Partytown should serve your google analytics script on a separate worker and your lighthouse score should have increased a lot.

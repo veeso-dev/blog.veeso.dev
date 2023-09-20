@@ -140,30 +140,30 @@ Prima avevo nel mio sito tutte le pagine wrappate da `BrowserRouter` in una comp
 
 ```tsx
 return (
-    <IntlProvider locale={language} messages={TRANSLATIONS[language]}>
-      <SeoEngine />
-      <React.Suspense fallback={<Fallback />}>
-        <Topbar path={pathname} menu={routesForPath()} />
-        <main>
-          <Routes>
-            <Route index path="/" element={<Home />} />
-            <Route path="/about-me" element={<About />} />
-            <Route path="/contacts" element={<Contacts />} />
-            <Route path="/cookie-policy" element={<CookiePolicy />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/products/:product" element={<ProductPage />} />
-            <Route path="/quote/:product" element={<Quote />} />
-            <Route path="/thank-you" element={<ThankYou />} />
-            {/* catch all */}
-            <Route path="/*" element={<NotFound />} />
-          </Routes>
-        </main>
-        <Footer />
-        {cookieBar}
-      </React.Suspense>
-    </IntlProvider>
-  );
+  <IntlProvider locale={language} messages={TRANSLATIONS[language]}>
+    <SeoEngine />
+    <React.Suspense fallback={<Fallback />}>
+      <Topbar path={pathname} menu={routesForPath()} />
+      <main>
+        <Routes>
+          <Route index path="/" element={<Home />} />
+          <Route path="/about-me" element={<About />} />
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:product" element={<ProductPage />} />
+          <Route path="/quote/:product" element={<Quote />} />
+          <Route path="/thank-you" element={<ThankYou />} />
+          {/* catch all */}
+          <Route path="/*" element={<NotFound />} />
+        </Routes>
+      </main>
+      <Footer />
+      {cookieBar}
+    </React.Suspense>
+  </IntlProvider>
+);
 ```
 
 Come puoi vedere, non solo questa componente gestiva le pagine da visualizzare, ma wrappava il tutto tra Topbar, Footer e cookie bar.
@@ -271,7 +271,6 @@ In questo caso non saremo in grado di usare un componente in `pages` per i nostr
 
 La prima cosa che dobbiamo fare è creare una nuova directory `src/templates` e qui dopo dobbiamo creare i nostri template, per esempio per `ProductPage`, creeremo il file `src/templates/product.tsx`.
 
-
 ```tsx
 import * as React from 'react';
 import { PageProps } from 'gatsby';
@@ -300,9 +299,8 @@ Per implementare questo step, dobbiamo creare quindi un nuovo file `gatsby-node.
 
 Nel nostro caso dovremo configurarlo in questo modo per creare le pagina templatizzate per i nostri prodotti:
 
-
 ```ts
-import { CreatePagesArgs } from 'gatsby'
+import { CreatePagesArgs } from 'gatsby';
 import path from 'path';
 
 import { QuoteSlug } from './src/js/data/quote';
@@ -535,7 +533,7 @@ return (
       hasCookieBar ? 'animate__animated animate__slideInUp' : 'hidden'
     } fixed z-50 right-0 left-0 w-full bottom-4`}
   >
-  ...
+    ...
   </Container.Container>
 );
 ```
@@ -553,23 +551,23 @@ Carichiamo le preferenze cookie `onMount`:
 const CookieBar = () => {
   const [hasCookieBar, setHasCookieBar] = React.useState(false);
   ...
-  
+
   React.useEffect(() => {
     initGaConsent(false, isAnalyticsCookiesConsentGiven());
     setHasCookieBar(!hasCookiePreferences());
   }, []);
- ```
- 
- Funzionerà, no?
- **In realtà, ancora no**. Questo in realtà manterrà l'LCP ancora alto. Ma la soluzione alla fine che ho trovato è veramente stupida. Semplicemente carichiamo le preferenze con un `setTimeout`:
- 
- ```tsx
+```
+
+Funzionerà, no?
+**In realtà, ancora no**. Questo in realtà manterrà l'LCP ancora alto. Ma la soluzione alla fine che ho trovato è veramente stupida. Semplicemente carichiamo le preferenze con un `setTimeout`:
+
+```tsx
 React.useEffect(() => {
-    initGaConsent(false, isAnalyticsCookiesConsentGiven());
-    setTimeout(() => {
-      setHasCookieBar(!hasCookiePreferences());
-    }, 1000);
-  }, []);
+  initGaConsent(false, isAnalyticsCookiesConsentGiven());
+  setTimeout(() => {
+    setHasCookieBar(!hasCookiePreferences());
+  }, 1000);
+}, []);
 ```
 
 Questo risolverà il problema una volta per tutte e l'LCP sarà molto basso.
@@ -627,7 +625,7 @@ exports.onPreBuild = async () => {
 };
 ```
 
-Ora non cui  resta che definire il comportamento di partytown nella configurazione SSR di Gatsby. Per farlo, crea se non esiste già il file `gatsby-ssr.tsx` e scrivici questo all'interno:
+Ora non cui resta che definire il comportamento di partytown nella configurazione SSR di Gatsby. Per farlo, crea se non esiste già il file `gatsby-ssr.tsx` e scrivici questo all'interno:
 
 ```tsx
 import React from 'react';
@@ -658,7 +656,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
       }}
     />,
   ]);
-}
+};
 ```
 
 Ed è fatta! Partytown dovrebbe cominciare a servire google analytics in un worker separato e il tempo di caricamento del tuo sito dovrebbe essere ottimale adesso.
@@ -675,4 +673,3 @@ Divertiti con Gatsby e goditi il tuo nuovo posizionamento sui motori di ricerca,
 ![rocket](rocket.gif)
 
 Grazie del tuo tempo impiegato a leggere il mio articolo. Considera di supportarmi condividendo l'articolo e se hai tempo dai un'occhiata agli altri post sul mio blog.
-
