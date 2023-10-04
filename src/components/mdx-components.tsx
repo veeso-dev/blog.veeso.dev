@@ -98,9 +98,19 @@ const PostLink = (props: React.HTMLProps<HTMLAnchorElement>) => (
   </Link.Paragraph>
 );
 
+const Code = (props: React.HTMLProps<HTMLSpanElement>) => (
+  <code
+    className="text-red-400 dark:text-red-300 bg-gray-100 dark:bg-gray-700"
+    {...props}
+  >
+    {props.children}
+  </code>
+);
+
 export const components = {
   a: PostLink,
   blockquote: Blockquote,
+  code: Code,
   h1: Heading.H1,
   h2: Heading.H2,
   h3: Heading.H3,

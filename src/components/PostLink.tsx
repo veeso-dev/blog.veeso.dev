@@ -6,6 +6,7 @@ import { readingTime } from '../utils/utils';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import Container from './reusable/Container';
 import Paragraph from './reusable/Paragraph';
+import { FormattedDate } from 'react-intl';
 
 interface Props {
   className?: string;
@@ -45,7 +46,14 @@ const PostLink = (props: Props) => {
       <Heading.H3>{props.subtitle}</Heading.H3>
       <Paragraph.Leading>{props.excerpt}</Paragraph.Leading>
       <Paragraph.Default className="text-gray-400 dark:text-gray-200">
-        Published on {props.date} — {readingTime(props.body)} min read{' '}
+        Published on{' '}
+        <FormattedDate
+          year="numeric"
+          month="long"
+          day="2-digit"
+          value={props.date}
+        />{' '}
+        — {readingTime(props.body)} min read{' '}
       </Paragraph.Default>
     </Container.Container>
   );
