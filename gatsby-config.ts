@@ -24,6 +24,16 @@ const config: GatsbyConfig = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
+      resolve: `gatsby-plugin-umami`,
+      options: {
+        websiteId: 'd07eab8e-02da-495e-9ee7-8c5596f839b6',
+        srcUrl: 'https://analytics.veeso.dev/script.js',
+        includeInDevelopment: false,
+        autoTrack: true,
+        respectDoNotTrack: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         serialize: ({ path }) => {
