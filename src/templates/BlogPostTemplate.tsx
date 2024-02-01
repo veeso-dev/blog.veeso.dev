@@ -29,27 +29,35 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
       subtitle={data.mdx?.frontmatter?.subtitle ?? undefined}
     >
       <MainContent>
-        <Container.Container>
-          {data.mdx?.frontmatter?.date && (
+        <Container.FlexResponsiveRow className="items-center justify-between">
+          <Container.Container>
+            {data.mdx?.frontmatter?.date && (
+              <span className="text-gray-400 dark:text-gray-300 pr-2">
+                <FormattedDate
+                  year="numeric"
+                  month="long"
+                  day="2-digit"
+                  value={data.mdx?.frontmatter?.date}
+                />
+              </span>
+            )}
+            <span className="text-gray-400 dark:text-gray-300 pr-2">—</span>
             <span className="text-gray-400 dark:text-gray-300 pr-2">
-              <FormattedDate
-                year="numeric"
-                month="long"
-                day="2-digit"
-                value={data.mdx?.frontmatter?.date}
-              />
+              {readingTime(data.mdx?.body ?? '')}{' '}
+              <RichTextFormattedMessage id={'post.readingTime'} />
             </span>
-          )}
-          <span className="text-gray-400 dark:text-gray-300 pr-2">—</span>
-          <span className="text-gray-400 dark:text-gray-300 pr-2">
-            {readingTime(data.mdx?.body ?? '')}{' '}
-            <RichTextFormattedMessage id={'post.readingTime'} />
-          </span>
-        </Container.Container>
+          </Container.Container>
+          <ShareButtons
+            url={url}
+            author={data.mdx?.frontmatter?.author ?? ''}
+            title={data.mdx?.frontmatter?.title ?? ''}
+            description={data.mdx?.excerpt ?? ''}
+          />
+        </Container.FlexResponsiveRow>
         <Container.Container className="py-4">
           <MDXProvider components={components}>{children}</MDXProvider>
         </Container.Container>
-        <Container.FlexResponsiveRow className="justify-between">
+        <Container.FlexResponsiveRow className="justify-between items-center my-10">
           <Container.FlexRow className="items-center justify-center">
             <Link
               className="font-medium text-lg text-brand dark:text-gray-300 underline hover:no-underline"

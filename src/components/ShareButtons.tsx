@@ -20,7 +20,7 @@ interface Props {
 const ShareButtons = (props: Props) => {
   const title = `${props.title} by ${props.author}`;
   return (
-    <Container.FlexRow className="text-brand dark:text-gray-200 gap-8 justify-end my-10">
+    <Container.FlexRow className="text-brand dark:text-gray-200 gap-8 justify-end">
       <FacebookShareButton url={props.url} quote={props.description}>
         <Facebook className="transition-transform transform scale-100 hover:scale-125" />
       </FacebookShareButton>

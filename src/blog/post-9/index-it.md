@@ -1,7 +1,7 @@
 ---
 date: '2024-02-01 22:15:00'
 slug: 'che-cosa-e-il-young-indian-method'
-title: 'Che cos'è Il "Young Indian Method"?'
+title: "Che cos'è Il Young Indian Method?"
 subtitle: "Meme o realtà? Si può veramente guadagnare con questo metodo?"
 author: 'Christian Visintin'
 featuredImage: ./featured.jpeg
@@ -10,7 +10,7 @@ lang: it
 
 ## Che cos'è il Young Indian Method?
 
-Vi sarà magari capitato anche a voi, soprattutto su TikTok, di esservi imbattuti in diversi video che mostravano screenshot di chat e bilanci da capogiro, fatti da persone che promuovevano questo "innovativo" sistema per fare soldi chiamato "Young Indian Method".
+Vi sarà magari capitato anche a voi, soprattutto su TikTok, di esservi imbattuti in diversi video che mostravano screenshot di chat e bilanci da capogiro, fatti da persone che promuovevano questo *"innovativo"* sistema per fare soldi chiamato "**Young Indian Method**".
 
 Ma che cos'è?
 
@@ -59,9 +59,10 @@ Ed è proprio questo il punto, spesso i clienti faticano a comprendere che dietr
 Ora, sono convinto che un'agenzia che opera con questo metodo, possa tranquillamente riuscire a scalare il proprio business affidandosi a professionisti su Fiverr o simili a prezzi più bassi.
 D'altronde, seppur non parliamo di variazioni di prezzo gigantesche, un **20% possiamo tranquillamente portarcelo a casa**, quindi capite bene che agenzie che operano con questi sistemi, potrebbero tranquillamente massimizzare il loro throughput.
 
-Inoltre non è certo una novità, che in passato influencer abbiano promosso sistemi pressoché resemblanti questo metodo, tra cui [Iman Gadzhi](https://www.youtube.com/watch?v=KMWx15H0SFs), dove in questo video raccontava di come fare 10k$ al mese, senza fare moltissimo,
+Inoltre non è certo una novità, che in passato influencer abbiano promosso sistemi pressoché resemblanti questo metodo, tra cui [Iman Gadzhi](https://www.youtube.com/watch?v=KMWx15H0SFs), YouTuber con oltre 4 milioni di iscritti, dove in questo video raccontava di come fare 10k$ al mese, senza fare moltissimo,
 
-Nel video giustificava il tutto con "è un sistema win-win, ti arricchisci tu, ma si arricchiscono anche loro, perché li paghi più di quanto verrebbero pagati".
+Nel video giustificava il tutto con
+> è un sistema win-win, ti arricchisci tu, ma si arricchiscono anche loro, perché li paghi più di quanto verrebbero pagati.
 
 ![yeah sure meme](./yeah-sure.gif)
 
