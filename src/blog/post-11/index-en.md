@@ -10,43 +10,45 @@ lang: en
 
 ## Preamble
 
-I want to be clear on some points before starting this article:
+I want to be clear on some aspects before starting this article:
 
-1. This is not going to be a Fiat Vs. Bitcoin argumentation: I both believe both of them are equally bad
-2. There's not any alternative: I'm not here to tell you "you shouldn't use Bitcoin, use XXXXXX instead!".
-3. I've been in the community long enough and I have a technical expertise to be able to expose this theory.
+1. **This is not going to be a Fiat Vs. Bitcoin argumentation**: I both believe both of them are equally bad
+2. **There's not any alternative**: I'm not here to tell you "you shouldn't use Bitcoin, use XXXXXX instead!".
+3. I've been in the community long enough and I have a **technical expertise** to be able to expose this theory.
+4. **I'm not an economist**, so I cannot be trusted at 100% on the economic impact of the scenario I'm going to illustrate in the next chapter.
+5. Most of people advocating for Bitcoin has a very poor technical knowledge of how it actually works.
 
 Said so, let's start from the beginning.
 
 ## There are three kind of persons who advocate for Bitcoin
 
-I've been in the Bitcoin community long enough to be able to recognize 3 kind of persons when it comes up to Bitcoin advocacy, and when I talk about Bitcoin advocacy, I'm referring to any kind of activity which promotes Bitcoin as the best option to replace the current FIAT standard with the **Bitcoin standard**. These kind of activities spread in their definition from a tweet to a no-profit organization organizing and promoting conference to spread the credo.
+I've been in the Bitcoin community long enough to be able to recognize 3 kind of persons when it comes up to Bitcoin advocacy, and when I talk about Bitcoin advocacy, I'm referring to any kind of activity which promotes Bitcoin as the best option to replace the current FIAT standard with the **Bitcoin standard**. These kind of activities consists in spreading the credo from a tweet to a no-profits organizing and promoting conferences.
 
-### Those who are there for business
+### Those who are there for money
 
-This is the first category we can identify, which are all of those people who promote bitcoin for a personal economic return. The more people use Bitcoin, the more its value will be and the more money I will make.
+This is the first category we can identify, which are all of those people who promote **bitcoin for a personal economic return**. The more people use Bitcoin, the more its value will be and the more money I will make.
 
 I have nothing against this category, except the fact they probably don't really believe in Bitcoin from an ideological point of view, but probably because this makes them richer.
 
-But, Business is business, so I can't blame them.
+But, **Business is business**, so I can't blame them.
 
-BUSINESS IS BUSINESS
+![business](./business.gif)
 
 ### Anti-governmentalists
 
-People who are in any case and with no exception against everything the government does. We have many of them in Europe and they find in Bitcoin the weapon to fight against taxes, confiscation of assets, FIAT electronic payments, CBDC, vaccines, green politics and yet, everything the government says.
+People who are in any case and with no exception against everything the government says and does. We have many of them in Europe and they find in Bitcoin the weapon to fight against taxes, confiscation of assets, FIAT electronic payments, CBDC, vaccines, green politics and yet, everything which has to do with the institutions.
 
-COMPLOTTO
+![conspiracy](./conspiracy.gif)
 
 ### Libertarians
 
-This is the category I'm more worried about. Personally I don't consider myself a libertarian and to be honest I find many aspects of this ideology utopistic and far from a real world implementation, but I would say that 99% of them a pro-bitcoin since it can perfectly fit with libertarism.
+This is the category I'm more worried about. Personally I don't consider myself a libertarian and to be honest I find many aspects of this ideology utopistic, like communism and far from a real world implementation, but I would say that 99% of them a pro-bitcoin since it can perfectly fit with libertarism.
 
-GIF MARRIED
+![perfect-fit](./perfect-fit.gif)
 
 ## Bitcoin and Libertarism
 
-If we wanted to resume in key-points the aspects that make Bitcoin for libertarians a perfect match, we could just list these points:
+If we wanted to resume in a couple of key-points the aspects that make Bitcoin for libertarians a perfect match, we could just list these points:
 
 - **Decentralization**: Bitcoin operates on a decentralized network, meaning no single entity controls it. This aligns with libertarian views against centralized control by governments or central banks.
 - **Limited Supply**: The total supply of Bitcoin is capped at 21 million, which prevents devaluation through inflation, a common critique of fiat currency systems by libertarians.
@@ -60,7 +62,7 @@ I want to be clear: these aspects of Bitcoin are 100% accurate, for the moment a
 
 But there is a huge problem with that: **these aspects won't be possible in the long terms**.
 
-GIF WAIT WHAT
+![the-rock-gif](./rock-wait.gif)
 
 Well, at least not all of them. Some of them are actually feasible nowadays and they will always be in the long terms, such as access to credit, borderless and privacy (more or less)
 
@@ -68,7 +70,7 @@ Well, at least not all of them. Some of them are actually feasible nowadays and 
 
 Before diving in the reasons Bitcoin is a huge lie, I need to explain what the huge issue with Bitcoin is, **the big fat elephant in the room** that nobody wants to see when we talk about Bitcoin as a currency: **Fees**.
 
-BIG FAT ELEPHANT GIF
+![elephant](./elephant.gif)
 
 ### Why do we pay fees
 
@@ -79,6 +81,8 @@ We all know we need to pay a certain amount of fee when we send BTC from an addr
 - **Network Maintenance**: Miners invest resources (such as electricity and computational power) to validate transactions and secure the network by mining new blocks. Fees compensate miners for these costs and provide an incentive for them to continue maintaining the network's integrity.
 
 And the amount of BTC we pay as fee it's determined by the network demands, which in a few words means the more transactions in the pool, the higher the fees.
+
+![hasbulla-money](./hasbulla-money.gif)
 
 ### What's wrong with Bitcoin fees
 
@@ -102,6 +106,8 @@ Multi-layer for Bitcoin would work well as a scaling solution, so let's see how 
 In order to make fees affordable the layer-2 solution should have a large block size and a lower block-time, such as it's implemented in Solana.
 So Alice and Bob would have their BTC2 wallets with some BTC2 pegged to some BTC in the layer-1 ledger. So for instance, if Alice wants to send 1BTC2 to Bob, the transaction is included after a validation of Alice's amount in the layer-2 pool, and after a minute the transaction is executed. At this point the validator in the layer-2 blockchain has a wallet pegged 1:1 on the layer-1, so in a 10 minutes interval it collects all the transactions in the layer-2 and then it creates a single transaction on the layer-1 to exchange BTC on the layer 1 to commit changes.
 
+![math](./math.gif)
+
 ### The layer-2 is adopted - What happens next
 
 So let's imagine the layer-2 blockchain were adopted. What would happen next? 
@@ -111,6 +117,8 @@ We're in a world where the *feepocalypse* is spreading and people want to use Bi
 In order to happen, the Layer-1 BTC are sent to **validators**, which will be the layer-2 miners, which need both to validate transactions in the layer-2, but overall have to bridge BTC to the layer-2 token. So basically validators hold a huge amount of BTC, basically the 99% of the circulating supply on the layer-1, in order to make the transactions possible.
 
 So basically everything works well you may think. But as we're now going to see, this solution is the death to all the values Bitcoin represents today.
+
+![pepe-nuke](./pepe-nuke.gif)
 
 ### Bitcoin and Money sovereignty
 
@@ -126,6 +134,8 @@ Does that sound familiar? No? Need a hint? What about... **The current bank syst
 
 Yeah, exactly what Bitcoin is meant to fight. So basically, everybody who's advocating for Bitcoin is telling you to **join Bitcoin to leave the current bank system, to join a new bank system**, based on the blockchain, but which actually works exactly in the same way.
 
+![always](./dumbledore-always.gif)
+
 ### What about decentralization
 
 At least you may think that nobody is going to touch the algorithm and the consensus, so at least nobody can cheat on Bitcoin as it happens in the FIAT system.
@@ -136,19 +146,23 @@ And do you remember when at that conference you heard about **confiscation** and
 
 In such a controlled scenario, also **censorship and privacy could soon become just a memory of the past**. Once the layer-1 oligopoly has taken control of the blockchain, controlling the transactions and the users on the level-2 would be a piece of cake.
 
-### Bitcoin could be a Honeypot
+![monopoly](./monopoly.gif)
 
-Winnie the pooh
+### Bitcoin could be a Honeypot
 
 What's even worse in this hypotetical scenario is what would happen to smaller BTC holders. In the event of a massive migration to a layer-2 blockchain, those who have smaller amounts of Bitcoins (1k-100k) could see their funds locked forever in the layer-1, making Bitcoin a **Honeypot** for many people around the world. It is indeed not certain **whether these people would be able to exchange their BTC for the BTC2 token**, due to the huge fee amount in the trading. There could be different scenarios, the first where these users pay an absurd amount of their money to pay the exchange transaction, losing most of their saves, or they might create a **PSBT** with other people in their same situation to create a transaction to make the exchange.
 
-It is worth to mention that it **is really unlikely that validator would create a gateway to help these people** in making their exchange possible, since if we have a look to the Bitcoin supply distribution, these people's BTC amount would just be dust compared to the circulating (and at this point already exchanged) value. 
+![honeypot](./honeypot.gif)
+
+It is worth to mention that it **is really unlikely that validator would create a gateway to help these people** in making their exchange possible, since if we have a look to the Bitcoin supply distribution, these people's BTC amount would just be dust compared to the circulating (and at this point already exchanged) value.
 
 ## Bitcoin is not people's currency
 
-One of the recurrent point I often hear about Bitcoin is the fact it is the people's currency, as the opposite of the FIAT money which is in the hand of a very few inviduals and banks or governments.
+One of the recurrent point I often hear about Bitcoin is the fact it is **the people's currency**, as the opposite of the FIAT money which is in the hand of a very few inviduals and banks or governments.
 
-While I agree with the second one, I can't say the same for the first. Bitcoin is not actually in people's hands and it will never be!
+While I agree with the second one, I can't say the same for the first. **Bitcoin is not actually in people's hands and it will never be!**
+
+![banks](./banks.gif)
 
 If we take the total supply of **21,000,000 BTC**, we can see the very uneven and peculiar distribution of it:
 
@@ -163,10 +177,36 @@ If we take the total supply of **21,000,000 BTC**, we can see the very uneven an
 
 ![BTC supply distribution](./supply-chart.webp)
 
-So we can affirm that less than 10% of the total Bitcoin supply could be held by common people. So I wouldn't say that this makes Bitcoin a more equal than FIAT money.
+So we can affirm less than 10% of the total Bitcoin supply could be held by common people. So I wouldn't say that this makes Bitcoin a more equal than FIAT money.
 
-It's anyway important to state that the BTC amount could be redistributed at a certain time to the wallets of those who have a real wealth, such as owners of comodities, such as gold, diamonds, oil etc etc. So I want to make clear that Bitcoin can't actually redistribute wealth, since this is not based on the money supply and it shouldn't be like that actually, but it seems that several people believe in that, so why not to prove them wrong?
+### Some thoughts about supply distribution
+
+It's in my opinion important to state that the BTC amount could be redistributed at a certain time to the wallets of those who have a real wealth, like the owners of commodities, such as gold, diamonds, oil etc etc. So I want to make clear that Bitcoin can't actually redistribute wealth, since this is Bitcoin should be considered a currency, which means it is a tool to exchange goods. This means the amount of Bitcoin should actually be redistributed according to the quantity each individual needs to trade. But there is a spread sentiment of Bitcoin seen as the god who will redistribute wealth, so why not to prove them wrong?
 
 ## Whales and inflation
 
+The last point I want to talk about it's **inflation**. I've always been told that Bitcoin cannot experience inflation, since the distributed supply is deflationary thanks to the mechanism of halving.
+
+While it's actually undeniable that Bitcoin has a fixed maximum supply, which anyway could be easily changed in case of a ologopolistic network, that doesn't mean that Bitcoin can't experience inflation.
+
+We have already seen in the previous chapter how massive amounts of Bitcoins are owned by few hands, and several millions of them are locked. In case at a certain time a **whale** holding a massive amount of Bitcoins decided to move them into the pool, that would actually create **inflation** for a certain period of time. In case billions of people were using Bitcoin as their main currency, **even the release of a couple of thousands of BTC would create a tsunami**, **devaluating the BTC** and causing a scenario which is very similiar to the inflation we often see in the FIAT system.
+
+![whale-alert](./whale-alert.gif)
+
+So should you prefer FIAT money to keep your saves safe from inflation? Of course not, but Bitcoin is for sure not the only option.
+
+I often see the Bitcoin supporter seeing the world in black and white. It's FIAT or Bitcoin. But it's not like that at all! What about Gold, ETF, bonds? Gold in particular, is still up to day the best way to protect your saves from inflation.
+
 ## Final thoughts - Don't get me wrong
+
+As I said at the beginning, this is not an article Pro FIAT against BTC. I just believe both systems are wrong and have several vulnerabilities within.
+
+I also feel sad to write this article. I've been a convinced supporter of Bitcoin for a long time, sure it could have brought to the world a solution to the current awful FIAT system.
+
+I don't even think we're doomed to keep up with the FIAT system forever. I think an alternative to Bitcoin may be a thing at a certain time in the history. A new technology which will perfectionate Bitcoin will may exist in the next decades, and it may not even rely on the blockchain.
+
+If you believe in all the values people are spreading about Bitcoin, that's good. We're on the same boat. But those values belongs to a healthy currency, that still doesn't exist, not to Bitcoin.
+
+Bitcoin is definitely too much polluted by investors and by people who often have a different interest for it beside of adopting it as the main currency. For example many of them want to spread the adoption of Bitcoin as a payment system just to avoid paying taxes.
+
+In conclusion, I believe Bitcoin won't die soon, because it's still too much used as an asset for investments, but it definetely will fail in the moment people will realise it will never be able to become a real currency. This doesn't mean it will die at a certain time. It will just keep existing as is.
