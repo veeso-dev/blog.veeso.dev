@@ -1,5 +1,5 @@
 ---
-date: '2024-04-01 15:30:00'
+date: '2024-04-12 12:30:00'
 slug: 'the-bitcoin-utopia-is-a-lie'
 title: "The Bitcoin Utopia is a Lie"
 subtitle: "Why we all have been lied about Bitcoin"
@@ -90,6 +90,8 @@ So what's wrong with this system? Well, it's easy to guess actually. At the mome
 
 And yes, you can think that we'll never reach the time when 7 billions of people use Bitcoin as their main currency. The issue with this, is that this scenario doesn't require billions of people paying with bitcoin to happen, but just some hundreds of millions. Let's say the population of the European Union or of the USA. That would be enough to reach the **breaking point**.
 
+In addition to that, once there will be no more reward for miners, everything will just rely on fees, which means the network fees will become even higher.
+
 Actually it's true there are solutions to fix this, but let me explain you why there is a **HUGE** problem with them in the next paragraph.
 
 ### Possible solutions
@@ -175,7 +177,7 @@ If we take the total supply of **21,000,000 BTC**, we can see the very uneven an
 - Approx. **1,300,000** BTC still to be mined
 - And the remaining **1,700,000** BTC in common people's hands.
 
-![BTC supply distribution](./supply-chart.webp)
+![BTC supply distribution](./bitcoin-supply.svg)
 
 So we can affirm less than 10% of the total Bitcoin supply could be held by common people. So I wouldn't say that this makes Bitcoin a more equal than FIAT money.
 
