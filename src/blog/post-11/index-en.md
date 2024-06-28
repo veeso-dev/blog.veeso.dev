@@ -112,7 +112,7 @@ So Alice and Bob would have their BTC2 wallets with some BTC2 pegged to some BTC
 
 ### The layer-2 is adopted - What happens next
 
-So let's imagine the layer-2 blockchain were adopted. What would happen next? 
+So let's imagine the layer-2 blockchain were adopted. What would happen next?
 
 We're in a world where the *feepocalypse* is spreading and people want to use Bitcoin to buy goods and services and the layer-2 blockchain has just launched. The first thing most of people will do is to exchange their BTC for BTC2. But how the exchange happen?
 
