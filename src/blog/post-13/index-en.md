@@ -1,7 +1,7 @@
 ---
 date: '2024-07-06 15:00:00'
-slug: 'how-to-configure-cpu-cores-to-use-on-tokio-with-core--affinity'
-title: "How to configure CPU cores to use on a Tokio application with core_affinity"
+slug: 'how-to-configure-cpu-cores-to-be-used-on-a-tokio-with-core--affinity'
+title: "How to configure CPU cores to be used in a Tokio application with core_affinity"
 subtitle: "Let's see how to setup the tokio runtime to use only the configured cores"
 author: 'Christian Visintin'
 featuredImage: ./featured.jpeg
