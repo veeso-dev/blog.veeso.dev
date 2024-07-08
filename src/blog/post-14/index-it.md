@@ -362,6 +362,16 @@ where
 
 Ed effettivamente funziona: provare per credere. L'unico problema è che ci sono casi in cui fallirà, per esempio con degli `u64` particolarmente grandi. Certo, essendo pensata per l'utente che inserisce dei range a mano, non ci sono grandi controindicazioni, però è comunque problematica.
 
+## Extra: il range-parser rifinito
+
+Alla fine ho deciso di rendere il range parser una libreria Rust.
+
+Il cuore del range-parser è lo stesso visto in questo articolo, ma aggiunge il supporto a multi range nelle stringhe (es. `1-3,7-9`), per i numeri negativi (es. `-1-2,-8--5,-10`), separatori custom e error type. Tra l'altro ho notato che in questo articolo non controllavo che **start fosse più piccolo di end nel range**, che causava un bug.
+
+Quindi se ti fa piacere vedere o usare il crate stable, puoi vedere [range-parser](https://crates.io/crates/range-parser) su crates.io ❤️.
+
+![party-dance](./party-dance.gif)
+
 ## Conclusioni
 
 Spero tu abbia trovato questo articolo interessante, o se era esattamente quello che stavi cercando di implementare, spero sia stato utile. Magari nel mentre controlla se Step è stato messo come stable :sweat_smile:.

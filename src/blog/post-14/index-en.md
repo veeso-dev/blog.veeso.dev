@@ -365,6 +365,16 @@ where
 
 So yeah, we could add a boundary which allows us to use primitives as long as they can fit into `isize`. With this approach though, some `u64` values would generate error, so even if simpler, it's worse for sure and probably even performance aren't good as in the first proposed solution.
 
+## Extra: refined range-parser
+
+Eventually I've decided to refine the range parser to publish it as a Rust crate.
+
+The refined range-parser has the same core as we've seen before, but it adds support for multi range in the string (e.g. `1-3,7-9`), negative numbers (e.g. `-1-2,-8--5,-10`), custom separators and better errors. Also in this article I've recently realized I didn't check whether **start is smaller than end in range**, which led to a bug.
+
+So if you wish to give a look or use the stable library, you can give a look to [range-parser](https://crates.io/crates/range-parser) on crates.io ❤️.
+
+![party-dance](./party-dance.gif)
+
 ## Conclusions
 
 I hope you found this article interesting or in case you were exactly looking how to implement this, well I hope it was useful. Maybe, check if the `Step` trait has been stabilized in the meantime :sweat_smile:.
