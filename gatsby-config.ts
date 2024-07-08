@@ -55,6 +55,18 @@ const config: GatsbyConfig = {
       },
     },
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [
+          { userAgent: '*', allow: '/' },
+          {
+            useAgent: '*',
+            disallow: ['/static/'],
+          },
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-i18n',
       options: {
         langKeyDefault: 'en',

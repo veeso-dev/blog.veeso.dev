@@ -26,6 +26,7 @@
     "flat": "^5.0",
     "gatsby": "^5.12",
     "gatsby-plugin-i18n": "^1.0",
+    "gatsby-plugin-robots-txt": "^1.8.0",
     "gatsby-plugin-umami": "^0.1.5",
     "gatsby-remark-copy-linked-files": "^6.12",
     "gatsby-remark-images": "^7.12",

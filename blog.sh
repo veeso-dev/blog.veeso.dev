@@ -22,6 +22,8 @@ completed() {
 
 start() {
   yarn && yarn build
+  # update browserslist db
+  yes | npx update-browserslist-db@latest
   info "starting blog"
   screen -S blog -d -m yarn serve
   sleep 1
