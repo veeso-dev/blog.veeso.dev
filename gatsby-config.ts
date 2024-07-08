@@ -57,10 +57,11 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
+        sitemap: 'https://blog.veeso.dev/sitemap-index.xml',
         policy: [
           { userAgent: '*', allow: '/' },
           {
-            useAgent: '*',
+            userAgent: '*',
             disallow: ['/static/'],
           },
         ],
