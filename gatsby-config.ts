@@ -149,13 +149,15 @@ const config: GatsbyConfig = {
                       '/blog/' +
                       edge.node.frontmatter.lang +
                       '/' +
-                      edge.node.frontmatter.slug,
+                      edge.node.frontmatter.slug +
+                      '/',
                     guid:
                       site.siteMetadata.siteUrl +
                       '/blog/' +
                       edge.node.frontmatter.lang +
                       '/' +
-                      edge.node.frontmatter.slug,
+                      edge.node.frontmatter.slug +
+                      '/',
                     custom_elements: [
                       {
                         preview: `https://blog.veeso.dev${edge.node.frontmatter.featuredImage.childImageSharp.fluid.src}`,
@@ -209,13 +211,15 @@ const config: GatsbyConfig = {
                       '/blog/' +
                       edge.node.frontmatter.lang +
                       '/' +
-                      edge.node.frontmatter.slug,
+                      edge.node.frontmatter.slug +
+                      '/',
                     guid:
                       site.siteMetadata.siteUrl +
                       '/blog/' +
                       edge.node.frontmatter.lang +
                       '/' +
-                      edge.node.frontmatter.slug,
+                      edge.node.frontmatter.slug +
+                      '/',
                     custom_elements: [
                       {
                         preview: `https://blog.veeso.dev${edge.node.frontmatter.featuredImage.childImageSharp.fluid.src}`,
