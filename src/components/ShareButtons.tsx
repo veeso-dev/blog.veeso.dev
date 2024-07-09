@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Facebook, Twitter, Linkedin, Send, Phone } from 'react-feather';
+import { Facebook, Twitter, Linkedin } from 'react-feather';
 import {
   FacebookShareButton,
   LinkedinShareButton,
