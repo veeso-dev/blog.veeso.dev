@@ -9,6 +9,8 @@ import {
 } from 'react-share';
 
 import Container from './reusable/Container';
+import Whatsapp from './reusable/svg/WhatsApp';
+import Telegram from './reusable/svg/Telegram';
 
 interface Props {
   url: string;
@@ -35,10 +37,17 @@ const ShareButtons = (props: Props) => {
         <Linkedin className="transition-transform transform scale-100 hover:scale-125" />
       </LinkedinShareButton>
       <TelegramShareButton url={props.url} title={title}>
-        <Send className="transition-transform transform scale-100 hover:scale-125" />
+        <Telegram
+          size={20}
+          fill="#31363b"
+          className="transition-transform transform scale-100 hover:scale-125"
+        />
       </TelegramShareButton>
       <WhatsappShareButton url={props.url} title={title}>
-        <Phone className="transition-transform transform scale-100 hover:scale-125" />
+        <Whatsapp
+          size={20}
+          className="transition-transform transform scale-100 hover:scale-125"
+        />
       </WhatsappShareButton>
     </Container.FlexRow>
   );
