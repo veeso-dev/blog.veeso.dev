@@ -10,7 +10,7 @@ import Link from './reusable/Link';
 import { Theme, getTheme } from '../utils/utils';
 
 const Blockquote = (props: React.HTMLProps<HTMLQuoteElement>) => (
-  <blockquote className="text-gray-500 border-l-4 ml-4 pl-4" {...props}>
+  <blockquote className="text-gray-500 border-l-4 m-4 pl-4" {...props}>
     {props.children}
   </blockquote>
 );
@@ -63,7 +63,7 @@ const Pre = (props: React.HTMLProps<HTMLPreElement>) => {
     <Highlight code={code} language={lang} theme={theme}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre
-          className={`${className} overflow-x-auto w-full relative`}
+          className={`${className} overflow-x-auto w-full relative mb-4`}
           style={{ ...style, padding: '20px' }}
         >
           <PreCopyButton content={code} />
