@@ -16,7 +16,10 @@ const Blockquote = (props: React.HTMLProps<HTMLQuoteElement>) => (
 );
 
 const ImgContainer = (props: React.HTMLProps<HTMLDivElement>) => (
-  <div className="flex justify-center items-center md-img-container" {...props}>
+  <div
+    className="flex justify-center items-center py-4 md-img-container"
+    {...props}
+  >
     {props.children}
   </div>
 );
@@ -100,7 +103,7 @@ const PostLink = (props: React.HTMLProps<HTMLAnchorElement>) => (
 
 const Code = (props: React.HTMLProps<HTMLSpanElement>) => (
   <code
-    className="text-red-400 dark:text-red-300 bg-gray-100 dark:bg-gray-700"
+    className="text-red-400 dark:text-red-300 bg-gray-100 dark:bg-gray-700 px-2"
     {...props}
   >
     {props.children}
