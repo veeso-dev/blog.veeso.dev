@@ -58,4 +58,14 @@ I probably know that you may expect termscp to provide a root view for the kube 
 - You can now deselect all the selected entries in the explorer with `ALT+A`
 - Fixed an issue where `@` wasn't allowed in the username when passing the remote argument to the CLI args.
 
+### Dropped support for RPM
+
+Sigh, I had to.
+
+Unfortunately since the first of July 2024, it's impossible to use the centos 7, or any other centos image, I used to build the RPM package.
+
+There is fedora, but unfortunately I'm unable to make it work. I've opened an [issue to track this](https://github.com/veeso/termscp/issues/269), but don't expect to see it fixed soon. If you manage to build on fedora, please submit a PR.
+
+---
+
 I hope you enjoy using termscp, and if you encounter any issue, don't hesitate to report an issue on [github](https://github.com/veeso/termscp).
