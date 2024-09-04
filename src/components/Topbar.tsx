@@ -11,7 +11,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 const DesktopTopbar = () => {
   return (
     <Container.FlexCols className="items-start justify-between w-full top-0">
-      <Container.Flex className="gap-4 items-center">
+      <Container.Flex className="gap-4 items-center pb-4">
         <div>
           <Link className="text-brand no-underline" to={'/'}>
             <StaticImage
@@ -23,14 +23,17 @@ const DesktopTopbar = () => {
             />
           </Link>
         </div>
-        <Heading.H1>
+        <Container.FlexCols className="">
           <Link
-            className="text-brand dark:text-gray-200 no-underline text-left sm:text-xl"
+            className="text-xl text-brand dark:text-gray-200 no-underline text-left sm:text-xl"
             to={'/'}
           >
-            Christian Visintin
+            veeso_dev
           </Link>
-        </Heading.H1>
+          <span className="block text-sm text-gray-500 dark:text-gray-300">
+            Christian Visintin
+          </span>
+        </Container.FlexCols>
       </Container.Flex>
       <Container.FlexResponsiveRow className="items-center justify-between w-full sm:items-start sm:gap-4">
         <Container.Flex className="gap-4">
