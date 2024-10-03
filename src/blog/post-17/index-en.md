@@ -1,5 +1,5 @@
 ---
-date: '2024-07-17 17:30:00'
+date: '2024-10-03 18:15:00'
 slug: 'announcing-termscp-015'
 title: "Announcing termscp 0.15.0"
 subtitle: "with many new features"
