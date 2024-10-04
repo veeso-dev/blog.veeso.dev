@@ -10,7 +10,9 @@ lang: en
 
 ## What's new
 
-So let's see what's new in this version 0.15 of termscp
+So let's see what's new in this version 0.15 of [termscp](https://termscp.veeso.dev/).
+
+Don't you know termscp yet? Come discover this [amazing project on Github](https://github.com/veeso/termscp).
 
 ### Fuzzy Search
 
