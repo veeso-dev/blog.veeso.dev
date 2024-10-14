@@ -1,4 +1,5 @@
 import { MDXProvider } from '@mdx-js/react';
+import * as Icon from 'react-feather';
 import { graphql, HeadFC, Link, PageProps } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
@@ -11,6 +12,7 @@ import ShareButtons from '../components/ShareButtons';
 import { readingTime } from '../utils/utils';
 import Container from '../components/reusable/Container';
 import RichTextFormattedMessage from '../components/reusable/RichTextFormattedMessage';
+import RLink from '../components/reusable/Link';
 import { FormattedDate } from 'react-intl';
 
 const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
@@ -57,22 +59,29 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
         <Container.Container className="py-4">
           <MDXProvider components={components}>{children}</MDXProvider>
         </Container.Container>
-        <Container.FlexResponsiveRow className="justify-between items-center my-10">
-          <Container.FlexRow className="items-center justify-center">
-            <Link
-              className="font-medium text-lg text-brand dark:text-gray-300 underline hover:no-underline"
-              to={'/blog'}
-            >
-              <RichTextFormattedMessage id={'post.discoverMore'} />
-            </Link>
-          </Container.FlexRow>
-          <ShareButtons
-            url={url}
-            author={data.mdx?.frontmatter?.author ?? ''}
-            title={data.mdx?.frontmatter?.title ?? ''}
-            description={data.mdx?.excerpt ?? ''}
-          />
-        </Container.FlexResponsiveRow>
+        <Container.FlexCols>
+          <Container.FlexResponsiveRow className="justify-between items-center my-10 sm:gap-8">
+            <Container.FlexResponsiveRow className="items-center justify-center gap-8">
+              <Link
+                className="font-medium text-lg text-brand dark:text-gray-300 underline hover:no-underline"
+                to={'/blog'}
+              >
+                <RichTextFormattedMessage id={'post.discoverMore'} />
+              </Link>
+              <RLink.Paragraph href={'https://x.com/veeso_dev'} target="_blank">
+                <Icon.Twitter className="mr-2 inline text-text" />
+                Follow me on X.com
+              </RLink.Paragraph>
+            </Container.FlexResponsiveRow>
+            <ShareButtons
+              url={url}
+              author={data.mdx?.frontmatter?.author ?? ''}
+              title={data.mdx?.frontmatter?.title ?? ''}
+              description={data.mdx?.excerpt ?? ''}
+            />
+          </Container.FlexResponsiveRow>
+          <Container.Container></Container.Container>
+        </Container.FlexCols>
       </MainContent>
     </PageLayout>
   );
