@@ -2,7 +2,7 @@
 date: '2024-07-06 15:00:00'
 slug: 'come-configurare-i-core-da-utilizzare-in-tokio-con-core--affinity'
 title: "Come configurare i core da utilizzare in un'applicazione Tokio con core_affinity"
-subtitle: "Vediamo insieme come configurare i core della cpu da utilizzare in un ambiente Tokio in Rust"
+subtitle: 'Vediamo insieme come configurare i core della cpu da utilizzare in un ambiente Tokio in Rust'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
@@ -27,7 +27,7 @@ Adesso per questo esempio vogliamo ottenere gli ID dei core che andremo ad utili
 
 Di solito nelle applicazioni in cui uso core-affinity, lascio impostare le CPU core come argomento da linea di comando con sintassi range `x,y,z` o `n-m`.
 
-```rust
+````rust
 /// Get the CPU cores to use for the application;
 /// if the range is not specified, it will use all the available cores
 pub fn get_cpu_cores(range: Option<&str>) -> anyhow::Result<Vec<CoreId>> {
@@ -99,7 +99,7 @@ pub fn parse_range_usize(range_str: &str) -> anyhow::Result<Vec<usize>> {
         Ok(range)
     }
 }
-```
+````
 
 > ❗ Di solito i core della CPU sono identificati numericamente dall'indice che va da 0 al numero di core (tipo 0-15)
 

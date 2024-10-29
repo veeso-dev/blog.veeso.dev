@@ -1,7 +1,7 @@
 ---
 date: '2024-06-18 15:30:00'
 slug: 'ti-presento-schifo-ai'
-title: "Ti presento SchifoAI"
+title: 'Ti presento SchifoAI'
 subtitle: "Come l'AI non ci sta rendendo migliori e come il 90% di esso è solo una bolla"
 author: 'veeso'
 featuredImage: ./featured.jpeg

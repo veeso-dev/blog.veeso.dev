@@ -1,8 +1,8 @@
 ---
 date: '2024-05-28 15:30:00'
 slug: 'let-me-introduce-you-shit-ai'
-title: "Let me introduce you ShitAI"
-subtitle: "How AI is not improving our society and for the 90% is just a bubble"
+title: 'Let me introduce you ShitAI'
+subtitle: 'How AI is not improving our society and for the 90% is just a bubble'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
@@ -43,7 +43,7 @@ And I know something can literally be advertised badly and scammy even without *
 
 ## Wish
 
-And this effortlessy usage of AI is *maybe* even hitting.
+And this effortlessy usage of AI is _maybe_ even hitting.
 
 The recent release of Disney's "Wish" has sparked conversations not just for its storyline but also for its seemingly **uninspired songs**. Many speculate that the **banality** of the soundtrack could be attributed to AI involvement in the songwriting process, a move potentially driven by the ongoing **screenwriters' strike in Hollywood**. The strike has left a significant void in creative talent, leading studios to lean on artificial intelligence to fill the gap.
 
@@ -53,7 +53,7 @@ Clearly there is no proof that this is real, but the entire movie seems really t
 
 If you read a blog article in 2024, it's very like that it wasn't handwritten. That's true in particular for some kind of blogs, which are those focused on getting indexed on Google. Not mine, nobody reads my blog.
 
-But everybody who owns a travel agency, a pet shop, a marketing agency now has a blog, and all the blogs article are 99% of the times written by AI. That's because they don't really give a sh*t about writing a blog, but it's just related to the fact that google places you website higher in the search results based on the traffic you generate. So if your blog generates a lot of traffic with key words, your website gets traffic. But writing articles is a hustle, so let ChatGPT write it for you.
+But everybody who owns a travel agency, a pet shop, a marketing agency now has a blog, and all the blogs article are 99% of the times written by AI. That's because they don't really give a sh\*t about writing a blog, but it's just related to the fact that google places you website higher in the search results based on the traffic you generate. So if your blog generates a lot of traffic with key words, your website gets traffic. But writing articles is a hustle, so let ChatGPT write it for you.
 
 ![this-is-fine](./this-is-fine.gif)
 

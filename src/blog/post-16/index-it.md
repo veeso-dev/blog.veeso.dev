@@ -1,8 +1,8 @@
 ---
 date: '2024-09-04 12:00:00'
 slug: 'ehi-rustaceans-esistono-anche-i-rust-freelancer'
-title: "Ehi Rustaceans: esistono anche i Rust freelancer!"
-subtitle: "Stanco di scrivere PHP tutto il giorno? Vorresti diventare un Rust dev full-time? Perché non aprire la partita iva?"
+title: 'Ehi Rustaceans: esistono anche i Rust freelancer!'
+subtitle: 'Stanco di scrivere PHP tutto il giorno? Vorresti diventare un Rust dev full-time? Perché non aprire la partita iva?'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
@@ -58,7 +58,7 @@ E sì, ce ne sono un sacco ed io stesso ho lavorato e tutt'ora lavoro con alcune
 
 Ho lavorato anche con diverse aziende in questo tempo che si occupavano di IoT, sviluppo embedded e servizi back-end con Rust, quindi non direi sia il caso di generalizzare.
 
-**Il lavoro mica lo si deve sposare**. Non ci vedo niente di male nel lavorare in un'azienda che fa un progetto web3, anche se non credete in questo mondo. Io stesso non sono un credente della rivoluzione web3 di cui tanto si parla. Ho scritto papiri contro Bitcoin, ho criticato aspramente diverse blockchain e tutt'ora reputo che il 90% della roba su blockchain sia rumore e basta. Bisogna saper prendere questi progetti come esperienze formative e soprattutto come fonte di guadagno, visto che in genere pagano profumatamente. *L'importante è non partecipare a nessun progetto scam o simili.*
+**Il lavoro mica lo si deve sposare**. Non ci vedo niente di male nel lavorare in un'azienda che fa un progetto web3, anche se non credete in questo mondo. Io stesso non sono un credente della rivoluzione web3 di cui tanto si parla. Ho scritto papiri contro Bitcoin, ho criticato aspramente diverse blockchain e tutt'ora reputo che il 90% della roba su blockchain sia rumore e basta. Bisogna saper prendere questi progetti come esperienze formative e soprattutto come fonte di guadagno, visto che in genere pagano profumatamente. _L'importante è non partecipare a nessun progetto scam o simili._
 
 ## Dobbiamo parlare delle conferenze Rust
 

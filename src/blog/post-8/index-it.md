@@ -2,7 +2,7 @@
 date: '2024-01-31 12:40:00'
 slug: 'the-fascinating-ethereum-mev-bot-scam'
 title: "L'affascinante truffa dei Bot MEV su Ethereum"
-subtitle: "Triste cronaca di una truffa avvenuta ad un cliente e analisi del codice"
+subtitle: 'Triste cronaca di una truffa avvenuta ad un cliente e analisi del codice'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
@@ -53,7 +53,7 @@ Il codice consisteva in 477 linee di codice scritto in Solidity e all'interno co
      * @dev withdrawals profit back to contract creator address
      * @return `profits`.
      */
-    function Withdrawal() public payable { 
+    function Withdrawal() public payable {
         emit Log("Sending profits back to contract creator address...");
         payable(WithdrawalProfits()).transfer(address(this).balance);
     }
@@ -148,7 +148,7 @@ Mi ha fatto male perché per quel giorno il mio lavoro è stato farmi pagare per
 
 Mi ha fatto male pensare a quanti soldi la gente perde credendo a queste opportunità.
 
-Mi fa tristezza anche il ruolo di omertà che hanno le piattaforme dove vengono esposti questi metodi. YouTube ti blocca un video se non censuri la parola *omicidio*, però i video di scam non li guardano neanche.
+Mi fa tristezza anche il ruolo di omertà che hanno le piattaforme dove vengono esposti questi metodi. YouTube ti blocca un video se non censuri la parola _omicidio_, però i video di scam non li guardano neanche.
 
 So che con molta probabilità il mio audience è composto da persone con competenze tecniche sopra dal copy-paste, però se un tuo conoscente o familiare entra in contatto con queste opportunità, per favore fagli presente che
 
@@ -183,11 +183,11 @@ Il costruttore prende due argomenti, che sono `Network` e `routerAddress`, ma in
 
 ```sol
 constructor(string memory Network, string memory routerAddress) public {
-        
+
         /*ETH
         /*The Uniswap V2 router address :  0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D
-     
-        
+
+
         /BSC
         /Pancakeswap router address :      0x10ED43C718714eb63d5aA57B78B54704E256024E
 
@@ -227,7 +227,7 @@ Quindi credetemi, non era assurda come idea, anche perché un bot non può funzi
 Ad essere onesti, era forse la funzione che fermava il bot ad essere strana.
 
 ```sol
-function Stop() public payable { 
+function Stop() public payable {
   Log("Stopping contract bot...");
 }
 ```
@@ -241,7 +241,7 @@ Ed infine, il colpo di grazia ai tuoi fondi, la funzione `Withdrawal`
      * @dev withdrawals profit back to contract creator address
      * @return `profits`.
      */
-    function Withdrawal() public payable { 
+    function Withdrawal() public payable {
         emit Log("Sending profits back to contract creator address...");
         payable(WithdrawalProfits()).transfer(address(this).balance);
     }

@@ -1,8 +1,8 @@
 ---
 date: '2024-09-04 12:00:00'
 slug: 'hey-rustaceans-rust-freelancers-do-exist'
-title: "Hey Rustaceans: Rust freelancers do exist!"
-subtitle: "Are you tired of PHP and you want to be a 100% Rust developer? You should consider becoming a freelancer"
+title: 'Hey Rustaceans: Rust freelancers do exist!'
+subtitle: 'Are you tired of PHP and you want to be a 100% Rust developer? You should consider becoming a freelancer'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
@@ -30,7 +30,7 @@ As every Italian, I was really scared about starting working as a freelance, bec
 
 So after starting my adventure as a contractor, a fire started burning in me: it was the enterpreuner spirit. I actually had some spare time, so I started to advertise my activity as a web designer.
 
-Well that didn't go too well. Not because I'm not a good web designer, but because there were too many competitors (every freelancer makes websites), so I couldn't find many customers (I did some websites actually, which were also paid quite well), but I had to find my *niche*; and **I knew the best niche for me was Rust.**
+Well that didn't go too well. Not because I'm not a good web designer, but because there were too many competitors (every freelancer makes websites), so I couldn't find many customers (I did some websites actually, which were also paid quite well), but I had to find my _niche_; and **I knew the best niche for me was Rust.**
 
 So I set up a Google Ads campaing for "Rust software engineer" positions and immediately and with a very small budget I started receiving **many project proposal for small projects**.
 
@@ -56,7 +56,7 @@ And yes, there are a lot of them, but it's not all about crypto.
 
 I've worked with several companies, and many were just developing backend applications for their infrastracture, some others were developing IoT and embedded devices, and of course, I've also worked on many web3 projects.
 
-But don't take me wrong, **I'm not a crypto guy**, personally I also think that 90% of the crypto projects are crap and just a craze. Anyway **there's nothing wrong with working for crypto projects**, even if you don't believe in web3. It's just a job (and payed a lot if you ask me), so even if in one year the crypto market collapse, there's no problem in working with these companies, *as long as you don't take part on scams and other illegal stuff*.
+But don't take me wrong, **I'm not a crypto guy**, personally I also think that 90% of the crypto projects are crap and just a craze. Anyway **there's nothing wrong with working for crypto projects**, even if you don't believe in web3. It's just a job (and payed a lot if you ask me), so even if in one year the crypto market collapse, there's no problem in working with these companies, _as long as you don't take part on scams and other illegal stuff_.
 
 ## We need to talk about Rust conferences
 

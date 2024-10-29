@@ -1,8 +1,8 @@
 ---
 date: '2024-04-12 12:30:00'
 slug: 'the-bitcoin-utopia-is-a-lie'
-title: "The Bitcoin Utopia is a Lie"
-subtitle: "Why we all have been lied about Bitcoin"
+title: 'The Bitcoin Utopia is a Lie'
+subtitle: 'Why we all have been lied about Bitcoin'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
@@ -86,7 +86,7 @@ And the amount of BTC we pay as fee it's determined by the network demands, whic
 
 ### What's wrong with Bitcoin fees
 
-So what's wrong with this system? Well, it's easy to guess actually. At the moment we could affirm fees are *low*, if you consider acceptable to **pay 7 dollars to exchange 100**, but at this time **the network load is small, actually close to zero** if we consider that Bitcoin should be used for. We are spreading the idea that Bitcoin should become the **worldwide people's currency**, so we could expect to use Bitcoin in place of traditional payment systems. Currently we have already accepted the idea that paying a coffee for a couple of dollars is infeasible, but what if we used it to pay goods and services with a current USD price above 100$ for instance? **The network load would soon become unsustainable** and the amount of BTC to pay for a single transaction would soon reach **thousands of dollars**.
+So what's wrong with this system? Well, it's easy to guess actually. At the moment we could affirm fees are _low_, if you consider acceptable to **pay 7 dollars to exchange 100**, but at this time **the network load is small, actually close to zero** if we consider that Bitcoin should be used for. We are spreading the idea that Bitcoin should become the **worldwide people's currency**, so we could expect to use Bitcoin in place of traditional payment systems. Currently we have already accepted the idea that paying a coffee for a couple of dollars is infeasible, but what if we used it to pay goods and services with a current USD price above 100$ for instance? **The network load would soon become unsustainable** and the amount of BTC to pay for a single transaction would soon reach **thousands of dollars**.
 
 And yes, you can think that we'll never reach the time when 7 billions of people use Bitcoin as their main currency. The issue with this, is that this scenario doesn't require billions of people paying with bitcoin to happen, but just some hundreds of millions. Let's say the population of the European Union or of the USA. That would be enough to reach the **breaking point**.
 
@@ -114,7 +114,7 @@ So Alice and Bob would have their BTC2 wallets with some BTC2 pegged to some BTC
 
 So let's imagine the layer-2 blockchain were adopted. What would happen next?
 
-We're in a world where the *feepocalypse* is spreading and people want to use Bitcoin to buy goods and services and the layer-2 blockchain has just launched. The first thing most of people will do is to exchange their BTC for BTC2. But how the exchange happen?
+We're in a world where the _feepocalypse_ is spreading and people want to use Bitcoin to buy goods and services and the layer-2 blockchain has just launched. The first thing most of people will do is to exchange their BTC for BTC2. But how the exchange happen?
 
 In order to happen, the Layer-1 BTC are sent to **validators**, which will be the layer-2 miners, which need both to validate transactions in the layer-2, but overall have to bridge BTC to the layer-2 token. So basically validators hold a huge amount of BTC, basically the 99% of the circulating supply on the layer-1, in order to make the transactions possible.
 

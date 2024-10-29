@@ -1,8 +1,8 @@
 ---
 date: '2024-02-15 15:30:00'
 slug: 'come-fare-lottery-mining-con-bitcoin'
-title: "Come fare Lottery Mining con Bitcoin?"
-subtitle: "Cosa ti serve per cominciare? Perché fare Lottery Mining? Si può guadagnare Bitcoin?"
+title: 'Come fare Lottery Mining con Bitcoin?'
+subtitle: 'Cosa ti serve per cominciare? Perché fare Lottery Mining? Si può guadagnare Bitcoin?'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
@@ -66,7 +66,7 @@ Devo però specificare che l'hashrate di un **Nerd Miner** per esempio, è di ci
 
 ### Perché dovrei fare solo-mining
 
-Una domanda che potresti esserti posto a questo punto è *perché dovrei sprecare il mio tempo a configurare un lottery miner allora?* ed è una domanda lecita e giusta.
+Una domanda che potresti esserti posto a questo punto è _perché dovrei sprecare il mio tempo a configurare un lottery miner allora?_ ed è una domanda lecita e giusta.
 Come puoi immaginare la probabilità di vincere il blocco è **molto più bassa di quella di vincere al SuperEnalotto**.
 
 Ma comunque, non impossibile.

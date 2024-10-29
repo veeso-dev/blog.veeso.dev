@@ -1,7 +1,7 @@
 ---
 date: '2024-07-12 16:00:00'
 slug: 'implementing-a-generic-range-parser-in-rust'
-title: "Implementing a generic range parser in Rust"
+title: 'Implementing a generic range parser in Rust'
 subtitle: "Well it looks easy, but it's not"
 author: 'veeso'
 featuredImage: ./featured.jpeg
@@ -14,7 +14,7 @@ A few days ago I was implementing a really simple function which would given a *
 
 I wanted to make it generic for any kind of primitive numeric type, so I started with writing the function with the following signature:
 
-```rust
+````rust
 /// Parse a range string to a vector of usize
 ///
 /// # Arguments
@@ -33,7 +33,7 @@ I wanted to make it generic for any kind of primitive numeric type, so I started
 /// assert_eq!(range, vec![0, 1, 2, 3]);
 /// ```
 fn parse_range<T>(range_str: &str) -> Result<Vec<T>, Box<dyn Error>>
-```
+````
 
 and continued implementing the body as follows:
 
@@ -201,7 +201,7 @@ where
         }
 
         Ok(range)
-  
+
   // ...
 }
 ```

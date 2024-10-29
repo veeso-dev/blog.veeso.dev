@@ -1,8 +1,8 @@
 ---
 date: '2024-10-14 18:15:00'
 slug: 'a-journey-into-file-transfer-protocols-in-rust'
-title: "A journey into File Transfer Protocols in Rust"
-subtitle: "How basically I became a file transfer protocol expert in Rust"
+title: 'A journey into File Transfer Protocols in Rust'
+subtitle: 'How basically I became a file transfer protocol expert in Rust'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
@@ -136,7 +136,7 @@ And starting from `SFTP`, I kept implementing the others protocols starting from
 
 > Why is SCP required? Well, old devices, such as the SBC we used at my previous workplace, which run on Linux 2.14, didn't support SFTP, so in that case the only vialable option is SCP, which doesn't actually expose anything but read and write operation on file. So when we talk about SCP file explorer, we actually talk about a mix of SCP for get and put operations and SSH for anything else. And of course SSH commands output need to be parsed.
 
-But implementing clients for the other protocols was immediately challenging; why you may ask. Well, let's say that Rust file transfer protocol libraries are... *not a priority*.
+But implementing clients for the other protocols was immediately challenging; why you may ask. Well, let's say that Rust file transfer protocol libraries are... _not a priority_.
 
 ## The status of file transfer protocol libraries in Rust
 
@@ -291,7 +291,7 @@ In this case SMB requires a library, like for any other protocol.
 So I started to implement a native Rust library for SMB in 2021, because I didn't want to rely on **libsmbclient**.
 
 The main reason for that is that I dind't want to force termscp user to install it on their system to work with SMB,
-because we all know: installing C libraries it's always *an interesting experience*.
+because we all know: installing C libraries it's always _an interesting experience_.
 
 So I started to go through the entire SMB protocol spec, but I gave up after one month.
 The protocol is extremely complicated and the benefits would probably not compensate the effort put in implementing it.
@@ -337,7 +337,7 @@ Probably not, but I implemented the client anyway.
 
 Oh, there's actually an [RFC](https://www.rfc-editor.org/rfc/rfc4918) for it!
 
-Unfortunately, the existing library for Rust *didn't work*, so
+Unfortunately, the existing library for Rust _didn't work_, so
 
 1. I created a [pr](https://github.com/d-k-bo/webdav-rs/pull/1).
 2. The PR was rejected

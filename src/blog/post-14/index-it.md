@@ -1,8 +1,8 @@
 ---
 date: '2024-07-12 16:00:00'
 slug: 'implementare-un-range-parser-con-generic-in-rust'
-title: "Implementare un range parser con generic in Rust"
-subtitle: "Sembra facile, ma non lo è"
+title: 'Implementare un range parser con generic in Rust'
+subtitle: 'Sembra facile, ma non lo è'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
@@ -14,7 +14,7 @@ Un paio di giorni fa avevo bisogno di implementare un range parser, cioè una fu
 
 La volevo generica per qualsiasi tipo primitivo intero numerico, quindi ho cominciato a scrivere una funzione con questa firma:
 
-```rust
+````rust
 /// Parse a range string to a vector of usize
 ///
 /// # Arguments
@@ -33,7 +33,7 @@ La volevo generica per qualsiasi tipo primitivo intero numerico, quindi ho comin
 /// assert_eq!(range, vec![0, 1, 2, 3]);
 /// ```
 fn parse_range<T>(range_str: &str) -> Result<Vec<T>, Box<dyn Error>>
-```
+````
 
 e ho poi implementato il corpo così:
 
@@ -198,7 +198,7 @@ where
         }
 
         Ok(range)
-  
+
   // ...
 }
 ```

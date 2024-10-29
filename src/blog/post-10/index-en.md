@@ -1,8 +1,8 @@
 ---
 date: '2024-02-15 15:30:00'
 slug: 'how-to-get-started-with-bitcoin-lottery-mining'
-title: "How to get started with Bitcoin Lottery Mining?"
-subtitle: "What do you need to get started? Why is it important? Can you actually earn bitcoins?"
+title: 'How to get started with Bitcoin Lottery Mining?'
+subtitle: 'What do you need to get started? Why is it important? Can you actually earn bitcoins?'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
@@ -63,7 +63,7 @@ I need to specify that the hashrate of a **NerdMiner** for example, is about 75K
 
 ### Why should I solo-mining
 
-A good question that could raise at this point is *Why should I waste my time setting up a lottery miner then?* and it is indeed a good question. As you can imagine the probability of winning the block is **much lower than winning the lottery**.
+A good question that could raise at this point is _Why should I waste my time setting up a lottery miner then?_ and it is indeed a good question. As you can imagine the probability of winning the block is **much lower than winning the lottery**.
 
 But yet, not impossible.
 

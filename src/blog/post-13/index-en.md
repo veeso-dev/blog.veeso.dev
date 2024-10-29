@@ -1,7 +1,7 @@
 ---
 date: '2024-07-06 15:00:00'
 slug: 'how-to-configure-cpu-cores-to-be-used-on-a-tokio-with-core--affinity'
-title: "How to configure CPU cores to be used in a Tokio application with core_affinity"
+title: 'How to configure CPU cores to be used in a Tokio application with core_affinity'
 subtitle: "Let's see how to setup the tokio runtime to use only the configured cores"
 author: 'veeso'
 featuredImage: ./featured.jpeg
@@ -25,7 +25,7 @@ tokio = { version = "1", features = [ "full" ] }
 
 Now we may want to implement a function to get the cores we want to use. Usually in the applications I've implemented where I've used core-affinity I let the user to pass as CLI argument the cores he wants to use in the range syntax `x,y,z` or `n-m`.
 
-```rust
+````rust
 /// Get the CPU cores to use for the application;
 /// if the range is not specified, it will use all the available cores
 pub fn get_cpu_cores(range: Option<&str>) -> anyhow::Result<Vec<CoreId>> {
@@ -97,7 +97,7 @@ pub fn parse_range_usize(range_str: &str) -> anyhow::Result<Vec<usize>> {
         Ok(range)
     }
 }
-```
+````
 
 > ❗ Usually CPU cores are sorted and identified by the numeric index from 0 to number of cores.
 

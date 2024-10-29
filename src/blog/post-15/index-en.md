@@ -1,8 +1,8 @@
 ---
 date: '2024-07-17 17:30:00'
 slug: 'termscp-014-released'
-title: "termscp 0.14 has been released"
-subtitle: "come discover many brand new cool features"
+title: 'termscp 0.14 has been released'
+subtitle: 'come discover many brand new cool features'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en

@@ -1,8 +1,8 @@
 ---
 date: '2024-10-28 17:00:00'
 slug: 'dyn-box-vs-generics-in-rust'
-title: "Dyn Box Vs. Generics"
-subtitle: "What is the best approach for achieving conditional generics in Rust?"
+title: 'Dyn Box Vs. Generics'
+subtitle: 'What is the best approach for achieving conditional generics in Rust?'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
@@ -101,7 +101,7 @@ let user = User { greet: Box::new(greet) };
 
 Here someone could say that **this might not be the best approach though** and there is a better way to do the same thing.
 
-Did you mean *Generics*?
+Did you mean _Generics_?
 
 ### Generics
 
@@ -118,7 +118,7 @@ let greet = Alice;
 let user = User { greet };
 ```
 
-It looks fine, but does this create some issues? What about *conditional typing*?
+It looks fine, but does this create some issues? What about _conditional typing_?
 
 ## Conditional types with generics
 
@@ -263,4 +263,4 @@ error[E0308]: mismatched types
    = help: `Alice` implements `Greet` so you could box the found value and coerce it to the trait object `Box<dyn Greet>`, you will have to change the expected type as well
 ```
 
-as we've seen before, but doesn't mention that Generics could be even more suitable for this purpose, giving newbies a *non-optimal* hint to deal with this case. Indeed, even myself, I used Box dyn a lot in place of generics in my early days with Rust.
+as we've seen before, but doesn't mention that Generics could be even more suitable for this purpose, giving newbies a _non-optimal_ hint to deal with this case. Indeed, even myself, I used Box dyn a lot in place of generics in my early days with Rust.

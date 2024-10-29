@@ -1,7 +1,7 @@
 ---
 date: '2024-04-12 12:30:00'
 slug: 'ti-hanno-sempre-mentito-su-bitcoin'
-title: "Ti hanno sempre mentito su Bitcoin"
+title: 'Ti hanno sempre mentito su Bitcoin'
 subtitle: "Perché l'utopia Bitcoin è una balla"
 author: 'veeso'
 featuredImage: ./featured.jpeg
@@ -86,7 +86,7 @@ E per essere chiari, la quantità di Bitcoin che l'utente deve pagare come commi
 
 ### Cosa c'è di sbagliato nelle fee
 
-Ma allora cosa c'è di sbagliato in questo sistema. Beh, in realtà è facile da comprendere. Al momento possiamo affermare che le fee sono *basse*, se possiamo considerare accettabile **pagare 7 dollari per scambiarne 100**, ma allo stato attuale **il carico di rete è trascurabile** se consideriamo che l'obiettivo finale sarebbe quello di far sì che bitcoin utilizzino Bitcoin al posto dei metodi di pagamento tradizionali. Quindi ipotizzando che tutti utilizzassero bitcoin per tutti gli acquisti sopra i 100$, cosa accadrebbe? **Il carico della rete diventerebbe presto insostenibile**, al di là dei tempi lunghissimi di conferma di una transazione, **presto le commissioni raggiungerebbero il valore di migliaia di dollari**.
+Ma allora cosa c'è di sbagliato in questo sistema. Beh, in realtà è facile da comprendere. Al momento possiamo affermare che le fee sono _basse_, se possiamo considerare accettabile **pagare 7 dollari per scambiarne 100**, ma allo stato attuale **il carico di rete è trascurabile** se consideriamo che l'obiettivo finale sarebbe quello di far sì che bitcoin utilizzino Bitcoin al posto dei metodi di pagamento tradizionali. Quindi ipotizzando che tutti utilizzassero bitcoin per tutti gli acquisti sopra i 100$, cosa accadrebbe? **Il carico della rete diventerebbe presto insostenibile**, al di là dei tempi lunghissimi di conferma di una transazione, **presto le commissioni raggiungerebbero il valore di migliaia di dollari**.
 
 E sì, possiamo supporre che Bitcoin non avrà mai 7 miliardi di utenti giornalieri. Il problema è che questo scenario, per avverarsi, non richiede affatto così tanti utenti, ma basterebbe qualche centinaio di milioni, come la popolazione europea o degli Stati Uniti.
 
@@ -98,7 +98,7 @@ In aggiunta a questo, una volta terminati i Bitcoin da minare, tra circa 100 ann
 
 Ad oggi abbiamo concepito due possibili soluzioni al problema:
 
-1. **Incrementare la dimensione del blocco e/o diminuire la distanza dei blocchi**: attualmente, infatti bitcoin ha una dimensione dei blocchi fissata a 1MB (in realtà riusciamo a immagazzinare anche 1.5MB per blocco) ed una distanza tra i blocchi approssimata a 10 minuti. Quindi, incrementare la dimensione dei blocchi ed eventualmente ridurre la distanza permetterebbe di avere più **transazioni al secondo** nel ledger e quindi permettere transazioni con commissioni più accessibili. Questa via è già stata battuta in precedenza, ma ha sempre causato hard-fork di poco successo, come **Bitcoin-Cash e BSV**. Sono inoltre considerate *sbagliate* e sono sempre state rinnegate dalla community mainstream di Bitcoin, anche perché in realtà la soluzione non risolve veramente molto, a meno che non si incrementi di un fattore di decine di megabyte la dimensione dei blocchi.
+1. **Incrementare la dimensione del blocco e/o diminuire la distanza dei blocchi**: attualmente, infatti bitcoin ha una dimensione dei blocchi fissata a 1MB (in realtà riusciamo a immagazzinare anche 1.5MB per blocco) ed una distanza tra i blocchi approssimata a 10 minuti. Quindi, incrementare la dimensione dei blocchi ed eventualmente ridurre la distanza permetterebbe di avere più **transazioni al secondo** nel ledger e quindi permettere transazioni con commissioni più accessibili. Questa via è già stata battuta in precedenza, ma ha sempre causato hard-fork di poco successo, come **Bitcoin-Cash e BSV**. Sono inoltre considerate _sbagliate_ e sono sempre state rinnegate dalla community mainstream di Bitcoin, anche perché in realtà la soluzione non risolve veramente molto, a meno che non si incrementi di un fattore di decine di megabyte la dimensione dei blocchi.
 2. **blockchain di n-livello**: Bitcoin potrebbe diventare una blockchain utilizzata solo per scambiare quantità gigantesche di bitcoin, peggati 1:1 in dei wallet su una blockchain di secondo livello, il che permetterebbe di mantenere l'affidabilità di Bitcoin, ma con dei costi di transazioni potenzialmente molto bassi.
 
 ### Scenario multi-livello
@@ -115,11 +115,11 @@ Quindi Alice e Bob se volessero scambiarsi valore, dovrebbero avere dei wallet s
 
 Quindi, immaginiamo che la blockchain L2 venisse adottata, cosa accadrebbe in seguito?
 
-Presupponendo che con buona probabilità nessuno comincerebbe ad usare in maniera sostanziale il livello 2 fino all'inizio della *feepocalypse*, ha senso pensare che nel momento in cui ciò accadrà, chiunque abbia quantità medio-piccole di BTC su livello 1 corra a scambiare i suoi BTC per i token BTC2.
+Presupponendo che con buona probabilità nessuno comincerebbe ad usare in maniera sostanziale il livello 2 fino all'inizio della _feepocalypse_, ha senso pensare che nel momento in cui ciò accadrà, chiunque abbia quantità medio-piccole di BTC su livello 1 corra a scambiare i suoi BTC per i token BTC2.
 
 Ma come funziona l'exchange?
 
-Al fine di fare lo scambio, i BTC di livello 1 dovranno essere inviati ai **validatori** di livello 2, che saranno i *miner* di livello 2, che quindi valideranno le transazioni sulla nuova blockchain, ma che sotto dovranno avere enormi quantità di BTC di livello 1 peggati a quelli di livello 2 in modo da permettere lo scambio.
+Al fine di fare lo scambio, i BTC di livello 1 dovranno essere inviati ai **validatori** di livello 2, che saranno i _miner_ di livello 2, che quindi valideranno le transazioni sulla nuova blockchain, ma che sotto dovranno avere enormi quantità di BTC di livello 1 peggati a quelli di livello 2 in modo da permettere lo scambio.
 
 Tutto sembra funzionare per il meglio, ma questo scenario decreta al contrario la fine di tutti i valori, che hai sempre pensato fossero incarnati in Bitcoin.
 
@@ -200,13 +200,13 @@ Penso che il punto di vista di molte persone sulla ridistribuzione della ricchez
 
 ## Whales e inflazione
 
-L'ultimo punto su cui voglio parlare è la questione **inflazione**. Ci è sempre stato raccontato che l'inflazione è parte del mondo FIAT e non di Bitcoin, anzi, al contrario in Bitcoin si sperimenta la *deflazione* tramite il sistema dell'halving.
+L'ultimo punto su cui voglio parlare è la questione **inflazione**. Ci è sempre stato raccontato che l'inflazione è parte del mondo FIAT e non di Bitcoin, anzi, al contrario in Bitcoin si sperimenta la _deflazione_ tramite il sistema dell'halving.
 
-Mentre è effettivamente vero che Bitcoin ha una supply massima e che quindi non potrà *teoricamente* mai aumentare come succede per le valute FIAT, **quello che può cambiare è la quantità circolante**, che invece può causare inflazione.
+Mentre è effettivamente vero che Bitcoin ha una supply massima e che quindi non potrà _teoricamente_ mai aumentare come succede per le valute FIAT, **quello che può cambiare è la quantità circolante**, che invece può causare inflazione.
 
 Ma cosa significa **quantità circolante**? Prendiamo l'oro, il valore rimane stabile nel tempo, anzi tende ad aumentare leggermente, ma anche l'oro ha una supply massima limitata fisicamente, mentre la quantità circolante è più o meno stabile. Cosa accadrebbe però se domani trovassimo un'enorme quantità di oro limitato e facile da estrarre pari alla quantità attualmente circolante? Il valore si dimezzerebbe per lo meno, in quanto la domanda sarebbe molto più bassa dell'offerta. Questo crea un effetto molto simile all'inflazione.
 
-Lo stesso può avvenire in Bitcoin. È la prova di ciò è la supply che abbiamo visto prima. Sappiamo che ci sono dei veri e propri *giacimenti* di Bitcoin con quantità **enormi** in mano di pochissimi e *facilmente* inseribili nell'offerta circolante.
+Lo stesso può avvenire in Bitcoin. È la prova di ciò è la supply che abbiamo visto prima. Sappiamo che ci sono dei veri e propri _giacimenti_ di Bitcoin con quantità **enormi** in mano di pochissimi e _facilmente_ inseribili nell'offerta circolante.
 
 Se questi enormi volumi di Bitcoin venissero improvvisamente immessi nell'**offerta circolante** gli effetti sul valore di Bitcoin sarebbero devastanti, creando effetti ben peggiori dell'inflazione nel mondo FIAT, che al paragone risulterebbe ben più controllata.
 
@@ -218,10 +218,10 @@ Spesso vedo che i sostenitori di Bitcoin tendono a vedere il mondo in bianco ner
 
 ## Considerazioni finali - onde evitare fraintendimenti
 
-Come avevo detto all'inizio di questo articolo, questo non è mai stato un articolo Pro FIAT, contrario a Bitcoin. Penso che entrambi i sistemi abbiano numerose vulnerabilità. Dubito quindi che Bitcoin abbia un futuro come valuta adottata da popolazioni e spero davvero che ciò non accada. 
+Come avevo detto all'inizio di questo articolo, questo non è mai stato un articolo Pro FIAT, contrario a Bitcoin. Penso che entrambi i sistemi abbiano numerose vulnerabilità. Dubito quindi che Bitcoin abbia un futuro come valuta adottata da popolazioni e spero davvero che ciò non accada.
 
 Non che io preferisca rimanere nel mondo FIAT, ma penso che dobbiamo trovare una soluzione più sostenibile e **davvero P2P**. Penso che tra qualche decennio saremo capaci di concepire un sistema che perfezionerà ciò che di buono aveva Bitcoin, eliminando i diversi problemi che si porta avanti. Personalmente non so neanche se sarà basato sulla blockchain. Questa tecnologia infatti, che ad oggi ci sembra perfetta per dei ledger P2P, ha diversi problemi in realtà. **È poco performante**, è pesante ed ha spesso un problema che è **trovare un compromesso tra performance e decentralizzazione**. Inoltre, penso che se da una parte la blockchain sia P2P dal punto di vista di rete e attori, non lo sia affatto dal punto di vista dei pagamenti, forse sarebbe da ricercare qualcosa di più simile ad un sistema di pagamento al portatore.
 
 Bitcoin è inoltre troppo inquinato ormai da un **ambiente saturato da investitori e persone che hanno un interesse troppo lontano da quello di considerarlo una valuta per permettere una'adozione standard**. Spesso gli stessi divulgatori di Bitcoin, dietro alla filosofia nascondono obiettivi ben diversi, tra cui l'evasione fiscale, ritorni economici in scambio FIAT/BTC, consulenza, ecc. In vita mia penso di aver veramente conosciuto solo un paio di persone con interessi veramente nobili sul tema, seppur non ho mai concordato con i loro ideali.
 
-In conclusione, **non penso che questo sia il canto del cigno per Bitcoin**, al contrario credo che vivrà molti anni, seppur sarà usato **come un asset per la crescita passiva del valore dei propri risparmi**, un po' come l'oro, seppur da fare in maniera controllata, per evitare quello che sta diventando un **honeypot** per tutti i Bitcoin detenuti su wallet non custodial - *Non raccontiamocela, è così. Se oggi hai dei Bitcoin su un wallet personale, questi sono bloccati per sempre nel mondo Bitcoin. Le porte per farli uscire ad oggi rimangono sempre meno e stanno sparendo.*
+In conclusione, **non penso che questo sia il canto del cigno per Bitcoin**, al contrario credo che vivrà molti anni, seppur sarà usato **come un asset per la crescita passiva del valore dei propri risparmi**, un po' come l'oro, seppur da fare in maniera controllata, per evitare quello che sta diventando un **honeypot** per tutti i Bitcoin detenuti su wallet non custodial - _Non raccontiamocela, è così. Se oggi hai dei Bitcoin su un wallet personale, questi sono bloccati per sempre nel mondo Bitcoin. Le porte per farli uscire ad oggi rimangono sempre meno e stanno sparendo._
