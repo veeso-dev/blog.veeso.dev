@@ -58,13 +58,7 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         sitemap: 'https://blog.veeso.dev/sitemap-index.xml',
-        policy: [
-          { userAgent: '*', allow: '/' },
-          {
-            userAgent: '*',
-            disallow: ['/static/'],
-          },
-        ],
+        policy: [{ userAgent: '*', allow: '/' }],
       },
     },
     {

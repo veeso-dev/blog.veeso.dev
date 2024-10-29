@@ -33,6 +33,7 @@
     "gatsby-source-filesystem": "^5.12",
     "gatsby-transformer-remark": "^6.12",
     "gatsby-transformer-sharp": "^5.12",
+    "js-cookie": "^3.0.5",
     "prism-react-renderer": "^2.0",
     "prismjs": "^1.29",
     "react": "^18.2",
@@ -44,6 +45,7 @@
   },
   "devDependencies": {
     "@types/flat": "^5.0.2",
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^18.16",
     "@types/react": "^18.2",
     "@types/react-dom": "^18.2",

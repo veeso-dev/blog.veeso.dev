@@ -2,12 +2,16 @@ import { flatten } from 'flat';
 
 import ItTranslations from '../locales/it.json';
 import EnTranslations from '../locales/en.json';
+import Cookies from 'js-cookie';
 
 export const LANG_ENGLISH = 'en';
 export const LANG_ITALIAN = 'it';
 
+export const AVAILABLE_LANGUAGES = [LANG_ITALIAN, LANG_ENGLISH];
+
 export type Language = typeof LANG_ITALIAN | typeof LANG_ENGLISH;
-const DEFAULT_LANGUAGE = LANG_ENGLISH;
+export const DEFAULT_LANGUAGE = LANG_ENGLISH;
+const COOKIE_LANGUAGE = 'lang';
 
 export interface Translations {
   it: Record<string, string>;
@@ -52,15 +56,26 @@ const getForcedLanguage = (): Language | undefined => {
   return undefined;
 };
 
+const getCookieLanguage = (): Language | undefined =>
+  Cookies.get(COOKIE_LANGUAGE) as Language;
+
+export const setCookieLanguage = (lang: Language): void => {
+  Cookies.set(COOKIE_LANGUAGE, lang, { expires: 365 });
+};
+
 export const getNavigatorLanguage = (): Language => {
   if (typeof window === 'undefined') {
     return DEFAULT_LANGUAGE;
   }
 
   const forcedLanguage = getForcedLanguage();
-
   if (forcedLanguage) {
     return forcedLanguage;
+  }
+
+  const cookieLanguage = getCookieLanguage();
+  if (cookieLanguage) {
+    return cookieLanguage;
   }
 
   return getPureNavigatorLanguage();

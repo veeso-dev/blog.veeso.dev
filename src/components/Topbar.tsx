@@ -2,11 +2,11 @@ import * as React from 'react';
 import { Link } from 'gatsby';
 
 import Socials from './Topbar/Socials';
-import Heading from './reusable/Heading';
 import SharedLink from './reusable/Link';
 import Container from './reusable/Container';
 import ThemeToggle from './Topbar/ThemeToggle';
 import { StaticImage } from 'gatsby-plugin-image';
+import LanguageSelect from './Topbar/LanguageSelect';
 
 const DesktopTopbar = () => {
   return (
@@ -53,6 +53,7 @@ const DesktopTopbar = () => {
         </Container.Flex>
         <Container.Flex className="justify-self-end items-end justify-between">
           <Container.Flex className="items-center justify-between gap-8 ph-8">
+            <LanguageSelect />
             <ThemeToggle />
             <Socials />
           </Container.Flex>

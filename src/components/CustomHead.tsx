@@ -2,6 +2,8 @@ import { useLocation } from '@reach/router';
 import React from 'react';
 import { useSiteMetadata } from '../hooks/use-site-metadata';
 
+const TWITTER_HANDLE = '@veso_dev';
+
 interface CustomHeadProps {
   description?: string;
   lang?: string;
@@ -22,16 +24,13 @@ export const CustomHead: React.FC<React.PropsWithChildren<CustomHeadProps>> = ({
   article,
   canonicalUrl: propCanonicalPath,
   nonCanonical = false,
-  author: propAuthor,
   noindex = false,
   children,
 }) => {
   const {
     title: siteTitle,
     description: siteDescription,
-    image: siteImage,
     siteUrl,
-    author: siteAuthor,
   } = useSiteMetadata();
 
   const { pathname } = useLocation();
@@ -41,7 +40,6 @@ export const CustomHead: React.FC<React.PropsWithChildren<CustomHeadProps>> = ({
   const canonicalUrl = propCanonicalPath || defaultCanonicalPath;
   const siteName = siteTitle || 'MachineServant';
   const lang = propLang || 'en_US';
-  const author = propAuthor || siteAuthor || '';
 
   return (
     <>
@@ -55,20 +53,15 @@ export const CustomHead: React.FC<React.PropsWithChildren<CustomHeadProps>> = ({
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:site_name" content={siteName} />
       <meta property="og:locale" content={lang} />
-      <meta name="twitter:creator" content={author} />
-      <meta name="twitter:site" content={author} />
+      <meta name="twitter:creator" content={TWITTER_HANDLE} />
+      <meta name="twitter:site" content={TWITTER_HANDLE} />-
       <meta name="tiwtter:url" content={canonicalUrl} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      {image ? (
+      {image && (
         <>
           <meta property="og:image" content={`${siteUrl}${image}`} />
           <meta name="twitter:card" content="summary_large_image" />
-        </>
-      ) : (
-        <>
-          <meta property="og:image" content={`${siteUrl}/${siteImage}`} />
-          <meta name="twitter:card" content="summary" />
         </>
       )}
       {noindex && <meta name="googlebot" content="noindex, nofollow" />}
