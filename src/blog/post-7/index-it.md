@@ -3,7 +3,7 @@ date: '2023-10-04 17:00:00'
 slug: 'ive-replaced-google-analytics-with-umami'
 title: 'Ho rimpiazzato Google Analytics con Umami'
 subtitle: "e perché dovresti fare lo stesso"
-author: 'Christian Visintin'
+author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
 ---

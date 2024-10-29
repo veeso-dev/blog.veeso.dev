@@ -3,7 +3,7 @@ date: '2023-03-20 00:00:00'
 slug: 'for-a-sustainable-open-source-community-start-pointing-the-finger-at-the-mirror'
 title: 'For a sustainable open-source community, start pointing the finger at the mirror'
 subtitle: "A reflection on how we're all part of the problem in open-source"
-author: 'Christian Visintin'
+author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
 ---

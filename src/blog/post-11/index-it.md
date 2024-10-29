@@ -3,7 +3,7 @@ date: '2024-04-12 12:30:00'
 slug: 'ti-hanno-sempre-mentito-su-bitcoin'
 title: "Ti hanno sempre mentito su Bitcoin"
 subtitle: "Perché l'utopia Bitcoin è una balla"
-author: 'Christian Visintin'
+author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
 ---

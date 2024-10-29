@@ -3,7 +3,7 @@ date: '2024-01-31 12:40:00'
 slug: 'the-fascinating-ethereum-mev-bot-scam'
 title: "The fascinating Ethereum MEV Bot scam"
 subtitle: "An overview of this scam contract code"
-author: 'Christian Visintin'
+author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
 ---

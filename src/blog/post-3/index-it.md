@@ -3,7 +3,7 @@ date: '2023-03-20 00:00:00'
 slug: 'for-a-sustainable-open-source-community-start-pointing-the-finger-at-the-mirror'
 title: 'Per una community open-source sostenibile, comincia a guardarti allo specchio'
 subtitle: "Una riflessione su come siamo tutti parte del problema della sostenibilità dell'open-source"
-author: 'Christian Visintin'
+author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
 ---

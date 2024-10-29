@@ -3,7 +3,7 @@ date: '2024-02-15 15:30:00'
 slug: 'come-fare-lottery-mining-con-bitcoin'
 title: "Come fare Lottery Mining con Bitcoin?"
 subtitle: "Cosa ti serve per cominciare? Perché fare Lottery Mining? Si può guadagnare Bitcoin?"
-author: 'Christian Visintin'
+author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
 ---

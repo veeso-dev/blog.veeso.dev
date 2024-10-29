@@ -3,7 +3,7 @@ date: '2024-09-04 12:00:00'
 slug: 'ehi-rustaceans-esistono-anche-i-rust-freelancer'
 title: "Ehi Rustaceans: esistono anche i Rust freelancer!"
 subtitle: "Stanco di scrivere PHP tutto il giorno? Vorresti diventare un Rust dev full-time? Perché non aprire la partita iva?"
-author: 'Christian Visintin'
+author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
 ---

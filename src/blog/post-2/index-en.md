@@ -3,7 +3,7 @@ date: '2023-02-20 00:00:00'
 slug: 'how-rust-nation-23-changed-my-pov-on-the-rust-community'
 title: 'How Rust Nation ‘23 changed my POV on the Rust community'
 subtitle: "A retrospective of Rust Nation '23"
-author: 'Christian Visintin'
+author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
 ---

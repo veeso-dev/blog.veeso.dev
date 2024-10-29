@@ -3,7 +3,7 @@ date: '2024-01-31 12:40:00'
 slug: 'the-fascinating-ethereum-mev-bot-scam'
 title: "L'affascinante truffa dei Bot MEV su Ethereum"
 subtitle: "Triste cronaca di una truffa avvenuta ad un cliente e analisi del codice"
-author: 'Christian Visintin'
+author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
 ---

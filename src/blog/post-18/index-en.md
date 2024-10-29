@@ -3,7 +3,7 @@ date: '2024-10-14 18:15:00'
 slug: 'announcing-termscp-016'
 title: "Announcing termscp 0.16.0"
 subtitle: "we have multi-host transfers baby"
-author: 'Christian Visintin'
+author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
 ---

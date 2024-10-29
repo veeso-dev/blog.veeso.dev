@@ -3,7 +3,7 @@ date: '2024-07-06 15:00:00'
 slug: 'come-configurare-i-core-da-utilizzare-in-tokio-con-core--affinity'
 title: "Come configurare i core da utilizzare in un'applicazione Tokio con core_affinity"
 subtitle: "Vediamo insieme come configurare i core della cpu da utilizzare in un ambiente Tokio in Rust"
-author: 'Christian Visintin'
+author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
 ---

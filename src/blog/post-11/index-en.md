@@ -3,7 +3,7 @@ date: '2024-04-12 12:30:00'
 slug: 'the-bitcoin-utopia-is-a-lie'
 title: "The Bitcoin Utopia is a Lie"
 subtitle: "Why we all have been lied about Bitcoin"
-author: 'Christian Visintin'
+author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
 ---

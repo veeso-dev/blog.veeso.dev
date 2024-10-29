@@ -3,7 +3,7 @@ date: '2024-02-01 22:15:00'
 slug: 'che-cosa-e-il-young-indian-method'
 title: "Che cos'è Il Young Indian Method?"
 subtitle: "Meme o realtà? Si può veramente guadagnare con questo metodo?"
-author: 'Christian Visintin'
+author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
 ---

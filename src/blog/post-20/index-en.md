@@ -3,7 +3,7 @@ date: '2024-10-14 18:15:00'
 slug: 'a-journey-into-file-transfer-protocols-in-rust'
 title: "A journey into File Transfer Protocols in Rust"
 subtitle: "How basically I became a file transfer protocol expert in Rust"
-author: 'Christian Visintin'
+author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
 ---

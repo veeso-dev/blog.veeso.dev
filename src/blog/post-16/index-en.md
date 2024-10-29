@@ -3,7 +3,7 @@ date: '2024-09-04 12:00:00'
 slug: 'hey-rustaceans-rust-freelancers-do-exist'
 title: "Hey Rustaceans: Rust freelancers do exist!"
 subtitle: "Are you tired of PHP and you want to be a 100% Rust developer? You should consider becoming a freelancer"
-author: 'Christian Visintin'
+author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
 ---

@@ -3,7 +3,7 @@ date: '2024-05-28 15:30:00'
 slug: 'let-me-introduce-you-shit-ai'
 title: "Let me introduce you ShitAI"
 subtitle: "How AI is not improving our society and for the 90% is just a bubble"
-author: 'Christian Visintin'
+author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
 ---

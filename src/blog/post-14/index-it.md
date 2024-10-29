@@ -3,7 +3,7 @@ date: '2024-07-12 16:00:00'
 slug: 'implementare-un-range-parser-con-generic-in-rust'
 title: "Implementare un range parser con generic in Rust"
 subtitle: "Sembra facile, ma non lo è"
-author: 'Christian Visintin'
+author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
 ---

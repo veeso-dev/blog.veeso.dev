@@ -3,7 +3,7 @@ date: '2024-02-15 15:30:00'
 slug: 'how-to-get-started-with-bitcoin-lottery-mining'
 title: "How to get started with Bitcoin Lottery Mining?"
 subtitle: "What do you need to get started? Why is it important? Can you actually earn bitcoins?"
-author: 'Christian Visintin'
+author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
 ---

@@ -2,9 +2,9 @@ import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Christian Visintin | Blog`,
-    description: `I'm a dev and rustacean writing about my dev misadventures and give unneeded opinions on many topics involving technology and development`,
-    author: 'Christian Visintin',
+    title: `Christian Visintin | Blog | Rust Blog`,
+    description: `Rust tech blogger, software engineer, and open-source enthusiast. I write about Rust, Web Development. Seen on this week in Rust`,
+    author: 'Christian veeso Visintin',
     siteUrl: `https://blog.veeso.dev`,
     twitterUsername: `@veeso_dev`,
     navigation: [

@@ -45,7 +45,7 @@ const DesktopTopbar = () => {
           </Link>
           <SharedLink.Default
             className="text-gray-500 dark:text-gray-200 no-underline text-xl transition-[0.5s] hover:text-brand hover:underline cursor-pointer"
-            href={'https://www.veeso.dev/'}
+            href={'https://www.veeso.me/'}
             target="_blank"
           >
             About

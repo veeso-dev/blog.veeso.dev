@@ -3,7 +3,7 @@ date: '2023-01-25 00:00:00'
 slug: 'dev-horror-story-1-an-android-nightmare'
 title: 'Dev Horror Story #1 — An Android Nightmare'
 subtitle: "Un viaggio verso una delle mie più stressanti esperienze nello sviluppo software: un'app per WearOS"
-author: 'Christian Visintin'
+author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
 ---

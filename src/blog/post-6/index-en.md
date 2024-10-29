@@ -3,7 +3,7 @@ date: '2023-09-21 12:00:00'
 slug: 'how-to-migrate-from-reactjs-to-gatsby'
 title: 'How to migrate from ReactJS to Gatsby'
 subtitle: 'Maximize your Lighthouse score by migrating your web page to Gatsby'
-author: 'Christian Visintin'
+author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
 ---
@@ -81,7 +81,7 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: `my website title`,
     description: `Default site description.`,
-    author: 'Christian Visintin',
+    author: 'veeso',
     siteUrl: `https://test.com`,
   },
   graphqlTypegen: true,
