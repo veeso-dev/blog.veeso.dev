@@ -11,7 +11,7 @@ import {
 import Container from './reusable/Container';
 import Whatsapp from './reusable/svg/WhatsApp';
 import Telegram from './reusable/svg/Telegram';
-import { getTheme, isThemeLight } from '../utils/utils';
+import { isThemeLight } from '../utils/utils';
 
 interface Props {
   url: string;
