@@ -6,6 +6,7 @@ subtitle: 'How basically I became a file transfer protocol expert in Rust'
 author: 'Christian Visintin'
 featuredImage: ./featured.jpeg
 lang: en
+draft: true
 ---
 
 ## How it started

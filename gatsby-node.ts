@@ -24,6 +24,7 @@ exports.createPages = async ({
           frontmatter {
             slug
             lang
+            draft
           }
           internal {
             contentFilePath
@@ -41,7 +42,11 @@ exports.createPages = async ({
   }
 
   result.data?.allMdx.nodes.forEach((node) => {
-    if (node.frontmatter?.lang && node.frontmatter?.slug) {
+    if (
+      node.frontmatter?.lang &&
+      node.frontmatter?.draft !== true &&
+      node.frontmatter?.slug
+    ) {
       createPage({
         path: getPostRoute(node.frontmatter?.lang, node.frontmatter?.slug),
         component: `${BlogPostTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
