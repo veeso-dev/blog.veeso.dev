@@ -11,6 +11,7 @@ import {
 import Container from './reusable/Container';
 import Whatsapp from './reusable/svg/WhatsApp';
 import Telegram from './reusable/svg/Telegram';
+import { getTheme, isThemeLight } from '../utils/utils';
 
 interface Props {
   url: string;
@@ -21,9 +22,11 @@ interface Props {
 
 const ShareButtons = (props: Props) => {
   const title = `${props.title} by ${props.author}`;
+  const fill = isThemeLight() ? '#31363b' : '#fff';
+
   return (
     <Container.FlexRow className="text-brand dark:text-gray-200 gap-8 justify-end">
-      <FacebookShareButton url={props.url} quote={props.description}>
+      <FacebookShareButton url={props.url}>
         <Facebook className="transition-transform transform scale-100 hover:scale-125" />
       </FacebookShareButton>
       <TwitterShareButton url={props.url} title={title}>
@@ -39,13 +42,14 @@ const ShareButtons = (props: Props) => {
       <TelegramShareButton url={props.url} title={title}>
         <Telegram
           size={20}
-          fill="#31363b"
+          fill={fill}
           className="transition-transform transform scale-100 hover:scale-125"
         />
       </TelegramShareButton>
       <WhatsappShareButton url={props.url} title={title}>
         <Whatsapp
           size={20}
+          fill={fill}
           className="transition-transform transform scale-100 hover:scale-125"
         />
       </WhatsappShareButton>

@@ -13,6 +13,9 @@ export enum Theme {
 const THEME_DARK = 'theme-dark';
 const THEME_LIGHT = 'theme-light';
 
+export const isThemeDark = (): boolean => getTheme() === Theme.DARK;
+export const isThemeLight = (): boolean => getTheme() === Theme.LIGHT;
+
 export const getTheme = (): Theme => {
   if (typeof window === 'undefined') {
     return Theme.LIGHT;

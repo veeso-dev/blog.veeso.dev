@@ -60,7 +60,7 @@ const Select = (props: Props) => {
           hasSelected,
           props.disabled,
           props.required,
-        )} border border-gray-300 text-brand text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500 block w-full p-2.5`}
+        )} border border-gray-300 dark:border-gray-800 dark:bg-brand text-brand dark:text-gray-50 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500 block w-full p-2.5`}
       >
         {props.children}
       </select>
