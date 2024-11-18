@@ -138,7 +138,7 @@ So I expect it to run and print two file entries: `/tmp` and `/tmp/test.txt`.
 
 My Rust-analyzer indeed says it's all good and the syntax is valid, but when I run `cargo build`...
 
-*BOOM* BUILD FAILED!
+_BOOM_ BUILD FAILED!
 
 ```txt
 error: reached the recursion limit while instantiating `find_files::<&mut &mut &mut &mut &mut ...>`
@@ -185,7 +185,7 @@ where
 
 which is `F: FnMut(&FindData) -> FillDataResult`
 
-The compiler, when building our program, must always know, or **infer** the type of generic functions. We can't have an *anonymous* generic type in Rust, the type must be always inferrable at build time.
+The compiler, when building our program, must always know, or **infer** the type of generic functions. We can't have an _anonymous_ generic type in Rust, the type must be always inferrable at build time.
 
 If we give a look at our code, where we first call `find_files`
 
