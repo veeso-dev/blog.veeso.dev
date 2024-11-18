@@ -22,7 +22,11 @@ const IndexPage: React.FC<PageProps> = ({
   const currentLanguage = getNavigatorLanguage();
   const posts = nodes
     .sort((a, b) => (a.frontmatter.date > b.frontmatter.date ? -1 : 1))
-    .filter((node) => node.frontmatter.lang === currentLanguage)
+    .filter(
+      (node) =>
+        node.frontmatter.lang === currentLanguage &&
+        node.frontmatter.draft !== true,
+    )
     .slice(0, 4)
     .map((node) => (
       <PostLink
@@ -83,6 +87,7 @@ export const pageQuery = graphql`
           slug
           title
           subtitle
+          draft
           date(formatString: "YYYY-MM-DD")
           featuredImage {
             childImageSharp {
