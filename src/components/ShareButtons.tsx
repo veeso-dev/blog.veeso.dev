@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Facebook, Twitter, Linkedin } from 'react-feather';
+import { Facebook, Linkedin } from 'react-feather';
 import {
   FacebookShareButton,
   LinkedinShareButton,
@@ -12,6 +12,7 @@ import Container from './reusable/Container';
 import Whatsapp from './reusable/svg/WhatsApp';
 import Telegram from './reusable/svg/Telegram';
 import { isThemeLight } from '../utils/utils';
+import X from './reusable/svg/X';
 
 interface Props {
   url: string;
@@ -30,7 +31,11 @@ const ShareButtons = (props: Props) => {
         <Facebook className="transition-transform transform scale-100 hover:scale-125" />
       </FacebookShareButton>
       <TwitterShareButton url={props.url} title={title}>
-        <Twitter className="transition-transform transform scale-100 hover:scale-125" />
+        <X
+          size={20}
+          fill={fill}
+          className="transition-transform transform scale-100 hover:scale-125"
+        />
       </TwitterShareButton>
       <LinkedinShareButton
         url={props.url}
