@@ -1,5 +1,4 @@
 import { MDXProvider } from '@mdx-js/react';
-import * as Icon from 'react-feather';
 import { graphql, HeadFC, Link, PageProps } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
@@ -9,10 +8,11 @@ import { PageLayout } from '../components/PageLayout';
 import { CustomHead } from '../components/CustomHead';
 import { components, MainContent } from '../components/mdx-components';
 import ShareButtons from '../components/ShareButtons';
-import { readingTime } from '../utils/utils';
+import { isThemeLight, readingTime } from '../utils/utils';
 import Container from '../components/reusable/Container';
 import RichTextFormattedMessage from '../components/reusable/RichTextFormattedMessage';
 import RLink from '../components/reusable/Link';
+import X from '../components/reusable/svg/X';
 import { FormattedDate } from 'react-intl';
 
 const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
@@ -23,6 +23,7 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
   const featuredImage = data.mdx?.frontmatter?.featuredImage
     ? getImage(data.mdx.frontmatter.featuredImage.childImageSharp)
     : null;
+  const fill = isThemeLight() ? '#31363b' : '#fff';
 
   return (
     <PageLayout
@@ -69,7 +70,7 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
                 <RichTextFormattedMessage id={'post.discoverMore'} />
               </Link>
               <RLink.Paragraph href={'https://x.com/veeso_dev'} target="_blank">
-                <Icon.Twitter className="mr-2 inline text-text" />
+                <X className="mr-2 inline" fill={fill} />
                 Follow me on X.com
               </RLink.Paragraph>
             </Container.FlexResponsiveRow>

@@ -1,5 +1,5 @@
 ---
-date: '2025-11-18 15:00:00'
+date: '2024-11-18 15:00:00'
 slug: 'you-dont-always-need-async'
 title: "You don't (*always*) need async"
 subtitle: "But you can't live without it anymore"
