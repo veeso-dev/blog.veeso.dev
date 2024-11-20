@@ -133,7 +133,7 @@ const config: GatsbyConfig = {
           {
             serialize: ({ query: { site, allMdx } }) => {
               return allMdx.edges
-                .filter((edge) => edge.node.draft !== true)
+                .filter((edge) => edge.node.frontmatter.draft !== true)
                 .filter((edge) => edge.node.frontmatter.lang === 'it')
                 .map((edge) => {
                   return Object.assign({}, edge.node.frontmatter, {
@@ -197,7 +197,7 @@ const config: GatsbyConfig = {
           {
             serialize: ({ query: { site, allMdx } }) => {
               return allMdx.edges
-                .filter((edge) => edge.node.draft !== true)
+                .filter((edge) => edge.node.frontmatter.draft !== true)
                 .filter((edge) => edge.node.frontmatter.lang === 'en')
                 .map((edge) => {
                   return Object.assign({}, edge.node.frontmatter, {
