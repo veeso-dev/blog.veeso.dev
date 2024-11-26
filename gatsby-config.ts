@@ -36,6 +36,10 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
+        excludes: ['/post-*'],
+        filterPages: (page) => {
+          return page.path.startsWith('/post-');
+        },
         serialize: ({ path }) => {
           // Estrai la lingua dal percorso della pagina
           const lang = path.split('/')[2];
@@ -58,7 +62,13 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         sitemap: 'https://blog.veeso.dev/sitemap-index.xml',
-        policy: [{ userAgent: '*', allow: '/' }],
+        policy: [
+          { userAgent: '*', allow: '/' },
+          {
+            userAgent: '*',
+            disallow: ['/post-*'], // disallow all pages starting with /post-
+          },
+        ],
       },
     },
     {
