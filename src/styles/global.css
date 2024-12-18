@@ -55,3 +55,8 @@ input {
 .md-img-container img {
   max-width: 420px;
 }
+
+strong {
+  color: #31363b;
+  font-weight: 600;
+}

@@ -7,7 +7,7 @@ const Unordered = (props: React.HTMLProps<HTMLUListElement>) => (
 );
 
 const Ordered = (props: React.HTMLProps<HTMLOListElement>) => (
-  <ol className={`px-8 list-disc sm:px-0 ${props.className}`}>
+  <ol className={`px-8 list-decimal sm:px-0 ${props.className}`}>
     {props.children}
   </ol>
 );
