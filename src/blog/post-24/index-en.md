@@ -97,11 +97,7 @@ const MdPage = ({ url, githubUrl }: Props) => {
         </Container.FlexRow>
         <Container.Container className={'markdown'}>
           {md && (
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-            >
-              {md}
-            </ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{md}</ReactMarkdown>
           )}
         </Container.Container>
       </Container.Container>

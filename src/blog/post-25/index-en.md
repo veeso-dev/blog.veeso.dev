@@ -40,10 +40,10 @@ But how is this achieved?
 
 1. For each property sale we make the **agency**, the **buyer** and the **seller** to sign the sale contract, which contains the following information, which are agreed by the parts:
 
-    - price of an installment
-    - amount of installments
-    - contract due date
-  
+   - price of an installment
+   - amount of installments
+   - contract due date
+
 2. Our DAPP (an application running on the blockchain) registers the sale contract on the ledger and mints an **NFT**, called **Deferred** for each installment. All the minted NFTs are given to the **seller** of the property.
 3. The **buyer** periodically goes to the **Marketplace** and buys the next token with USDT.
 
@@ -56,7 +56,7 @@ Let's see how!
 In the **EKOKE DAO** Environment there are **3 different okens**:
 
 - **Deferred**: Deferred is a NFT token (**ERC721**). **Each token** represents an **installment** of a sale contract. Deferred tokens are **minted** when a **sale contract is created**. There is a token for each installment and they have a fixed price expressed in dollars. They are initially owned by the property seller and they all must be bought by the property buyer in order to pay the seller.
-- **EKOKE**: EKOKE is a fungible token (**ERC20**). The EKOKE token is used as a reward for investors who *lend* money to the buyer. The total supply of EKOKE is set to **8,880,101.01** tokens and the reward given to the investors will decrease over time automatically with a predefined algorithm.
+- **EKOKE**: EKOKE is a fungible token (**ERC20**). The EKOKE token is used as a reward for investors who _lend_ money to the buyer. The total supply of EKOKE is set to **8,880,101.01** tokens and the reward given to the investors will decrease over time automatically with a predefined algorithm.
 - **EKOGOV**: The token for the governance of the EKOKE DAO.
 
 > Note: the deferred smart contract is shared over all the sale contract, so there isn't a Deferred smart contract for each sale contract!
@@ -65,7 +65,7 @@ In the **EKOKE DAO** Environment there are **3 different okens**:
 
 All the NFTs, as long as they are still owned by the **seller** can be bought by **anyone** on the marketplace, but why is that?
 
-We've said before that **investors** (the third-party who buys the NFT) can *lend* money to the property buyer. This is achieved by buying the **Deferred** token on the Marketplace.
+We've said before that **investors** (the third-party who buys the NFT) can _lend_ money to the property buyer. This is achieved by buying the **Deferred** token on the Marketplace.
 
 At this point the **investors** will immediately receive the reward with **EKOKE ERC20 Token**.
 

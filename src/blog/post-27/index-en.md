@@ -670,10 +670,10 @@ and feature requests, which were also kinda revolutionary in the API design.
 At the moment in my opinion there are two things that need to be done:
 
 - Stabilizing the FUSE implementation. FUSE is a very complex thing and it requires a lot of testing and debugging,
-    and can be very dangerous if not implemented correctly. I know for sure that the Linux implementation is quite stable,
-    but for example I have weird behaviour when using the `symlink` implementation of Rust. And the Windows implementation is
-    much more unstable due to the complexity of the Dokany library, which requires many features that I can't exactly
-    implement correctly when using the remotefs library.
+  and can be very dangerous if not implemented correctly. I know for sure that the Linux implementation is quite stable,
+  but for example I have weird behaviour when using the `symlink` implementation of Rust. And the Windows implementation is
+  much more unstable due to the complexity of the Dokany library, which requires many features that I can't exactly
+  implement correctly when using the remotefs library.
 - Going async: this often requested, but it's very problematic. Let's see why in details.
 
 ### Going async - it ain't easy
@@ -684,69 +684,69 @@ There are quite a few reasons why going async is not easy:
 
 1. Async traits are still a pain
 
-    So the first thing is that async traits are still a pain in Rust.
-    Some things are just **complex** to achieve in the async world.
+   So the first thing is that async traits are still a pain in Rust.
+   Some things are just **complex** to achieve in the async world.
 
-    Let's take the `open` function for instance:
+   Let's take the `open` function for instance:
 
-    ```rust
-    fn open(&mut self, path: &Path) -> RemoteResult<ReadStream>;
-    ```
+   ```rust
+   fn open(&mut self, path: &Path) -> RemoteResult<ReadStream>;
+   ```
 
-    or even worse:
+   or even worse:
 
-    ```rust
-    fn on_written(&mut self, _writable: WriteStream) -> RemoteResult<()>
-    ```
+   ```rust
+   fn on_written(&mut self, _writable: WriteStream) -> RemoteResult<()>
+   ```
 
-    where these types are defined as:
+   where these types are defined as:
 
-    ```rust
-    pub struct ReadStream {
-        stream: StreamReader,
-    }
+   ```rust
+   pub struct ReadStream {
+       stream: StreamReader,
+   }
 
-    /// The kind of stream contained in the stream. Can be [`Read`] only or [`Read`] + [`Seek`]
-    enum StreamReader {
-        Read(Box<dyn Read + Send>),
-        ReadAndSeek(Box<dyn ReadAndSeek>),
-    }
+   /// The kind of stream contained in the stream. Can be [`Read`] only or [`Read`] + [`Seek`]
+   enum StreamReader {
+       Read(Box<dyn Read + Send>),
+       ReadAndSeek(Box<dyn ReadAndSeek>),
+   }
 
-    /// A trait which combines `io::Write` and `io::Seek` together
-    pub trait WriteAndSeek: Write + Seek + Send {}
+   /// A trait which combines `io::Write` and `io::Seek` together
+   pub trait WriteAndSeek: Write + Seek + Send {}
 
-    /// The stream returned by [`crate::RemoteFs`] to write a file from the remote server
-    pub struct WriteStream {
-        pub stream: StreamWriter,
-    }
+   /// The stream returned by [`crate::RemoteFs`] to write a file from the remote server
+   pub struct WriteStream {
+       pub stream: StreamWriter,
+   }
 
-    /// The kind of stream contained in the stream. Can be Write only or [`Write`] + [`Seek`]
-    pub enum StreamWriter {
-        Write(Box<dyn Write + Send>),
-        WriteAndSeek(Box<dyn WriteAndSeek>),
-    }
-    ```
+   /// The kind of stream contained in the stream. Can be Write only or [`Write`] + [`Seek`]
+   pub enum StreamWriter {
+       Write(Box<dyn Write + Send>),
+       WriteAndSeek(Box<dyn WriteAndSeek>),
+   }
+   ```
 
-    These types in async are just a pain to manage, due to requirements async has, such as pinning etc.
-    I tried, I think even different times but with no success.
+   These types in async are just a pain to manage, due to requirements async has, such as pinning etc.
+   I tried, I think even different times but with no success.
 
 2. Not all clients are async
 
-    Okay, this is not a huge deal actually, but yeah. Some of the clients are not even async, such as the SFTP/SCP clients.
+   Okay, this is not a huge deal actually, but yeah. Some of the clients are not even async, such as the SFTP/SCP clients.
 
 3. I'm not a huge fan of async in place of sync
 
-    Listen up, sometimes async is just not needed. Not everyone needs async, and async requires tons of dependencies.
-    Take **termscp** for instance. It is currently the biggest user of the remotefs library and it is not using async.
-    And it's not because I'm lazy, but because it doesn't need it and I don't want to add dependencies that are not needed.
+   Listen up, sometimes async is just not needed. Not everyone needs async, and async requires tons of dependencies.
+   Take **termscp** for instance. It is currently the biggest user of the remotefs library and it is not using async.
+   And it's not because I'm lazy, but because it doesn't need it and I don't want to add dependencies that are not needed.
 
-    So why should I migrate everything to async then?
+   So why should I migrate everything to async then?
 
-    As I said in the article async currently doesn't provide any simple way to implement both the sync and async version.
-    I would like to implement something to make this possible, but I'm quite busy right now.
+   As I said in the article async currently doesn't provide any simple way to implement both the sync and async version.
+   I would like to implement something to make this possible, but I'm quite busy right now.
 
-    So I want async, but I want both versions. But having both versions requires me to have both versions for each client.
-    And this is just a huge work.
+   So I want async, but I want both versions. But having both versions requires me to have both versions for each client.
+   And this is just a huge work.
 
 ![not going to be easy](./it's-not-gonna-be-easy-usain-bolt.gif)
 

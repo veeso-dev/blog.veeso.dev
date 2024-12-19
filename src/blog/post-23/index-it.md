@@ -10,7 +10,7 @@ lang: it
 
 Maestri della finanza, guru del mindset, ma anche insegnanti di lingue o musica, oggi il business dei videocorsi è in continua crescita. Quello dei videocorsi è un business con poche spese e incassi cospicui, che fanno sì che sia una delle attività col margine maggiore. I corsi li troviamo ovunque in giro per internet, in particolare sui social.
 
-La cosa interessante è che una volta che clicchiamo sull'annuncio veniamo catapultati in delle landing page **grottesche**. Tutte sono accumunate da una lunghezza della pagina **infinita**, dei veri e propri wall-of-text; con elementi spesso ripetuti anche 3 o 4 volte; grafiche tremende, partita IVA spesso assente, prezzi che terminano col `7` e disclaimer *strani* come:
+La cosa interessante è che una volta che clicchiamo sull'annuncio veniamo catapultati in delle landing page **grottesche**. Tutte sono accumunate da una lunghezza della pagina **infinita**, dei veri e propri wall-of-text; con elementi spesso ripetuti anche 3 o 4 volte; grafiche tremende, partita IVA spesso assente, prezzi che terminano col `7` e disclaimer _strani_ come:
 
 > Questo sito non fa parte o è approvato da Facebook, Google, Twitter o qualsiasi piattaforma di social media in alcun modo.
 
@@ -48,7 +48,7 @@ La domanda che quindi sorge spontanea è:
 
 Sul chi non lo so, ma sul motivo la risposta è presto data:
 
-se sul proprio sito si mette il **logo di un social o di un'azienda** *teoricamente* si dovrebbe pure scrivere da qualche parte che il logo è di proprietà di tal-dei-tali e che il sito non è direttamente affiliato con la suddetta azienda.
+se sul proprio sito si mette il **logo di un social o di un'azienda** _teoricamente_ si dovrebbe pure scrivere da qualche parte che il logo è di proprietà di tal-dei-tali e che il sito non è direttamente affiliato con la suddetta azienda.
 
 Quindi l'origine del disclaimer è proprio dovuta al fatto che qualcuno che vendeva corsi online aveva effettivamente sulla pagina il logo di **Facebook, Twitter, ecc**.
 
@@ -72,7 +72,7 @@ Inoltre visto che qualsiasi corso sul marketing che possiate trovare su Udemy o 
 
 ## Una questione di target
 
-Un ultimo punto rimane la questione dello stile dei siti. Certo, come ho spiegato prima lo stile si protrae da anni per una questione di **copia-incolla**, ma in realtà *potrebbe* esserci dietro anche una questione di **target**.
+Un ultimo punto rimane la questione dello stile dei siti. Certo, come ho spiegato prima lo stile si protrae da anni per una questione di **copia-incolla**, ma in realtà _potrebbe_ esserci dietro anche una questione di **target**.
 
 Se dovessi descrivere lo stile delle landing dei corsi online, lo descriverei sicuramente come **datato**, che ricorda le grafiche delle **televendite** di decine di anni fa.
 
@@ -80,6 +80,6 @@ Eppure la cosa è strana, perché buona parte di questi video corsi vengono vend
 
 Probabilmente il motivo risiede nel target: infatti, malgrado questi corsi vengano spesso proposti da ragazzi giovani, il target non lo è affatto, anzi spesso si trattano di persone con un'età superiore ai 40 anni, spesso persino **più vicina ai 50 anni**, che per una questione di abitudine trovano lo stile grafico più vicino a quello dei loro tempi.
 
-La nostra mente man mano che cresciamo diventa sempre meno elastica ed aperta al *nuovo*, quindi probabilmente per un target di quell'età, **risulterà più accattivante lo stile di 20 anni fa**, che lo stile odierno.
+La nostra mente man mano che cresciamo diventa sempre meno elastica ed aperta al _nuovo_, quindi probabilmente per un target di quell'età, **risulterà più accattivante lo stile di 20 anni fa**, che lo stile odierno.
 
 ![chef tony](./chef-tony.gif)

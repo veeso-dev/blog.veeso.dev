@@ -14,7 +14,7 @@ Ieri stavo scorrendo il mio feed su LinkedIn, una cosa che di solito faccio una 
 ![post-source](./post-source.webp)
 
 Nell'immagine sopra puoi vedere un grafico che mostra la distribuzione di Bitcoin tra diversi enti.
-Il grafico mostra che il **57%**  dei Bitcoin è posseduto da *individui*. È una buona notizia, no? Significa che Bitcoin è decentralizzato, giusto?
+Il grafico mostra che il **57%** dei Bitcoin è posseduto da _individui_. È una buona notizia, no? Significa che Bitcoin è decentralizzato, giusto?
 Beh, non è una bugia, ma non è nemmeno la verità. È solo un modo conveniente per rappresentare i dati e farli sembrare decentralizzati.
 
 Vuoi vedere i dati reali?
@@ -32,21 +32,21 @@ Di un totale di 21 milioni, dobbiamo sottrarre 1,2 milioni di Bitcoin che devono
 
 Quindi, sui 19,8 milioni di Bitcoin, abbiamo:
 
-- **1 milione**  posseduti/persi da **Satoshi Nakamoto**
-- **5 milioni**  che probabilmente sono persi per sempre o posseduti anch'essi da Nakamoto
-- **2,4 milioni**  posseduti da **Humpback**  (più di 5k BTC) ed exchange. Questi sono in mano a pochissime persone.
-- **3,4 milioni**  posseduti da **whales**  (più di 1k BTC)
-- **1,2 milioni**  posseduti da **sharks**  (più di 500 BTC)
-- **2,2 milioni**  posseduti da **dolphins**  (più di 100 BTC)
-- **0,8 milioni**  posseduti da **fish**  (più di 50 BTC)
-- **1,6 milioni**  posseduti da **octopus**  (più di 1 BTC)
-- **1,6 milioni**  posseduti da **crabs**  (più di 1 BTC)
-- **1,8 milioni**  posseduti dai **miner**
-- **0,9 milioni**  posseduti da persone **normali**  (shrimps), che possiedono meno di 1 BTC.
+- **1 milione** posseduti/persi da **Satoshi Nakamoto**
+- **5 milioni** che probabilmente sono persi per sempre o posseduti anch'essi da Nakamoto
+- **2,4 milioni** posseduti da **Humpback** (più di 5k BTC) ed exchange. Questi sono in mano a pochissime persone.
+- **3,4 milioni** posseduti da **whales** (più di 1k BTC)
+- **1,2 milioni** posseduti da **sharks** (più di 500 BTC)
+- **2,2 milioni** posseduti da **dolphins** (più di 100 BTC)
+- **0,8 milioni** posseduti da **fish** (più di 50 BTC)
+- **1,6 milioni** posseduti da **octopus** (più di 1 BTC)
+- **1,6 milioni** posseduti da **crabs** (più di 1 BTC)
+- **1,8 milioni** posseduti dai **miner**
+- **0,9 milioni** posseduti da persone **normali** (shrimps), che possiedono meno di 1 BTC.
 
-Detto ciò, possiamo vedere che la distribuzione è molto centralizzata, con la maggior parte dell'offerta in mano a pochi enti, mentre per il resto delle persone, anche includendo i crabs, abbiamo solo circa l'**11%**  dell'offerta totale. Denaro del popolo, vero?
+Detto ciò, possiamo vedere che la distribuzione è molto centralizzata, con la maggior parte dell'offerta in mano a pochi enti, mentre per il resto delle persone, anche includendo i crabs, abbiamo solo circa l'**11%** dell'offerta totale. Denaro del popolo, vero?
 Okay, potresti pensare che sia lo stesso con il denaro FIAT.
-Beh, mentre è vero che l'1% della popolazione possiede il 50% della ricchezza, la differenza è che con Bitcoin la distribuzione è ancora più centralizzata. Si stima che il **90% dei Bitcoin**  sia posseduto da circa **50k persone** .Per fare un confronto, l'**1% della popolazione mondiale**  è circa **80 milioni**  di persone.
+Beh, mentre è vero che l'1% della popolazione possiede il 50% della ricchezza, la differenza è che con Bitcoin la distribuzione è ancora più centralizzata. Si stima che il **90% dei Bitcoin** sia posseduto da circa **50k persone** .Per fare un confronto, l'**1% della popolazione mondiale** è circa **80 milioni** di persone.
 
 ## E i miner?
 
@@ -65,7 +65,7 @@ Infatti, la distribuzione dei miner non è nemmeno lontanamente diffusa nel mond
 C'è stato anche un periodo, un paio di anni fa, in cui più del 51% dei miner si trovava in Cina, una nazione non proprio famosa per la sua democrazia. Se il governo cinese avesse deciso di prendere il controllo della rete con un attacco al 51%, avrebbe potuto farlo.
 
 Inoltre, ci sono molte preoccupazioni riguardo alla decentralizzazione a causa della difficoltà di entrare nella rete di mining. La rete di mining è controllata da pochi enti che hanno il denaro per comprare l'hardware e l'elettricità per minare Bitcoin.
-Il mining è **insostenibile** , **costoso**  e **inaccessibile**  per la maggior parte delle persone.
+Il mining è **insostenibile** , **costoso** e **inaccessibile** per la maggior parte delle persone.
 
 ### Ma abbiamo i validatori però
 

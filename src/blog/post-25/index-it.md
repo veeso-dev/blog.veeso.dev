@@ -39,9 +39,9 @@ Ma come funziona?
 
 1. Per ogni vendita di proprietà facciamo firmare a **agenzia**, **compratore** e **venditore** un contratto di vendita che contiene le seguenti informazioni, concordate dalle parti:
 
-    - prezzo di una rata
-    - numero di rate (installments)
-    - data di scadenza del contratto
+   - prezzo di una rata
+   - numero di rate (installments)
+   - data di scadenza del contratto
 
 2. La nostra DAPP (un'applicazione che opera sulla blockchain) registra il contratto di vendita nel registro e genera un **NFT**, chiamato **Deferred**, per ogni rata. Tutti gli NFT generati vengono assegnati al **venditore** della proprietà.
 3. Il **compratore** acquista periodicamente il prossimo token con USDT attraverso il **Marketplace**.
@@ -54,8 +54,8 @@ Vediamolo!
 
 Nell'ambiente di **EKOKE DAO** esistono **3 diversi token**:
 
-- **Deferred**: Deferred è un token NFT (**ERC721**). **Ogni token** rappresenta una **rata** (*installment*) di un contratto di vendita. I token Deferred vengono **generati** quando un **contratto di vendita viene creato**. Esiste un token per ogni rata e ha un prezzo fisso espresso in dollari. Inizialmente sono di proprietà del venditore dell'immobile e devono essere acquistati dal compratore per pagare il venditore.
-- **EKOKE**: EKOKE è un token fungibile (**ERC20**). Viene utilizzato come ricompensa per gli investitori che *prestano* denaro al compratore. La quantità totale di EKOKE è fissata a **8,880,101.01** token e la ricompensa per gli investitori diminuirà automaticamente nel tempo seguendo un algoritmo predefinito.
+- **Deferred**: Deferred è un token NFT (**ERC721**). **Ogni token** rappresenta una **rata** (_installment_) di un contratto di vendita. I token Deferred vengono **generati** quando un **contratto di vendita viene creato**. Esiste un token per ogni rata e ha un prezzo fisso espresso in dollari. Inizialmente sono di proprietà del venditore dell'immobile e devono essere acquistati dal compratore per pagare il venditore.
+- **EKOKE**: EKOKE è un token fungibile (**ERC20**). Viene utilizzato come ricompensa per gli investitori che _prestano_ denaro al compratore. La quantità totale di EKOKE è fissata a **8,880,101.01** token e la ricompensa per gli investitori diminuirà automaticamente nel tempo seguendo un algoritmo predefinito.
 - **EKOGOV**: Il token per la governance di EKOKE DAO.
 
 > Nota: il smart contract di Deferred è condiviso tra tutti i contratti di vendita, quindi non c'è uno smart contract separato per ogni vendita.
@@ -64,7 +64,7 @@ Nell'ambiente di **EKOKE DAO** esistono **3 diversi token**:
 
 Tutti gli NFT, fintanto che sono ancora di proprietà del **venditore**, possono essere acquistati da **chiunque** sul marketplace. Ma perché?
 
-Abbiamo detto che gli **investitori** (la terza parte che acquista l'NFT) possono *prestare* denaro al compratore. Questo avviene acquistando il token **Deferred** sul Marketplace.
+Abbiamo detto che gli **investitori** (la terza parte che acquista l'NFT) possono _prestare_ denaro al compratore. Questo avviene acquistando il token **Deferred** sul Marketplace.
 
 In questo momento gli **investitori** ricevono immediatamente una ricompensa in **token EKOKE ERC20**.
 
