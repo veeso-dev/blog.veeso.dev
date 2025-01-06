@@ -1,12 +1,12 @@
 ---
-date: '2025-01-06 10:15:00'
+date: '2025-01-06 13:15:00'
 slug: 'a-journey-into-file-transfer-protocols-in-rust'
 title: 'A journey into File Transfer Protocols in Rust'
 subtitle: 'How basically I became a file transfer protocol expert in Rust'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
-draft: true
+draft: false
 ---
 
 ## How it started
