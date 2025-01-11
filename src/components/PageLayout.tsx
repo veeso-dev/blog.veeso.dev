@@ -30,7 +30,7 @@ export const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
 
   return (
     <IntlProvider locale={language} messages={TRANSLATIONS[language]}>
-      <main className="bg-brand flex flex-col items-center justify-center py-4 sm:py-0">
+      <main className="bg-page dark:bg-brand flex flex-col items-center justify-center py-4 sm:py-0">
         <Container.FlexCols className="items-center bg-white dark:bg-brand text-brand dark:text-white rounded shadow-xl dark:shadow-none justify-center w-fit sm:w-full sm:rounded-none">
           <Container.Container className="m-4 max-w-screen-md w-auto sm:max-w-full p-2">
             <Topbar />

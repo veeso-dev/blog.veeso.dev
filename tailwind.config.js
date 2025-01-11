@@ -13,6 +13,7 @@ module.exports = {
     extend: {
       colors: {
         brand: '#31363b',
+        page: '#f5f5f5',
       },
       fontSize: {
         xl: '1.5rem',
