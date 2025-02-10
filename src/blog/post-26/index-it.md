@@ -22,7 +22,7 @@ Vuoi vedere i dati reali?
 ## Distribuzione dei token di Bitcoin
 
 Ecco qui, questa è la vera distribuzione dell'offerta di Bitcoin in base alla quantità di token posseduti da ciascun ente:
-![real-distribution](.btc-supply-distribution.webp)
+![real-distribution](./btc-supply-distribution.webp)
 
 (Dati da [statista.com](https://www.statista.com/) ).
 
@@ -58,7 +58,7 @@ Beh, non proprio. I miner sono quelli che mantengono la rete sicura, ma non sono
 
 Infatti, la distribuzione dei miner non è nemmeno lontanamente diffusa nel mondo o tra individui. La maggior parte dei miner si trova negli Stati Uniti e in Cina, e la maggior parte della potenza di mining è in mano a pochi enti.
 
-![miners distribution](https://chatgpt.com/c/miners-distribution.webp)
+![miners distribution](./miners-distribution.webp)
 
 (Dati da [statista.com](https://www.statista.com/statistics/1200477/bitcoin-mining-by-country/) ).
 
