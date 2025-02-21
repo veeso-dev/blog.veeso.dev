@@ -165,6 +165,12 @@ Attualmente la difficoltà del bitcoin è 10, il che significa che i primi 10 by
 
 Ma qualcuno ce l'ha fatta in realtà. Secondo alcune statistiche i lottery miner avrebbero vinto circa un blocco al mese nel 2023.
 
+## Pool privata
+
+Nel caso volessi utilizzare una pool tua, puoi leggere questo articolo per vedere come fare:
+
+[Come configurare un pool di mining Bitcoin in solitaria](https://blog.veeso.dev/blog/it/come-configurare-un-pool-di-mining-bitcoin-in-solitaria/)
+
 ## Conclusioni
 
 Penso che il lottery-mining nelle public pool siano una buona pratica per tentare di mantenere decentralizzato il tutto e più persone dovrebbero entrare nel giro. Certo, ora è un hashrate trascurabile, ma magari nel futuro con più persone che tirano su un miner, saremmo capaci di vincere più blocchi.

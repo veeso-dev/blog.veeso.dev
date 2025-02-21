@@ -156,6 +156,12 @@ Currently the bitcoin difficulty is 10, which means the first 10 bytes of the ge
 
 But someone actually did it. According to some stats, in 2023, one block per month was from a solo-miner.
 
+## Private Pool
+
+In case you want to setup your own private pool, you can follow this guide:
+
+[How to setup a Bitcoin Solo Mining Pool](https://blog.veeso.dev/blog/en/how-to-setup-a-bitcoin-solo-mining-pool/)
+
 ## Conclusions
 
 I think lottery-mining in public pool is a good practice to try to keep it more decentralized, and more people should join it.
