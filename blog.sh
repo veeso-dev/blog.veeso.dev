@@ -52,7 +52,7 @@ if [ -z "$NODE" ]; then
   export NVM_DIR="/root/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-  nvm use 20
+  nvm use 22
 fi
 
 case "$1" in
