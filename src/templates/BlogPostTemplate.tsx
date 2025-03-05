@@ -16,18 +16,20 @@ import X from '../components/reusable/svg/X';
 import { FormattedDate } from 'react-intl';
 import RelatedPosts from '../components/RelatedPosts';
 
-const getRelatedPosts = async (lang: string, tag: string): Promise<any[]> => {
-  const response = await fetch('/__graphql', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      query: relatedPostsQuery,
-      variables: { lang, tag },
-    }),
-  });
+const getRelatedPosts = (
+  data: any,
+  id: string,
+  lang: string,
+  tag: string,
+): any[] => {
+  const related = data.relatedPosts.nodes.filter(
+    (item: any) =>
+      item.id !== id &&
+      item.frontmatter.lang === lang &&
+      item.frontmatter.tag === tag,
+  );
 
-  const { data } = await response.json();
-  return data.relatedPosts.nodes;
+  return related.sort(() => Math.random() - 0.5).slice(0, 2);
 };
 
 const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
@@ -42,19 +44,14 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
     : null;
   const fill = isThemeLight() ? '#31363b' : '#fff';
 
+  const id = data.mdx?.id ?? '';
   const lang = data.mdx?.frontmatter?.lang ?? 'en';
   const tag = data.mdx?.frontmatter?.tag ?? undefined;
 
   React.useEffect(() => {
     if (tag) {
-      getRelatedPosts(lang, tag)
-        .then((posts) => {
-          // take up to 3 random posts
-          const randomPosts = posts.sort(() => Math.random() - 0.5).slice(0, 2);
-
-          setRelatedPosts(randomPosts);
-        })
-        .catch((e) => console.error(e));
+      const related = getRelatedPosts(data, id, lang, tag);
+      setRelatedPosts(related);
     }
   }, [lang, tag]);
 
@@ -126,6 +123,7 @@ export default BlogPostTemplate;
 export const query = graphql`
   query BlogPost($id: String!) {
     mdx(id: { eq: $id }) {
+      id
       excerpt(pruneLength: 160)
       body
       frontmatter {
@@ -142,18 +140,11 @@ export const query = graphql`
         }
       }
     }
-  }
-`;
 
-const relatedPostsQuery = `
-  query RelatedPosts($lang: String!, $tag: String!) {
-    relatedPosts: allMdx(
-      filter: { frontmatter: { lang: { eq: $lang }, tag: { eq: $tag } } }
-    ) {
+    relatedPosts: allMdx {
       nodes {
         id
         excerpt(pruneLength: 128)
-        body
         frontmatter {
           slug
           title
@@ -166,9 +157,7 @@ const relatedPostsQuery = `
             }
           }
           lang
-        }
-        internal {
-          contentFilePath
+          tag
         }
       }
     }
