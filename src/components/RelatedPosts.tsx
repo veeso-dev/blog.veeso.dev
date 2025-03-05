@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Container from './reusable/Container';
 import Paragraph from './reusable/Paragraph';
 import RichTextFormattedMessage from './reusable/RichTextFormattedMessage';
+import { getPostRoute } from '../utils/route';
 
 interface Props {
   posts: any[];
@@ -40,29 +41,31 @@ const PostCard = ({ post }: { post: any }) => {
   const title = post.frontmatter?.title;
 
   return (
-    <Container.Card className="!px-0 !p-0 flex-1 h-full w-auto" hoverScale>
-      {featuredImage && (
-        <div className="rounded-t-lg">
-          <GatsbyImage
-            imgClassName="rounded-t-lg"
-            image={featuredImage}
-            alt=""
-            className="inset-0"
-          />
-        </div>
-      )}
-      <Container.Container className="pt-4 pb-6 px-6">
-        {title && (
-          <div>
-            <span className="text-md sm:text-lg py-2 dark:text-white text-brand font-normal">
-              {title}
-            </span>
+    <a href={getPostRoute(post.frontmatter?.lang, post.frontmatter?.slug)}>
+      <Container.Card className="!px-0 !p-0 flex-1 h-full w-auto" hoverScale>
+        {featuredImage && (
+          <div className="rounded-t-lg">
+            <GatsbyImage
+              imgClassName="rounded-t-lg"
+              image={featuredImage}
+              alt=""
+              className="inset-0"
+            />
           </div>
         )}
-        <Paragraph.Default className="text-sm sm:text-md py-2">
-          {post.excerpt}
-        </Paragraph.Default>
-      </Container.Container>
-    </Container.Card>
+        <Container.Container className="pt-4 pb-6 px-6">
+          {title && (
+            <div>
+              <span className="text-md sm:text-lg py-2 dark:text-white text-brand font-normal">
+                {title}
+              </span>
+            </div>
+          )}
+          <Paragraph.Default className="text-sm sm:text-md py-2">
+            {post.excerpt}
+          </Paragraph.Default>
+        </Container.Container>
+      </Container.Card>
+    </a>
   );
 };
