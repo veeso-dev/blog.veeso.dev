@@ -48,7 +48,30 @@ const FlexResponsiveRow = (props: React.HTMLProps<HTMLDivElement>) => {
   );
 };
 
+interface CardProps extends React.HTMLProps<HTMLDivElement> {
+  hoverScale?: boolean;
+}
+
+const Card = (props: CardProps) => (
+  <div
+    id={props.id}
+    ref={props.ref}
+    itemProp={props.itemProp}
+    itemScope={props.itemScope}
+    itemType={props.itemType}
+    onClick={props.onClick}
+    className={`${props.className} ${
+      props.hoverScale
+        ? 'transition-transform transform scale-100 hover:scale-105'
+        : ''
+    } p-6 bg-white dark:bg-brand border border-gray-200 rounded-lg shadow`}
+  >
+    {props.children}
+  </div>
+);
+
 export default {
+  Card,
   Container,
   Flex,
   FlexCols,

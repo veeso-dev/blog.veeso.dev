@@ -6,6 +6,7 @@ subtitle: "Let's see how to setup the tokio runtime to use only the configured c
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
+tag: rust
 ---
 
 There are several cases where applications are developed for extreme performance and choosing the cores to be used for an application is required. For instance we may want to reserve certain cores for some specific process, or we may want to chunk the server's cores based on the service.

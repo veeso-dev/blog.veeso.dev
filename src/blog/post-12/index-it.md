@@ -6,6 +6,7 @@ subtitle: "Come l'AI non ci sta rendendo migliori e come il 90% di esso è solo 
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
+tag: web
 ---
 
 ## Un breve riassunto di come l'IA ha preso il sopravvento

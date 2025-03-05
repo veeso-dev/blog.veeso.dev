@@ -6,6 +6,7 @@ subtitle: 'Why we all have been lied about Bitcoin'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
+tag: bitcoin
 ---
 
 ## Preamble

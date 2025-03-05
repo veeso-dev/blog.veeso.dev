@@ -6,6 +6,7 @@ subtitle: 'EKOKE DAO is going to replace the traditional bank mortgage with a su
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
+tag: web3
 ---
 
 ## Introduction

@@ -6,6 +6,7 @@ subtitle: 'Sembra facile, ma non lo è'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
+tag: rust
 ---
 
 ## Problemi semplici che richiedono soluzioni complesse

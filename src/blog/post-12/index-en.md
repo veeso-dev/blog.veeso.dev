@@ -6,6 +6,7 @@ subtitle: 'How AI is not improving our society and for the 90% is just a bubble'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
+tag: web
 ---
 
 ## A brief resume of how AI has taken over

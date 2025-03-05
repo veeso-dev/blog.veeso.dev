@@ -6,6 +6,7 @@ subtitle: 'The truth everybody tries to hide about Bitcoin decentralization'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
+tag: bitcoin
 ---
 
 ## Bitcoin is decentralized, right?

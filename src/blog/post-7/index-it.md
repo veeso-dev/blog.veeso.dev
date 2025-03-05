@@ -6,6 +6,7 @@ subtitle: 'e perché dovresti fare lo stesso'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
+tag: web
 ---
 
 ## Google Analytics è spesso sopravvalutato

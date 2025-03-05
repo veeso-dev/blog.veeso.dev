@@ -6,6 +6,7 @@ subtitle: 'Vediamo di fare chiarezza sugli Ethereum MEV bot una volta per tutte'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
+tag: scam
 ---
 
 Diversi mesi fa scrissi questo articolo: [L'affascinante truffa dei bot MEV su Ethereum](https://blog.veeso.dev/blog/it/the-fascinating-ethereum-mev-bot-scam/), in cui andavo a livello molto tecnico a smascherare una truffa che si ripete ormai da anni su social come X.com o YouTube e che consiste nel deploy di smart contract su Ethereum che una volta lanciati dovrebbero garantire entrate da capogiro al creatore dello smart contract.

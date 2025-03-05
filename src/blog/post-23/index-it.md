@@ -6,6 +6,7 @@ subtitle: 'Sono anni che ormai me lo chiedo, quindi ho deciso di trovare una ris
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
+tag: web
 ---
 
 Maestri della finanza, guru del mindset, ma anche insegnanti di lingue o musica, oggi il business dei videocorsi è in continua crescita. Quello dei videocorsi è un business con poche spese e incassi cospicui, che fanno sì che sia una delle attività col margine maggiore. I corsi li troviamo ovunque in giro per internet, in particolare sui social.

@@ -6,6 +6,7 @@ subtitle: 'come discover many brand new cool features'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
+tag: termscp
 ---
 
 ## It's been a long time

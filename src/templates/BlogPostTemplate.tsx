@@ -14,22 +14,58 @@ import RichTextFormattedMessage from '../components/reusable/RichTextFormattedMe
 import RLink from '../components/reusable/Link';
 import X from '../components/reusable/svg/X';
 import { FormattedDate } from 'react-intl';
+import RelatedPosts from '../components/RelatedPosts';
+
+const getRelatedPosts = async (lang: string, tag: string): Promise<any[]> => {
+  const response = await fetch('/__graphql', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      query: relatedPostsQuery,
+      variables: { lang, tag },
+    }),
+  });
+
+  const { data } = await response.json();
+  return data.relatedPosts.nodes;
+};
 
 const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
   data,
   children,
 }) => {
+  const [relatedPosts, setRelatedPosts] = React.useState<any[]>([]);
+
   const url = typeof window !== 'undefined' ? window.location.href : '';
   const featuredImage = data.mdx?.frontmatter?.featuredImage
     ? getImage(data.mdx.frontmatter.featuredImage.childImageSharp)
     : null;
   const fill = isThemeLight() ? '#31363b' : '#fff';
 
+  const lang = data.mdx?.frontmatter?.lang ?? 'en';
+  const tag = data.mdx?.frontmatter?.tag ?? undefined;
+
+  React.useEffect(() => {
+    if (tag) {
+      getRelatedPosts(lang, tag)
+        .then((posts) => {
+          // take up to 3 random posts
+          const randomPosts = posts.sort(() => Math.random() - 0.5).slice(0, 2);
+
+          setRelatedPosts(randomPosts);
+        })
+        .catch((e) => console.error(e));
+    }
+  }, [lang, tag]);
+
+  console.log(relatedPosts);
+
   return (
     <PageLayout
       image={featuredImage}
       title={data.mdx?.frontmatter?.title ?? undefined}
       subtitle={data.mdx?.frontmatter?.subtitle ?? undefined}
+      beforeFooter={relatedPosts && <RelatedPosts posts={relatedPosts} />}
     >
       <MainContent>
         <Container.FlexResponsiveRow className="items-center justify-between">
@@ -81,7 +117,6 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
               description={data.mdx?.excerpt ?? ''}
             />
           </Container.FlexResponsiveRow>
-          <Container.Container></Container.Container>
         </Container.FlexCols>
       </MainContent>
     </PageLayout>
@@ -101,10 +136,41 @@ export const query = graphql`
         subtitle
         date(formatString: "MMMM DD, YYYY")
         lang
+        tag
         featuredImage {
           childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH)
           }
+        }
+      }
+    }
+  }
+`;
+
+const relatedPostsQuery = `
+  query RelatedPosts($lang: String!, $tag: String!) {
+    relatedPosts: allMdx(
+      filter: { frontmatter: { lang: { eq: $lang }, tag: { eq: $tag } } }
+    ) {
+      nodes {
+        id
+        excerpt(pruneLength: 128)
+        body
+        frontmatter {
+          slug
+          title
+          subtitle
+          draft
+          date(formatString: "YYYY-MM-DD")
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData(layout: CONSTRAINED)
+            }
+          }
+          lang
+        }
+        internal {
+          contentFilePath
         }
       }
     }

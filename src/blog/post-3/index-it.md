@@ -6,6 +6,7 @@ subtitle: "Una riflessione su come siamo tutti parte del problema della sostenib
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
+tag: open-source
 ---
 
 ## Premessa

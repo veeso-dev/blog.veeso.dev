@@ -6,6 +6,7 @@ subtitle: 'Stanco di scrivere PHP tutto il giorno? Vorresti diventare un Rust de
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
+tag: rust
 ---
 
 Nel 2023 ho deciso di dimettermi dal mio lavoro in Prima per cominciare a lavorare come freelancer, con un focus rivolto verso lo sviluppo Rust ed solo in piccola parte verso lo sviluppo Web. Attualmente posso affermare di lavorare **per il 90/95% del mio tempo su progetti Rust come freelance**. Ho però potuto notare come solo una minima parte, quasi nessuno, lavora come freelance in Rust, ed è davvero un peccato! Ma vediamo insieme perché.

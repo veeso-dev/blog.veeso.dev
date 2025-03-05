@@ -6,6 +6,7 @@ subtitle: 'Vediamo insieme come configurare i core della cpu da utilizzare in un
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
+tag: rust
 ---
 
 Ci sono diversi casi in cui applicazioni che necessitano di performance estreme e si rende quindi necessario configurare esattamente come distribuire il carico di lavoro della CPU sui vari core per i vari processi.

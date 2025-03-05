@@ -103,7 +103,7 @@ const PostLink = (props: React.HTMLProps<HTMLAnchorElement>) => (
 
 const Code = (props: React.HTMLProps<HTMLSpanElement>) => (
   <code
-    className="text-red-400 dark:text-red-300 bg-gray-100 dark:bg-gray-700 px-2"
+    className="text-red-400 dark:text-red-300 bg-gray-100 dark:bg-gray-700 px-2 whitespace-pre-wrap overflow-x-hidden break-words"
     {...props}
   >
     {props.children}

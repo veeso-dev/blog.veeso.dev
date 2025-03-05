@@ -6,6 +6,7 @@ subtitle: 'I literally got mad with react-markdown to make it work with Parcel. 
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
+tag: react
 ---
 
 ## Audience

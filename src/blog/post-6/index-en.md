@@ -6,6 +6,7 @@ subtitle: 'Maximize your Lighthouse score by migrating your web page to Gatsby'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
+tag: web
 ---
 
 ## Why to migrate your ReactJS frontend to Gatsby

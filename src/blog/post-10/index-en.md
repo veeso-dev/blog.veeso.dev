@@ -6,6 +6,7 @@ subtitle: 'What do you need to get started? Why is it important? Can you actuall
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
+tag: bitcoin
 ---
 
 ## What is the Lottery Mining

@@ -6,6 +6,7 @@ subtitle: 'we have multi-host transfers baby'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
+tag: termscp
 ---
 
 ## What's new

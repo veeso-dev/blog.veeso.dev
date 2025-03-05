@@ -7,4 +7,5 @@ author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
 draft: true
+tag: open-source
 ---

@@ -6,6 +6,7 @@ subtitle: 'An overview of this scam contract code'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
+tag: scam
 ---
 
 ## What is a MEV Bot

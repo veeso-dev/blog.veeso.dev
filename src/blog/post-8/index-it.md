@@ -6,6 +6,7 @@ subtitle: 'Triste cronaca di una truffa avvenuta ad un cliente e analisi del cod
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
+tag: scam
 ---
 
 ## Cosa sono i Bot MEV

@@ -6,6 +6,7 @@ subtitle: 'with many new features'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
+tag: termscp
 ---
 
 ## What's new

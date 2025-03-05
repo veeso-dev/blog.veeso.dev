@@ -182,6 +182,7 @@ const config: GatsbyConfig = {
                       date
                       slug
                       lang
+                      tag
                       draft
                       featuredImage {
                         childImageSharp {
@@ -246,6 +247,7 @@ const config: GatsbyConfig = {
                       date
                       slug
                       lang
+                      tag
                       draft
                       featuredImage {
                         childImageSharp {

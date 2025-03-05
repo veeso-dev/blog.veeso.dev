@@ -6,6 +6,7 @@ subtitle: 'Massimizza il tuo punteggio su Lighthouse migrando il tuo sito a Gats
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
+tag: web
 ---
 
 ## Perché migrare il tuo frontend ReactJS a Gatsby

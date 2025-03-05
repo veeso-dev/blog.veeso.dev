@@ -7,6 +7,7 @@ author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
 draft: false
+tag: rust
 ---
 
 ## How it started

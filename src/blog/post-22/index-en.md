@@ -6,6 +6,7 @@ subtitle: 'Let me clarify once for all why Ethereum MEV bots are a scam'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
+tag: scam
 ---
 
 Several months ago, I wrote this article: [The Fascinating Ethereum MEV Bot Scam](https://blog.veeso.dev/blog/en/the-fascinating-ethereum-mev-bot-scam/), where I dived deep into the technical aspects of a scam that has been circulating for years on platforms like X.com and YouTube. These scams revolve around deploying smart contracts on Ethereum, which are advertised as tools to generate astronomical profits for their users.

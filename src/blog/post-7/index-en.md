@@ -6,6 +6,7 @@ subtitle: 'And why you should do the same'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
+tag: web
 ---
 
 ## Google Analytics is mostly overrated

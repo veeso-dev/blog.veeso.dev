@@ -6,6 +6,7 @@ subtitle: 'Meme o realtà? Si può veramente guadagnare con questo metodo?'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
+tag: scam
 ---
 
 ## Che cos'è il Young Indian Method?

@@ -6,6 +6,7 @@ subtitle: "Well it looks easy, but it's not"
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
+tag: rust
 ---
 
 ## Simple problems that require complex solutions

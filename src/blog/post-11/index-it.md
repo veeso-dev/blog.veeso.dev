@@ -6,6 +6,7 @@ subtitle: "Perché l'utopia Bitcoin è una balla"
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
+tag: bitcoin
 ---
 
 ## Premessa

@@ -6,6 +6,7 @@ subtitle: "But you can't live without it anymore"
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
+tag: rust
 ---
 
 ## We are too much into async, but we can't go back

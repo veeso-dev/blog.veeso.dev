@@ -6,6 +6,7 @@ subtitle: 'Are you tired of PHP and you want to be a 100% Rust developer? You sh
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
+tag: rust
 ---
 
 In 2023 I've decided to resign from my job at Prima to start working as a freelancer, with a particular focus on Rust, along with a minor web development. Currently I can affirm that for 90/95% of the time I work on Rust projects as a freelancer and I've noticed that only a minimum part of people, almost no one, works as a freelancer in Rust development, which is really a pity in my opinion, and now I'll explain you the reasons.

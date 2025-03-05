@@ -6,6 +6,7 @@ subtitle: "A reflection on how we're all part of the problem in open-source"
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
+tag: open-source
 ---
 
 ## Preamble

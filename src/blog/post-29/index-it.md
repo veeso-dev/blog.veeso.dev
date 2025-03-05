@@ -7,6 +7,7 @@ author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
 draft: false
+tag: university
 ---
 
 Tutti avremo visto almeno una volta sui social le pubblicità alle **università online**, da **Unipegaso**, a **e-Campus**, a **Uninettuno** e **Unimercatorum** e sono

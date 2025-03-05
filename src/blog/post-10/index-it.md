@@ -6,6 +6,7 @@ subtitle: 'Cosa ti serve per cominciare? Perché fare Lottery Mining? Si può gu
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
+tag: bitcoin
 ---
 
 ## Cos'è il Lottery Mining

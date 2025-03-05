@@ -6,6 +6,7 @@ subtitle: 'As an experienced open-source developer, I want to tell you why you s
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
+tag: open-source
 ---
 
 ## Preamble

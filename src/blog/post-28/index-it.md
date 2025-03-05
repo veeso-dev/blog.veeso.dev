@@ -7,6 +7,7 @@ author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
 draft: false
+tag: bitcoin
 ---
 
 ## A proposito del lottery mining

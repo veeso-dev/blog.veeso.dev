@@ -6,6 +6,7 @@ subtitle: 'A quick investigation on the recursion limit exceeded issue at build 
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
+tag: rust
 ---
 
 ## A bit of context

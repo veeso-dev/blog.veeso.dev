@@ -6,6 +6,7 @@ subtitle: 'con EKOKE DAO vogliamo sostituire il tradizionale mutuo bancario con 
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
+tag: web3
 ---
 
 ## Introduzione

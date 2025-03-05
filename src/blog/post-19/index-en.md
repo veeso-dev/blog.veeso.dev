@@ -6,6 +6,7 @@ subtitle: 'What is the best approach for achieving conditional generics in Rust?
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
+tag: rust
 ---
 
 ## Case scenario
