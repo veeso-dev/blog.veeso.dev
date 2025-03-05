@@ -26,8 +26,6 @@ const RelatedPosts = ({ posts }: Props) => (
 export default RelatedPosts;
 
 const PostCard = ({ post }: { post: any }) => {
-  console.log(post);
-
   const featuredImage = post.frontmatter?.featuredImage
     ? getImage(post.frontmatter.featuredImage.childImageSharp)
     : null;
@@ -46,7 +44,7 @@ const PostCard = ({ post }: { post: any }) => {
           />
         </div>
       )}
-      <Container.Container className="pb-6 px-6">
+      <Container.Container className="pt-4 pb-6 px-6">
         {title && (
           <div>
             <span className="text-md sm:text-lg py-2 dark:text-white text-brand font-normal">

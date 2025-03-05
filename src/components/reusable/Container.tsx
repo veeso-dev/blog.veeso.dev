@@ -64,7 +64,7 @@ const Card = (props: CardProps) => (
       props.hoverScale
         ? 'transition-transform transform scale-100 hover:scale-105'
         : ''
-    } p-6 bg-white dark:bg-brand border border-gray-200 rounded-lg shadow`}
+    } p-6 bg-white dark:bg-brand border border-gray-200 dark:border-gray-800 rounded-lg shadow`}
   >
     {props.children}
   </div>

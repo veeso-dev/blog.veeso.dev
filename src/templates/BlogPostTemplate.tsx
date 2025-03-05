@@ -58,8 +58,6 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
     }
   }, [lang, tag]);
 
-  console.log(relatedPosts);
-
   return (
     <PageLayout
       image={featuredImage}
