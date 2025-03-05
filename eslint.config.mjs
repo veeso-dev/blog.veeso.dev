@@ -24,7 +24,8 @@ const config = {
     '@typescript-eslint/no-explicit-any': 'off',
   },
   files: ['./src/**/*.js', './src/**/*.ts', './src/**/*.jsx', './src/**/*.tsx'],
-  ignores: ['node_modules/**', 'dist/**', '.cache/**'],
+  ignores: ['node_modules', 'dist', '.cache'],
+  ignorePatterns: ['node_modules/**', 'dist/**', '.cache/**'],
 };
 
 export default config;
