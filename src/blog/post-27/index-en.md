@@ -250,7 +250,7 @@ file transfers using SCP work.
 So the entire library is execute this shell command and parse the output. Probably this one was the hardest to implement,
 but it works somehow.
 
-BIG BRAINS
+![big-brain](./big-brain.webp)
 
 ### FTP
 
@@ -271,7 +271,7 @@ the audit the original ftp library **unsafe** and suppaftp has raised as the sta
 
 Suppaftp has also recently **reached 1 Million of downloads**, so it's been a great achievement for my open-source career.
 
-ELON MUSK GIF
+![elon-musk](./elon-musk.gif)
 
 ### SMB
 
@@ -285,7 +285,7 @@ a SMB share like it was a file on Windows.
 If you're interested in accessing SMB shares on Windows with Rust,
 you can check this article: [How to access an SMB share with Rust on Windows](https://blog.veeso.dev/blog/en/how-to-access-an-smb-share-with-rust-on-windows/) from my blog.
 
-VIOLIN FEELS GOOD
+![violin](./violin.webp)
 
 #### SMB for Linux/MacOs
 
