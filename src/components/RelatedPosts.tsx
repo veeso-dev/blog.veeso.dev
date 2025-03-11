@@ -5,6 +5,8 @@ import Container from './reusable/Container';
 import Paragraph from './reusable/Paragraph';
 import RichTextFormattedMessage from './reusable/RichTextFormattedMessage';
 import { getPostRoute } from '../utils/route';
+import { pushClickRelatedArticle } from '../utils/analytics';
+import { Link } from 'gatsby';
 
 interface Props {
   posts: any[];
@@ -40,8 +42,15 @@ const PostCard = ({ post }: { post: any }) => {
 
   const title = post.frontmatter?.title;
 
+  const onNavigate = () => {
+    pushClickRelatedArticle(title);
+  };
+
   return (
-    <a href={getPostRoute(post.frontmatter?.lang, post.frontmatter?.slug)}>
+    <Link
+      onClick={onNavigate}
+      to={getPostRoute(post.frontmatter?.lang, post.frontmatter?.slug)}
+    >
       <Container.Card className="!px-0 !p-0 flex-1 h-full w-auto" hoverScale>
         {featuredImage && (
           <div className="rounded-t-lg">
@@ -66,6 +75,6 @@ const PostCard = ({ post }: { post: any }) => {
           </Paragraph.Default>
         </Container.Container>
       </Container.Card>
-    </a>
+    </Link>
   );
 };

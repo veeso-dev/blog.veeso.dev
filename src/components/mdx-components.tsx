@@ -8,6 +8,7 @@ import Paragraph from './reusable/Paragraph';
 import List from './reusable/List';
 import Link from './reusable/Link';
 import { Theme, getTheme } from '../utils/utils';
+import { pushCopyCodeEvent } from '../utils/analytics';
 
 const Blockquote = (props: React.HTMLProps<HTMLQuoteElement>) => (
   <blockquote className="text-gray-500 border-l-4 m-4 pl-4" {...props}>
@@ -36,6 +37,7 @@ const PreCopyButton = (props: PreCopyButtonProps) => {
 
     navigator.clipboard.writeText(props.content).then(() => {
       setCopied(true);
+      pushCopyCodeEvent(props.content);
     });
   };
 

@@ -2596,6 +2596,11 @@
   resolved "https://registry.yarnpkg.com/@types/tmp/-/tmp-0.0.33.tgz#1073c4bc824754ae3d10cfab88ab0237ba964e4d"
   integrity sha512-gVC1InwyVrO326wbBZw+AO3u2vRXz/iRWq9jYhpG4W8LXyIgDv3ZmcLQ5Q4Gs+gFMyqx+viFoFT+l3p61QFCmQ==
 
+"@types/umami-browser@^2.13.0":
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/@types/umami-browser/-/umami-browser-2.13.0.tgz#8d867d245d5dc7c335a1fef65f2a83bf64b840cb"
+  integrity sha512-kKIrJk1REFefrIOrSeJAy9dMEuvalcc4R7bz8Di1gXLJwBu+cEk0XBzYSy0Q0uWDJERsn8oHJv5uUTExQRqdKw==
+
 "@types/unist@*", "@types/unist@^2.0.0", "@types/unist@^2.0.2", "@types/unist@^2.0.3":
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.6.tgz#250a7b16c3b91f672a24552ec64678eeb1d3a08d"

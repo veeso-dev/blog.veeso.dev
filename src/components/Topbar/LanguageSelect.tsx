@@ -8,6 +8,7 @@ import {
   setCookieLanguage,
 } from '../../utils/locale';
 import Select from '../reusable/Select';
+import { pushLanguageChange } from '../../utils/analytics';
 
 const LanguageSelect = () => {
   const [language, setLanguage] = React.useState(DEFAULT_LANGUAGE);
@@ -19,6 +20,7 @@ const LanguageSelect = () => {
   const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setLanguage(e.target.value);
     setCookieLanguage(e.target.value as Language);
+    pushLanguageChange(e.target.value);
     setTimeout(() => {
       window.location.href = '/';
     }, 500);

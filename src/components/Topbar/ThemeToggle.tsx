@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Sun, Moon } from 'react-feather';
 import { Theme, getTheme, setTheme } from '../../utils/utils';
 import Link from '../reusable/Link';
+import { pushThemeChange } from '../../utils/analytics';
 
 const ThemeToggle = () => {
   const [theme, setStateTheme] = React.useState(getTheme());
@@ -11,7 +12,9 @@ const ThemeToggle = () => {
   }, [theme]);
 
   const onThemeToggle = () => {
-    setStateTheme(theme === Theme.DARK ? Theme.LIGHT : Theme.DARK);
+    const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
+    setStateTheme(newTheme);
+    pushThemeChange(newTheme === Theme.DARK ? 'dark' : 'light');
   };
 
   const icon = theme === Theme.DARK ? <Moon /> : <Sun />;
