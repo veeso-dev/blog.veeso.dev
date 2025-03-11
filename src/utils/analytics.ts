@@ -8,7 +8,7 @@ const pushEvent = (eventName: string, parameters: any) => {
 
   if (canUseUmami) {
     try {
-      console.log(window.umami);
+      console.log(eventName, parameters);
       window.umami.track(eventName, parameters);
     } catch (e) {
       console.error(`failed to track ${eventName}: ${e}`);
