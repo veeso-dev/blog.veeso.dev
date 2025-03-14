@@ -73,19 +73,21 @@ const Pre = (props: React.HTMLProps<HTMLPreElement>) => {
   return (
     <Highlight code={code} language={lang} theme={codeTheme}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre
-          className={`${className} overflow-x-auto w-full relative mb-4`}
-          style={{ ...style, padding: '20px' }}
-        >
-          <PreCopyButton content={code} />
-          {tokens.map((line, i) => (
-            <div key={i} {...getLineProps({ line, key: i })}>
-              {line.map((token, key) => (
-                <span key={key} {...getTokenProps({ token, key })} />
-              ))}
-            </div>
-          ))}
-        </pre>
+        <div className="overflow-auto box-border w-full min-w-full">
+          <pre
+            className={`${className} overflow-auto w-fit min-w-full relative mb-4 p-[20px]`}
+            style={{ ...style }}
+          >
+            <PreCopyButton content={code} />
+            {tokens.map((line, i) => (
+              <div key={i} {...getLineProps({ line, key: i })}>
+                {line.map((token, key) => (
+                  <span key={key} {...getTokenProps({ token, key })} />
+                ))}
+              </div>
+            ))}
+          </pre>
+        </div>
       )}
     </Highlight>
   );
