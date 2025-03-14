@@ -7,7 +7,7 @@ import Heading from './reusable/Heading';
 import Footer from './Footer';
 import Topbar from './Topbar';
 import Container from './reusable/Container';
-import { getTheme, setTheme } from '../utils/utils';
+import AppContextProvider from './AppContext';
 
 interface PageLayoutProps {
   image?: IGatsbyImageData | null;
@@ -23,53 +23,50 @@ export const PageLayout: React.FC<React.PropsWithChildren<PageLayoutProps>> = ({
   subtitle,
   beforeFooter,
 }) => {
-  // on visible, init theme
-  React.useEffect(() => {
-    setTheme(getTheme());
-  }, []);
-
   const language = getNavigatorLanguage();
 
   return (
     <IntlProvider locale={language} messages={TRANSLATIONS[language]}>
-      <main>
-        <div className="bg-page dark:bg-zinc-900 flex flex-col items-center justify-center py-4 sm:py-0">
-          <Container.FlexCols className="items-center bg-white dark:bg-brand text-brand dark:text-white rounded shadow-xl dark:shadow-none justify-center w-fit sm:w-full sm:rounded-none">
-            <Container.Container className="m-4 max-w-screen-md w-auto sm:max-w-full p-2">
-              <Topbar />
-              {image && (
-                <div>
-                  <GatsbyImage
-                    image={image}
-                    alt=""
-                    className="m-8 rounded inset-0"
-                  />
-                  {title && (
-                    <div>
-                      <Heading.H1 className="text-left sm:text-center">
-                        {title}
-                      </Heading.H1>
-                    </div>
-                  )}
-                  {subtitle && (
-                    <div>
-                      <Heading.H2 className="p-4 sm:text-md">
-                        {subtitle}
-                      </Heading.H2>
-                    </div>
-                  )}
-                  <div />
-                </div>
-              )}
-              <div className="mx-auto mb-12">{children}</div>
-            </Container.Container>
-          </Container.FlexCols>
-          <div className="max-w-screen-md w-auto sm:max-w-full py-4">
-            {beforeFooter}
+      <AppContextProvider>
+        <main>
+          <div className="bg-page dark:bg-zinc-900 flex flex-col items-center justify-center py-4 sm:py-0">
+            <Container.FlexCols className="items-center bg-white dark:bg-brand text-brand dark:text-white rounded shadow-xl dark:shadow-none justify-center w-fit sm:w-full sm:rounded-none">
+              <Container.Container className="m-4 max-w-screen-md w-auto sm:max-w-full p-2">
+                <Topbar />
+                {image && (
+                  <div>
+                    <GatsbyImage
+                      image={image}
+                      alt=""
+                      className="m-8 rounded inset-0"
+                    />
+                    {title && (
+                      <div>
+                        <Heading.H1 className="text-left sm:text-center">
+                          {title}
+                        </Heading.H1>
+                      </div>
+                    )}
+                    {subtitle && (
+                      <div>
+                        <Heading.H2 className="p-4 sm:text-md">
+                          {subtitle}
+                        </Heading.H2>
+                      </div>
+                    )}
+                    <div />
+                  </div>
+                )}
+                <div className="mx-auto mb-12">{children}</div>
+              </Container.Container>
+            </Container.FlexCols>
+            <div className="max-w-screen-md w-auto sm:max-w-full py-4">
+              {beforeFooter}
+            </div>
           </div>
-        </div>
-      </main>
-      <Footer />
+        </main>
+        <Footer />
+      </AppContextProvider>
     </IntlProvider>
   );
 };

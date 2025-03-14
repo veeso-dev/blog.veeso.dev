@@ -15,6 +15,8 @@ const THEME_LIGHT = 'theme-light';
 
 export const isThemeDark = (): boolean => getTheme() === Theme.DARK;
 export const isThemeLight = (): boolean => getTheme() === Theme.LIGHT;
+export const isThemeDefined = (): boolean =>
+  localStorage.getItem('theme') !== null;
 
 export const getTheme = (): Theme => {
   if (typeof window === 'undefined') {

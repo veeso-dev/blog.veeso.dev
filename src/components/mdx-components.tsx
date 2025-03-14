@@ -7,8 +7,9 @@ import Heading from './reusable/Heading';
 import Paragraph from './reusable/Paragraph';
 import List from './reusable/List';
 import Link from './reusable/Link';
-import { Theme, getTheme } from '../utils/utils';
 import { pushCopyCodeEvent } from '../utils/analytics';
+import { useAppContext } from './AppContext';
+import { Theme } from '../utils/utils';
 
 const Blockquote = (props: React.HTMLProps<HTMLQuoteElement>) => (
   <blockquote className="text-gray-500 border-l-4 m-4 pl-4" {...props}>
@@ -52,6 +53,9 @@ const PreCopyButton = (props: PreCopyButtonProps) => {
 };
 
 const Pre = (props: React.HTMLProps<HTMLPreElement>) => {
+  const { theme } = useAppContext();
+  const [codeTheme, setCodeTheme] = React.useState(themes.github);
+
   const singleChild = React.Children.only(props.children) as React.ReactElement;
 
   const className = singleChild.props.className || '';
@@ -62,10 +66,12 @@ const Pre = (props: React.HTMLProps<HTMLPreElement>) => {
 
   const code = onlyText(props.children).trim();
 
-  const theme = getTheme() === Theme.DARK ? themes.vsDark : themes.github;
+  React.useEffect(() => {
+    setCodeTheme(theme === Theme.DARK ? themes.vsDark : themes.github);
+  }, [theme]);
 
   return (
-    <Highlight code={code} language={lang} theme={theme}>
+    <Highlight code={code} language={lang} theme={codeTheme}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre
           className={`${className} overflow-x-auto w-full relative mb-4`}
