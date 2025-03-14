@@ -12,7 +12,7 @@ tag: rust
 
 ## Introduction
 
-On the line of my experiments with **Async Rust** (cuz I'm working on something big 🤞) and while writing my last article [Async Rust for Dummies](https://blog.veeso.dev/blog/en/async-rust-for-dummies/) a weird and sick thought came to my mind: **can we actually extend Future?**
+As part of my experiments with **Async Rust** (cuz I'm working on something big 🤞) and while writing my last article [Async Rust for Dummies](https://blog.veeso.dev/blog/en/async-rust-for-dummies/) a weird and sick thought came to my mind: **can we actually extend Future?**
 
 ### Extending a Trait
 
@@ -35,9 +35,9 @@ trait MyTraitExt: MyTrait {
 }
 ```
 
-So every implementor of `MyTraitExt` will have `my_fn` and `my_fn_ext` methods and it must implement both of course.
+So every implementor of `MyTraitExt` will have `my_fn` and `my_fn_ext` methods and must implement both of course.
 
-So if you have a struct `A` which only impl `MyTrait`, it won't impl `MyTraitExt`, but if you have `B` implementing `MyTraitExt`, it also have to implement `MyTrait`.
+So if you have a struct `A` which only impl `MyTrait`, it won't impl `MyTraitExt`, but if you have `B` implementing `MyTraitExt`, it also has to implement `MyTrait`.
 
 ![extend](./extend.gif)
 
