@@ -1,5 +1,5 @@
 ---
-date: '2025-03-27 15:00:00'
+date: '2025-03-21 16:00:00'
 slug: 'embedding-shared-objects-in-rust'
 title: 'Embedding shared objects in Rust'
 subtitle: 'How to embed a shared object in a Rust binary and load it at runtime'
