@@ -597,8 +597,7 @@ fn init_libsmbclient() {
 
 Or something like that. I've got no idea if it works, I will maybe try that in the future.
 
-If some of you knows if it works, please email me at  
-[christian.visintin at veeso.dev](mailto:christian.visintin@veeso.dev), because it would be a great solution for vendoring shared objects.
+EDIT: I've tried it, and it works! If you want to read more about it, you can read [this post](https://blog.veeso.dev/blog/en/embedding-shared-objects-in-rust/).
 
 ![science-lab](./science-lab.gif)
 
