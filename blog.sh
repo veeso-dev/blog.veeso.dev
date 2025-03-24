@@ -47,6 +47,16 @@ stop() {
   return 0
 }
 
+reload() {
+  info "reloading blog"
+  git stash
+  sudo monit stop blog 
+  git pull origin main 
+  sudo yarn 
+  sudo yarn build
+  sudo monit start blog
+}
+
 NODE=$(which node)
 if [ -z "$NODE" ]; then
   export NVM_DIR="/root/.nvm"
@@ -68,6 +78,10 @@ case "$1" in
   "restart")
     stop
     start
+    ;;
+
+  "reload")
+    reload
     ;;
   
   *)
