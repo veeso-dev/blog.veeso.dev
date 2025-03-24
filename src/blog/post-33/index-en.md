@@ -402,10 +402,11 @@ tempfile = "3"
 
 Let's go back to our `libfoo_sys.rs`.
 
-First we need to create a static `Once` to the temporary file:
+First we need to create a static `Once` to the temporary file and to the library:
 
 ```rust
 static LIBFOO_SO_FILE: OnceLock<NamedTempFile> = OnceLock::new();
+static LIBFOO_LIB: OnceLock<Library> = OnceLock::new();
 ```
 
 And then we create a `init_libfoo` function which will create the temporary file and write the shared object to it:
@@ -424,7 +425,7 @@ fn init_libfoo() {
 Finally, inside `init_libfoo`, we need to load `libfoo.so`, so it eventually will look like this:
 
 ```rust
-unsafe fn init_libfoo() -> Library {
+pub unsafe fn init_libfoo() -> &'static Library {
     let libfoo_file = LIBFOO_SO_FILE.get_or_init(|| {
         let mut file = NamedTempFile::new().expect("failed to create temp file");
         file.write_all(LIBFOO_SO)
@@ -432,8 +433,9 @@ unsafe fn init_libfoo() -> Library {
         file
     });
 
-    // load with libloading
-    unsafe { libloading::Library::new(libfoo_file.path()).expect("failed to load libfoo.so") }
+    LIBFOO_LIB.get_or_init(|| unsafe {
+        Library::new(libfoo_file.path()).expect("failed to load libfoo.so")
+    })
 }
 ```
 
@@ -522,8 +524,9 @@ use tempfile::NamedTempFile;
 
 const LIBFOO_SO: &[u8] = include_bytes!(concat!(env!("CARGO_MANIFEST_DIR"), "/libfoo.so"));
 static LIBFOO_SO_FILE: OnceLock<NamedTempFile> = OnceLock::new();
+static LIBFOO_LIB: OnceLock<Library> = OnceLock::new();
 
-unsafe fn init_libfoo() -> Library {
+unsafe fn init_libfoo() -> &'static Library {
     let libfoo_file = LIBFOO_SO_FILE.get_or_init(|| {
         let mut file = NamedTempFile::new().expect("failed to create temp file");
         file.write_all(LIBFOO_SO)
@@ -531,8 +534,9 @@ unsafe fn init_libfoo() -> Library {
         file
     });
 
-    // load with libloading
-    unsafe { libloading::Library::new(libfoo_file.path()).expect("failed to load libfoo.so") }
+    LIBFOO_LIB.get_or_init(|| unsafe {
+        Library::new(libfoo_file.path()).expect("failed to load libfoo.so")
+    })
 }
 
 pub unsafe fn sum(x: c_int, y: c_int) -> c_int {
@@ -573,8 +577,9 @@ use tempfile::NamedTempFile;
 
 const LIBFOO_SO: &[u8] = include_bytes!(concat!(env!("CARGO_MANIFEST_DIR"), "/libfoo.so"));
 static LIBFOO_SO_FILE: OnceLock<NamedTempFile> = OnceLock::new();
+static LIBFOO_LIB: OnceLock<Library> = OnceLock::new();
 
-pub unsafe fn init_libfoo() -> Library {
+pub unsafe fn init_libfoo() -> &'static Library {
     let libfoo_file = LIBFOO_SO_FILE.get_or_init(|| {
         let mut file = NamedTempFile::new().expect("failed to create temp file");
         file.write_all(LIBFOO_SO)
@@ -583,7 +588,9 @@ pub unsafe fn init_libfoo() -> Library {
     });
 
     // load with libloading
-    unsafe { libloading::Library::new(libfoo_file.path()).expect("failed to load libfoo.so") }
+    LIBFOO_LIB.get_or_init(|| unsafe {
+        Library::new(libfoo_file.path()).expect("failed to load libfoo.so")
+    })
 }
 ```
 
