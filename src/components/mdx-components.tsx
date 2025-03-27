@@ -45,9 +45,9 @@ const PreCopyButton = (props: PreCopyButtonProps) => {
   return (
     <button
       onClick={onClick}
-      className={`bg-inherit absolute right-4 top-4 rounded border-gray-500 border-2 p-2 hover:bg-gray-200 active:bg-gray-300`}
+      className={`bg-inherit rounded p-1 hover:bg-gray-200 active:bg-gray-300`}
     >
-      {(copied && <Check size={16} />) || <Copy size={16} />}
+      {(copied && <Check size={20} />) || <Copy size={20} />}
     </button>
   );
 };
@@ -73,20 +73,24 @@ const Pre = (props: React.HTMLProps<HTMLPreElement>) => {
   return (
     <Highlight code={code} language={lang} theme={codeTheme}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <div className="overflow-auto box-border w-full min-w-full">
-          <pre
-            className={`${className} overflow-auto w-fit min-w-full relative mb-4 p-[20px]`}
-            style={{ ...style }}
-          >
+        <div className="flex flex-row w-full p-[20px]" style={{ ...style }}>
+          <div className="overflow-auto box-border flex-1">
+            <pre
+              className={`${className} overflow-auto w-fit mb-4`}
+              style={{ ...style }}
+            >
+              {tokens.map((line, i) => (
+                <div key={i} {...getLineProps({ line, key: i })}>
+                  {line.map((token, key) => (
+                    <span key={key} {...getTokenProps({ token, key })} />
+                  ))}
+                </div>
+              ))}
+            </pre>
+          </div>
+          <div style={{ backgroundColor: 'inherit' }}>
             <PreCopyButton content={code} />
-            {tokens.map((line, i) => (
-              <div key={i} {...getLineProps({ line, key: i })}>
-                {line.map((token, key) => (
-                  <span key={key} {...getTokenProps({ token, key })} />
-                ))}
-              </div>
-            ))}
-          </pre>
+          </div>
         </div>
       )}
     </Highlight>
