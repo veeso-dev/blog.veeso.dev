@@ -12,7 +12,7 @@ import Container from './reusable/Container';
 import Whatsapp from './reusable/svg/WhatsApp';
 import Telegram from './reusable/svg/Telegram';
 import { isThemeLight } from '../utils/utils';
-import X from './reusable/svg/X';
+import X from './reusable/svg/Mastodon';
 import {
   pushFacebookShare,
   pushLinkedinShare,

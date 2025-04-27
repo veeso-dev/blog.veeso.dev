@@ -11,7 +11,7 @@ interface Contacts {
   sdl: string;
   telegram: string;
   tiktok: string;
-  twitter: string;
+  mastodon: string;
   vat: string;
   whatsapp: string;
 }
@@ -29,7 +29,7 @@ const CONTACTS: Contacts = {
   sdl: '3C984HL',
   telegram: 'https://t.me/veeso_dev',
   tiktok: 'https://www.tiktok.com/@veeso97',
-  twitter: 'https://twitter.com/veeso_dev',
+  mastodon: 'https://hachyderm.io/@veeso_dev',
   vat: 'IT03104140300',
   whatsapp: 'https://wa.me/message/BQGR4AO6YI7GE1',
 };

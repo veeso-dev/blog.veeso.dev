@@ -12,7 +12,7 @@ import { isThemeLight, readingTime } from '../utils/utils';
 import Container from '../components/reusable/Container';
 import RichTextFormattedMessage from '../components/reusable/RichTextFormattedMessage';
 import RLink from '../components/reusable/Link';
-import X from '../components/reusable/svg/X';
+import X from '../components/reusable/svg/Mastodon';
 import { FormattedDate } from 'react-intl';
 import RelatedPosts from '../components/RelatedPosts';
 

@@ -18,14 +18,14 @@ const Sections = () => (
         <Link.Link href={'https://blog.veeso.dev'} target="_blank">
           Home
         </Link.Link>
-        <Link.Link href={'https://www.veeso.dev'} target="_blank">
+        <Link.Link href={'https://veeso.dev'} target="_blank">
           veeso.dev
+        </Link.Link>
+        <Link.Link href={'https://veeso.me'} target="_blank">
+          veeso.me
         </Link.Link>
         <Link.Link href="https://termscp.veeso.dev" target="_blank">
           termscp
-        </Link.Link>
-        <Link.Link href="https://opentapo.veeso.dev" target="_blank">
-          OpenTapo
         </Link.Link>
       </Links>
     </Section>
@@ -43,8 +43,8 @@ const Sections = () => (
         <Link.Link href={CONTACTS.linktree} target="_blank">
           Linktree
         </Link.Link>
-        <Link.Link href={CONTACTS.twitter} target="_blank">
-          Twitter
+        <Link.Link href={CONTACTS.mastodon} target="_blank">
+          Mastodon
         </Link.Link>
       </Links>
     </Section>

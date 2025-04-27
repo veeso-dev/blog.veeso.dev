@@ -5,7 +5,7 @@ import CONTACTS from '../../data/contacts';
 import Link from '../reusable/Link';
 import { getNavigatorLanguage } from '../../utils/locale';
 import { isThemeLight } from '../../utils/utils';
-import X from '../reusable/svg/X';
+import Mastodon from '../reusable/svg/Mastodon';
 
 const Socials = () => {
   const fill = isThemeLight() ? '#31363b' : '#fff';
@@ -15,8 +15,8 @@ const Socials = () => {
       <Link.IconLink href={CONTACTS.github} target="_blank">
         <GitHub />
       </Link.IconLink>
-      <Link.IconLink href={CONTACTS.twitter} target="_blank">
-        <X fill={fill} />
+      <Link.IconLink href={CONTACTS.mastodon} target="_blank">
+        <Mastodon fill={fill} />
       </Link.IconLink>
       <Link.IconLink href={CONTACTS.linkedin} target="_blank">
         <Linkedin />
