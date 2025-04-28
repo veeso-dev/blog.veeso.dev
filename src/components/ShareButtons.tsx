@@ -12,7 +12,7 @@ import Container from './reusable/Container';
 import Whatsapp from './reusable/svg/WhatsApp';
 import Telegram from './reusable/svg/Telegram';
 import { isThemeLight } from '../utils/utils';
-import X from './reusable/svg/Mastodon';
+import X from './reusable/svg/X';
 import {
   pushFacebookShare,
   pushLinkedinShare,
@@ -46,7 +46,8 @@ const ShareButtons = (props: Props) => {
         title={title}
       >
         <X
-          size={20}
+          width={20}
+          height={20}
           fill={fill}
           className="transition-transform transform scale-100 hover:scale-125"
         />

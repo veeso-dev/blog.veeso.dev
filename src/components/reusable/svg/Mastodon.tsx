@@ -11,6 +11,7 @@ const Mastodon = (props: Props) => (
     width={props.size ? props.size : 24}
     height={props.size ? props.size : 24}
     fill={props.fill}
+    className={props.className}
     viewBox="0 0 74 79"
     xmlns="http://www.w3.org/2000/svg"
   >

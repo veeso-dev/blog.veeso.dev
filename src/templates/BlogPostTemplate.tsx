@@ -15,6 +15,7 @@ import RLink from '../components/reusable/Link';
 import X from '../components/reusable/svg/Mastodon';
 import { FormattedDate } from 'react-intl';
 import RelatedPosts from '../components/RelatedPosts';
+import CONTACTS from '../data/contacts';
 
 const getRelatedPosts = (
   data: any,
@@ -100,9 +101,9 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
               >
                 <RichTextFormattedMessage id={'post.discoverMore'} />
               </Link>
-              <RLink.Paragraph href={'https://x.com/veeso_dev'} target="_blank">
+              <RLink.Paragraph href={CONTACTS.mastodon} target="_blank">
                 <X className="mr-2 inline" fill={fill} />
-                Follow me on X.com
+                Follow me on Mastodon
               </RLink.Paragraph>
             </Container.FlexResponsiveRow>
             <ShareButtons
