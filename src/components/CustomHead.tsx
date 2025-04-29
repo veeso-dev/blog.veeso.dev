@@ -58,6 +58,7 @@ export const CustomHead: React.FC<React.PropsWithChildren<CustomHeadProps>> = ({
       <meta name="tiwtter:url" content={canonicalUrl} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      <meta name="fediverse:creator" content="@veeso_dev@hachyderm.io" />
       {image && (
         <>
           <meta property="og:image" content={`${siteUrl}${image}`} />
