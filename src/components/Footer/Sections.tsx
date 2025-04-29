@@ -43,7 +43,7 @@ const Sections = () => (
         <Link.Link href={CONTACTS.linktree} target="_blank">
           Linktree
         </Link.Link>
-        <Link.Link href={CONTACTS.mastodon} target="_blank">
+        <Link.Link href={CONTACTS.mastodon} rel="me" target="_blank">
           Mastodon
         </Link.Link>
       </Links>
