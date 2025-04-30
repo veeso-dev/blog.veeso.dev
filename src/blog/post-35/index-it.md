@@ -29,11 +29,11 @@ Per capirlo dobbiamo capire la politica applicata da Musk su X.com.
 
 ### Libertà di espressione e spunta blu
 
-Non sono mai stato contrario all'idea di base di Musk nel volere che Twitter diventasse aperto alla libertà di espressione, sì, anche in quei casi *estremi*.
+Non sono mai stato contrario all'idea di base di Musk nel volere che Twitter diventasse aperto alla libertà di espressione, sì, anche in quei casi _estremi_.
 
 Il problema è nato dal mix tra la libertà di espressione e la maledetta **spunta blu**.
 
-Il fatto è questo, su X.com chiunque può avere la *spunta blu*, purché paghi. Di fatto non è più un simbolo di verifica, ma solo una stellina per dire che ho il premium.
+Il fatto è questo, su X.com chiunque può avere la _spunta blu_, purché paghi. Di fatto non è più un simbolo di verifica, ma solo una stellina per dire che ho il premium.
 
 ![blue mark](./twitter-x.gif)
 
@@ -63,7 +63,7 @@ Bene, ora puoi aprire un qualsiasi post, anche uno che è magari uno che apre un
 
 > @Grok, ma è reale?  
 > @Grok, ma è vero?  
-> @Grok, ma è un fake?  
+> @Grok, ma è un fake?
 
 Ora chiaramente non è colpa della piattaforma, però il livello delle persone che usano X.com è veramente imbarazzante. Mi fa capire che ormai ci siano rimasti solo i **peggio imbecilli**.
 
