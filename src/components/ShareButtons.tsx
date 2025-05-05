@@ -20,6 +20,7 @@ import {
   pushTwitterShare,
   pushWhatsappShare,
 } from '../utils/analytics';
+import { useAppContext } from './AppContext';
 
 interface Props {
   url: string;
@@ -30,7 +31,11 @@ interface Props {
 
 const ShareButtons = (props: Props) => {
   const title = `${props.title} by ${props.author}`;
-  const fill = isThemeLight() ? '#31363b' : '#fff';
+  const { theme } = useAppContext();
+  const fill = React.useMemo(
+    () => (isThemeLight(theme) ? '#31363b' : '#fff'),
+    [theme],
+  );
 
   return (
     <Container.FlexRow className="text-brand dark:text-gray-200 gap-8 justify-end">

@@ -13,8 +13,8 @@ export enum Theme {
 const THEME_DARK = 'theme-dark';
 const THEME_LIGHT = 'theme-light';
 
-export const isThemeDark = (): boolean => getTheme() === Theme.DARK;
-export const isThemeLight = (): boolean => getTheme() === Theme.LIGHT;
+export const isThemeDark = (theme: Theme): boolean => theme === Theme.DARK;
+export const isThemeLight = (theme: Theme): boolean => theme === Theme.LIGHT;
 export const isThemeDefined = (): boolean =>
   localStorage.getItem('theme') !== null;
 
@@ -42,7 +42,11 @@ export const setTheme = (theme: Theme) => {
     localStorage.setItem('theme', themeName);
   }
 
-  if (themeName === THEME_DARK) {
+  applyTheme(theme);
+};
+
+export const applyTheme = (theme: Theme) => {
+  if (theme === Theme.DARK) {
     document.documentElement.classList.add('dark');
   } else {
     document.documentElement.classList.remove('dark');

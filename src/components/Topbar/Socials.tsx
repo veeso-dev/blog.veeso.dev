@@ -6,9 +6,14 @@ import Link from '../reusable/Link';
 import { getNavigatorLanguage } from '../../utils/locale';
 import { isThemeLight } from '../../utils/utils';
 import Mastodon from '../reusable/svg/Mastodon';
+import { useAppContext } from '../AppContext';
 
 const Socials = () => {
-  const fill = isThemeLight() ? '#31363b' : '#fff';
+  const { theme } = useAppContext();
+  const fill = React.useMemo(
+    () => (isThemeLight(theme) ? '#31363b' : '#fff'),
+    [theme],
+  );
 
   return (
     <>

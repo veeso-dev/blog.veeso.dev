@@ -1,6 +1,12 @@
 import * as React from 'react';
 
-import { getTheme, isThemeDefined, setTheme, Theme } from '../utils/utils';
+import {
+  applyTheme,
+  getTheme,
+  isThemeDefined,
+  setTheme,
+  Theme,
+} from '../utils/utils';
 
 interface Context {
   theme: Theme;
@@ -25,6 +31,8 @@ const AppContextProvider = ({ children }: { children?: React.ReactNode }) => {
     setThemeState(theme);
     if (!isThemeDefined()) {
       setTheme(theme);
+    } else {
+      applyTheme(theme);
     }
   }, []);
 

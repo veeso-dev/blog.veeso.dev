@@ -16,6 +16,7 @@ import X from '../components/reusable/svg/Mastodon';
 import { FormattedDate } from 'react-intl';
 import RelatedPosts from '../components/RelatedPosts';
 import CONTACTS from '../data/contacts';
+import { useAppContext } from '../components/AppContext';
 
 const getRelatedPosts = (
   data: any,
@@ -43,7 +44,11 @@ const BlogPostTemplate: React.FC<PageProps<Queries.BlogPostQuery>> = ({
   const featuredImage = data.mdx?.frontmatter?.featuredImage
     ? getImage(data.mdx.frontmatter.featuredImage.childImageSharp)
     : null;
-  const fill = isThemeLight() ? '#31363b' : '#fff';
+  const { theme } = useAppContext();
+  const fill = React.useMemo(
+    () => (isThemeLight(theme) ? '#31363b' : '#fff'),
+    [theme],
+  );
 
   const id = data.mdx?.id ?? '';
   const lang = data.mdx?.frontmatter?.lang ?? 'en';
