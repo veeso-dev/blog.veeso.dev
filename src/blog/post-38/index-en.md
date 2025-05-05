@@ -40,7 +40,7 @@ If you don't know what web3 is, it's basically the idea of a decentralized inter
 
 And you may say, okay but **do we even need it?**
 
-**Well, I'll be honest. We don't**. But we *may* **want it.**
+**Well, I'll be honest. We don't**. But we _may_ **want it.**
 
 And the reason is that we are seeing a lot of problems with the current internet. We have seen data breaches, censorship, and a lack of privacy and transparency. And we are also seeing a lot of monopolies forming in the tech industry, which is not good for innovation.
 

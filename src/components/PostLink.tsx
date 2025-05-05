@@ -33,7 +33,7 @@ const PostLink = (props: Props) => {
     </Container.Container>
   ) : undefined;
   return (
-    <Container.Container className={`${props.className} p-2 border-b`}>
+    <Container.Container className={`${props.className} p-2 border-b  h-full`}>
       {preview}
       <Heading.H2>
         <Link

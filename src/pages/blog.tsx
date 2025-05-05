@@ -45,9 +45,9 @@ const Blog: React.FC<PageProps> = ({
   return (
     <PageLayout>
       <Heading.H1>Blog Posts</Heading.H1>
-      <Container.FlexCols className="items-center justify-start p-2">
+      <Container.Container className="grid grid-cols-2 sm:grid-cols-1 items-start justify-start gap-4">
         {posts}
-      </Container.FlexCols>
+      </Container.Container>
     </PageLayout>
   );
 };

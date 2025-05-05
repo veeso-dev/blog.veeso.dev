@@ -2,7 +2,7 @@
 date: '2025-05-05 11:30:00'
 slug: 'an-abstract-of-a-real-p2p-electronic-cash-system'
 title: 'An Abstract of a real P2P Electronic Cash System'
-subtitle: "A draft and analysis of a real P2P Electronic Cash System"
+subtitle: 'A draft and analysis of a real P2P Electronic Cash System'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
@@ -29,7 +29,7 @@ Currently, we don't have any Electronic P2P cash system that works. Why isn't th
 What we need to understand is that a Cash System is made of two parts:
 
 - **Ledger**: This part is the one that keeps track of balances and transactions and also of issuing new money. This part of course is the most important part of a cash system, and it must be trusted.
-- **Payment**: This part is the one that allows people to send money to each other. Users should be able to trust other users *enough* to send money to them, but it's not guaranteed that trust will be 100% of the time.
+- **Payment**: This part is the one that allows people to send money to each other. Users should be able to trust other users _enough_ to send money to them, but it's not guaranteed that trust will be 100% of the time.
 
 Bitcoin for instance, is P2P for the **Ledger** part. The ledger is distributed in a P2P way where (more or less - I've already talked about how [Bitcoin is not really decentralized in this article](https://blog.veeso.dev/blog/en/why-bitcoin-is-not-decentralized--in-any-way/)) everybody can partecipate in the network both to create new blocks and to validate them.
 
@@ -74,7 +74,7 @@ And we need to have a system that in between of Ledger/Payment/Ledger mechanism 
 
 - **Counterfeiting**: What if Alice gives Bob fake dollars? The authority must take care of making hard to counterfeit money and provide a way for receivers to check if money is real or not.
 - **Double spend**: Can Alice deposit the same 10$ after spending it? Well, in the real world this is not possible, because you know we still can't clone matter.
-- Or again double spend: If Bob then gives 5$ to Charlie, he must be able to deposit up to 5$ in the bank, so the P2P payment system must be able to take care of *n* transactions which have been made P2P.
+- Or again double spend: If Bob then gives 5$ to Charlie, he must be able to deposit up to 5$ in the bank, so the P2P payment system must be able to take care of _n_ transactions which have been made P2P.
 - **Thin-air creation**: Alice mustn't be able to spend money that has been created out of thin air. This means that the system must be able to check if the money is real and was actually withdrawn from the ledger before.
 
 ### Medium
@@ -92,12 +92,12 @@ We've got two layers of trust to solve:
 1. **Trust during the payment**: Bob must be sure that Alice is not giving him counterfeit money.
 2. **Trust between the Ledger and the Payment**: When money is deposited, the Ledger must be able to prevent double deposit and that every party involved in the flow of transactions from the same origin has their part of the money.
 
-    1. Alice withdraw 10$ from the ledger
-    2. Alice gives Bob 5$
-    3. Alice gives Charlie 2$
-    4. Bob gives Charlie 1$
+   1. Alice withdraw 10$ from the ledger
+   2. Alice gives Bob 5$
+   3. Alice gives Charlie 2$
+   4. Bob gives Charlie 1$
 
-    Eventually the ledger must be able to be sure that Alice can deposit 3$, Bob 4$ and Charlie 3$.
+   Eventually the ledger must be able to be sure that Alice can deposit 3$, Bob 4$ and Charlie 3$.
 
 ### Fee-less
 
