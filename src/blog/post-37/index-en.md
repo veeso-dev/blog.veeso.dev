@@ -408,6 +408,8 @@ From the official Rust documentation they say it is only useful for a couple of 
   }
   ```
 
+Also a final note: the Rust compiler can reorder the fields of a struct at will, until `#[repr(C)]` is used. So even in the simple case the fields may get swapped.
+
 ### Zeroed and MaybeUninit
 
 Last but not least, `zeroed` is a function that creates a value of type `T` with all bits set to zero.
