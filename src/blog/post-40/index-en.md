@@ -39,7 +39,7 @@ I thought maybe it's the age gap, or maybe the fact that I don't have a degree; 
 
 ## The Black List
 
-If you're in Rust groups, from time to time you will see a batch of positions for Rust Jobs called *"RUST OPPORTUNITIES (No Blockchain) | $Month $Year"* or something similar.
+If you're in Rust groups, from time to time you will see a batch of positions for Rust Jobs called _"RUST OPPORTUNITIES (No Blockchain) | $Month $Year"_ or something similar.
 
 The fact it specifies it's a batch of jobs not related to blockchain is related to the fact that many people in the Rust community want to find a job in Rust, but not in the web3 space. It's totally fine for me, it's a personal choice; like I would never work for a company that manifactures weapons or drugs, but I don't care if you do it; **it's your life and your choice**.
 
@@ -99,6 +99,6 @@ I think it's a shame that many companies in the Rust ecosystem are not consideri
 
 Also I want to invite developers to not be afraid of working in web3, and to not be ashamed of it.
 
-I think it's a great opportunity to learn a lot, and to work with brilliant people; even if 99% of the projects are going to be trashed in a couple of years (*but isn't it the fate of most of the companies as well?*), you will learn a lot from them, and trust me, there are really some gems, in particular in the cryptography and security space; just give a look at **FHE** and **ZK** projects, they are really brilliant and they are going to change the world.
+I think it's a great opportunity to learn a lot, and to work with brilliant people; even if 99% of the projects are going to be trashed in a couple of years (_but isn't it the fate of most of the companies as well?_), you will learn a lot from them, and trust me, there are really some gems, in particular in the cryptography and security space; just give a look at **FHE** and **ZK** projects, they are really brilliant and they are going to change the world.
 
 And finally, this is quite strong, but **I invite Rust communities to stop posting that batch**, unless there is a clear statement that there is no discrimination against **any kind of past job experience**.
