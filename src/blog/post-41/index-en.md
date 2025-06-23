@@ -108,7 +108,7 @@ Yes, indeed we've got the same address here of course, but we can't always rely 
 
 And fun fact, if we could use `scoped` threads, we could just have used directly the `Vec<u8>` 😅.
 
-### Arc
+### Arc Vec T
 
 The second solution is to use an `Arc<Vec<u8>>`, which is a smart pointer that allows us to share ownership of the `Vec<u8>` across multiple threads. This would allow us to avoid cloning the `Vec<u8>` and thus avoid memory bloat.
 
@@ -136,9 +136,31 @@ fn main() {
 }
 ```
 
+### Arc Slice T
+
+EDIT: 23th June 2025
+
+Actually, I've recently discovered that `Arc[T]` is actually much better than `Arc<Vec<T>>`.
+
+Also it is generally better than `Vec` also when the data is not shared, but just for immutable data, because it avoids the overhead of the `Vec` type, which is not needed when we just need to share immutable data.
+
+Why is it better:
+
+- Extremely cheap clone with complexity `O(1)` since it just clones the pointer.
+- Smaller stack size (16 bytes vs 24 bytes for `Vec` on 64-bit systems).
+- Implements `Deref` to `T`, so you can use it as if it was a slice, without the need to dereference it.
+
+Thank you [sgued@pouet.chapril.org](https://hachyderm.io/@sgued@pouet.chapril.org/114677223492950363) for pointing this out!
+
+Also in case you don't need to share along threads, `Rc` should be preferred over `Arc`, since it is faster and has less overhead, but in this case, we need to share the data across threads, so `Arc` is the way to go.
+
+In case you don't even need `Clone`, you can directly use a `Box<T>`, but it's not the case here.
+
+For more details, you can watch the video [Use Arc Instead of Vec](https://www.youtube.com/watch?v=A4cKi7PTJSs).
+
 ### Bytes
 
-The [Bytes crate](https://docs.rs/bytes/latest/bytes/) provides an efficient container for storing and operating on ontiguous slices of memory, mainly focused on networking and I/O operations and it allowes zero-copy operations, which is exactly what we need here.
+The [Bytes crate](https://docs.rs/bytes/latest/bytes/) provides an efficient container for storing and operating on contiguous slices of memory, mainly focused on networking and I/O operations and it allows zero-copy operations, which is exactly what we need here.
 
 So the solution used in the Solana Validator, was as soon as the transaction is received, it is wrapped into a `Bytes` type, and from there on, the `Bytes` is just copied around.
 
@@ -164,7 +186,7 @@ The point is that when we have to deal with thousands of clones per second, the 
 
 Another issue in my opinion, is that as a Rust developer, we often are proned to think that Rust, since it's considered safe and performant, can **handle everything for us in the best way possible**, but it's not actually true.
 
-Up to now, there's not a single programming language that can implement a perfect memory management system, and Rust is not an exception. It's all up to us to implement efficient applications.
+Up to now, there's not a single programming language that can implement a perfect memory management, and Rust is not an exception. It's all up to us to implement efficient applications.
 
 ### Think more about shareability
 

@@ -6,7 +6,7 @@ subtitle: "A retrospective of Rust Nation '23"
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
-tag: rust
+tag: conference
 ---
 
 ## About Rust Nation '23

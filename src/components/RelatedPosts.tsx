@@ -48,6 +48,7 @@ const PostCard = ({ post }: { post: any }) => {
 
   return (
     <Link
+      className="h-full"
       onClick={onNavigate}
       to={getPostRoute(post.frontmatter?.lang, post.frontmatter?.slug)}
     >

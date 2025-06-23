@@ -152,6 +152,38 @@ note: required by an implicit `Sized` bound in `Wrapper`
 
 So it doesn't matter if `T` is wrapped in a `Box`, what matters is that `T` is sized, if we don't specify `?Sized`.
 
+### ?Sized without a Box
+
+Another way to implement the same thing, is by using a reference to `T`, like this:
+
+```rust
+struct Testing<T: ?Sized> {
+    inner: T,
+}
+
+trait TestingTrait {
+    fn foo(&self) {}
+}
+
+impl TestingTrait for String {}
+
+fn main() {
+    let a: Testing<[u8; 10]> = Testing { inner: [0; 10] };
+    let b: &Testing<[u8]> = &a;
+
+    let c: Testing<String> = Testing { inner: String::new() };
+    let d: &Testing<dyn TestingTrait> = &c;
+}
+```
+
+Of course `[u8; 10]` is a sized type, but `[u8]` is not, so we can use `?Sized` to specify that the `inner` field may be either sized or not.
+
+Also here of course, `b` is sized, because it is a reference to a sized type, but the `T` type parameter is still `?Sized`, so we can use it with unsized types like `dyn TestingTrait`.
+
+If we didn't specify `?Sized`, the compiler would complain that `T` doesn't have a size known at compile time, even if we are using a reference to it.
+
+Thanks to [sgued@pouet.chapril.org](https://hachyderm.io/@sgued@pouet.chapril.org) for pointing this out!
+
 ## Why fields order matters
 
 Now that we know what `?Sized` is, let's go back to the `BufReader` struct.
