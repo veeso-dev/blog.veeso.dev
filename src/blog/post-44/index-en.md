@@ -47,15 +47,44 @@ So, whenever we want to reuse the value, we have either to pass it by reference 
 ```rust
 fn move_string(s: String) {
     println!("{s}");
+    println!("Heap addr in move_string: 0x{:x}", s.as_ptr() as usize);
 }
 
 fn main() {
     let s = "Hello, World!".to_string();
+    println!("Heap addr in main for s: 0x{:x}", s.as_ptr() as usize);
     move_string(s.clone());
 
     println!("{s}");
 }
 ```
+
+```txt
+Heap addr in main for s: 0x62eaf2c44b10
+Heap addr in move_string: 0x62eaf2c44b30
+```
+
+We can easily verify that the value is moved by checking the address of the string in the main function and in the `move_string` function.
+
+```rust
+fn move_string(s: String) {
+    println!("{s}");
+    println!("Heap addr in move_string: 0x{:x}", s.as_ptr() as usize);
+}
+
+fn main() {
+    let s = "Hello, World!".to_string();
+    println!("Heap addr in main for s: 0x{:x}", s.as_ptr() as usize);
+    move_string(s);
+}
+```
+
+```txt
+Heap addr in main for s: 0x632de4208b10
+Heap addr in move_string: 0x632de4208b10
+```
+
+## Copy types
 
 But, some types do not need to be cloned, because they implement the `Copy` trait, which means that they can be copied instead of moved, such as integers, booleans, and characters.
 
@@ -150,3 +179,13 @@ First, when a value is passed by reference the pointer is copied, not the value 
 You could think that for bigger types, such as a `[i32; 100]`, it would be more efficient to move it, but in reality, what it does is just copy the pointer to the first element of the array, so it is still efficient.
 
 Second, if Rust were to allow moving `Copy` types, it would undermine the point of the Copy trait itself. The distinction between `Copy` and non-`Copy` types is meant to be clear: Copy types can be freely duplicated without needing to track ownership. Allowing them to be moved would reintroduce ownership tracking for types that are supposed to be trivially copyable, defeating the purpose of the Copy trait.
+
+## Addendum: A note about this method
+
+Someone told me on Mastodon that this method is not reliable and we should check with assemblers or debuggers to see if the value is copied or moved.
+
+And yes it's true, sometimes the compiler optimizes the code and makes the CPU to reuse the value in the register, so no pointer is used in the process, and the value is not copied or moved, but just reused.
+
+But there is not a foolproof way to determine if a value is copied or moved without looking at the generated assembly code or using a debugger and it's just to illustrate the concept in a simple way.
+
+In any case this doesn't change the fact that `Copy` types are copied, not moved, and that we can verify it by checking the pointer address before and after the function call.
