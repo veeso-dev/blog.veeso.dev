@@ -327,3 +327,5 @@ Once I've finished with the memory management implementation, in the next blog p
 Note that this is more a draft of the architecture, so things may change during the implementation phase.
 
 You can stay tuned by following the [GitHub repository](https://github.com/veeso/ic-dbms-canister) where I will push the code as soon as possible.
+
+Chapter 2 is now available: [Cooking ic-dbms-canister: Memory Management](https://blog.veeso.dev/cooking-ic-dbms-canister-memory-management/).
