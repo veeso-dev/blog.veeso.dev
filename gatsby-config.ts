@@ -26,7 +26,7 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-umami`,
       options: {
-        websiteId: 'd07eab8e-02da-495e-9ee7-8c5596f839b6',
+        websiteId: '3c511ad6-7ac8-4a8a-952f-f4a797510b25',
         srcUrl: 'https://analytics.veeso.dev/script.js',
         includeInDevelopment: false,
         autoTrack: true,
