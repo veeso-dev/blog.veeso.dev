@@ -1,5 +1,5 @@
 ---
-date: '2025-11-22 13:10:00'
+date: '2025-11-22 14:10:00'
 slug: 'instantly-convert-hanzi-to-pinyin-with-biangbiang-hanzi'
 title: 'Instantly convert Hanzi to Pinyin with BiangBiang Hanzi'
 subtitle: 'A fast and accurate iOS and Android app for converting Chinese characters to Pinyin with camera OCR'

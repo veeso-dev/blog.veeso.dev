@@ -44,35 +44,35 @@ The concept I have in mind is to have this kind of flow:
 
 1. The user defines the database schema using Rust structs and annotations.
 
-    ```rust
-    #[derive(Table)]
-    struct User {
-        #[primary_key]
-        id: Integer,
-        name: Text,
-        email: Text,
-        age: Integer,
-    }
+   ```rust
+   #[derive(Table)]
+   struct User {
+       #[primary_key]
+       id: Integer,
+       name: Text,
+       email: Text,
+       age: Integer,
+   }
 
-    #[derive(Table)]
-    struct Post {
-        #[primary_key]
-        id: Integer,
-        title: Text,
-        content: Text,
-        #[foreign_key(table = "User", column = "id")]
-        author_id: Integer,
-    }
-    ```
+   #[derive(Table)]
+   struct Post {
+       #[primary_key]
+       id: Integer,
+       title: Text,
+       content: Text,
+       #[foreign_key(table = "User", column = "id")]
+       author_id: Integer,
+   }
+   ```
 
 2. This macro generates all the necessary code we'll see later to define the tables, columns and relationships and memory management.
 3. The user sets up the database with a macro call.
 
-    ```rust
-    ic_dbms_canister! {
-        tables: [User, Post],
-    }
-    ```
+   ```rust
+   ic_dbms_canister! {
+       tables: [User, Post],
+   }
+   ```
 
 4. The macro generates all the canister code with the canister methods to perform CRUD operations, queries, transactions and more.
 5. The user can then deploy the canister on IC with the init method which takes the account id which can access the database.
@@ -205,7 +205,7 @@ while the deleted records offsets contains for each deleted record the page numb
 Given that structure we can finally define our `MemoryDelegate` struct:
 
 ```rust
-struct MemoryDelegate<Entity> 
+struct MemoryDelegate<Entity>
 where Entity: Encode
 {
     /// The table assigned to this delegate
@@ -261,7 +261,7 @@ struct MemoryManager;
 
 impl MemoryManager {
     /// Initializes the memory manager and allocates the header and reserved pages.
-    /// 
+    ///
     /// The header is initialized if contains the magic number `0x1CDBMS01`.
     /// If the memory is already initialized, it also loads the ACL from the reserved page.
     pub fn init() -> MemoryResult<Self>;
