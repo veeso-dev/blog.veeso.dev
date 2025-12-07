@@ -165,7 +165,7 @@ const config: GatsbyConfig = {
                       '/',
                     custom_elements: [
                       {
-                        preview: `https://blog.veeso.dev${edge.node.frontmatter.featuredImage.childImageSharp.fluid.src}`,
+                        preview: `https://blog.veeso.dev${edge.node.frontmatter.featuredImage.publicURL}`,
                       },
                     ],
                   });
@@ -185,11 +185,7 @@ const config: GatsbyConfig = {
                       tag
                       draft
                       featuredImage {
-                        childImageSharp {
-                          fluid(maxWidth: 1200) {
-                            src
-                          }
-                        }
+                        publicURL
                       }
                     }
                   }
@@ -230,7 +226,7 @@ const config: GatsbyConfig = {
                       '/',
                     custom_elements: [
                       {
-                        preview: `https://blog.veeso.dev${edge.node.frontmatter.featuredImage.childImageSharp.fluid.src}`,
+                        preview: `https://blog.veeso.dev${edge.node.frontmatter.featuredImage.publicURL}`,
                       },
                     ],
                   });
@@ -250,11 +246,7 @@ const config: GatsbyConfig = {
                       tag
                       draft
                       featuredImage {
-                        childImageSharp {
-                          fluid(maxWidth: 1200) {
-                            src
-                          }
-                        }
+                        publicURL
                       }
                     }
                   }
