@@ -40,7 +40,6 @@ But how is this achieved?
 ### Sale Process
 
 1. For each property sale we make the **agency**, the **buyer** and the **seller** to sign the sale contract, which contains the following information, which are agreed by the parts:
-
    - price of an installment
    - amount of installments
    - contract due date

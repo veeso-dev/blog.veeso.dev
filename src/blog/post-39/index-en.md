@@ -91,7 +91,6 @@ We've got two layers of trust to solve:
 
 1. **Trust during the payment**: Bob must be sure that Alice is not giving him counterfeit money.
 2. **Trust between the Ledger and the Payment**: When money is deposited, the Ledger must be able to prevent double deposit and that every party involved in the flow of transactions from the same origin has their part of the money.
-
    1. Alice withdraw 10$ from the ledger
    2. Alice gives Bob 5$
    3. Alice gives Charlie 2$

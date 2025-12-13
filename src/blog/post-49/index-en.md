@@ -396,7 +396,6 @@ pub enum Filter {
 1. Lookup the schema
 
    The DBMS accesses the `SchemaRegistry` to find the metadata associated with the table:
-
    - table fingerprint
    - page ledger page
    - free segments page
@@ -406,7 +405,6 @@ pub enum Filter {
    Using the registry information, the DBMS loads the `PageLedger` and `FreeSegmentsLedger`.
 
    This layer knows how to:
-
    - list all the pages belonging to the table
    - find the physical location of each record and provide a reader interface for them
    - decode raw bytes into `Value` instances

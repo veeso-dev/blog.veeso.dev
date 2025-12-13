@@ -39,7 +39,6 @@ Ma come funziona?
 ### Processo di vendita
 
 1. Per ogni vendita di proprietà facciamo firmare a **agenzia**, **compratore** e **venditore** un contratto di vendita che contiene le seguenti informazioni, concordate dalle parti:
-
    - prezzo di una rata
    - numero di rate (installments)
    - data di scadenza del contratto

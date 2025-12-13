@@ -37,8 +37,8 @@ import 'property-information';
 // package.json
 {
   "@parcel/resolver-default": {
-    "packageExports": true
-  }
+    "packageExports": true,
+  },
 }
 ```
 
