@@ -6,7 +6,7 @@ subtitle: "Un viaggio verso una delle mie più stressanti esperienze nello svilu
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
-tag: open-source
+tag: dev-life
 ---
 
 ## Premessa

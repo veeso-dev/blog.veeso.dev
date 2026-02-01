@@ -6,7 +6,7 @@ subtitle: 'A journey into one of my most painful development: a Wear Os App'
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
-tag: open-source
+tag: dev-life
 ---
 
 ## Preamble

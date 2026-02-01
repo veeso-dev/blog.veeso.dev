@@ -6,7 +6,7 @@ subtitle: "Come sviluppatore con molta esperienza pregressa nell'open-source, vo
 author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: it
-tag: open-source
+tag: dev-life
 ---
 
 ## Premessa

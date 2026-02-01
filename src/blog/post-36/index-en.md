@@ -7,7 +7,7 @@ author: 'veeso'
 featuredImage: ./featured.jpeg
 lang: en
 draft: false
-tag: open-source
+tag: dev-life
 ---
 
 ## Introduction
