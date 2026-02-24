@@ -1,0 +1,18 @@
+name = "blog"
+version = "1.0.0"
+links = [{ title = "Website", href = "https://blog.veeso.dev" }]
+repository = { type = "github", user = "veeso", repo = "blog.veeso.dev" }
+description = "My personal blog built with Gleam and Lustre."
+licenses = ["MIT", "CC-BY-NC-ND-4.0"]
+
+[dependencies]
+glailglind = ">= 2.2.0 and < 3.0.0"
+gleam_stdlib = ">= 0.44.0 and < 2.0.0"
+lustre = ">= 5.6.0 and < 6.0.0"
+blogatto = ">= 1.0.0 and < 2.0.0"
+
+[dev-dependencies]
+gleeunit = ">= 1.0.0 and < 2.0.0"
+
+[tailwind]
+version = "4.1"

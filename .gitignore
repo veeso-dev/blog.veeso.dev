@@ -1,8 +1,6 @@
-node_modules/
-.cache/
-public
-src/gatsby-types.d.ts
-yarn-error.log
+*.beam
+*.ez
+/build
+erl_crash.dump
 
-# Partytown
-static/~partytown
+dist/
