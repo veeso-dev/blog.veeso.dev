@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant sm (@media (max-width: 640px));
+
+@theme {
+  --breakpoint-sm: initial;
+
+  --color-brand: #31363b;
+  --color-page: #f5f5f5;
+
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 3.5rem;
+  --font-size-4xl: 7rem;
+}

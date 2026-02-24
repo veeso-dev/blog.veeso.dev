@@ -1,35 +1,15 @@
-# veeso.dev
+# blog
 
-[![CI](https://github.com/veeso-dev/blog.veeso.dev/workflows/CI/badge.svg)](https://github.com/veeso-dev/blog.veeso.dev/actions)
-
-## Building and running on localhost
-
-First install dependencies:
+## Development
 
 ```sh
-yarn
+gleam run   # Run the project
+gleam test  # Run the tests
 ```
 
-To run in hot module reloading mode:
+## Resources
 
-```sh
-yarn start
-```
-
-To run a production build:
-
-```sh
-yarn serve
-```
-
-To lint
-
-```sh
-yarn lint
-```
-
-To format
-
-```sh
-yarn prettier
-```
+- [A Blog in Gleam](https://gearsco.de/blog/blog-in-gleam/)
+- [blogatto](https://github.com/veeso/blogatto): A blog engine in Gleam
+- [glailglind](https://hexdocs.pm/glailglind/): Tailwindcss installer for Gleam
+- [webls](https://hexdocs.pm/webls/): Sitemaps, robots and RSS feed for Websites
