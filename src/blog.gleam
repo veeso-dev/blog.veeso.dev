@@ -11,7 +11,11 @@ import blogatto/config/markdown
 import blogatto/config/robots
 import blogatto/config/sitemap
 import blogatto/error as blogatto_error
+import gleam/dict
 import gleam/io
+import gleam/list
+import gleam/option
+import gleam/string
 import tailwind
 
 /// Build the blog: install Tailwind, configure blogatto, and generate output.
@@ -36,6 +40,7 @@ pub fn main() {
     )
     |> feed.language("en-us")
     |> feed.output("/rss/en.xml")
+    |> feed.serialize(serialize_feed_item)
 
   let cfg =
     config.new("https://blog.veeso.dev")
@@ -71,4 +76,57 @@ pub fn main() {
   }
 
   io.println("Blog built successfully!")
+}
+
+fn serialize_feed_item(metadata: feed.FeedMetadata(msg)) -> feed.FeedItem {
+  let enclosure = case metadata.post.featured_image {
+    option.None -> option.None
+    option.Some(featured_image) -> {
+      let url = case featured_image {
+        "http" <> _ -> featured_image
+        path ->
+          "https://blog.veeso.dev/blog/en/" <> metadata.post.slug <> "/" <> path
+      }
+      let mime = image_mime_type(featured_image)
+      option.Some(feed.Enclosure(url:, length: 0, enclosure_type: mime))
+    }
+  }
+
+  let categories =
+    metadata.post.extras
+    |> dict.get("tag")
+    |> option.from_result
+    |> option.map(fn(x) { [x] })
+    |> option.unwrap(or: [])
+
+  feed.FeedItem(
+    title: metadata.post.title,
+    description: metadata.excerpt,
+    link: option.Some(metadata.url),
+    author: option.Some("Christian Visintin"),
+    comments: option.None,
+    source: option.None,
+    pub_date: option.Some(metadata.post.date),
+    categories:,
+    enclosure:,
+    guid: option.Some(metadata.url),
+  )
+}
+
+fn image_mime_type(filename: String) -> String {
+  let name = string.lowercase(filename)
+  let extension =
+    name
+    |> string.split(".")
+    |> list.last()
+    |> option.from_result()
+    |> option.unwrap("")
+
+  case extension {
+    "png" -> "image/png"
+    "gif" -> "image/gif"
+    "webp" -> "image/webp"
+    "svg" -> "image/svg+xml"
+    _ -> "image/jpeg"
+  }
 }
