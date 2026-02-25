@@ -1,9 +1,9 @@
 ---
-date: ‘2026-02-25 18:00:00’
-slug: ‘this-blog-was-made-with-gleam’
-title: ‘This Blog was made with Gleam’
-description: ‘Goodbye Gatsby, Hello Gleam! This blog is now powered by Gleam, Lustre, and Blogatto’
-author: ‘veeso’
+date: '2026-02-25 18:00:00'
+slug: 'this-blog-was-made-with-gleam'
+title: 'This Blog was made with Gleam'
+description: 'Goodbye Gatsby, Hello Gleam! This blog is now powered by Gleam, Lustre, and Blogatto'
+author: 'veeso'
 featured_image: featured.jpeg
 tag: gleam
 ---
