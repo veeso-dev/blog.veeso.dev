@@ -2,10 +2,11 @@
 date: '2024-07-06 15:00:00'
 slug: 'how-to-configure-cpu-cores-to-be-used-on-a-tokio-with-core--affinity'
 title: 'How to configure CPU cores to be used in a Tokio application with core_affinity'
-subtitle: "Let's see how to setup the tokio runtime to use only the configured cores"
+description: "Let's see how to setup the tokio runtime to use only the configured cores"
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: rust
+reading_time: '4'
 ---
 
 There are several cases where applications are developed for extreme performance and choosing the cores to be used for an application is required. For instance we may want to reserve certain cores for some specific process, or we may want to chunk the server's cores based on the service.

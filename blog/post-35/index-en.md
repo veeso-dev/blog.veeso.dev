@@ -2,10 +2,11 @@
 date: '2025-04-28 12:00:00'
 slug: 'it-s-time-to-leave-x-com'
 title: "It's time to leave X.com"
-subtitle: 'With two years of delay, I finally decided to leave too'
+description: 'With two years of delay, I finally decided to leave too'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: misc
+reading_time: '4'
 ---
 
 ## Elon Musk has created a monster

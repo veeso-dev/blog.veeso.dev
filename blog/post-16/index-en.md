@@ -2,10 +2,11 @@
 date: '2024-09-04 12:00:00'
 slug: 'hey-rustaceans-rust-freelancers-do-exist'
 title: 'Hey Rustaceans: Rust freelancers do exist!'
-subtitle: 'Are you tired of PHP and you want to be a 100% Rust developer? You should consider becoming a freelancer'
+description: 'Are you tired of PHP and you want to be a 100% Rust developer? You should consider becoming a freelancer'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: rust
+reading_time: '5'
 ---
 
 In 2023 I've decided to resign from my job at Prima to start working as a freelancer, with a particular focus on Rust, along with a minor web development. Currently I can affirm that for 90/95% of the time I work on Rust projects as a freelancer and I've noticed that only a minimum part of people, almost no one, works as a freelancer in Rust development, which is really a pity in my opinion, and now I'll explain you the reasons.

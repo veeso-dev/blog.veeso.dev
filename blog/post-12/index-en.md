@@ -2,10 +2,11 @@
 date: '2024-05-28 15:30:00'
 slug: 'let-me-introduce-you-shit-ai'
 title: 'Let me introduce you ShitAI'
-subtitle: 'How AI is not improving our society and for the 90% is just a bubble'
+description: 'How AI is not improving our society and for the 90% is just a bubble'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: web
+reading_time: '4'
 ---
 
 ## A brief resume of how AI has taken over

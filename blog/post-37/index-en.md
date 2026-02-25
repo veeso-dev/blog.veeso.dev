@@ -2,10 +2,11 @@
 date: '2025-05-02 11:00:00'
 slug: 'std-mem-is-interesting'
 title: 'std::mem is... interesting'
-subtitle: "Let's uncover the mysterious std::mem module in Rust"
+description: "Let's uncover the mysterious std::mem module in Rust"
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: rust
+reading_time: '11'
 ---
 
 ## A module we don't use often

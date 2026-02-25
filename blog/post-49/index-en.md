@@ -2,10 +2,11 @@
 date: '2025-12-05 23:00:00'
 slug: 'cooking-ic-dbms-canister-dbms-layer'
 title: 'Cooking ic-dbms-canister: DBMS Layer'
-subtitle: 'A tale of building a framework for building DBMS on Internet Computer - Chapter 3'
+description: 'A tale of building a framework for building DBMS on Internet Computer - Chapter 3'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: rust
+reading_time: '21'
 ---
 
 ## Introduction

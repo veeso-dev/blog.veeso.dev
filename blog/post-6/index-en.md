@@ -2,10 +2,11 @@
 date: '2023-09-21 12:00:00'
 slug: 'how-to-migrate-from-reactjs-to-gatsby'
 title: 'How to migrate from ReactJS to Gatsby'
-subtitle: 'Maximize your Lighthouse score by migrating your web page to Gatsby'
+description: 'Maximize your Lighthouse score by migrating your web page to Gatsby'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: web
+reading_time: '15'
 ---
 
 ## Why to migrate your ReactJS frontend to Gatsby

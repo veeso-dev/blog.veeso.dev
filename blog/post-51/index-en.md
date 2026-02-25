@@ -2,10 +2,11 @@
 date: '2025-12-13 18:07:00'
 slug: 'announcing-ic-dbms-0-1-0'
 title: 'Announcing ic-dbms 0.1.0'
-subtitle: 'A Rust framework to easily implement a database canister on the Internet Computer'
+description: 'A Rust framework to easily implement a database canister on the Internet Computer'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: rust
+reading_time: '3'
 ---
 
 What if I told you that this code:

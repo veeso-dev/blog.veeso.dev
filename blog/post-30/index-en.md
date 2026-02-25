@@ -2,10 +2,11 @@
 date: '2025-03-11 18:00:00'
 slug: 'async-rust-for-dummies'
 title: 'Async Rust for Dummies'
-subtitle: 'Let me show you how async Rust works under the hood'
+description: 'Let me show you how async Rust works under the hood'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: rust
+reading_time: '10'
 ---
 
 ## Introduction

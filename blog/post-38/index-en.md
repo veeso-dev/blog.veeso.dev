@@ -2,10 +2,11 @@
 date: '2025-05-03 18:00:00'
 slug: 'why-as-a-software-engineer-i-truly-believe-in-the-internet-computer-project'
 title: 'Why as a Software Engineer I truly believe in the Internet Computer project'
-subtitle: "Hear me out, I know it's about web3, but Internet Computer is different"
+description: "Hear me out, I know it's about web3, but Internet Computer is different"
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: internet-computer
+reading_time: '8'
 ---
 
 ## Premise

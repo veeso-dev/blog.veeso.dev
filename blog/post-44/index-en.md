@@ -2,10 +2,11 @@
 date: '2025-07-28 18:10:00'
 slug: 'can-you-move-a-copy-in-rust'
 title: 'Can you move a Copy in Rust?'
-subtitle: 'A dumb question, but a good one to ask'
+description: 'A dumb question, but a good one to ask'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: rust
+reading_time: '5'
 ---
 
 ## Introduction

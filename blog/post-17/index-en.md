@@ -2,10 +2,11 @@
 date: '2024-10-03 18:15:00'
 slug: 'announcing-termscp-015'
 title: 'Announcing termscp 0.15.0'
-subtitle: 'with many new features'
+description: 'with many new features'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: termscp
+reading_time: '3'
 ---
 
 ## What's new

@@ -1,0 +1,179 @@
+---
+date: '2023-05-13 00:00:00'
+slug: 'how-to-access-an-smb-share-with-rust-on-windows'
+title: 'How to access an SMB share with Rust (on Windows)'
+description: 'A step-by-step guide to access SMB share on Windows with Rust stdlib'
+author: 'veeso'
+featured_image: featured.jpeg
+tag: rust
+reading_time: '4'
+---
+
+## Introduction
+
+I’ve developed termscp, which is basically a feature-rich terminal file transfer and explorer, with support for SCP/SFTP/FTP/S3 and now also SMB. But implementing SMB wasn’t that simple.
+
+Even if I managed to get a rust interface for libsmbclient working for **Linux and MacOS** (see [pavao](https://github.com/veeso/pavao)), I still couldn’t understand how to make it work for Windows, since there is not really a guide on how it should be done.
+
+On a stack overflow thread, I read that actually SMB should be natively supported by Windows, so you could access your share directly as a file if you put the IP address or hostname in front of the path.
+
+But unfortunately, it wasn’t that easy and I had to find the way by myself searching on different forums for other languages.
+
+So, said that, welcome to the definitive guide on “How to access an SMB share with Rust” (on Windows).
+
+## How to mount the share
+
+Basically what I found out was that you can easily access an SMB share on Powershell using :
+
+```sh
+net use \\server\share /user:username [password]`
+```
+
+so the first thing I decided to investigate is what API it uses, and I found out that we can mount the share with an easy call in the Windows API. For that reason, the first thing we need to do is to set up our dependencies.
+
+### Dependencies
+
+We just need to add windows-sys with a single additional feature for this implementation
+
+```toml
+[dependencies]
+windows-sys = { version = "^0.48" features = [ "Win32_NetworkManagement_WNet" ] }
+```
+
+Now we’re ready to mount the share in our client
+
+### Mount the share
+
+Let’s set up the imports
+
+```rust
+use std::ffi::CString;
+
+use windows_sys::Win32::Foundation::{NO_ERROR, TRUE};
+use windows_sys::Win32::NetworkManagement::WNet;
+```
+
+Then we need also a utility function that takes a String and returns a CString since we’re going to work with raw pointers.
+
+```rust
+fn to_cstr(s: &str) -> CString {
+    CString::new(s).unwrap()
+}
+```
+
+Feel free to handle the error better here.
+
+At this point, we can set up our connect function
+
+```rust
+fn connect(
+    server: &str,
+    share: &str,
+    username: Option<&str>,
+    password: Option<&str>
+) -> Result<(), i32>
+{
+    let remote_name = to_cstr(format!("\\\\{server}\\{share}"));
+
+    // init resources
+    let mut resources = WNet::NETRESOURCEA {
+        dwDisplayType: WNet::RESOURCEDISPLAYTYPE_SHAREADMIN,
+        dwScope: WNet::RESOURCE_GLOBALNET,
+        dwType: WNet::RESOURCETYPE_DISK,
+        dwUsage: WNet::RESOURCEUSAGE_ALL,
+        lpComment: std::ptr::null_mut(),
+        lpLocalName: std::ptr::null_mut(), // PUT a volume here if you want to mount as a windows volume
+        lpProvider: std::ptr::null_mut(),
+        lpRemoteName: remote_name.as_c_str().as_ptr() as *mut u8,
+    };
+
+  let username = username.as_ref().map(|username| to_cstr(username));
+  let password = password.as_ref().map(|password| to_cstr(password));
+
+  // mount
+  let result = unsafe {
+      let username_ptr = username
+          .as_ref()
+          .map(|username| username.as_ptr())
+          .unwrap_or(std::ptr::null());
+      let password_ptr = password
+          .as_ref()
+          .map(|password| password.as_ptr())
+          .unwrap_or(std::ptr::null());
+      WNet::WNetAddConnection2A(
+          &mut resource as *mut WNet::NETRESOURCEA,
+          password_ptr as *const u8,
+          username_ptr as *const u8,
+          WNet::CONNECT_INTERACTIVE, // Interactive will show a system dialog in case credentials are wrong to retry with the password. Put 0 if you don't want it
+       )
+
+  };
+
+  if result == NO_ERROR {
+    Ok(())
+  } else {
+    Err(result)
+  }
+
+}
+```
+
+### Interacting with the share files
+
+So calling this method we’ll be able to access any file on our share. But, how? With which path?
+
+We have two possibilities here actually:
+
+1. We provided `lpLocalName` in the resources. In this case, we can access the Volume chosen to mount the share.
+2. Use the `full_path` function here below.
+
+```rust
+fn full_path(server: &str, share: &str, p: &Path) -> PathBuf {
+    let mut full_path = PathBuf::from(format!("\\\\{}\\{}", server, share));
+    full_path.push(p);
+
+    full_path
+}
+```
+
+In my case I opt for case 2, so let’s see an example:
+
+```rust
+use std::fs::File;
+use std::io::Result as IoResult;
+
+fn open(server: &str, share: &str, path: &Path) -> IoResult<File> {
+    let path = full_path(server, share, path);
+    File::open(&path)
+}
+```
+
+So as you can see, once we’ve built the full path for the share we’ve mounted, we can easily access every file on the remote share as if it was on the local file system with the standard library.
+
+### Clean up
+
+It’s always important to remember that we need to clean up the share connection before terminating our application. For this purpose we’ve got a simple Windows API call:
+
+```rust
+fn disconnect(server: &str, share: &str) -> Result<(), i32> {
+    let remote_name = to_cstr(format!("\\\\{server}\\{share}"));
+
+    let result =
+        unsafe { WNet::WNetCancelConnection2A(remote_name.as_ptr() as *mut u8, 0, TRUE) };
+
+    if result == NO_ERROR {
+        Ok(())
+    } else {
+        Err(result)
+    }
+
+}
+```
+
+And that’s all. Long research to find out that dealing with SMB shares on Windows systems is actually quite simple.
+
+## References
+
+Everything shown in this tutorial can be found in this [repository](https://github.com/veeso/remotefs-rs-smb) under `src/client/windows.rs`, while you can directly use this library to have a simple interface to SMB shares if you’re a fan of the remotefs-rs project.
+
+This library also works on `Linux/MacOS` systems, so if you need a fully compatible application for SMB on Rust feel free to use it.

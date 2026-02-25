@@ -2,10 +2,11 @@
 date: '2026-01-06 15:10:00'
 slug: 'i-transformed-my-lego-gameboy-into-a-working-gameboy'
 title: 'I transformed my LEGO Gameboy into a working Gameboy!'
-subtitle: 'A frustrating DIY project to turn your Lego Gameboy into a functional Gameboy using a Raspberry Pi Zero 2W.'
+description: 'A frustrating DIY project to turn your Lego Gameboy into a functional Gameboy using a Raspberry Pi Zero 2W.'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: tinker
+reading_time: '11'
 ---
 
 Since I saw the [Lego Gameboy set](https://www.lego.com/product/game-boy-72046), I wanted to make it functional since I have good knowledge of programming and little knowledge of electronics.

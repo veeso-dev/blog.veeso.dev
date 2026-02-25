@@ -2,10 +2,11 @@
 date: '2025-03-20 17:00:00'
 slug: 'vendoring-c-cpp-dependencies-in-rust'
 title: 'Vendoring C/C++ dependencies in Rust'
-subtitle: 'How to statically bundle a C library to your project like with OpenSSL'
+description: 'How to statically bundle a C library to your project like with OpenSSL'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: rust
+reading_time: '11'
 ---
 
 ## What is vendoring about?

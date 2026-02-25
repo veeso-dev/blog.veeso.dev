@@ -2,10 +2,11 @@
 date: '2024-12-19 15:00:00'
 slug: 'why-bitcoin-is-not-decentralized--in-any-way'
 title: 'Why Bitcoin is not decentralized - in any way'
-subtitle: 'The truth everybody tries to hide about Bitcoin decentralization'
+description: 'The truth everybody tries to hide about Bitcoin decentralization'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: bitcoin
+reading_time: '6'
 ---
 
 ## Bitcoin is decentralized, right?

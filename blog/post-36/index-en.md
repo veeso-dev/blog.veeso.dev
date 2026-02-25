@@ -2,10 +2,11 @@
 date: '2025-04-30 12:00:00'
 slug: 'all-my-dead-open-source-projects'
 title: 'All my Dead Open Source Projects'
-subtitle: 'Showcasing successful projects is mainstream, but what about the dead ones?'
+description: 'Showcasing successful projects is mainstream, but what about the dead ones?'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: dev-life
+reading_time: '9'
 ---
 
 ## Introduction
