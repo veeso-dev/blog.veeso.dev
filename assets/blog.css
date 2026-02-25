@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 @custom-variant sm (@media (max-width: 640px));
@@ -13,4 +13,50 @@
   --font-size-2xl: 2rem;
   --font-size-3xl: 3.5rem;
   --font-size-4xl: 7rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Sora", sans-serif;
+  margin: 0;
+  min-width: 100vw;
+  overflow-x: hidden !important;
+  padding: 0;
+}
+
+p {
+  font-weight: 300;
+}
+
+input {
+  font-family: "Sora", sans-serif;
+  font-size: 1em;
+}
+
+textarea {
+  font-family: "Sora", sans-serif;
+}
+
+strong {
+  font-weight: 600;
+}
+
+button {
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+button,
+input {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.md-img {
+  max-width: 420px;
 }

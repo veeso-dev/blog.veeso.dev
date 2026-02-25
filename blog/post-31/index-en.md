@@ -2,10 +2,11 @@
 date: '2025-03-14 18:00:00'
 slug: 'extending-future-in-rust'
 title: 'Extending Future in Rust'
-subtitle: 'Is it even a thing?'
+description: 'Is it even a thing?'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: rust
+reading_time: '7'
 ---
 
 ## Introduction

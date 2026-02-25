@@ -2,10 +2,11 @@
 date: '2024-04-12 12:30:00'
 slug: 'the-bitcoin-utopia-is-a-lie'
 title: 'The Bitcoin Utopia is a Lie'
-subtitle: 'Why we all have been lied about Bitcoin'
+description: 'Why we all have been lied about Bitcoin'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: bitcoin
+reading_time: '15'
 ---
 
 ## Preamble

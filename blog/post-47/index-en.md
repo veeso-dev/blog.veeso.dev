@@ -2,10 +2,11 @@
 date: '2025-11-22 12:10:00'
 slug: 'cooking-ic-dbms-canister-memory-management'
 title: 'Cooking ic-dbms-canister: Memory Management'
-subtitle: 'A tale of building a framework for building DBMS on Internet Computer - Chapter 2'
+description: 'A tale of building a framework for building DBMS on Internet Computer - Chapter 2'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: rust
+reading_time: '14'
 ---
 
 ## Introduction

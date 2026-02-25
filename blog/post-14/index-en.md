@@ -2,10 +2,11 @@
 date: '2024-07-12 16:00:00'
 slug: 'implementing-a-generic-range-parser-in-rust'
 title: 'Implementing a generic range parser in Rust'
-subtitle: "Well it looks easy, but it's not"
+description: "Well it looks easy, but it's not"
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: rust
+reading_time: '8'
 ---
 
 ## Simple problems that require complex solutions

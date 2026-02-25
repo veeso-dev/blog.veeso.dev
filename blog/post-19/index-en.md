@@ -2,10 +2,11 @@
 date: '2024-10-28 17:00:00'
 slug: 'dyn-box-vs-generics-in-rust'
 title: 'Dyn Box Vs. Generics'
-subtitle: 'What is the best approach for achieving conditional generics in Rust?'
+description: 'What is the best approach for achieving conditional generics in Rust?'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: rust
+reading_time: '6'
 ---
 
 ## Case scenario

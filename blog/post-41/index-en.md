@@ -2,10 +2,11 @@
 date: '2025-06-07 18:30:00'
 slug: 'rust-on-a-diet'
 title: 'Rust on a Diet'
-subtitle: 'How cloning a Vec had caused memory bloat on the Solana Validator'
+description: 'How cloning a Vec had caused memory bloat on the Solana Validator'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: rust
+reading_time: '8'
 ---
 
 So if you don't know, I also develop on the Solana Validator (but please don't leave, it's about Rust and not blockchain things 😓) mostly mods for Solana RPC nodes, and recently a colleague of mine, sent me this Post on X.com, about a massive fixup on the Solana Validator, which claims to have pushed down the memory usage of the QUIC transport **from 2.6GB to 124MB**.

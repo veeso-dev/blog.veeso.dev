@@ -2,10 +2,11 @@
 date: '2025-08-14 11:15:00'
 slug: 'prs-taking-too-long-to-be-reviewed'
 title: 'PRs taking too long to be reviewed'
-subtitle: 'The dilemma of assigning Pull Requests Reviews'
+description: 'The dilemma of assigning Pull Requests Reviews'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: dev-life
+reading_time: '4'
 ---
 
 ## Introduction

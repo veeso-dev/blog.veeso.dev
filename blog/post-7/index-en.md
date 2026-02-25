@@ -2,10 +2,11 @@
 date: '2023-10-04 17:00:00'
 slug: 'ive-replaced-google-analytics-with-umami'
 title: "I've replaced Google Analytics with Umami"
-subtitle: 'And why you should do the same'
+description: 'And why you should do the same'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: web
+reading_time: '6'
 ---
 
 ## Google Analytics is mostly overrated

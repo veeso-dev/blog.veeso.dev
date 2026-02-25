@@ -2,10 +2,11 @@
 date: '2025-03-30 17:30:00'
 slug: 'one-does-not-simply-write-a-ssh-config-parser-in-rust'
 title: 'One does not simply write a SSH config parser (in Rust)'
-subtitle: 'A journey through the land of Rust, nom and SSH config files'
+description: 'A journey through the land of Rust, nom and SSH config files'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: rust
+reading_time: '11'
 ---
 
 Do you know the feeling when you start a project and you think it will be easy, but then you realize that it is not? This is the story of the implementation of [ssh2-config](https://github.com/veeso/ssh2-config), a Rust library to parse SSH config files.

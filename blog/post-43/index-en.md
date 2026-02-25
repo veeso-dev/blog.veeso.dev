@@ -2,10 +2,11 @@
 date: '2025-06-26 18:00:00'
 slug: 'leaktracer-a-rust-allocator-to-trace-memory-allocations'
 title: 'Leaktracer: A Rust allocator to trace memory allocations'
-subtitle: 'A simple allocator to help you find leaks and memory issues in your Rust applications'
+description: 'A simple allocator to help you find leaks and memory issues in your Rust applications'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: rust
+reading_time: '11'
 ---
 
 A few days ago, I had a memory issue in one of my Rust applications.

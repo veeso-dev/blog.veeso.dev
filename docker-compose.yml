@@ -1,0 +1,8 @@
+services:
+  blog:
+    image: nginx:alpine
+    ports:
+      - "3000:80"
+    volumes:
+      - ./dist:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro

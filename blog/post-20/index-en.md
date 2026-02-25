@@ -2,10 +2,11 @@
 date: '2024-11-03 17:00:00'
 slug: 'reached-the-recursion-limit-at-build-time'
 title: 'Reached the recursion limit... at build time?'
-subtitle: 'A quick investigation on the recursion limit exceeded issue at build time'
+description: 'A quick investigation on the recursion limit exceeded issue at build time'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: rust
+reading_time: '6'
 ---
 
 ## A bit of context

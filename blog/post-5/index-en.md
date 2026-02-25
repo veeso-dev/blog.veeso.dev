@@ -2,10 +2,11 @@
 date: '2023-07-17 12:00:00'
 slug: 'why-you-should-and-should-not-do-open-source'
 title: 'Why you should (and should not) do open-source'
-subtitle: 'As an experienced open-source developer, I want to tell you why you should do open-source, with all the cons though'
+description: 'As an experienced open-source developer, I want to tell you why you should do open-source, with all the cons though'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: dev-life
+reading_time: '10'
 ---
 
 ## Preamble

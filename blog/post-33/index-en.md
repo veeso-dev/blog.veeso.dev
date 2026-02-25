@@ -2,10 +2,11 @@
 date: '2025-03-28 16:00:00'
 slug: 'embedding-shared-objects-in-rust'
 title: 'Embedding shared objects in Rust'
-subtitle: 'How to embed a shared object in a Rust binary and load it at runtime'
+description: 'How to embed a shared object in a Rust binary and load it at runtime'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: rust
+reading_time: '11'
 ---
 
 ## But why?

@@ -2,10 +2,11 @@
 date: '2024-10-14 18:15:00'
 slug: 'announcing-termscp-016'
 title: 'Announcing termscp 0.16.0'
-subtitle: 'we have multi-host transfers baby'
+description: 'we have multi-host transfers baby'
 author: 'veeso'
-featuredImage: ./featured.jpeg
+featured_image: featured.jpeg
 tag: termscp
+reading_time: '2'
 ---
 
 ## What's new
