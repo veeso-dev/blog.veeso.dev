@@ -4,3 +4,6 @@
 erl_crash.dump
 
 dist/
+.vercel/
+.vercel
+.env*.local
