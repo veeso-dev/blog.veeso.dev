@@ -8,6 +8,7 @@ import blogatto
 import blogatto/config
 import blogatto/config/feed
 import blogatto/config/markdown
+import blogatto/config/robots
 import blogatto/config/sitemap
 import blogatto/error as blogatto_error
 import gleam/io
@@ -45,6 +46,18 @@ pub fn main() {
     |> config.sitemap(sitemap.new("/sitemap.xml"))
     |> config.route("/", home.home)
     |> config.route("/blog/", blog.blog)
+    |> config.robots(
+      robots.RobotsConfig(
+        sitemap_url: "https://blog.veeso.dev/sitemap.xml",
+        robots: [
+          robots.Robot(
+            user_agent: "*",
+            allowed_routes: ["/"],
+            disallowed_routes: [],
+          ),
+        ],
+      ),
+    )
 
   case blogatto.build(cfg) {
     Ok(_) -> io.println("Blog built successfully!")
