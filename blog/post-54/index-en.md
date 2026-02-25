@@ -6,6 +6,7 @@ description: 'Goodbye Gatsby, Hello Gleam! This blog is now powered by Gleam, Lu
 author: 'veeso'
 featured_image: featured.jpeg
 tag: gleam
+reading_time: '7'
 ---
 
 If you are reading this, you are looking at a blog that runs **zero React, zero GraphQL, and zero Node.js**. This blog is now entirely powered by Gleam, Lustre, and a little static site generator I built called Blogatto.
