@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  pull_request:
 
 jobs:
   deploy:
@@ -26,7 +27,19 @@ jobs:
 
       - run: npm install -g vercel
 
-      - run: vercel deploy ./dist --prod --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Deploy production
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: vercel deploy ./dist --prod --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: Deploy preview
+        if: github.event_name == 'pull_request'
+        run: |
+          url=$(vercel deploy ./dist --token=${{ secrets.VERCEL_TOKEN }})
+          echo "Preview URL: $url"
+          echo "PREVIEW_URL=$url" >> "$GITHUB_ENV"
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
