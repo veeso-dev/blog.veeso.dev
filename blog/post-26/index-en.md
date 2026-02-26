@@ -5,7 +5,7 @@ title: 'Why Bitcoin is not decentralized - in any way'
 description: 'The truth everybody tries to hide about Bitcoin decentralization'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: bitcoin
+category: blockchain
 reading_time: '6'
 ---
 

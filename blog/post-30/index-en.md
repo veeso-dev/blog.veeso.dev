@@ -5,7 +5,7 @@ title: 'Async Rust for Dummies'
 description: 'Let me show you how async Rust works under the hood'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: rust
+category: rust-tutorials
 reading_time: '10'
 ---
 

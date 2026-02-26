@@ -35,6 +35,21 @@ pub fn post_preview(post: post.Post(msg)) -> Element(msg) {
             "w-full",
             "mb-3",
             "text-justify",
+            "text-lg",
+            "text-gray-500",
+            "dark:text-gray-200",
+          ]),
+        ],
+        [
+          element.text(post.excerpt),
+        ],
+      ),
+      html.p(
+        [
+          components.classes([
+            "w-full",
+            "mb-3",
+            "text-justify",
             "text-gray-400",
             "dark:text-gray-400",
           ]),

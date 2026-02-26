@@ -5,7 +5,7 @@ title: 'Announcing ic-dbms 0.1.0'
 description: 'A Rust framework to easily implement a database canister on the Internet Computer'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: rust
+category: open-source
 reading_time: '3'
 ---
 

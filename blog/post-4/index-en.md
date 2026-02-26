@@ -5,7 +5,7 @@ title: 'How to access an SMB share with Rust (on Windows)'
 description: 'A step-by-step guide to access SMB share on Windows with Rust stdlib'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: rust
+category: rust-tutorials
 reading_time: '4'
 ---
 

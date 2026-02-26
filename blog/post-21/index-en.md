@@ -5,7 +5,7 @@ title: "You don't (*always*) need async"
 description: "But you can't live without it anymore"
 author: 'veeso'
 featured_image: featured.jpeg
-tag: rust
+category: rust-internals
 reading_time: '11'
 ---
 

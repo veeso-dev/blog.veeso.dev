@@ -5,7 +5,7 @@ title: 'PRs taking too long to be reviewed'
 description: 'The dilemma of assigning Pull Requests Reviews'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: dev-life
+category: 'software-engineering'
 reading_time: '4'
 ---
 

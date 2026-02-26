@@ -5,7 +5,7 @@ title: 'Announcing termscp 0.16.0'
 description: 'we have multi-host transfers baby'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: termscp
+category: open-source
 reading_time: '2'
 ---
 

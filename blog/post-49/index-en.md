@@ -5,7 +5,7 @@ title: 'Cooking ic-dbms-canister: DBMS Layer'
 description: 'A tale of building a framework for building DBMS on Internet Computer - Chapter 3'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: rust
+category: rust-projects
 reading_time: '21'
 ---
 

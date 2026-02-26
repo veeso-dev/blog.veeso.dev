@@ -5,7 +5,7 @@ title: 'How to get started with Bitcoin Lottery Mining?'
 description: 'What do you need to get started? Why is it important? Can you actually earn bitcoins?'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: bitcoin
+category: blockchain
 reading_time: '7'
 ---
 

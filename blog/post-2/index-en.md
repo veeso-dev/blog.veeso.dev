@@ -5,7 +5,7 @@ title: 'How Rust Nation ‘23 changed my POV on the Rust community'
 description: "A retrospective of Rust Nation '23"
 author: 'veeso'
 featured_image: featured.jpeg
-tag: conference
+category: 'software-engineering'
 reading_time: '4'
 ---
 

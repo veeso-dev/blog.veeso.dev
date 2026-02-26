@@ -5,7 +5,7 @@ title: "It's time to leave X.com"
 description: 'With two years of delay, I finally decided to leave too'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: misc
+category: 'software-engineering'
 reading_time: '4'
 ---
 

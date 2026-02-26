@@ -5,7 +5,7 @@ title: 'Hey Rustaceans: Rust freelancers do exist!'
 description: 'Are you tired of PHP and you want to be a 100% Rust developer? You should consider becoming a freelancer'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: rust
+category: 'software-engineering'
 reading_time: '5'
 ---
 

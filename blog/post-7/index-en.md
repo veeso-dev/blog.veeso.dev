@@ -5,7 +5,7 @@ title: "I've replaced Google Analytics with Umami"
 description: 'And why you should do the same'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: web
+category: web-development
 reading_time: '6'
 ---
 

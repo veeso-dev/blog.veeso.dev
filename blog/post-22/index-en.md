@@ -5,7 +5,7 @@ title: 'The Ethereum MEV Bots are a scam'
 description: 'Let me clarify once for all why Ethereum MEV bots are a scam'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: scam
+category: blockchain
 reading_time: '5'
 ---
 

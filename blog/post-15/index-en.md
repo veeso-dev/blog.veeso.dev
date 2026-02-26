@@ -5,7 +5,7 @@ title: 'termscp 0.14 has been released'
 description: 'come discover many brand new cool features'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: termscp
+category: open-source
 reading_time: '3'
 ---
 

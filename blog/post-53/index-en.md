@@ -5,7 +5,7 @@ title: 'The role of the Software Engineer in the age of AI'
 description: 'A consideration of how AI is going to change the role of Software Engineers and the advent of the Software Engineer 2.0'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: dev-life
+category: 'software-engineering'
 reading_time: '8'
 ---
 

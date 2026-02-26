@@ -5,7 +5,7 @@ title: 'Cooking ic-dbms-canister: Memory Management'
 description: 'A tale of building a framework for building DBMS on Internet Computer - Chapter 2'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: rust
+category: rust-projects
 reading_time: '14'
 ---
 

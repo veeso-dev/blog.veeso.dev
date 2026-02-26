@@ -5,7 +5,7 @@ title: 'Let me introduce you ShitAI'
 description: 'How AI is not improving our society and for the 90% is just a bubble'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: web
+category: open-source
 reading_time: '4'
 ---
 

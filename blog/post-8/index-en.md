@@ -5,7 +5,7 @@ title: 'The fascinating Ethereum MEV Bot scam'
 description: 'An overview of this scam contract code'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: scam
+category: blockchain
 reading_time: '13'
 ---
 

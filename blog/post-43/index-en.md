@@ -5,7 +5,7 @@ title: 'Leaktracer: A Rust allocator to trace memory allocations'
 description: 'A simple allocator to help you find leaks and memory issues in your Rust applications'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: rust
+category: rust-internals
 reading_time: '11'
 ---
 

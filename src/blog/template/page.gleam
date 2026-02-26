@@ -32,8 +32,15 @@ pub type PageConfig {
 }
 
 /// Render a full HTML page with the given configuration and body children.
-pub fn page(config: PageConfig, children: List(Element(msg))) -> Element(msg) {
-  html.html([attribute.lang("en")], [head(config), body(children)])
+pub fn page(
+  config: PageConfig,
+  children: List(Element(msg)),
+  before_footer: Element(msg),
+) -> Element(msg) {
+  html.html([attribute.lang("en")], [
+    head(config),
+    body(children, before_footer),
+  ])
 }
 
 fn head(config: PageConfig) -> Element(msg) {
@@ -159,7 +166,10 @@ fn head(config: PageConfig) -> Element(msg) {
   ])
 }
 
-fn body(children: List(Element(msg))) -> Element(msg) {
+fn body(
+  children: List(Element(msg)),
+  before_footer: Element(msg),
+) -> Element(msg) {
   html.body([], [
     html.div([], [
       container.col(
@@ -201,6 +211,19 @@ fn body(children: List(Element(msg))) -> Element(msg) {
                 ],
                 [topbar.topbar(), html.main([], children)],
               ),
+            ],
+          ),
+          html.div(
+            [
+              components.classes([
+                "max-w-screen-md",
+                "w-auto",
+                "sm:max-w-full",
+                "py-4",
+              ]),
+            ],
+            [
+              before_footer,
             ],
           ),
         ],

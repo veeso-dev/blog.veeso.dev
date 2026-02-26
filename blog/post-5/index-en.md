@@ -5,7 +5,7 @@ title: 'Why you should (and should not) do open-source'
 description: 'As an experienced open-source developer, I want to tell you why you should do open-source, with all the cons though'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: dev-life
+category: 'software-engineering'
 reading_time: '10'
 ---
 

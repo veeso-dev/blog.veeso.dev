@@ -5,7 +5,7 @@ title: 'Instantly convert Hanzi to Pinyin with BiangBiang Hanzi'
 description: 'A fast and accurate iOS and Android app for converting Chinese characters to Pinyin with camera OCR'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: app
+category: open-source
 reading_time: '4'
 ---
 

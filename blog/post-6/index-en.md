@@ -5,7 +5,7 @@ title: 'How to migrate from ReactJS to Gatsby'
 description: 'Maximize your Lighthouse score by migrating your web page to Gatsby'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: web
+category: web-development
 reading_time: '15'
 ---
 

@@ -5,7 +5,7 @@ title: 'Vendoring C/C++ dependencies in Rust'
 description: 'How to statically bundle a C library to your project like with OpenSSL'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: rust
+category: rust-tutorials
 reading_time: '11'
 ---
 

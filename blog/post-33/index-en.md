@@ -5,7 +5,7 @@ title: 'Embedding shared objects in Rust'
 description: 'How to embed a shared object in a Rust binary and load it at runtime'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: rust
+category: rust-tutorials
 reading_time: '11'
 ---
 

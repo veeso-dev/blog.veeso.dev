@@ -5,7 +5,7 @@ title: 'Why as a Software Engineer I truly believe in the Internet Computer proj
 description: "Hear me out, I know it's about web3, but Internet Computer is different"
 author: 'veeso'
 featured_image: featured.jpeg
-tag: internet-computer
+category: blockchain
 reading_time: '8'
 ---
 

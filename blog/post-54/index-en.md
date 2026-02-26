@@ -5,7 +5,7 @@ title: 'This Blog was made with Gleam'
 description: 'Goodbye Gatsby, Hello Gleam! This blog is now powered by Gleam, Lustre, and Blogatto'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: gleam
+category: gleam
 reading_time: '7'
 ---
 

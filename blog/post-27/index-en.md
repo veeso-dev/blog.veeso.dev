@@ -5,7 +5,7 @@ title: 'A journey into File Transfer Protocols in Rust'
 description: 'How basically I became a file transfer protocol expert in Rust'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: rust
+category: rust-tutorials
 reading_time: '21'
 ---
 

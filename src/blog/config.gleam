@@ -70,7 +70,7 @@ fn serialize_feed_item(metadata: feed.FeedMetadata(msg)) -> feed.FeedItem {
 
   let categories =
     metadata.post.extras
-    |> dict.get("tag")
+    |> dict.get("category")
     |> option.from_result
     |> option.map(fn(x) { [x] })
     |> option.unwrap(or: [])

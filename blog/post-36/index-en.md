@@ -5,7 +5,7 @@ title: 'All my Dead Open Source Projects'
 description: 'Showcasing successful projects is mainstream, but what about the dead ones?'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: dev-life
+category: 'software-engineering'
 reading_time: '9'
 ---
 

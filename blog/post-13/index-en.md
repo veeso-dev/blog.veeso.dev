@@ -5,7 +5,7 @@ title: 'How to configure CPU cores to be used in a Tokio application with core_a
 description: "Let's see how to setup the tokio runtime to use only the configured cores"
 author: 'veeso'
 featured_image: featured.jpeg
-tag: rust
+category: rust-tutorials
 reading_time: '4'
 ---
 

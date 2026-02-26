@@ -5,7 +5,7 @@ title: "Don't you dare to sort your struct fields when using ?Sized"
 description: 'Or Ferris will come for you!'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: rust
+category: rust-internals
 reading_time: '7'
 ---
 

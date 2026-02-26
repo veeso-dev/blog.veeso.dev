@@ -5,7 +5,7 @@ title: 'Should we get rid of clippy::manual_try_fold?'
 description: 'A discussion on the most dangerous lint in Clippy'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: rust
+category: rust-internals
 reading_time: '7'
 ---
 

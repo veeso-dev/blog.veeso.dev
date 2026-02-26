@@ -5,7 +5,7 @@ title: 'std::mem is... interesting'
 description: "Let's uncover the mysterious std::mem module in Rust"
 author: 'veeso'
 featured_image: featured.jpeg
-tag: rust
+category: rust-internals
 reading_time: '11'
 ---
 

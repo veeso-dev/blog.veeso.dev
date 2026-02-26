@@ -20,7 +20,7 @@ pub fn blog(posts: List(post.Post(Nil))) -> Element(Nil) {
       featured_image: option.Some("https://blog.veeso.dev/og_preview.jpeg"),
     )
 
-  page.page(config, [page_content(posts)])
+  page.page(config, [page_content(posts)], element.none())
 }
 
 fn page_content(posts: List(post.Post(Nil))) -> Element(Nil) {

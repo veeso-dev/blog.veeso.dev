@@ -5,7 +5,7 @@ title: 'Can you move a Copy in Rust?'
 description: 'A dumb question, but a good one to ask'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: rust
+category: rust-internals
 reading_time: '5'
 ---
 

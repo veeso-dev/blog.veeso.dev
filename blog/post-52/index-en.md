@@ -5,7 +5,7 @@ title: 'I transformed my LEGO Gameboy into a working Gameboy!'
 description: 'A frustrating DIY project to turn your Lego Gameboy into a functional Gameboy using a Raspberry Pi Zero 2W.'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: tinker
+category: tinkering
 reading_time: '11'
 ---
 

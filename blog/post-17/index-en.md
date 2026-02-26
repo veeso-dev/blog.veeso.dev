@@ -5,7 +5,7 @@ title: 'Announcing termscp 0.15.0'
 description: 'with many new features'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: termscp
+category: open-source
 reading_time: '3'
 ---
 

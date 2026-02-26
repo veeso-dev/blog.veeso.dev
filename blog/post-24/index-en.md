@@ -5,7 +5,7 @@ title: 'How to make react-markdown work with Parcel?'
 description: 'I literally got mad with react-markdown to make it work with Parcel. Now you have a guide to make it work'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: react
+category: web-development
 reading_time: '4'
 ---
 

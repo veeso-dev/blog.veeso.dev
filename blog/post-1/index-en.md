@@ -5,7 +5,7 @@ title: 'Dev Horror Story #1 — An Android Nightmare'
 description: 'A journey into one of my most painful development: a Wear Os App'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: dev-life
+category: 'software-engineering'
 reading_time: '11'
 ---
 

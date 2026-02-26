@@ -5,7 +5,7 @@ title: 'Extending Future in Rust'
 description: 'Is it even a thing?'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: rust
+category: rust-internals
 reading_time: '7'
 ---
 

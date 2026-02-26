@@ -5,7 +5,7 @@ title: 'For a sustainable open-source community, start pointing the finger at th
 description: "A reflection on how we're all part of the problem in open-source"
 author: 'veeso'
 featured_image: featured.jpeg
-tag: dev-life
+category: 'software-engineering'
 reading_time: '7'
 ---
 

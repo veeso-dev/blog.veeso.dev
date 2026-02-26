@@ -5,7 +5,7 @@ title: 'Dyn Box Vs. Generics'
 description: 'What is the best approach for achieving conditional generics in Rust?'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: rust
+category: rust-internals
 reading_time: '6'
 ---
 

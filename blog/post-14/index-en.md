@@ -5,7 +5,7 @@ title: 'Implementing a generic range parser in Rust'
 description: "Well it looks easy, but it's not"
 author: 'veeso'
 featured_image: featured.jpeg
-tag: rust
+category: rust-tutorials
 reading_time: '8'
 ---
 

@@ -5,7 +5,7 @@ title: 'An Abstract of a real P2P Electronic Cash System'
 description: 'A draft and analysis of a real P2P Electronic Cash System'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: bitcoin
+category: blockchain
 reading_time: '11'
 ---
 

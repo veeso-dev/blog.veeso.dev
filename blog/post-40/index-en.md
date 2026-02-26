@@ -5,7 +5,7 @@ title: 'Web3: The new Scarlet Letter on your resume'
 description: 'So apparently in 2025 you can get automatically rejected for a job if you have Web3 on your resume'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: job
+category: 'software-engineering'
 reading_time: '7'
 ---
 

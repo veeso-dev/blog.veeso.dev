@@ -5,7 +5,7 @@ title: 'Rust on a Diet'
 description: 'How cloning a Vec had caused memory bloat on the Solana Validator'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: rust
+category: rust-internals
 reading_time: '8'
 ---
 

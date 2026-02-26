@@ -5,7 +5,7 @@ title: 'Revolutionizing the real estate market with EKOKE DAO'
 description: 'EKOKE DAO is going to replace the traditional bank mortgage with a sustainable and decentralized model based on installments on the blockchain'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: web3
+category: blockchain
 reading_time: '7'
 ---
 

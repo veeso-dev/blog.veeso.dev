@@ -5,7 +5,7 @@ title: 'One does not simply write a SSH config parser (in Rust)'
 description: 'A journey through the land of Rust, nom and SSH config files'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: rust
+category: rust-tutorials
 reading_time: '11'
 ---
 

@@ -5,7 +5,7 @@ title: 'How to setup a Bitcoin Solo Mining Pool'
 description: 'Today we will learn how to setup a Bitcoin Solo Mining Pool with a Raspberry Pi'
 author: 'veeso'
 featured_image: featured.jpeg
-tag: bitcoin
+category: blockchain
 reading_time: '6'
 ---
 
