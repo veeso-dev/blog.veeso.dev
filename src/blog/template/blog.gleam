@@ -14,7 +14,10 @@ import lustre/element.{type Element}
 import lustre/element/html
 
 /// Render a full blog post page with featured image, metadata, and share buttons.
-pub fn template(post: post.Post(msg)) -> Element(msg) {
+pub fn template(
+  post: post.Post(msg),
+  _all_posts: List(post.Post(msg)),
+) -> Element(msg) {
   let config =
     page.PageConfig(
       title: post.title,

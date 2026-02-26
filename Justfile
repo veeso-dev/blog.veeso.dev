@@ -3,5 +3,4 @@ default:
     @just --list
 
 dev:
-    gleam run
-    docker compose up --build
+    gleam run -m blog/dev
