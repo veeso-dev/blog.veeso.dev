@@ -1,4 +1,5 @@
 import blog/components/md_components
+import blog/components/syntax_highlighting
 import blog/pages/blog
 import blog/pages/home
 import blog/template/blog as blog_template
@@ -20,6 +21,7 @@ pub fn config() -> config.Config(Nil) {
     |> markdown.route_prefix("blog")
     |> markdown.template(blog_template.template)
     |> markdown.components(md_components.components())
+    |> markdown.syntax_highlighting(syntax_highlighting.config())
 
   let rss =
     feed.new(

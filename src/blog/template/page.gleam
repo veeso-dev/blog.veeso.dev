@@ -134,22 +134,6 @@ fn head(config: PageConfig) -> Element(msg) {
       attribute.rel("stylesheet"),
       attribute.href("/blog.css"),
     ]),
-    // Prism.js themes (light: One Light, dark: VS Code Dark Plus)
-    html.link([
-      attribute.id("prism-light"),
-      attribute.rel("stylesheet"),
-      attribute.href(
-        "https://cdn.jsdelivr.net/npm/prism-themes/themes/prism-one-light.css",
-      ),
-    ]),
-    html.link([
-      attribute.id("prism-dark"),
-      attribute.rel("stylesheet"),
-      attribute.href(
-        "https://cdn.jsdelivr.net/npm/prism-themes/themes/prism-vsc-dark-plus.css",
-      ),
-      attribute.disabled(True),
-    ]),
     // Umami analytics
     html.script(
       [
@@ -264,22 +248,6 @@ fn body_scripts() -> Element(msg) {
       [
         attribute.src(
           "https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js",
-        ),
-      ],
-      "",
-    ),
-    // Prism.js core
-    html.script(
-      [
-        attribute.src("https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"),
-      ],
-      "",
-    ),
-    // Prism.js autoloader (loads language grammars on demand)
-    html.script(
-      [
-        attribute.src(
-          "https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js",
         ),
       ],
       "",

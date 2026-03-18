@@ -72,23 +72,23 @@ fn blockquote(children: List(Element(msg))) -> Element(msg) {
   )
 }
 
-fn code(language: Option(String), children: List(Element(msg))) -> Element(msg) {
-  let class =
-    language
-    |> option.map(fn(lang) { attribute.class("language-" <> lang) })
-    |> option.unwrap(
-      or: components.classes([
-        "bg-gray-100",
-        "dark:bg-gray-800",
+fn code(_language: Option(String), children: List(Element(msg))) -> Element(msg) {
+  html.code(
+    [
+      components.classes([
+        "bg-[#fafafa]",
+        "dark:bg-[#1e1e1e]",
+        "text-[#383a42]",
+        "dark:text-[#d4d4d4]",
         "px-1.5",
         "py-0.5",
         "rounded",
         "text-sm",
         "font-mono",
       ]),
-    )
-
-  html.code([class], children)
+    ],
+    children,
+  )
 }
 
 fn img(src: String, alt: String, title: Option(String)) -> Element(msg) {
@@ -166,17 +166,35 @@ fn p(children: List(Element(msg))) -> Element(msg) {
 }
 
 fn pre(children: List(Element(msg))) -> Element(msg) {
-  container.row(["w-full", "relative"], [
-    html.div([components.classes(["overflow-auto", "flex-1"])], [
-      html.pre(
-        [
-          components.classes(["overflow-auto", "w-fit", "mb-4", "p-5"]),
-        ],
-        children,
-      ),
-    ]),
-    pre_copy_button(),
-  ])
+  container.row(
+    [
+      "w-full",
+      "relative",
+      "bg-[#fafafa]",
+      "dark:bg-[#1e1e1e]",
+      "rounded",
+      "text-[#383a42]",
+      "dark:text-[#d4d4d4]",
+    ],
+    [
+      html.div([components.classes(["overflow-auto", "flex-1"])], [
+        html.pre(
+          [
+            components.classes([
+              "overflow-auto",
+              "w-fit",
+              "mb-4",
+              "p-5",
+              "font-mono",
+              "text-sm",
+            ]),
+          ],
+          children,
+        ),
+      ]),
+      pre_copy_button(),
+    ],
+  )
 }
 
 fn pre_copy_button() -> Element(msg) {
