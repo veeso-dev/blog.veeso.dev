@@ -1,0 +1,35 @@
+flowchart LR
+    User(("User"))
+    II["Internet<br/>Identity"]
+    FE["Frontend<br/>(Asset Canister)"]
+
+    subgraph IC["Internet Computer"]
+        direction TB
+        DIR["Directory<br/>Canister"]
+        FED["Federation<br/>Canister"]
+        subgraph PUC["Per-user Canisters"]
+            direction LR
+            UC1["Alice"]
+            UC2["Bob"]
+            UC3["Carol"]
+            UCn["..."]
+        end
+    end
+
+    Fedi["Fediverse<br/>(Mastodon, Pleroma, ...)"]
+
+    User --> FE
+    FE --> II
+    FE --> DIR
+    FE --> UC1
+
+    DIR -. spawns .-> UC1
+    DIR -. spawns .-> UC2
+    DIR -. spawns .-> UC3
+
+    UC1 <--> FED
+    UC2 <--> FED
+    UC3 <--> FED
+    UCn <--> FED
+
+    FED <-->|"ActivityPub + HTTP Signatures"| Fedi

@@ -1,0 +1,7 @@
+flowchart LR
+    Alice(("Alice")) -->|"posts status"| AUC["Alice's<br/>User Canister"]
+    AUC -->|"Create activity"| FED["Federation<br/>Canister"]
+    FED -->|"local fanout"| BUC["Bob's<br/>User Canister"]
+    FED -->|"ActivityPub"| MAS["remote.social<br/>(Mastodon)"]
+    BUC -->|"feed"| Bob(("Bob"))
+    MAS -->|"feed"| Carol(("Carol<br/>@remote"))

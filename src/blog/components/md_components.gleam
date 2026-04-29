@@ -78,7 +78,10 @@ fn blockquote(children: List(Element(msg))) -> Element(msg) {
   )
 }
 
-fn code(_language: Option(String), children: List(Element(msg))) -> Element(msg) {
+fn code(
+  _language: Option(String),
+  children: List(Element(msg)),
+) -> Element(msg) {
   html.code(
     [
       components.classes([
@@ -227,26 +230,23 @@ fn pre_copy_button() -> Element(msg) {
 }
 
 fn table(children: List(Element(msg))) -> Element(msg) {
-  html.div(
-    [components.classes(["w-full", "overflow-x-auto", "my-6"])],
-    [
-      html.table(
-        [
-          components.classes([
-            "w-full",
-            "border-collapse",
-            "text-left",
-            "text-gray-700",
-            "dark:text-gray-200",
-            "border",
-            "border-gray-300",
-            "dark:border-gray-600",
-          ]),
-        ],
-        children,
-      ),
-    ],
-  )
+  html.div([components.classes(["w-full", "overflow-x-auto", "my-6"])], [
+    html.table(
+      [
+        components.classes([
+          "w-full",
+          "border-collapse",
+          "text-left",
+          "text-gray-700",
+          "dark:text-gray-200",
+          "border",
+          "border-gray-300",
+          "dark:border-gray-600",
+        ]),
+      ],
+      children,
+    ),
+  ])
 }
 
 fn thead(children: List(Element(msg))) -> Element(msg) {

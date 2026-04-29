@@ -6,7 +6,10 @@ import lustre/element.{type Element}
 import lustre/element/html
 
 /// A flex row
-pub fn row(classes: List(String), children: List(Element(msg))) -> Element(msg) {
+pub fn row(
+  classes: List(String),
+  children: List(Element(msg)),
+) -> Element(msg) {
   let classes = list.append(["flex", "flex-row"], classes)
   html.div(
     [
@@ -17,7 +20,10 @@ pub fn row(classes: List(String), children: List(Element(msg))) -> Element(msg) 
 }
 
 /// A flex column
-pub fn col(classes: List(String), children: List(Element(msg))) -> Element(msg) {
+pub fn col(
+  classes: List(String),
+  children: List(Element(msg)),
+) -> Element(msg) {
   let classes = list.append(["flex", "flex-col"], classes)
   html.div(
     [
