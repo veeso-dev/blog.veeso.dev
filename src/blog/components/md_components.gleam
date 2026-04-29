@@ -3,7 +3,7 @@
 import blog/components
 import blog/components/container
 import blog/components/heading
-import blogatto/config/markdown
+import blogatto/config/markdown.{type Alignment, Center, Left, Right}
 import gleam/int
 import gleam/option.{type Option}
 import lustre/attribute
@@ -28,6 +28,12 @@ pub fn components() -> markdown.Components(msg) {
     ol: ol,
     p: p,
     pre: pre,
+    table: table,
+    tbody: tbody,
+    td: td,
+    th: th,
+    thead: thead,
+    tr: tr,
     ul: ul,
   )
 }
@@ -218,6 +224,106 @@ fn pre_copy_button() -> Element(msg) {
       ],
     ),
   ])
+}
+
+fn table(children: List(Element(msg))) -> Element(msg) {
+  html.div(
+    [components.classes(["w-full", "overflow-x-auto", "my-6"])],
+    [
+      html.table(
+        [
+          components.classes([
+            "w-full",
+            "border-collapse",
+            "text-left",
+            "text-gray-700",
+            "dark:text-gray-200",
+            "border",
+            "border-gray-300",
+            "dark:border-gray-600",
+          ]),
+        ],
+        children,
+      ),
+    ],
+  )
+}
+
+fn thead(children: List(Element(msg))) -> Element(msg) {
+  html.thead(
+    [
+      components.classes([
+        "bg-gray-100",
+        "dark:bg-zinc-800",
+        "border-b",
+        "border-gray-300",
+        "dark:border-gray-600",
+      ]),
+    ],
+    children,
+  )
+}
+
+fn tbody(children: List(Element(msg))) -> Element(msg) {
+  html.tbody([], children)
+}
+
+fn tr(children: List(Element(msg))) -> Element(msg) {
+  html.tr(
+    [
+      components.classes([
+        "border-b",
+        "border-gray-200",
+        "dark:border-gray-700",
+        "even:bg-gray-50",
+        "dark:even:bg-zinc-900",
+      ]),
+    ],
+    children,
+  )
+}
+
+fn th(alignment: Alignment, children: List(Element(msg))) -> Element(msg) {
+  html.th(
+    [
+      components.classes([
+        "px-4",
+        "py-2",
+        "font-semibold",
+        "text-gray-900",
+        "dark:text-gray-100",
+        "border",
+        "border-gray-300",
+        "dark:border-gray-600",
+        alignment_class(alignment),
+      ]),
+    ],
+    children,
+  )
+}
+
+fn td(alignment: Alignment, children: List(Element(msg))) -> Element(msg) {
+  html.td(
+    [
+      components.classes([
+        "px-4",
+        "py-2",
+        "border",
+        "border-gray-300",
+        "dark:border-gray-600",
+        alignment_class(alignment),
+      ]),
+    ],
+    children,
+  )
+}
+
+fn alignment_class(alignment: Alignment) -> String {
+  case alignment {
+    Left -> "text-left"
+    Center -> "text-center"
+    Right -> "text-right"
+  }
 }
 
 fn ul(children: List(Element(msg))) -> Element(msg) {
