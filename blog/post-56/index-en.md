@@ -5,6 +5,7 @@ description: 'After 3 months of using RustRover, I share my thoughts on whether 
 author: 'veeso'
 featured_image: featured.jpeg
 category: software-engineering
+reading_time: '6'
 ---
 
 > TL;DR:
