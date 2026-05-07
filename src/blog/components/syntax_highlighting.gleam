@@ -2,7 +2,7 @@
 //// Uses Prism One Light for light theme and VS Code Dark Plus for dark theme,
 //// with Tailwind CSS arbitrary color classes and the dark: variant.
 
-import blogatto/config/markdown/code
+import blogatto/config/post/code
 import lustre/attribute
 import lustre/element.{type Element}
 import lustre/element/html

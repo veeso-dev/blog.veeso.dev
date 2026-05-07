@@ -3,7 +3,7 @@
 import blog/components
 import blog/components/container
 import blog/components/heading
-import blogatto/config/markdown.{type Alignment, Center, Left, Right}
+import blogatto/config/post.{type Alignment, Center, Left, Right}
 import gleam/int
 import gleam/option.{type Option}
 import lustre/attribute
@@ -11,9 +11,9 @@ import lustre/element.{type Element}
 import lustre/element/html
 
 /// Markdown components for markdown rendering.
-pub fn components() -> markdown.Components(msg) {
-  markdown.Components(
-    ..markdown.default_components(),
+pub fn components() -> post.Components(msg) {
+  post.Components(
+    ..post.default_components(),
     a: a,
     blockquote: blockquote,
     code: code,
