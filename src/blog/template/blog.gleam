@@ -130,13 +130,6 @@ fn article_footer(post: post.Post(msg)) -> Element(msg) {
   ])
 }
 
-fn span(text: String) -> Element(msg) {
-  html.span(
-    [components.classes(["text-gray-400", "dark:text-gray-300", "pr-2"])],
-    [element.text(text)],
-  )
-}
-
 fn share_buttons(url: String, title: String) -> Element(msg) {
   container.row(["text-brand", "dark:text-gray-200", "gap-8", "justify-end"], [
     share_link(facebook_share_url(url), svg.feather_icon("facebook")),
