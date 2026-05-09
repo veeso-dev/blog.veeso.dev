@@ -64,7 +64,7 @@ fn article(post: post.Post(msg)) -> Element(msg) {
       [
         html.div([], [
           post_meta.formatted_date(post.date),
-          span("—"),
+          element.text(" — "),
           post_meta.reading_time(post),
         ]),
         share_buttons(post.url, post.title),
