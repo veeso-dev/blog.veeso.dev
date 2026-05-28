@@ -5,7 +5,7 @@ description: 'iOS and Android app that scans, romanizes and translates Japanese,
 author: 'veeso'
 featured_image: featured.jpeg
 category: open-source
-reading_time: '7'
+reading_time: '6'
 ---
 
 ## Preamble
