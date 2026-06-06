@@ -5,7 +5,7 @@ description: 'With this move, Ladybird is closing the doors to public code contr
 author: 'veeso'
 featured_image: featured.jpeg
 category: open-source
-reading_time: '5'
+reading_time: '6'
 ---
 
 ## What happened
@@ -52,6 +52,14 @@ Nobody cares about forks most of the time because they are sparse, and unless th
 A good example of a successful fork is [ratatui](https://ratatui.rs/), but the original `tui-rs` was also discontinued. Also, the complexity of maintaining Ratatui, not to offend, can't be compared to that of maintaining a project like Ladybird.
 
 You can easily see that there will never be a chance for the community to create a strong fork of Ladybird unless a company decides to invest serious engineering resources in it.
+
+### Forks are not resistance
+
+Forking gives users a legal escape hatch, but public pull requests give the community a visible place to resist the project's direction.
+
+If an unpopular feature lands upstream, sure, someone can fork the project and remove it. But in practice, most users will continue to follow the main project. The fork will have no brand, no distribution, no update pipeline, and probably no team.
+
+A public contribution process is not only about adding code. It is also about contesting code, proposing reverts, and forcing a public discussion around technical decisions. Without that, the community can still talk, but it has much less leverage where it actually matters: upstream.
 
 ## Was closing public PRs the only option?
 
