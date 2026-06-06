@@ -69,6 +69,7 @@ fn blockquote(children: List(Element(msg))) -> Element(msg) {
         "italic",
         "pl-4",
         "py-2",
+        "pr-4",
         "my-4",
         "text-gray-700",
         "dark:text-gray-200",
