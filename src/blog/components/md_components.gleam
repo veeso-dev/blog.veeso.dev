@@ -4,6 +4,7 @@ import blog/components
 import blog/components/container
 import blog/components/heading
 import blogatto/config/post.{type Alignment, Center, Left, Right}
+import gleam/dict.{type Dict}
 import gleam/int
 import gleam/option.{type Option}
 import lustre/attribute
@@ -39,6 +40,7 @@ pub fn components() -> post.Components(msg) {
 }
 
 fn a(
+  _attributes: Dict(String, String),
   href: String,
   title: Option(String),
   children: List(Element(msg)),
@@ -57,7 +59,10 @@ fn a(
   )
 }
 
-fn blockquote(children: List(Element(msg))) -> Element(msg) {
+fn blockquote(
+  _attributes: Dict(String, String),
+  children: List(Element(msg)),
+) -> Element(msg) {
   html.blockquote(
     [
       components.classes([
@@ -80,6 +85,7 @@ fn blockquote(children: List(Element(msg))) -> Element(msg) {
 }
 
 fn code(
+  _attributes: Dict(String, String),
   _language: Option(String),
   children: List(Element(msg)),
 ) -> Element(msg) {
@@ -101,7 +107,12 @@ fn code(
   )
 }
 
-fn img(src: String, alt: String, title: Option(String)) -> Element(msg) {
+fn img(
+  _attributes: Dict(String, String),
+  src: String,
+  alt: String,
+  title: Option(String),
+) -> Element(msg) {
   html.div(
     [
       components.classes([
@@ -159,7 +170,10 @@ fn ol(start: Option(Int), children: List(Element(msg))) -> Element(msg) {
   )
 }
 
-fn p(children: List(Element(msg))) -> Element(msg) {
+fn p(
+  _attributes: Dict(String, String),
+  children: List(Element(msg)),
+) -> Element(msg) {
   html.p(
     [
       components.classes([
@@ -175,7 +189,10 @@ fn p(children: List(Element(msg))) -> Element(msg) {
   )
 }
 
-fn pre(children: List(Element(msg))) -> Element(msg) {
+fn pre(
+  _attributes: Dict(String, String),
+  children: List(Element(msg)),
+) -> Element(msg) {
   container.row(
     [
       "w-full",

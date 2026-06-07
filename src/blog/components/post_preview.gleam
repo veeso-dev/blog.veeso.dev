@@ -4,6 +4,7 @@ import blog/components
 import blog/components/heading
 import blog/components/post_meta
 import blogatto/post
+import gleam/dict
 import gleam/option
 import lustre/attribute
 import lustre/element.{type Element}
@@ -15,7 +16,7 @@ pub fn post_preview(post: post.Post(msg)) -> Element(msg) {
     [components.classes(["p-2", "border-b", "border-gray-200", "h-full"])],
     [
       image_preview(post),
-      heading.h2("", [
+      heading.h2(dict.new(), "", [
         html.a(
           [
             attribute.href(post_uri(post)),
@@ -28,7 +29,7 @@ pub fn post_preview(post: post.Post(msg)) -> Element(msg) {
           [element.text(post.title)],
         ),
       ]),
-      heading.h3("", [element.text(post.description)]),
+      heading.h3(dict.new(), "", [element.text(post.description)]),
       html.p(
         [
           components.classes([

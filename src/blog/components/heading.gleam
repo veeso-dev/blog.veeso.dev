@@ -1,12 +1,17 @@
 //// Styled heading components (h1 through h5) with consistent typography.
 
 import blog/components
+import gleam/dict.{type Dict}
 import lustre/attribute
 import lustre/element.{type Element}
 import lustre/element/html
 
 /// Render an h1 heading with optional anchor id.
-pub fn h1(id: String, children: List(Element(msg))) -> Element(msg) {
+pub fn h1(
+  _attributes: Dict(String, String),
+  id: String,
+  children: List(Element(msg)),
+) -> Element(msg) {
   html.h1(
     [
       h_id(id),
@@ -26,7 +31,11 @@ pub fn h1(id: String, children: List(Element(msg))) -> Element(msg) {
 }
 
 /// Render an h2 heading with optional anchor id.
-pub fn h2(id: String, children: List(Element(msg))) -> Element(msg) {
+pub fn h2(
+  _attributes: Dict(String, String),
+  id: String,
+  children: List(Element(msg)),
+) -> Element(msg) {
   html.h2(
     [
       h_id(id),
@@ -46,7 +55,11 @@ pub fn h2(id: String, children: List(Element(msg))) -> Element(msg) {
 }
 
 /// Render an h3 heading with optional anchor id.
-pub fn h3(id: String, children: List(Element(msg))) -> Element(msg) {
+pub fn h3(
+  _attributes: Dict(String, String),
+  id: String,
+  children: List(Element(msg)),
+) -> Element(msg) {
   html.h3(
     [
       h_id(id),
@@ -65,7 +78,11 @@ pub fn h3(id: String, children: List(Element(msg))) -> Element(msg) {
 }
 
 /// Render an h4 heading with optional anchor id.
-pub fn h4(id: String, children: List(Element(msg))) -> Element(msg) {
+pub fn h4(
+  _attributes: Dict(String, String),
+  id: String,
+  children: List(Element(msg)),
+) -> Element(msg) {
   html.h4(
     [
       h_id(id),
@@ -83,7 +100,11 @@ pub fn h4(id: String, children: List(Element(msg))) -> Element(msg) {
 }
 
 /// Render an h5 heading with optional anchor id.
-pub fn h5(id: String, children: List(Element(msg))) -> Element(msg) {
+pub fn h5(
+  _attributes: Dict(String, String),
+  id: String,
+  children: List(Element(msg)),
+) -> Element(msg) {
   html.h5(
     [
       h_id(id),

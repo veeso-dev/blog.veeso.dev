@@ -6,6 +6,7 @@ import blog/components/heading
 import blog/components/post_preview
 import blog/template/page
 import blogatto/post
+import gleam/dict
 import gleam/list
 import gleam/option
 import lustre/attribute
@@ -70,7 +71,7 @@ fn latest_posts(posts: List(post.Post(Nil))) -> Element(Nil) {
   let latest_posts = list.take(posts, 4)
 
   html.div([], [
-    heading.h1("", [element.text("Latest Posts")]),
+    heading.h1(dict.new(), "", [element.text("Latest Posts")]),
     html.div(
       [components.classes(["grid", "grid-cols-2", "gap-x-4", "sm:grid-cols-1"])],
       list.map(latest_posts, post_preview.post_preview),

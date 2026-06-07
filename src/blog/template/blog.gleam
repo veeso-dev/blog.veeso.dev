@@ -46,9 +46,11 @@ fn layout(post: post.Post(msg)) -> Element(msg) {
         components.classes(["rounded", "inset-0"]),
       ]),
       html.div([], [
-        heading.h1("", [element.text(post.title)]),
+        heading.h1(dict.new(), "", [element.text(post.title)]),
       ]),
-      html.div([], [heading.h2("", [element.text(post.description)])]),
+      html.div([], [
+        heading.h2(dict.new(), "", [element.text(post.description)]),
+      ]),
       html.div([components.classes(["mx-auto"])], [article(post)]),
     ],
   )

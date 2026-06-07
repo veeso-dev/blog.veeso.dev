@@ -5,6 +5,7 @@ import blog/components/heading
 import blog/components/post_preview
 import blog/template/page
 import blogatto/post
+import gleam/dict
 import gleam/list
 import gleam/option
 import lustre/element.{type Element}
@@ -25,7 +26,7 @@ pub fn blog(posts: List(post.Post(Nil))) -> Element(Nil) {
 
 fn page_content(posts: List(post.Post(Nil))) -> Element(Nil) {
   element.fragment([
-    heading.h1("", [element.text("Blog Posts")]),
+    heading.h1(dict.new(), "", [element.text("Blog Posts")]),
     html.div(
       [
         components.classes([
