@@ -2,6 +2,7 @@ import blog/components/md_components
 import blog/components/syntax_highlighting
 import blog/pages/blog
 import blog/pages/home
+import blog/pages/privacy
 import blog/template/blog as blog_template
 import blogatto/config
 import blogatto/config/feed
@@ -78,6 +79,7 @@ are licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives
   |> config.sitemap(sitemap.new("/sitemap.xml"))
   |> config.route("/", home.home)
   |> config.route("/blog/", blog.blog)
+  |> config.route("/privacy/", privacy.privacy)
   |> config.robots(
     robots.RobotsConfig(
       sitemap_url: "https://blog.veeso.dev/sitemap.xml",

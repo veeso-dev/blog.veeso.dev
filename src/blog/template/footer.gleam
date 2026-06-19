@@ -21,7 +21,7 @@ pub fn footer() -> Element(msg) {
         "justify-center",
         "gap-4",
       ],
-      [built_with_blogatto(), copyright_line()],
+      [built_with_blogatto(), privacy_line(), copyright_line()],
     ),
   ])
 }
@@ -54,6 +54,14 @@ fn built_with_blogatto() -> Element(msg) {
       ),
     ],
   )
+}
+
+fn privacy_line() -> Element(msg) {
+  html.div([components.classes(["text-center", "text-sm", "text-gray-300"])], [
+    html.a([components.classes(["underline"]), attribute.href("/privacy/")], [
+      element.text("Privacy Policy"),
+    ]),
+  ])
 }
 
 fn copyright_line() -> Element(msg) {
