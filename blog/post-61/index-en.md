@@ -5,7 +5,7 @@ description: 'With this move, Ladybird is closing the doors to public code contr
 author: 'veeso'
 featured_image: featured.jpeg
 category: open-source
-reading_time: '6'
+reading_time: '5'
 ---
 
 ## What happened

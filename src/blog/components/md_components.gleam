@@ -140,8 +140,8 @@ fn li(children: List(Element(msg))) -> Element(msg) {
       components.classes([
         "text-lg",
         "py-2",
-        "text-gray-600",
-        "dark:text-gray-200",
+        "text-gray-700",
+        "dark:text-gray-100",
       ]),
     ],
     children,
