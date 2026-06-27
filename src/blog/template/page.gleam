@@ -227,6 +227,7 @@ fn featured_image_meta(image: Option(String)) -> Element(msg) {
           attribute.name("twitter:card"),
           attribute.content("summary_large_image"),
         ]),
+        html.meta([attribute.name("twitter:image"), attribute.content(url)]),
         html.link([
           attribute.rel("preload"),
           attribute.as_("image"),

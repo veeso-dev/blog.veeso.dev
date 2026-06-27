@@ -25,10 +25,26 @@ pub fn template(
       title: post.title,
       description: post.description,
       url: post.url,
-      featured_image: post.featured_image,
+      featured_image: absolute_featured_image(post),
     )
 
   page.page(config, [layout(post)], related_posts(post, all_posts))
+}
+
+/// Resolve the featured image to an absolute URL.
+///
+/// Social platforms like X.com require absolute og:image / twitter:image URLs
+/// to render preview cards; relative paths are silently ignored by them (while
+/// Mastodon resolves them against the page URL). Already-absolute URLs are kept
+/// as-is, relative paths are joined against the absolute post URL.
+fn absolute_featured_image(post: post.Post(msg)) -> option.Option(String) {
+  post.featured_image
+  |> option.map(fn(image) {
+    case image {
+      "http" <> _ -> image
+      path -> post.url <> path
+    }
+  })
 }
 
 fn layout(post: post.Post(msg)) -> Element(msg) {
