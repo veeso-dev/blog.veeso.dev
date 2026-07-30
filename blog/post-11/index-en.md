@@ -5,7 +5,7 @@ title: 'The Bitcoin Utopia is a Lie'
 description: 'Why we all have been lied about Bitcoin'
 author: 'veeso'
 featured_image: featured.jpeg
-category: blockchain
+category: tech-commentary
 reading_time: '15'
 ---
 

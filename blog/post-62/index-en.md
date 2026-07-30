@@ -4,7 +4,7 @@ title: "I paid for Brave Origin, and I'm fine with that"
 description: 'Paying for fewer features may sound stupid, but browsers don't live on good intentions.'
 author: 'veeso'
 featured_image: featured.jpeg
-category: open-source
+category: tech-commentary
 reading_time: '5'
 ---
 

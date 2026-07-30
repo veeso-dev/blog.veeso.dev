@@ -4,7 +4,7 @@ title: "Ladybird won't accept public PRs anymore - what does it mean?"
 description: 'With this move, Ladybird is closing the doors to public code contributions. Time for a reflection on open-source software.'
 author: 'veeso'
 featured_image: featured.jpeg
-category: open-source
+category: tech-commentary
 reading_time: '5'
 ---
 

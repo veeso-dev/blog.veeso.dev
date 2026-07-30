@@ -4,7 +4,7 @@ title: "Why Airlines don’t want your boarding pass in Apple or Google wallet"
 description: 'How a small UX annoyance hides a bigger upselling machine'
 author: 'veeso'
 featured_image: featured.jpeg
-category: ux
+category: tech-commentary
 reading_time: '4'
 ---
 
