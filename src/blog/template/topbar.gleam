@@ -11,6 +11,8 @@ const github_url = "https://github.com/veeso"
 
 const mastodon_url = "https://hachyderm.io/@veeso_dev"
 
+const x_url = "https://x.com/veeso_dev"
+
 const linkedin_url = "https://www.linkedin.com/in/christian-visintin/"
 
 const rss_url = "/rss/en.xml"
@@ -150,6 +152,7 @@ fn socials() -> Element(msg) {
   element.fragment([
     icon_link(github_url, svg.feather_icon("github")),
     icon_link(mastodon_url, svg.mastodon(24)),
+    icon_link(x_url, svg.x(24)),
     icon_link(linkedin_url, svg.feather_icon("linkedin")),
     icon_link(rss_url, svg.feather_icon("rss")),
   ])
