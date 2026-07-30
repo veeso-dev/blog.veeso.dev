@@ -217,6 +217,7 @@ fn related_posts(
             Ok(post_category) -> post_category == category
           }
         })
+        |> list.shuffle
         |> list.take(2)
       case siblings {
         [] -> element.none()
