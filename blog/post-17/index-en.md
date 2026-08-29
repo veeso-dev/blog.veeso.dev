@@ -1,12 +1,12 @@
 ---
-date: '2024-10-03 18:15:00'
-slug: 'announcing-termscp-015'
-title: 'Announcing termscp 0.15.0'
-description: 'with many new features'
-author: 'veeso'
+date: "2024-10-03 18:15:00"
+slug: "announcing-termscp-015"
+title: "Announcing termscp 0.15.0"
+description: "with many new features"
+author: "veeso"
 featured_image: featured.jpeg
 category: open-source
-reading_time: '3'
+reading_time: "3"
 ---
 
 ## What's new

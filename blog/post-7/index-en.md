@@ -1,12 +1,12 @@
 ---
-date: '2023-10-04 17:00:00'
-slug: 'ive-replaced-google-analytics-with-umami'
+date: "2023-10-04 17:00:00"
+slug: "ive-replaced-google-analytics-with-umami"
 title: "I've replaced Google Analytics with Umami"
-description: 'And why you should do the same'
-author: 'veeso'
+description: "And why you should do the same"
+author: "veeso"
 featured_image: featured.jpeg
 category: web-development
-reading_time: '6'
+reading_time: "6"
 ---
 
 ## Google Analytics is mostly overrated
@@ -75,12 +75,12 @@ Then, in your app directory, you need to get umami: `git clone https://github.co
 Now, change the secret key for umami `vi docker-compose.yml`:
 
 ```yml
-version: '3'
+version: "3"
 services:
   umami:
     image: ghcr.io/umami-software/umami:postgresql-latest
     ports:
-      - '3000:3000'
+      - "3000:3000"
     environment:
       DATABASE_URL: postgresql://umami:umami@db:5432/umami
       DATABASE_TYPE: postgresql

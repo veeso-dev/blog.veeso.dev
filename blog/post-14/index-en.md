@@ -1,12 +1,12 @@
 ---
-date: '2024-07-12 16:00:00'
-slug: 'implementing-a-generic-range-parser-in-rust'
-title: 'Implementing a generic range parser in Rust'
+date: "2024-07-12 16:00:00"
+slug: "implementing-a-generic-range-parser-in-rust"
+title: "Implementing a generic range parser in Rust"
 description: "Well it looks easy, but it's not"
-author: 'veeso'
+author: "veeso"
 featured_image: featured.jpeg
 category: rust-tutorials
-reading_time: '8'
+reading_time: "8"
 ---
 
 ## Simple problems that require complex solutions
@@ -361,7 +361,6 @@ where
         Ok(range)
     }
 }
-
 ```
 
 So yeah, we could add a boundary which allows us to use primitives as long as they can fit into `isize`. With this approach though, some `u64` values would generate error, so even if simpler, it's worse for sure and probably even performance aren't good as in the first proposed solution.

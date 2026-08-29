@@ -1,12 +1,12 @@
 ---
-date: '2026-02-25 18:00:00'
-slug: 'this-blog-was-made-with-gleam'
-title: 'This Blog was made with Gleam'
-description: 'Goodbye Gatsby, Hello Gleam! This blog is now powered by Gleam, Lustre, and Blogatto'
-author: 'veeso'
+date: "2026-02-25 18:00:00"
+slug: "this-blog-was-made-with-gleam"
+title: "This Blog was made with Gleam"
+description: "Goodbye Gatsby, Hello Gleam! This blog is now powered by Gleam, Lustre, and Blogatto"
+author: "veeso"
 featured_image: featured.jpeg
 category: gleam
-reading_time: '7'
+reading_time: "7"
 ---
 
 If you are reading this, you are looking at a blog that runs **zero React, zero GraphQL, and zero Node.js**. This blog is now entirely powered by Gleam, Lustre, and a little static site generator I built called Blogatto.

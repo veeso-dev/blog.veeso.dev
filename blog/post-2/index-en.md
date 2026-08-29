@@ -1,12 +1,12 @@
 ---
-date: '2023-02-20 00:00:00'
-slug: 'how-rust-nation-23-changed-my-pov-on-the-rust-community'
-title: 'How Rust Nation ‘23 changed my POV on the Rust community'
+date: "2023-02-20 00:00:00"
+slug: "how-rust-nation-23-changed-my-pov-on-the-rust-community"
+title: "How Rust Nation ‘23 changed my POV on the Rust community"
 description: "A retrospective of Rust Nation '23"
-author: 'veeso'
+author: "veeso"
 featured_image: featured.jpeg
-category: 'software-engineering'
-reading_time: '4'
+category: "software-engineering"
+reading_time: "4"
 ---
 
 ## About Rust Nation '23

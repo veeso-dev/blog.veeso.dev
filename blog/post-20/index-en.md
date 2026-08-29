@@ -1,12 +1,12 @@
 ---
-date: '2024-11-03 17:00:00'
-slug: 'reached-the-recursion-limit-at-build-time'
-title: 'Reached the recursion limit... at build time?'
-description: 'A quick investigation on the recursion limit exceeded issue at build time'
-author: 'veeso'
+date: "2024-11-03 17:00:00"
+slug: "reached-the-recursion-limit-at-build-time"
+title: "Reached the recursion limit... at build time?"
+description: "A quick investigation on the recursion limit exceeded issue at build time"
+author: "veeso"
 featured_image: featured.jpeg
 category: rust-internals
-reading_time: '6'
+reading_time: "6"
 ---
 
 ## A bit of context

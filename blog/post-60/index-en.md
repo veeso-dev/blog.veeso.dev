@@ -1,11 +1,11 @@
 ---
-date: '2026-05-28 15:52:00 Europe/Rome'
+date: "2026-05-28 15:52:00 Europe/Rome"
 title: "Why Airlines don’t want your boarding pass in Apple or Google wallet"
-description: 'How a small UX annoyance hides a bigger upselling machine'
-author: 'veeso'
+description: "How a small UX annoyance hides a bigger upselling machine"
+author: "veeso"
 featured_image: featured.jpeg
 category: tech-commentary
-reading_time: '4'
+reading_time: "4"
 ---
 
 ## The boarding pass should be boring
@@ -46,7 +46,7 @@ Dark patterns, also known as deceptive patterns, are small design decisions that
 
 In particular, for airlines, the most widely adopted pattern is known as **confirmshaming**.
 
-From *[deceptive.design](https://deceptive.design)*, the definition of confirmshaming is:
+From _[deceptive.design](https://deceptive.design)_, the definition of confirmshaming is:
 
 > The user is emotionally manipulated into doing something that they would not otherwise have done.
 

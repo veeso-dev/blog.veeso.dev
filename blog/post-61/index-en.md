@@ -1,11 +1,11 @@
 ---
-date: '2026-06-06 12:05:00 Europe/Rome'
+date: "2026-06-06 12:05:00 Europe/Rome"
 title: "Ladybird won't accept public PRs anymore - what does it mean?"
-description: 'With this move, Ladybird is closing the doors to public code contributions. Time for a reflection on open-source software.'
-author: 'veeso'
+description: "With this move, Ladybird is closing the doors to public code contributions. Time for a reflection on open-source software."
+author: "veeso"
 featured_image: featured.jpeg
 category: tech-commentary
-reading_time: '5'
+reading_time: "5"
 ---
 
 ## What happened
@@ -19,7 +19,7 @@ Full post: <https://ladybird.org/posts/changing-how-we-develop-ladybird/>
 
 ## What is Ladybird
 
-For those who don't know what Ladybird is, it is not just a random project. It is, as they claim, a *truly independent web browser*. In a couple of years, they have developed a browser engine from scratch, becoming the *third way* in the browser ecosystem. The browser ecosystem has left many concerned in recent years because of the monopoly created by Chromium, with just a little slice of the market left to Firefox. Let's clarify, it's not about browsers, it's about browser engines. There are many alternatives to Chrome, but just a couple to Chromium.
+For those who don't know what Ladybird is, it is not just a random project. It is, as they claim, a _truly independent web browser_. In a couple of years, they have developed a browser engine from scratch, becoming the _third way_ in the browser ecosystem. The browser ecosystem has left many concerned in recent years because of the monopoly created by Chromium, with just a little slice of the market left to Firefox. Let's clarify, it's not about browsers, it's about browser engines. There are many alternatives to Chrome, but just a couple to Chromium.
 
 ## The reason behind this decision
 
@@ -33,7 +33,7 @@ As the article clearly states, they claim to be still open-source:
 
 I have strong concerns about this. There is a clear legal and licensing definition of open-source software, but there is a **less clear cultural expectation** around what an open-source project should allow its community to do.
 
-Is it enough to have the source available? Not really, in that case we talk about *source-available*, which doesn't imply open-source. For instance, the Elastic V2 license, which forbids others from commercialising your software, is considered source-available, but not open-source.
+Is it enough to have the source available? Not really, in that case we talk about _source-available_, which doesn't imply open-source. For instance, the Elastic V2 license, which forbids others from commercialising your software, is considered source-available, but not open-source.
 
 Is it then just about the license? Nay. While it is true that the license grants users the rights to use, fork, create their own implementations, and build a totally new product from it, it doesn't actually address direct contributions to the original project.
 

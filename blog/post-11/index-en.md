@@ -1,12 +1,12 @@
 ---
-date: '2024-04-12 12:30:00'
-slug: 'the-bitcoin-utopia-is-a-lie'
-title: 'The Bitcoin Utopia is a Lie'
-description: 'Why we all have been lied about Bitcoin'
-author: 'veeso'
+date: "2024-04-12 12:30:00"
+slug: "the-bitcoin-utopia-is-a-lie"
+title: "The Bitcoin Utopia is a Lie"
+description: "Why we all have been lied about Bitcoin"
+author: "veeso"
 featured_image: featured.jpeg
 category: tech-commentary
-reading_time: '15'
+reading_time: "15"
 ---
 
 ## Preamble

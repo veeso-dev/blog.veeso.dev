@@ -1,12 +1,12 @@
 ---
-date: '2024-10-14 18:15:00'
-slug: 'announcing-termscp-016'
-title: 'Announcing termscp 0.16.0'
-description: 'we have multi-host transfers baby'
-author: 'veeso'
+date: "2024-10-14 18:15:00"
+slug: "announcing-termscp-016"
+title: "Announcing termscp 0.16.0"
+description: "we have multi-host transfers baby"
+author: "veeso"
 featured_image: featured.jpeg
 category: open-source
-reading_time: '2'
+reading_time: "2"
 ---
 
 ## What's new

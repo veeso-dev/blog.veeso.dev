@@ -1,11 +1,11 @@
 ---
-date: '2026-05-09 17:15:00 Europe/Rome'
+date: "2026-05-09 17:15:00 Europe/Rome"
 title: "Harakat Lens, an iOS app to scan, transliterate and translate Arabic, for learners and Quran readers"
-description: 'iOS app that scans, transliterates and translates Arabic, with Quran verse recognition and audio recitation'
-author: 'veeso'
+description: "iOS app that scans, transliterates and translates Arabic, with Quran verse recognition and audio recitation"
+author: "veeso"
 featured_image: featured.jpeg
 category: open-source
-reading_time: '8'
+reading_time: "8"
 ---
 
 ## Preamble

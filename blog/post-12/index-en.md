@@ -1,12 +1,12 @@
 ---
-date: '2024-05-28 15:30:00'
-slug: 'let-me-introduce-you-shit-ai'
-title: 'Let me introduce you ShitAI'
-description: 'How AI is not improving our society and for the 90% is just a bubble'
-author: 'veeso'
+date: "2024-05-28 15:30:00"
+slug: "let-me-introduce-you-shit-ai"
+title: "Let me introduce you ShitAI"
+description: "How AI is not improving our society and for the 90% is just a bubble"
+author: "veeso"
 featured_image: featured.jpeg
 category: open-source
-reading_time: '4'
+reading_time: "4"
 ---
 
 ## A brief resume of how AI has taken over

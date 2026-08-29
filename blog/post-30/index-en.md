@@ -1,19 +1,19 @@
 ---
-date: '2025-03-11 18:00:00'
-slug: 'async-rust-for-dummies'
-title: 'Async Rust for Dummies'
-description: 'Let me show you how async Rust works under the hood'
-author: 'veeso'
+date: "2025-03-11 18:00:00"
+slug: "async-rust-for-dummies"
+title: "Async Rust for Dummies"
+description: "Let me show you how async Rust works under the hood"
+author: "veeso"
 featured_image: featured.jpeg
 category: rust-tutorials
-reading_time: '10'
+reading_time: "10"
 ---
 
 ## Introduction
 
 Hello, Rustaceans! I'm quite sure many of you use async Rust every day in your projects, but do you actually know how it works under the hood? In this article I'm going to show you how async Rust works, explaining the Future trait, the Pin type, and the Context and Poll types. Let's get started!
 
-> Aren't there like other thousands of articles like this?  
+> Aren't there like other thousands of articles like this?\
 > Yes, but this one is mine.
 
 ## Why do we need async?
@@ -101,7 +101,6 @@ fn main() {
 async fn async_main() {
     println!("Hello, world!");
 }
-
 ```
 
 This will print `Hello, world!` once, and `polling future` and `future is ready` once, since we only have one future.

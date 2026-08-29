@@ -1,12 +1,12 @@
 ---
-date: '2025-07-28 18:10:00'
-slug: 'can-you-move-a-copy-in-rust'
-title: 'Can you move a Copy in Rust?'
-description: 'A dumb question, but a good one to ask'
-author: 'veeso'
+date: "2025-07-28 18:10:00"
+slug: "can-you-move-a-copy-in-rust"
+title: "Can you move a Copy in Rust?"
+description: "A dumb question, but a good one to ask"
+author: "veeso"
 featured_image: featured.jpeg
 category: rust-internals
-reading_time: '5'
+reading_time: "5"
 ---
 
 ## Introduction
@@ -38,7 +38,6 @@ fn main() {
 8 |
 9 |     println!("{s}");
   |               ^^^ value borrowed here after move
-
 ```
 
 So, whenever we want to reuse the value, we have either to pass it by reference or clone it.
@@ -158,7 +157,6 @@ fn main() {
     // let nptr = &n as *const i32;
     // println!("Number ptr in main: 0x{:x}", nptr as usize);
 }
-
 ```
 
 Surprisingly, the value in `move_num` is still copied, and the original value is still in the main function.

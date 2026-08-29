@@ -1,12 +1,12 @@
 ---
-date: '2025-02-21 15:15:00'
-slug: 'how-to-setup-a-bitcoin-solo-mining-pool'
-title: 'How to setup a Bitcoin Solo Mining Pool'
-description: 'Today we will learn how to setup a Bitcoin Solo Mining Pool with a Raspberry Pi'
-author: 'veeso'
+date: "2025-02-21 15:15:00"
+slug: "how-to-setup-a-bitcoin-solo-mining-pool"
+title: "How to setup a Bitcoin Solo Mining Pool"
+description: "Today we will learn how to setup a Bitcoin Solo Mining Pool with a Raspberry Pi"
+author: "veeso"
 featured_image: featured.jpeg
 category: blockchain
-reading_time: '6'
+reading_time: "6"
 ---
 
 ## About lottery mining

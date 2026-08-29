@@ -28,7 +28,7 @@ This is the title of a popular YouTube video on this topic.
 
 I understand why people see this as a dark pattern, but we actually need to understand why Brave, like many other browsers, has slowly turned the browser into a distribution channel for other products.
 
-This process is indeed called *"enshittification"*.
+This process is indeed called _"enshittification"_.
 
 > Enshittification, also known as platform decay, is a process in which two-sided online products and services decline in quality over time - Wikipedia
 
@@ -54,7 +54,7 @@ Whenever a company is developing a browser, and you are not paying for it, there
 
 I already know you are going to scream, "but there is this browser that is really privacy-first and has no shit features integrated!". Well, let me clarify that there are three options for that:
 
-- The project is still too young: companies are building privacy and user-first browsers to attract more users, but the moment they need to come to their balance, at that point they'll have to *make a decision*. And that decision is, of course, trying whatever cross-selling of their VPN, of their own AI assistant, sponsoring questionable websites, etc.
+- The project is still too young: companies are building privacy and user-first browsers to attract more users, but the moment they need to come to their balance, at that point they'll have to _make a decision_. And that decision is, of course, trying whatever cross-selling of their VPN, of their own AI assistant, sponsoring questionable websites, etc.
 - They're lying to you.
 - It's a group of people with beautiful values carrying the project, but it won't last long.
 

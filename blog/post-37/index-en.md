@@ -1,12 +1,12 @@
 ---
-date: '2025-05-02 11:00:00'
-slug: 'std-mem-is-interesting'
-title: 'std::mem is... interesting'
+date: "2025-05-02 11:00:00"
+slug: "std-mem-is-interesting"
+title: "std::mem is... interesting"
 description: "Let's uncover the mysterious std::mem module in Rust"
-author: 'veeso'
+author: "veeso"
 featured_image: featured.jpeg
 category: rust-internals
-reading_time: '11'
+reading_time: "11"
 ---
 
 ## A module we don't use often
@@ -97,7 +97,6 @@ struct Foo {
 
 let align_of_foo = mem::align_of::<Foo>();
 assert_eq!(align_of_foo, 8);
-
 ```
 
 Why 8? Because the largest type in the struct is `i64`, which is 8 bytes long, so the struct needs to be aligned to 8 bytes. This means that the address of the struct must be a multiple of 8.

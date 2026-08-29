@@ -1,12 +1,12 @@
 ---
-date: '2025-06-07 18:30:00'
-slug: 'rust-on-a-diet'
-title: 'Rust on a Diet'
-description: 'How cloning a Vec had caused memory bloat on the Solana Validator'
-author: 'veeso'
+date: "2025-06-07 18:30:00"
+slug: "rust-on-a-diet"
+title: "Rust on a Diet"
+description: "How cloning a Vec had caused memory bloat on the Solana Validator"
+author: "veeso"
 featured_image: featured.jpeg
 category: rust-internals
-reading_time: '8'
+reading_time: "8"
 ---
 
 So if you don't know, I also develop on the Solana Validator (but please don't leave, it's about Rust and not blockchain things 😓) mostly mods for Solana RPC nodes, and recently a colleague of mine, sent me this Post on X.com, about a massive fixup on the Solana Validator, which claims to have pushed down the memory usage of the QUIC transport **from 2.6GB to 124MB**.
@@ -76,7 +76,7 @@ Cow Thread: [202, 254, 186, 190]; underlying addr: 0x55fec55b9b30
 Mhm, so just borrow right?
 
 ```rust
-    let cow_t = cow.borrow(); // clone the Cow to move into the thread
+let cow_t = cow.borrow(); // clone the Cow to move into the thread
 ```
 
 We can't do that, because the compiler doesn't know exactly the lifetime of the `Cow`.
@@ -100,7 +100,6 @@ fn main() {
 
     println!("Cow: {cow:?}; underlying addr: {ptr_addr:p}",);
 }
-
 ```
 
 Yes, indeed we've got the same address here of course, but we can't always rely on `scoped` threads, especially in the Solana ecosystem where we also pass many other data around.

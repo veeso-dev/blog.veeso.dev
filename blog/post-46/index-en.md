@@ -1,12 +1,12 @@
 ---
-date: '2025-11-13 12:00:00'
-slug: 'cooking-ic-dbms-canister-the-journey-begins'
-title: 'Cooking ic-dbms-canister: The journey begins'
-description: 'A tale of building a framework for building DBMS on Internet Computer - Chapter 1'
-author: 'veeso'
+date: "2025-11-13 12:00:00"
+slug: "cooking-ic-dbms-canister-the-journey-begins"
+title: "Cooking ic-dbms-canister: The journey begins"
+description: "A tale of building a framework for building DBMS on Internet Computer - Chapter 1"
+author: "veeso"
 featured_image: featured.jpeg
 category: rust-projects
-reading_time: '11'
+reading_time: "11"
 ---
 
 ## Premise

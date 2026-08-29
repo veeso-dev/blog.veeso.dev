@@ -1,12 +1,12 @@
 ---
-date: '2025-05-21 11:45:00'
-slug: 'web3-the-new-scarlet-letter-on-your-resume'
-title: 'Web3: The new Scarlet Letter on your resume'
-description: 'So apparently in 2025 you can get automatically rejected for a job if you have Web3 on your resume'
-author: 'veeso'
+date: "2025-05-21 11:45:00"
+slug: "web3-the-new-scarlet-letter-on-your-resume"
+title: "Web3: The new Scarlet Letter on your resume"
+description: "So apparently in 2025 you can get automatically rejected for a job if you have Web3 on your resume"
+author: "veeso"
 featured_image: featured.jpeg
-category: 'software-engineering'
-reading_time: '7'
+category: "software-engineering"
+reading_time: "7"
 ---
 
 ## A premise about my work experience

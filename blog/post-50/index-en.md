@@ -1,12 +1,12 @@
 ---
-date: '2025-12-06 13:05:00'
-slug: 'should-we-get-rid-of-clippy-manual-try-fold'
-title: 'Should we get rid of clippy::manual_try_fold?'
-description: 'A discussion on the most dangerous lint in Clippy'
-author: 'veeso'
+date: "2025-12-06 13:05:00"
+slug: "should-we-get-rid-of-clippy-manual-try-fold"
+title: "Should we get rid of clippy::manual_try_fold?"
+description: "A discussion on the most dangerous lint in Clippy"
+author: "veeso"
 featured_image: featured.jpeg
 category: rust-internals
-reading_time: '7'
+reading_time: "7"
 ---
 
 > This is the 50th blog post on this blog! 🎉 Thank you everyone for reading my blog in the past 3 years!

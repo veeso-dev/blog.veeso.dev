@@ -1,12 +1,12 @@
 ---
-date: '2025-11-22 14:10:00'
-slug: 'instantly-convert-hanzi-to-pinyin-with-biangbiang-hanzi'
-title: 'Instantly convert Hanzi to Pinyin with BiangBiang Hanzi'
-description: 'A fast and accurate iOS and Android app for converting Chinese characters to Pinyin with camera OCR'
-author: 'veeso'
+date: "2025-11-22 14:10:00"
+slug: "instantly-convert-hanzi-to-pinyin-with-biangbiang-hanzi"
+title: "Instantly convert Hanzi to Pinyin with BiangBiang Hanzi"
+description: "A fast and accurate iOS and Android app for converting Chinese characters to Pinyin with camera OCR"
+author: "veeso"
 featured_image: featured.jpeg
 category: open-source
-reading_time: '4'
+reading_time: "4"
 ---
 
 ## Introduction

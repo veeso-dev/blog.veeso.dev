@@ -1,11 +1,11 @@
 ---
-date: '2026-04-29 22:00:00 Europe/Rome'
+date: "2026-04-29 22:00:00 Europe/Rome"
 title: "Btw, I'm working on Mastic"
-description: 'A Mastodon instance built in Rust, running on Internet Computer'
-author: 'veeso'
+description: "A Mastodon instance built in Rust, running on Internet Computer"
+author: "veeso"
 featured_image: featured.jpeg
 category: rust-projects
-reading_time: '8'
+reading_time: "8"
 ---
 
 ## Preamble

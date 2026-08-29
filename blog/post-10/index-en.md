@@ -1,12 +1,12 @@
 ---
-date: '2024-02-15 15:30:00'
-slug: 'how-to-get-started-with-bitcoin-lottery-mining'
-title: 'How to get started with Bitcoin Lottery Mining?'
-description: 'What do you need to get started? Why is it important? Can you actually earn bitcoins?'
-author: 'veeso'
+date: "2024-02-15 15:30:00"
+slug: "how-to-get-started-with-bitcoin-lottery-mining"
+title: "How to get started with Bitcoin Lottery Mining?"
+description: "What do you need to get started? Why is it important? Can you actually earn bitcoins?"
+author: "veeso"
 featured_image: featured.jpeg
 category: blockchain
-reading_time: '7'
+reading_time: "7"
 ---
 
 ## What is the Lottery Mining

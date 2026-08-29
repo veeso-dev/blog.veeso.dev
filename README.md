@@ -6,13 +6,13 @@ Previously built with Gatsby, now migrated to a fully static site generated with
 
 ## Tech Stack
 
-| Technology | Purpose |
-| --- | --- |
-| [Gleam](https://gleam.run/) | Programming language (compiles to Erlang/OTP) |
-| [Lustre](https://lustre.dev/) | UI component framework |
-| [Blogatto](https://github.com/veeso/blogatto) | Blog engine / static site generator |
-| [Tailwind CSS](https://tailwindcss.com/) | Styling |
-| [Vercel](https://vercel.com/) | Hosting |
+| Technology                                    | Purpose                                       |
+| --------------------------------------------- | --------------------------------------------- |
+| [Gleam](https://gleam.run/)                   | Programming language (compiles to Erlang/OTP) |
+| [Lustre](https://lustre.dev/)                 | UI component framework                        |
+| [Blogatto](https://github.com/veeso/blogatto) | Blog engine / static site generator           |
+| [Tailwind CSS](https://tailwindcss.com/)      | Styling                                       |
+| [Vercel](https://vercel.com/)                 | Hosting                                       |
 
 ## Project Structure
 

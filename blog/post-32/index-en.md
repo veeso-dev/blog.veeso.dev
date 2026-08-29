@@ -1,12 +1,12 @@
 ---
-date: '2025-03-20 17:00:00'
-slug: 'vendoring-c-cpp-dependencies-in-rust'
-title: 'Vendoring C/C++ dependencies in Rust'
-description: 'How to statically bundle a C library to your project like with OpenSSL'
-author: 'veeso'
+date: "2025-03-20 17:00:00"
+slug: "vendoring-c-cpp-dependencies-in-rust"
+title: "Vendoring C/C++ dependencies in Rust"
+description: "How to statically bundle a C library to your project like with OpenSSL"
+author: "veeso"
 featured_image: featured.jpeg
 category: rust-tutorials
-reading_time: '11'
+reading_time: "11"
 ---
 
 ## What is vendoring about?
@@ -310,7 +310,6 @@ with open(filename, "r") as f:
 
     for obj in objects:
         print(f'"{obj}",')
-
 ```
 
 Sorry Rustaceans about the Python snippet, but I use it for these kind of tasks.
@@ -468,7 +467,6 @@ fn build_vendored() {
     println!("cargo:include={}", artifacts.include_dir.display());
     println!("cargo:rustc-link-lib=static=foo");
 }
-
 ```
 
 Finally, let's also add the `vendored` feature to the `foo` crate:

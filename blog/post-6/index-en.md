@@ -1,12 +1,12 @@
 ---
-date: '2023-09-21 12:00:00'
-slug: 'how-to-migrate-from-reactjs-to-gatsby'
-title: 'How to migrate from ReactJS to Gatsby'
-description: 'Maximize your Lighthouse score by migrating your web page to Gatsby'
-author: 'veeso'
+date: "2023-09-21 12:00:00"
+slug: "how-to-migrate-from-reactjs-to-gatsby"
+title: "How to migrate from ReactJS to Gatsby"
+description: "Maximize your Lighthouse score by migrating your web page to Gatsby"
+author: "veeso"
 featured_image: featured.jpeg
 category: web-development
-reading_time: '15'
+reading_time: "15"
 ---
 
 ## Why to migrate your ReactJS frontend to Gatsby
@@ -560,7 +560,6 @@ const CookieBar = () => {
     initGaConsent(false, isAnalyticsCookiesConsentGiven());
     setHasCookieBar(!hasCookiePreferences());
   }, []);
-
 ```
 
 It should work, right?

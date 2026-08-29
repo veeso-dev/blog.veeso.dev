@@ -1,12 +1,12 @@
 ---
-date: '2026-03-02 11:00:00'
-slug: 'from-ic-dbms-to-wasm-dbms'
-title: 'From ic-dbms to wasm-dbms'
-description: 'Untangling a database engine from the Internet Computer'
-author: 'veeso'
+date: "2026-03-02 11:00:00"
+slug: "from-ic-dbms-to-wasm-dbms"
+title: "From ic-dbms to wasm-dbms"
+description: "Untangling a database engine from the Internet Computer"
+author: "veeso"
 featured_image: featured.jpeg
 category: rust-projects
-reading_time: '8'
+reading_time: "8"
 ---
 
 This is an article about how I restructured a monolithic IC canister framework into a runtime-agnostic WASM database engine.
@@ -35,7 +35,7 @@ crates/
 
 See the issue? `ic-dbms-canister` was doing all the heavy lifting. Memory provider, memory manager, schema registry, table registry, the full DBMS engine, transactions, JOINs, integrity validators, ACL. Everything was crammed into a single crate, all coupled to IC-specific constructs.
 
-The `MemoryProvider` trait existed, but it was private. The ACL was hardcoded to `Principal`. Transaction rollback relied on IC's trap semantics, where a panic reverts all stable memory changes. The `DbmsCanister` derive macro was a 400-line monster that generated both the database schema dispatch *and* the entire canister API in one shot.
+The `MemoryProvider` trait existed, but it was private. The ACL was hardcoded to `Principal`. Transaction rollback relied on IC's trap semantics, where a panic reverts all stable memory changes. The `DbmsCanister` derive macro was a 400-line monster that generated both the database schema dispatch _and_ the entire canister API in one shot.
 
 ## The New Architecture
 
@@ -175,7 +175,7 @@ Transaction `commit()` now wraps all its operations in a single journal. Either 
 
 ## The AccessControl Trait
 
-The old ACL was welded to `Principal`. Every method was `add_principal`, `remove_principal`, `allowed_principals`. Fine for IC, but a database engine shouldn't care what an "*identity*" looks like.
+The old ACL was welded to `Principal`. Every method was `add_principal`, `remove_principal`, `allowed_principals`. Fine for IC, but a database engine shouldn't care what an "_identity_" looks like.
 
 The new `AccessControl` trait uses an associated type:
 

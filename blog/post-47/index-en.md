@@ -1,12 +1,12 @@
 ---
-date: '2025-11-22 12:10:00'
-slug: 'cooking-ic-dbms-canister-memory-management'
-title: 'Cooking ic-dbms-canister: Memory Management'
-description: 'A tale of building a framework for building DBMS on Internet Computer - Chapter 2'
-author: 'veeso'
+date: "2025-11-22 12:10:00"
+slug: "cooking-ic-dbms-canister-memory-management"
+title: "Cooking ic-dbms-canister: Memory Management"
+description: "A tale of building a framework for building DBMS on Internet Computer - Chapter 2"
+author: "veeso"
 featured_image: featured.jpeg
 category: rust-projects
-reading_time: '14'
+reading_time: "14"
 ---
 
 ## Introduction
@@ -51,7 +51,6 @@ pub trait MemoryProvider {
 And I implemented two providers:
 
 ```rust
-
 /// An implementation of [`MemoryProvider`] that uses the Internet Computer's stable memory.
 #[cfg(target_family = "wasm")]
 #[derive(Default)]

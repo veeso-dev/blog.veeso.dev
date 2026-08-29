@@ -1,12 +1,12 @@
 ---
-date: '2024-10-28 17:00:00'
-slug: 'dyn-box-vs-generics-in-rust'
-title: 'Dyn Box Vs. Generics'
-description: 'What is the best approach for achieving conditional generics in Rust?'
-author: 'veeso'
+date: "2024-10-28 17:00:00"
+slug: "dyn-box-vs-generics-in-rust"
+title: "Dyn Box Vs. Generics"
+description: "What is the best approach for achieving conditional generics in Rust?"
+author: "veeso"
 featured_image: featured.jpeg
 category: rust-internals
-reading_time: '6'
+reading_time: "6"
 ---
 
 ## Case scenario
@@ -80,7 +80,6 @@ error[E0308]: mismatched types
    = note: expected trait object `(dyn Greet + 'static)`
                     found struct `Alice`
    = help: `Alice` implements `Greet` so you could box the found value and coerce it to the trait object `Box<dyn Greet>`, you will have to change the expected type as well
-
 ```
 
 So we have two different approach we can take here:

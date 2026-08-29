@@ -1,12 +1,12 @@
 ---
-date: '2025-12-05 23:00:00'
-slug: 'cooking-ic-dbms-canister-dbms-layer'
-title: 'Cooking ic-dbms-canister: DBMS Layer'
-description: 'A tale of building a framework for building DBMS on Internet Computer - Chapter 3'
-author: 'veeso'
+date: "2025-12-05 23:00:00"
+slug: "cooking-ic-dbms-canister-dbms-layer"
+title: "Cooking ic-dbms-canister: DBMS Layer"
+description: "A tale of building a framework for building DBMS on Internet Computer - Chapter 3"
+author: "veeso"
 featured_image: featured.jpeg
 category: rust-projects
-reading_time: '21'
+reading_time: "21"
 ---
 
 ## Introduction
@@ -761,16 +761,16 @@ And we have a `patch` method to apply the overlay changes to a record:
 Also we need to iterate over inserted records in the overlay, so we have a method for that too:
 
 ```rust
-    /// Returns an iterator over the inserted records which are still valid after the operation stack.
-    pub fn iter_inserted(&self) -> impl Iterator<Item = Vec<(ColumnDef, Value)>> {
-        self.operations.iter().filter_map(|op| {
-            if let Operation::Insert(_, record) = op {
-                self.patch_row(record.clone())
-            } else {
-                None
-            }
-        })
-    }
+/// Returns an iterator over the inserted records which are still valid after the operation stack.
+pub fn iter_inserted(&self) -> impl Iterator<Item = Vec<(ColumnDef, Value)>> {
+    self.operations.iter().filter_map(|op| {
+        if let Operation::Insert(_, record) = op {
+            self.patch_row(record.clone())
+        } else {
+            None
+        }
+    })
+}
 ```
 
 Eventually instead of using `TableReader` directly we use `DatabaseOverlayReader` which merges the overlay changes with the underlying table reader:
@@ -863,7 +863,6 @@ let mut table_reader = table_overlay.reader(table_reader);
 while let Some(values) = table_reader.try_next()? {
     // ...
 }
-
 ```
 
 ## Dealing with Integrity Validation

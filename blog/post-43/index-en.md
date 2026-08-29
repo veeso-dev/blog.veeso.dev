@@ -1,12 +1,12 @@
 ---
-date: '2025-06-26 18:00:00'
-slug: 'leaktracer-a-rust-allocator-to-trace-memory-allocations'
-title: 'Leaktracer: A Rust allocator to trace memory allocations'
-description: 'A simple allocator to help you find leaks and memory issues in your Rust applications'
-author: 'veeso'
+date: "2025-06-26 18:00:00"
+slug: "leaktracer-a-rust-allocator-to-trace-memory-allocations"
+title: "Leaktracer: A Rust allocator to trace memory allocations"
+description: "A simple allocator to help you find leaks and memory issues in your Rust applications"
+author: "veeso"
 featured_image: featured.jpeg
 category: rust-internals
-reading_time: '11'
+reading_time: "11"
 ---
 
 A few days ago, I had a memory issue in one of my Rust applications.
@@ -36,7 +36,6 @@ I started implementing Leaktracer by defining the allocator, called `LeaktracerA
 And this can be achieved very easily:
 
 ```rust
-
 pub struct LeaktracerAllocator;
 
 impl LeaktracerAllocator {
@@ -54,7 +53,6 @@ unsafe impl GlobalAlloc for LeaktracerAllocator {
         unsafe { System.dealloc(ptr, layout) }
     }
 }
-
 ```
 
 This is the basic structure of the allocator. The most important thing is that `init` must be a `const fn`, so it cannot allocate anything to the heap.
@@ -502,7 +500,6 @@ fn main() {
         }
     })?;
 }
-
 ```
 
 ## Performance

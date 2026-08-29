@@ -1,12 +1,12 @@
 ---
-date: '2025-01-06 13:15:00'
-slug: 'a-journey-into-file-transfer-protocols-in-rust'
-title: 'A journey into File Transfer Protocols in Rust'
-description: 'How basically I became a file transfer protocol expert in Rust'
-author: 'veeso'
+date: "2025-01-06 13:15:00"
+slug: "a-journey-into-file-transfer-protocols-in-rust"
+title: "A journey into File Transfer Protocols in Rust"
+description: "How basically I became a file transfer protocol expert in Rust"
+author: "veeso"
 featured_image: featured.jpeg
 category: rust-tutorials
-reading_time: '21'
+reading_time: "21"
 ---
 
 ## How it started

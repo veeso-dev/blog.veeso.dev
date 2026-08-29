@@ -1,12 +1,12 @@
 ---
-date: '2023-07-17 12:00:00'
-slug: 'why-you-should-and-should-not-do-open-source'
-title: 'Why you should (and should not) do open-source'
-description: 'As an experienced open-source developer, I want to tell you why you should do open-source, with all the cons though'
-author: 'veeso'
+date: "2023-07-17 12:00:00"
+slug: "why-you-should-and-should-not-do-open-source"
+title: "Why you should (and should not) do open-source"
+description: "As an experienced open-source developer, I want to tell you why you should do open-source, with all the cons though"
+author: "veeso"
 featured_image: featured.jpeg
-category: 'software-engineering'
-reading_time: '10'
+category: "software-engineering"
+reading_time: "10"
 ---
 
 ## Preamble

@@ -1,11 +1,11 @@
 ---
-date: '2026-05-19 22:15:00 Europe/Rome'
+date: "2026-05-19 22:15:00 Europe/Rome"
 title: "BiangBiang Kana, an iOS and Android app to scan, romanize and translate Japanese"
-description: 'iOS and Android app that scans, romanizes and translates Japanese, with Kanji and Kana recognition from a live camera'
-author: 'veeso'
+description: "iOS and Android app that scans, romanizes and translates Japanese, with Kanji and Kana recognition from a live camera"
+author: "veeso"
 featured_image: featured.jpeg
 category: open-source
-reading_time: '6'
+reading_time: "6"
 ---
 
 ## Preamble

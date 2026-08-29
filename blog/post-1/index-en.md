@@ -1,12 +1,12 @@
 ---
-date: '2023-01-25 00:00:00'
-slug: 'dev-horror-story-1-an-android-nightmare'
-title: 'Dev Horror Story #1 — An Android Nightmare'
-description: 'A journey into one of my most painful development: a Wear Os App'
-author: 'veeso'
+date: "2023-01-25 00:00:00"
+slug: "dev-horror-story-1-an-android-nightmare"
+title: "Dev Horror Story #1 — An Android Nightmare"
+description: "A journey into one of my most painful development: a Wear Os App"
+author: "veeso"
 featured_image: featured.jpeg
-category: 'software-engineering'
-reading_time: '11'
+category: "software-engineering"
+reading_time: "11"
 ---
 
 ## Preamble

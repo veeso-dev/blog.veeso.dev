@@ -24,15 +24,18 @@ just dev                 # Start dev server on port 3000 with live reload (runs 
 **Configuration** (`src/blog/config.gleam`): Defines Blogatto config - markdown source dir (`./blog`), output dir (`./dist`), static files (`./static`), RSS feed, sitemap, robots.txt, and route definitions.
 
 **Template hierarchy**:
+
 - `template/page.gleam` - Root HTML wrapper with `<head>` (SEO meta tags, dark mode script, CDN resources) and `<body>` (topbar + content + footer)
 - `template/blog.gleam` - Blog post template: featured image, title, metadata, article body, share buttons, related posts (filtered by `category` extra field, takes first 2 matches)
 - `template/topbar.gleam` / `template/footer.gleam` - Site chrome
 
 **Pages** (`pages/`):
+
 - `home.gleam` - Homepage with author bio and latest 4 posts, mounted at `/`
 - `blog.gleam` - Blog listing with all posts in a 2-column grid, mounted at `/blog/`
 
 **Components** (`components/`):
+
 - `container.gleam` - Flexbox layout primitives (`row`, `col`, `responsive_row`)
 - `md_components.gleam` - Custom markdown renderers (links open in new tab, Prism.js code blocks, styled blockquotes)
 - `post_preview.gleam` / `post_meta.gleam` - Post card and metadata display

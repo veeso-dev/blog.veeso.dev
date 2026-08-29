@@ -1,12 +1,12 @@
 ---
-date: '2025-06-18 17:40:00'
-slug: 'dont-you-dare-to-sort-your-struct-fields-when-using-sized'
+date: "2025-06-18 17:40:00"
+slug: "dont-you-dare-to-sort-your-struct-fields-when-using-sized"
 title: "Don't you dare to sort your struct fields when using ?Sized"
-description: 'Or Ferris will come for you!'
-author: 'veeso'
+description: "Or Ferris will come for you!"
+author: "veeso"
 featured_image: featured.jpeg
 category: rust-internals
-reading_time: '7'
+reading_time: "7"
 ---
 
 So on the other day I was making a custom implementation of the `io` module for [maybe-fut](https://github.com/veeso/maybe-fut) and I had to implement the `BufReader` struct, which has this definition:

@@ -1,18 +1,18 @@
 ---
-date: '2026-07-30 11:30:00 Europe/Rome'
+date: "2026-07-30 11:30:00 Europe/Rome"
 title: "Codeberg is self-sabotaging by turning against AI-assisted development"
-description: 'Codeberg updated its Terms of Service, opposing cryptocurrencies and, de facto, any real-world use of AI. What does this imply?'
-author: 'veeso'
+description: "Codeberg updated its Terms of Service, opposing cryptocurrencies and, de facto, any real-world use of AI. What does this imply?"
+author: "veeso"
 featured_image: featured.jpeg
 category: tech-commentary
-reading_time: '6'
+reading_time: "7"
 ---
 
 ## What happened
 
 In the last week of July 2026, Codeberg made a small but impactful change to its Terms of Service (ToS):
 
-> You must not share projects that mostly consist of code written by "generative AI"-tools (including services such as *Claude*, *OpenAI Codex*). Such projects having an unclear copyright status (see requirements § 2 (1) 1 and § 2 (1) 3) and furthermore have little safeguards to ensure that they do not include harmful code (c.f. § 2 (1) 5).
+> You must not share projects that mostly consist of code written by "generative AI"-tools (including services such as _Claude_, _OpenAI Codex_). Such projects having an unclear copyright status (see requirements § 2 (1) 1 and § 2 (1) 3) and furthermore have little safeguards to ensure that they do not include harmful code (c.f. § 2 (1) 5).
 > […]. We also explicitly do not tolerate: […] Content that harms the reputation of Codeberg, such as cryptocurrency related projects.
 
 These two changes, even if they look small, actually have a huge impact on Codeberg's user base and have already caused several users to flee from the platform.
@@ -45,7 +45,7 @@ I've worked for many years on projects running on the Internet Computer, for ins
 
 Fun fact: some of these projects were hosted on Codeberg as well, such as my wasm-dbms library, which included an adapter for Internet Computer. This means that wasm-dbms is also now against Codeberg's ToS and needs to be removed.
 
-I also uploaded a harness library for testing with IC (Internet Computer), and now that is *de facto* against the ToS as well, because it can be considered against the ToS too.
+I also uploaded a harness library for testing with IC (Internet Computer), and now that is _de facto_ against the ToS as well, because it can be considered against the ToS too.
 
 Also, it is not clear what `cryptocurrency related projects` means, and it could potentially include many more things than just blockchains or smart contracts.
 
@@ -73,9 +73,9 @@ If you don't think this is crazy, it either means you are an anti-AI yourself, o
 
 ### The copyright claim is bullshit
 
-They defend this clause with one of the most artistic pieces of bullshit I've ever seen; in Italy, we call this kind of justification "*supercazzola*".
+They defend this clause with one of the most artistic pieces of bullshit I've ever seen; in Italy, we call this kind of justification "_supercazzola_".
 
-They say that if your project is *mostly* written using AI, it **may have an unclear copyright status**.
+They say that if your project is _mostly_ written using AI, it **may have an unclear copyright status**.
 
 It is true that in recent years there have been many discussions about copyright when using generative AI, and at the beginning many people were sure that there was no copyright, since it was created by a machine.
 
@@ -101,7 +101,7 @@ I think I can make this statement without any issues, and I think everybody can 
 
 There is now way, that if they wanted to prevent spam, or malicious code, they would have put the terms down like this.
 
-It is quite clear that in the last year, Codeberg has mostly been supported and joined by people belonging to arguably different categories, such as the *Buy from EU* (not bad in general, just the extremists) people and *anti-AI* people.
+It is quite clear that in the last year, Codeberg has mostly been supported and joined by people belonging to arguably different categories, such as the _Buy from EU_ (not bad in general, just the extremists) people and _anti-AI_ people.
 
 I believe Codeberg knows that it must keep its line in compliance with that of its community, so it decided to become the GitHub of anti-AIs.
 

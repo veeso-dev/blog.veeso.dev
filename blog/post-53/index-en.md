@@ -1,12 +1,12 @@
 ---
-date: '2026-02-01 19:10:00'
-slug: 'the-role-of-the-software-engineer-in-the-age-of-ai'
-title: 'The role of the Software Engineer in the age of AI'
-description: 'A consideration of how AI is going to change the role of Software Engineers and the advent of the Software Engineer 2.0'
-author: 'veeso'
+date: "2026-02-01 19:10:00"
+slug: "the-role-of-the-software-engineer-in-the-age-of-ai"
+title: "The role of the Software Engineer in the age of AI"
+description: "A consideration of how AI is going to change the role of Software Engineers and the advent of the Software Engineer 2.0"
+author: "veeso"
 featured_image: featured.jpeg
-category: 'software-engineering'
-reading_time: '8'
+category: "software-engineering"
+reading_time: "8"
 ---
 
 ## Introduction
@@ -62,7 +62,7 @@ Would Claude be able to write the same code without a strong engineer guiding it
 
 This is a valid concern, but I believe that the role of the Software Engineer 2.0 is not just about writing prompts for AI tools. It’s about **understanding the problem domain, designing solutions, and guiding the AI to implement those solutions effectively**.
 
-After all, nowadays, software engineers are more considered for their ability to design systems and solve problems than for their coding skills. Coding is just a means to an end. And writing code has nothing to do with architecturing the code itself, which is still required to build maintainable and scalable systems, even with the use of AI tools. It's just the *code's manufacturing* that is changing.
+After all, nowadays, software engineers are more considered for their ability to design systems and solve problems than for their coding skills. Coding is just a means to an end. And writing code has nothing to do with architecturing the code itself, which is still required to build maintainable and scalable systems, even with the use of AI tools. It's just the _code's manufacturing_ that is changing.
 
 ### So we won't need to learn how to code anymore?
 

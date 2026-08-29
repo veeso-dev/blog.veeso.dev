@@ -1,12 +1,12 @@
 ---
-date: '2023-03-20 00:00:00'
-slug: 'for-a-sustainable-open-source-community-start-pointing-the-finger-at-the-mirror'
-title: 'For a sustainable open-source community, start pointing the finger at the mirror'
+date: "2023-03-20 00:00:00"
+slug: "for-a-sustainable-open-source-community-start-pointing-the-finger-at-the-mirror"
+title: "For a sustainable open-source community, start pointing the finger at the mirror"
 description: "A reflection on how we're all part of the problem in open-source"
-author: 'veeso'
+author: "veeso"
 featured_image: featured.jpeg
-category: 'software-engineering'
-reading_time: '7'
+category: "software-engineering"
+reading_time: "7"
 ---
 
 ## Preamble

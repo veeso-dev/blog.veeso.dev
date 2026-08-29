@@ -1,12 +1,12 @@
 ---
-date: '2025-03-28 16:00:00'
-slug: 'embedding-shared-objects-in-rust'
-title: 'Embedding shared objects in Rust'
-description: 'How to embed a shared object in a Rust binary and load it at runtime'
-author: 'veeso'
+date: "2025-03-28 16:00:00"
+slug: "embedding-shared-objects-in-rust"
+title: "Embedding shared objects in Rust"
+description: "How to embed a shared object in a Rust binary and load it at runtime"
+author: "veeso"
 featured_image: featured.jpeg
 category: rust-tutorials
-reading_time: '11'
+reading_time: "11"
 ---
 
 ## But why?
@@ -83,7 +83,6 @@ target_include_directories(foo_shared PUBLIC include)
 add_library(foo_static STATIC ${SOURCES})
 set_target_properties(foo_static PROPERTIES OUTPUT_NAME "foo")
 target_include_directories(foo_static PUBLIC include)
-
 ```
 
 ## Bindings to Rust
@@ -272,7 +271,6 @@ fn cp_r(src: &Path, dst: &Path) -> Result<(), String> {
     }
     Ok(())
 }
-
 ```
 
 And finally, at least for the moment, let's link libfoo statically:

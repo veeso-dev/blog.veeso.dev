@@ -1,12 +1,12 @@
 ---
-date: '2024-07-17 17:30:00'
-slug: 'termscp-014-released'
-title: 'termscp 0.14 has been released'
-description: 'come discover many brand new cool features'
-author: 'veeso'
+date: "2024-07-17 17:30:00"
+slug: "termscp-014-released"
+title: "termscp 0.14 has been released"
+description: "come discover many brand new cool features"
+author: "veeso"
 featured_image: featured.jpeg
 category: open-source
-reading_time: '3'
+reading_time: "3"
 ---
 
 ## It's been a long time

@@ -1,12 +1,12 @@
 ---
-date: '2025-08-14 11:15:00'
-slug: 'prs-taking-too-long-to-be-reviewed'
-title: 'PRs taking too long to be reviewed'
-description: 'The dilemma of assigning Pull Requests Reviews'
-author: 'veeso'
+date: "2025-08-14 11:15:00"
+slug: "prs-taking-too-long-to-be-reviewed"
+title: "PRs taking too long to be reviewed"
+description: "The dilemma of assigning Pull Requests Reviews"
+author: "veeso"
 featured_image: featured.jpeg
-category: 'software-engineering'
-reading_time: '4'
+category: "software-engineering"
+reading_time: "4"
 ---
 
 ## Introduction

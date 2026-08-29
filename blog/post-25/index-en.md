@@ -1,12 +1,12 @@
 ---
-date: '2024-12-18 13:00:00'
-slug: 'revolutioninzing-the-real-estate-market-with-ekoke-dao'
-title: 'Revolutionizing the real estate market with EKOKE DAO'
-description: 'EKOKE DAO is going to replace the traditional bank mortgage with a sustainable and decentralized model based on installments on the blockchain'
-author: 'veeso'
+date: "2024-12-18 13:00:00"
+slug: "revolutioninzing-the-real-estate-market-with-ekoke-dao"
+title: "Revolutionizing the real estate market with EKOKE DAO"
+description: "EKOKE DAO is going to replace the traditional bank mortgage with a sustainable and decentralized model based on installments on the blockchain"
+author: "veeso"
 featured_image: featured.jpeg
 category: blockchain
-reading_time: '7'
+reading_time: "7"
 ---
 
 ## Introduction

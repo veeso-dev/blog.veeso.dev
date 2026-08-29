@@ -1,12 +1,12 @@
 ---
-date: '2024-12-16 10:45:00'
-slug: 'how-to-make-react--markdown-work-with-parcel'
-title: 'How to make react-markdown work with Parcel?'
-description: 'I literally got mad with react-markdown to make it work with Parcel. Now you have a guide to make it work'
-author: 'veeso'
+date: "2024-12-16 10:45:00"
+slug: "how-to-make-react--markdown-work-with-parcel"
+title: "How to make react-markdown work with Parcel?"
+description: "I literally got mad with react-markdown to make it work with Parcel. Now you have a guide to make it work"
+author: "veeso"
 featured_image: featured.jpeg
 category: web-development
-reading_time: '4'
+reading_time: "4"
 ---
 
 ## Audience

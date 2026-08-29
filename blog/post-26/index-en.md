@@ -1,12 +1,12 @@
 ---
-date: '2024-12-19 15:00:00'
-slug: 'why-bitcoin-is-not-decentralized--in-any-way'
-title: 'Why Bitcoin is not decentralized - in any way'
-description: 'The truth everybody tries to hide about Bitcoin decentralization'
-author: 'veeso'
+date: "2024-12-19 15:00:00"
+slug: "why-bitcoin-is-not-decentralized--in-any-way"
+title: "Why Bitcoin is not decentralized - in any way"
+description: "The truth everybody tries to hide about Bitcoin decentralization"
+author: "veeso"
 featured_image: featured.jpeg
 category: tech-commentary
-reading_time: '6'
+reading_time: "6"
 ---
 
 ## Bitcoin is decentralized, right?

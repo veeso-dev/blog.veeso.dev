@@ -1,12 +1,12 @@
 ---
-date: '2023-05-13 00:00:00'
-slug: 'how-to-access-an-smb-share-with-rust-on-windows'
-title: 'How to access an SMB share with Rust (on Windows)'
-description: 'A step-by-step guide to access SMB share on Windows with Rust stdlib'
-author: 'veeso'
+date: "2023-05-13 00:00:00"
+slug: "how-to-access-an-smb-share-with-rust-on-windows"
+title: "How to access an SMB share with Rust (on Windows)"
+description: "A step-by-step guide to access SMB share on Windows with Rust stdlib"
+author: "veeso"
 featured_image: featured.jpeg
 category: rust-tutorials
-reading_time: '4'
+reading_time: "4"
 ---
 
 ## Introduction

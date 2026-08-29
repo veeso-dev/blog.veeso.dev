@@ -1,12 +1,12 @@
 ---
-date: '2025-12-13 18:07:00'
-slug: 'announcing-ic-dbms-0-1-0'
-title: 'Announcing ic-dbms 0.1.0'
-description: 'A Rust framework to easily implement a database canister on the Internet Computer'
-author: 'veeso'
+date: "2025-12-13 18:07:00"
+slug: "announcing-ic-dbms-0-1-0"
+title: "Announcing ic-dbms 0.1.0"
+description: "A Rust framework to easily implement a database canister on the Internet Computer"
+author: "veeso"
 featured_image: featured.jpeg
 category: open-source
-reading_time: '3'
+reading_time: "3"
 ---
 
 What if I told you that this code:

@@ -1,12 +1,12 @@
 ---
-date: '2025-05-03 18:00:00'
-slug: 'why-as-a-software-engineer-i-truly-believe-in-the-internet-computer-project'
-title: 'Why as a Software Engineer I truly believe in the Internet Computer project'
+date: "2025-05-03 18:00:00"
+slug: "why-as-a-software-engineer-i-truly-believe-in-the-internet-computer-project"
+title: "Why as a Software Engineer I truly believe in the Internet Computer project"
 description: "Hear me out, I know it's about web3, but Internet Computer is different"
-author: 'veeso'
+author: "veeso"
 featured_image: featured.jpeg
 category: blockchain
-reading_time: '8'
+reading_time: "8"
 ---
 
 ## Premise

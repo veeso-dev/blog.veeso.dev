@@ -1,12 +1,12 @@
 ---
-date: '2024-11-18 15:00:00'
-slug: 'you-dont-always-need-async'
+date: "2024-11-18 15:00:00"
+slug: "you-dont-always-need-async"
 title: "You don't (*always*) need async"
 description: "But you can't live without it anymore"
-author: 'veeso'
+author: "veeso"
 featured_image: featured.jpeg
 category: rust-internals
-reading_time: '11'
+reading_time: "11"
 ---
 
 ## We are too much into async, but we can't go back

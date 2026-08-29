@@ -1,17 +1,17 @@
 ---
-date: '2025-04-28 12:00:00'
-slug: 'it-s-time-to-leave-x-com'
+date: "2025-04-28 12:00:00"
+slug: "it-s-time-to-leave-x-com"
 title: "It's time to leave X.com"
-description: 'With two years of delay, I finally decided to leave too'
-author: 'veeso'
+description: "With two years of delay, I finally decided to leave too"
+author: "veeso"
 featured_image: featured.jpeg
-category: 'software-engineering'
-reading_time: '4'
+category: "software-engineering"
+reading_time: "4"
 ---
 
 ## Elon Musk has created a monster
 
-It’s not entirely his fault.  
+It’s not entirely his fault.\
 Or at least, not just because he exists.
 
 I wasn’t one of those who fled the day Twitter was bought, because **I didn’t want to make decisions solely based on the fact that Musk had bought Twitter** and I still wanted to see how things would evolve.
@@ -53,8 +53,8 @@ A while ago, **Grok** was launched — X.com’s AI — with an idealistic featu
 
 Well, now you can open literally any post, even one where someone just opens a faucet and water comes out, and you’ll find dozens of people commenting:
 
-> @Grok, is it real?  
-> @Grok, is it true?  
+> @Grok, is it real?\
+> @Grok, is it true?\
 > @Grok, is it fake?
 
 Now obviously it’s not the platform’s fault, but the level of people using X.com is truly embarrassing. It makes me realize that only the **dumbest morons** are left there.

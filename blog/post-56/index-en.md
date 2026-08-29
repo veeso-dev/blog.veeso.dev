@@ -72,7 +72,7 @@ Not to mention the **find-and-replace is SO DUMB**. I hope that everybody on thi
 
 An important aspect of editors is how well git changes are shown in the editor view. On RustRover, it’s a disaster. I would expect to have a clear view, like on VSCode's sidebar, of changes made to a file. On RustRover, they are visible but barely. It’s really hard to see and navigate to!
 
-Also, the conflict-resolution view of RustRover is very hard to use. It’s never clear how to use it; it uses meaningless terminology that always comes down to Accept ours or Accept theirs for the entire file. You don’t have a conflict-by-conflict view like in VSCode; you just have two panels, no way to edit them, and two buttons that say "Accept ours" and "Accept theirs." The problem? It doesn’t tell which one is the other, and the git terminology for it is confusing. For instance, if you rebase on main, ours  and theirs logic get twisted and is hard to understand.
+Also, the conflict-resolution view of RustRover is very hard to use. It’s never clear how to use it; it uses meaningless terminology that always comes down to Accept ours or Accept theirs for the entire file. You don’t have a conflict-by-conflict view like in VSCode; you just have two panels, no way to edit them, and two buttons that say "Accept ours" and "Accept theirs." The problem? It doesn’t tell which one is the other, and the git terminology for it is confusing. For instance, if you rebase on main, ours and theirs logic get twisted and is hard to understand.
 
 ### Requires a lot of configuration
 

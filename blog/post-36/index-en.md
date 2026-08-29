@@ -1,12 +1,12 @@
 ---
-date: '2025-04-30 12:00:00'
-slug: 'all-my-dead-open-source-projects'
-title: 'All my Dead Open Source Projects'
-description: 'Showcasing successful projects is mainstream, but what about the dead ones?'
-author: 'veeso'
+date: "2025-04-30 12:00:00"
+slug: "all-my-dead-open-source-projects"
+title: "All my Dead Open Source Projects"
+description: "Showcasing successful projects is mainstream, but what about the dead ones?"
+author: "veeso"
 featured_image: featured.jpeg
-category: 'software-engineering'
-reading_time: '9'
+category: "software-engineering"
+reading_time: "9"
 ---
 
 ## Introduction

@@ -1,12 +1,12 @@
 ---
-date: '2025-05-05 11:30:00'
-slug: 'an-abstract-of-a-real-p2p-electronic-cash-system'
-title: 'An Abstract of a real P2P Electronic Cash System'
-description: 'A draft and analysis of a real P2P Electronic Cash System'
-author: 'veeso'
+date: "2025-05-05 11:30:00"
+slug: "an-abstract-of-a-real-p2p-electronic-cash-system"
+title: "An Abstract of a real P2P Electronic Cash System"
+description: "A draft and analysis of a real P2P Electronic Cash System"
+author: "veeso"
 featured_image: featured.jpeg
 category: blockchain
-reading_time: '11'
+reading_time: "11"
 ---
 
 ## We have P2P Electronic Cash Systems at home
