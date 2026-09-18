@@ -157,20 +157,43 @@ impl LeaktracerAllocator {
 
 At this point, inside of `alloc` and `dealloc` methods, we'll trace the allocations only if `is_external_allocation` returns `true`, meaning that the allocation is not made by the allocator itself.
 
+Each traced allocation is also tagged with an `AllocId`, which is simply the pointer itself cast to a `usize` (we'll define this alias, and see why we need it, in a moment).
+
 ```rust
+impl LeaktracerAllocator {
+    // ...
+
+    /// Converts a pointer to an [`AllocId`].
+    fn alloc_id_from_ptr(&self, ptr: *mut u8) -> AllocId {
+        ptr as AllocId
+    }
+}
+
 unsafe impl GlobalAlloc for LeaktracerAllocator {
     unsafe fn alloc(&self, layout: Layout) -> *mut u8 {
+        // some platforms (macOS in particular) allocate internally while resolving symbols,
+        // so if we're already tracing, just forward straight to the system allocator
+        if IN_ALLOC.with(|c| c.get()) {
+            return unsafe { System.alloc(layout) };
+        }
+
         let ptr = unsafe { System.alloc(layout) };
         // if the allocation is not null AND the allocation is external, trace the allocation
         if !ptr.is_null() && self.is_external_allocation() {
-            self.trace(layout, AllocOp::Alloc);
+            let alloc_id = self.alloc_id_from_ptr(ptr);
+            self.trace(alloc_id, layout, AllocOp::Alloc);
         }
         ptr
     }
 
     unsafe fn dealloc(&self, ptr: *mut u8, layout: Layout) {
+        if IN_ALLOC.with(|c| c.get()) {
+            return unsafe { System.dealloc(ptr, layout) };
+        }
+
         if !ptr.is_null() && self.is_external_allocation() {
-            self.trace(layout, AllocOp::Dealloc);
+            let alloc_id = self.alloc_id_from_ptr(ptr);
+            self.trace(alloc_id, layout, AllocOp::Dealloc);
         }
         unsafe { System.dealloc(ptr, layout) };
     }
@@ -282,9 +305,15 @@ Finally, we need to store the allocations in a way that allows us to analyze the
 
 Unfortunately, here there's no way to use a `no_alloc` data structure, so we will have to use a `Mutex<HashMap<CallerName, Stats>>` to store the allocations.
 
-So I have created `symbols.rs` which exposes the `SymbolTable` struct, which contains the symbols with their allocations.
+There's a catch though: resolving the symbol from the backtrace only makes sense on `alloc`. When a value is dropped, the backtrace at that point almost never points back to the function that originally allocated it, it points to whatever destructor, `Vec` growth, or runtime cleanup happens to be freeing the memory right now. So to correctly attribute a deallocation, we need to remember, for every `AllocId`, which symbol allocated it in the first place, and look it up again on `dealloc` instead of resolving the backtrace a second time. This has the nice side effect of making deallocations much faster too, since we skip backtrace resolution entirely on that path.
+
+So I have created `symbols.rs` which exposes the `SymbolTable` struct, which contains the symbols with their allocations, plus a map from `AllocId` to the symbol that owns it.
 
 ```rust
+/// Type alias for allocation identifier.
+/// It is derived from a `*mut u8` pointer.
+pub type AllocId = usize;
+
 /// A [`Symbol`] table.
 ///
 /// Each [`Symbol`] is identified by the module name (e.g. `leaktracer::alloc`).
@@ -292,7 +321,10 @@ So I have created `symbols.rs` which exposes the `SymbolTable` struct, which con
 pub struct SymbolTable {
     /// The modules that are being traced.
     modules: &'static [&'static str],
+    /// Maps symbol names to their corresponding [`Symbol`]s.
     symbols: HashMap<&'static str, Symbol>,
+    /// Maps allocation ids to symbols, for quick lookup during deallocation.
+    ptr_to_symbol: HashMap<AllocId, &'static str>,
 }
 
 impl SymbolTable {
@@ -301,6 +333,7 @@ impl SymbolTable {
         Self {
             modules,
             symbols: HashMap::with_capacity(size),
+            ptr_to_symbol: HashMap::with_capacity(size),
         }
     }
 
@@ -315,13 +348,15 @@ impl SymbolTable {
     }
 
     /// Increments the allocated bytes for a [`Symbol`].
-    pub(crate) fn alloc(&mut self, bytes: usize) {
+    pub(crate) fn alloc(&mut self, alloc_id: AllocId, bytes: usize) {
         let name = demangle::get_demangled_symbol(self.modules);
 
         // If the symbol does not exist, we create it with the given name.
         if !self.symbols.contains_key(&name) {
             self.insert(name);
         }
+        // remember which symbol owns this allocation, so `dealloc` doesn't have to guess
+        self.ptr_to_symbol.insert(alloc_id, name);
 
         let symbol = self.symbols.get_mut(name).expect("Symbol should exist");
 
@@ -334,16 +369,30 @@ impl SymbolTable {
     }
 
     /// Decrements the allocated bytes for a [`Symbol`].
-    pub(crate) fn dealloc(&mut self, bytes: usize) {
-        let name = demangle::get_demangled_symbol(self.modules);
+    pub(crate) fn dealloc(&mut self, alloc_id: AllocId, bytes: usize) {
+        // look up the symbol that made this allocation instead of resolving the backtrace again
+        let Some(name) = self.ptr_to_symbol.remove(&alloc_id) else {
+            return;
+        };
 
         if let Some(symbol) = self.symbols.get_mut(name) {
+            // saturating, so a stray/unmatched deallocation can't underflow the counters
             symbol
                 .allocated
-                .fetch_sub(bytes, std::sync::atomic::Ordering::Relaxed);
+                .fetch_update(
+                    std::sync::atomic::Ordering::Relaxed,
+                    std::sync::atomic::Ordering::Relaxed,
+                    |current| Some(current.saturating_sub(bytes)),
+                )
+                .ok();
             symbol
                 .count
-                .fetch_sub(1, std::sync::atomic::Ordering::Relaxed);
+                .fetch_update(
+                    std::sync::atomic::Ordering::Relaxed,
+                    std::sync::atomic::Ordering::Relaxed,
+                    |current| Some(current.saturating_sub(1)),
+                )
+                .ok();
         }
     }
 
@@ -391,37 +440,52 @@ We can just define the `trace` methods to trace the allocations to the symbol ta
 
 ```rust
     /// Traces the allocation, logging the layout of the allocation.
-    fn trace_allocation(&self, layout: Layout, table: Option<&mut MutexGuard<SymbolTable>>) {
+    fn trace_allocation(
+        &self,
+        alloc_id: AllocId,
+        layout: Layout,
+        table: Option<&mut MutexGuard<SymbolTable>>,
+    ) {
         // first increment the allocated bytes
         self.allocated
             .fetch_add(layout.size(), std::sync::atomic::Ordering::Relaxed);
         if let Some(table) = table {
-            table.alloc(layout.size());
+            table.alloc(alloc_id, layout.size());
         }
     }
 
     /// Traces the deallocation, logging the layout of the deallocation.
-    fn trace_deallocation(&self, layout: Layout, table: Option<&mut MutexGuard<SymbolTable>>) {
-        // first decrement the allocated bytes
+    fn trace_deallocation(
+        &self,
+        alloc_id: AllocId,
+        layout: Layout,
+        table: Option<&mut MutexGuard<SymbolTable>>,
+    ) {
+        // first decrement the allocated bytes, saturating to avoid underflow
         self.allocated
-            .fetch_sub(layout.size(), std::sync::atomic::Ordering::Relaxed);
+            .fetch_update(
+                std::sync::atomic::Ordering::Relaxed,
+                std::sync::atomic::Ordering::Relaxed,
+                |current| Some(current.saturating_sub(layout.size())),
+            )
+            .ok();
         if let Some(table) = table {
-            table.dealloc(layout.size());
+            table.dealloc(alloc_id, layout.size());
         }
     }
 
     /// Traces the allocation or deallocation operation using the [`Layout`], depending on the [`AllocOp`] type.
-    fn trace(&self, layout: Layout, op: AllocOp) {
+    fn trace(&self, alloc_id: AllocId, layout: Layout, op: AllocOp) {
+        self.enter_alloc();
         // lock symbol table to avoid deadlocks
         let mut lock = SYMBOL_TABLE.get().and_then(|table| table.lock().ok());
 
-        self.enter_alloc();
         match op {
-            AllocOp::Alloc => self.trace_allocation(layout, lock.as_mut()),
-            AllocOp::Dealloc => self.trace_deallocation(layout, lock.as_mut()),
+            AllocOp::Alloc => self.trace_allocation(alloc_id, layout, lock.as_mut()),
+            AllocOp::Dealloc => self.trace_deallocation(alloc_id, layout, lock.as_mut()),
         }
-        self.exit_alloc();
         drop(lock);
+        self.exit_alloc();
     }
 ```
 
@@ -506,7 +570,7 @@ fn main() {
 
 It sucks, of course.
 
-Really, the application it's extremely slow when using **Leaktracer**, but indeed it's meant for debugging only in extreme cases where you have no idea where the memory is leaked.
+Really, the application it's extremely slow when using **Leaktracer**, but indeed it's meant for debugging only in extreme cases where you have no idea where the memory is leaked. Deallocations are noticeably cheaper than allocations though, since they just look up the `AllocId` in the map instead of resolving a backtrace, but the overall overhead is still far from something you'd want in production.
 
 ## Conclusion
 

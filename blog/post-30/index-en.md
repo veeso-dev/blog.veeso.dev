@@ -20,13 +20,15 @@ Hello, Rustaceans! I'm quite sure many of you use async Rust every day in your p
 
 Basically we can say that **we need async when we are unable to know when that task finishes**, which usually means that our application is not directly responsible of taking care of it, **instead its execution depends on an external system or resource which may be subject to delays**.
 
-Async, is good for at least these three cases:
+There's also a more practical reason, which is about **resources**. If we have multiple tasks and we don't use async, we'd have to **spawn a thread per task**, which works, but it's expensive and quickly becomes annoying once you have hundreds or thousands of tasks running at the same time. With async instead, we spawn **several tasks handled by way fewer threads**, because the **runtime optimizes** how those tasks get scheduled onto the threads it actually has available, instead of paying for a whole OS thread per task.
+
+Async is good for at least these three cases:
 
 - **I/O**: reading from and writing to the filesystem depends on the filesystem itself. Usually this doesn't have significant delays, but it's still something we don't have control of and so it's good for async. We schedule an I/O operation to the OS and we poll for it to finish.
-- **Network**: any interaction with the network creates a lot of delays depending on many external resources. Just a HTTP GET request goes through several components that don't depend on our application. We ask the OS to create a socket for us, we write on the socket, the packet is enrouted from our gateway it goes through the entire internet and finally it reaches the HTTP server we want and that point it goes through the OS socket and finally it reaches the web server application which processes the request and finally it has to do everything backward (and trust me I've skipped many many steps). This creates tons of delays.
+- **Network**: any interaction with the network creates a lot of delays depending on many external resources. Just an HTTP GET request goes through several components that don't depend on our application. We ask the OS to create a socket for us, we write on the socket, the packet is enrouted from our gateway it goes through the entire internet and finally it reaches the HTTP server we want and at that point it goes through the OS socket and finally it reaches the web server application which processes the request and finally it has to do everything backward (and trust me I've skipped many many steps). This creates tons of delays.
 - **Time**: sometimes we ignore that, but time is async and can't be _resolved_ immediately. If we need to wait 5 seconds, we depend on an _external system_, which is the **Universe** I guess, so async is also good for that.
 
-> 💡 About I/O: you may not know that, but **I/O is not always async actually**. For example on Linux, the async fs functions just make a select on the file system using libc. That's because Linux provides async IO with [uring](https://kernel.dk/io_uring.pdf), but it's too complex for everyday use, so we still rely on the ol' good libc.
+> 💡 About I/O: you may not know that, but **I/O is not always async actually**. For example on Linux, the async fs functions actually run the ol' good blocking libc calls on a **separate thread pool** under the hood (that's what tokio's `spawn_blocking` does), because `epoll` doesn't even support regular files. Linux does provide real async I/O with [io_uring](https://kernel.dk/io_uring.pdf), but it's still too complex and not consistently supported for a general purpose runtime to rely on by default, so we still fake it with a thread pool.
 
 Now that we have covered the basics, let's see how async Rust works.
 
@@ -34,9 +36,9 @@ Now that we have covered the basics, let's see how async Rust works.
 
 The first time you've encountered async code you may have tried to execute it directly inside a sync function, but it didn't work, because the compiler told you that you must be inside an async function to use the `await` keyword.
 
-So what you did at that point was either wrapping everything in `tokio::main` or use `block_on` from the **futures** crate.
+So what you did at that point was either wrap everything in `tokio::main` or use `block_on` from the **futures** crate.
 
-Actually, though, we can see that executing an async in a non-async context, is quite simple actually. Let's implement our simple `DumbRuntime`:
+Actually, though, we can see that executing async code in a non-async context is quite simple. Let's implement our simple `DumbRuntime`:
 
 ```rust
 use std::pin::Pin;
@@ -84,7 +86,7 @@ But what's going on there? Let's break it down:
    So what's a `Future` then? A `Future` is a trait that represents an asynchronous computation that may or may not be completed yet. It has a method called `poll` that takes a mutable `Context` and returns a `Poll` enum. The `Poll` enum can be either `Ready` or `Pending`. When it's `Ready`, it contains the value of the computation, otherwise it's `Pending` and it means that the computation is not done yet.
 
 2. We create a `Pin` from the mutable reference of the future. A `Pin` is a type that is used to ensure that an object is not moved in memory, which is important for async code because the future must not be moved in memory while it's being executed, otherwise we could get a **Segmentation Fault** or other nasty bugs.
-3. We create a `Context` from a `Waker`. A `Waker` is a type that is used to wake up a task when it's ready to be executed
+3. We create a `Context` from a `Waker`. A `Waker` is a type that is used to wake up a task when it's ready to be executed.
 4. We enter a loop where we poll the future. **If the future is ready, we return the value**, otherwise we sleep for 10 microseconds and poll again.
 
 At this point we can execute async code in a sync context:
@@ -128,7 +130,7 @@ async fn async_fn() -> i32 {
 }
 ```
 
-How many print of `polling future` will be printed before the program exits?
+How many times will `polling future` be printed before the program exits?
 
 **Just one actually**, so how is the internal async function executed?
 
@@ -156,7 +158,7 @@ This call is handled by our Runtime though, either tokio or our `DumbRuntime`, w
 
 Indeed we can create a more interesting asynchronous task, instead of just returning `42`.
 
-We want to create a Future which takes a `n: u64` and returns `Pending` `n - 1` times, and then `Ready`.
+We want to create a Future which takes an `n: u64` and returns `Pending` `n - 1` times, and then `Ready`.
 
 ```rust
 use std::pin::Pin;
@@ -204,11 +206,11 @@ fn count(to: u64) -> impl Future<Output = u64> {
 }
 ```
 
-What it's quite curious, is that we return a struct, instead of a result, that's because our **runtime will call poll for us** when we call `.await` on it.
+What's quite curious is that we return a struct, instead of a result, that's because our **runtime will call poll for us** when we call `.await` on it.
 
 So is that all? Well, the basic concepts are these, but of course you may think that this runtime, as the name suggests, is quite dumb and much far from a real async runtime, like tokio.
 
-So let's see how can we implement something more serious.
+So let's see how we can implement something more serious.
 
 ## Implementing a decent async runtime
 
@@ -230,7 +232,7 @@ where
 }
 ```
 
-Here `T` is the return type of the task
+Here `T` is the return type of the task.
 
 Then we define the runtime, which will have a sender to send tasks to the worker:
 
@@ -243,7 +245,7 @@ where
 }
 ```
 
-We define an handle to join for the result
+We define a handle to join for the result.
 
 ```rust
 pub struct TaskHandle<T>
@@ -386,15 +388,15 @@ Let's add some final notes on two things that we've not covered yet: Context and
 
 ### Context
 
-The `Context` type is used to pass information to the future when it's polled. It is just used to access to the `Waker` which can be used to wake the current task.
+The `Context` type is used to pass information to the future when it's polled. It is just used to access the `Waker` which can be used to wake the current task.
 
 ### Waker
 
-A waker is a handle for waking up a task, notifying its executor that is ready to be run.
+A waker is a handle for waking up a task, notifying its executor that it's ready to be run.
 
-Indeed when `poll` is called, we receive the `Context` as an argument, and so we can access to `Waker` by using `ctx.waker()`.
+Indeed when `poll` is called, we receive the `Context` as an argument, and so we can access the `Waker` by using `ctx.waker()`.
 
-The poll function should, in case of `Pending` is returned, wake up the task by calling `cx.waker().wake_by_ref()`, like we've done in our `Counter` struct.
+The poll function should, in case `Pending` is returned, wake up the task by calling `cx.waker().wake_by_ref()`, like we've done in our `Counter` struct.
 
 That's because the runtime will keep calling `poll` until it returns `Ready`, and so we need to wake up the task when it's ready to be polled again, and it's the `Waker` that will do this job.
 
