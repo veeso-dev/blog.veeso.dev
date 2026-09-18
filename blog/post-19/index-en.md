@@ -11,7 +11,7 @@ reading_time: "6"
 
 ## Case scenario
 
-Have you ever done something similiar?
+Have you ever done something similar?
 
 ```rust
 trait Greet {
@@ -49,7 +49,7 @@ let greet = Alice;
 let user = User { greet };
 ```
 
-This is something everything has tried to do in Rust: dynamic types inside of data structures.
+This is something everyone has tried to do in Rust: dynamic types inside of data structures.
 There are two different ways to achieve this in Rust:
 
 - **Box dyn**
@@ -71,18 +71,19 @@ struct User {
 Well, of course we can't put `Greet` in our struct this way, indeed we'll have this error:
 
 ```txt
-error[E0308]: mismatched types
-  --> src/main.rs:32:23
+error[E0782]: expected a type, found a trait
+  --> src/main.rs:26:3
    |
-32 |     let user = User { greet };'
-   |                       ^^^^^ expected `dyn Greet`, found `Alice`
+26 |   greet: Greet
+   |   ^^^^^
    |
-   = note: expected trait object `(dyn Greet + 'static)`
-                    found struct `Alice`
-   = help: `Alice` implements `Greet` so you could box the found value and coerce it to the trait object `Box<dyn Greet>`, you will have to change the expected type as well
+help: you can add the `dyn` keyword if you want a trait object
+   |
+26 |   greet: dyn Greet
+   |   +++
 ```
 
-So we have two different approach we can take here:
+So we have two different approaches we can take here:
 
 ### Box Dyn
 
@@ -132,7 +133,7 @@ let user = match name {
 };
 ```
 
-This would result in an error, because the type of `user` canàt be determined
+This would result in an error, because the type of `user` can't be determined
 
 ```txt
 error[E0308]: `match` arms have incompatible types
@@ -157,8 +158,8 @@ While if we used `Box dyn` this wouldn't be an issue:
 
 ```rust
 let user = match name {
-    "carlo" => UserDyn { greet: Box::new(Carlo) },
-    "alice" => UserDyn { greet: Box::new(Alice) },
+    "carlo" => User { greet: Box::new(Carlo) },
+    "alice" => User { greet: Box::new(Alice) },
     _ => panic!("Unknown user"),
 };
 ```
@@ -167,7 +168,7 @@ So apparently, in this case the only way we can achieve this is by using `Box dy
 
 ## Wrap generics
 
-Actually there is a different way to have the same result is by using a `impl Greet` that wraps our `Greet` types, like this:
+Actually there's a different way to get the same result, by using an enum that wraps our `Greet` types and implements `Greet` itself, like this:
 
 ```rust
 enum MyGreet {
@@ -207,12 +208,12 @@ but there are actually some important differences in these two approaches. Let's
 
 ## Box dyn Vs. Generics Wrapper - What's better?
 
-Before starting the analisys, I want to you to imagine that this type containing the `Dynamic` type,
+Before starting the analysis, I want you to imagine that this type containing the `Dynamic` type
 is exposed publicly in a library you're using. So, what would be better for you?
 
 ### Flexibility
 
-Generics and generics wrappers allows you to have more custom code, on the other hand
+Generics and generics wrappers allow you to have more custom code, on the other hand
 generics wrappers may be complex to achieve in case where some bounds must be respected by the inner type, and in some cases we may
 have **several** generics to include inside of our Dynamic type data, or could even be undetermined. In all of these cases
 **Box dyn** should be preferred.
@@ -221,7 +222,7 @@ have **several** generics to include inside of our Dynamic type data, or could e
 
 Talking about performance, both cases have pros and cons:
 
-- **Generics** doesn't have a overhead for dispatching (but generic wrappers do have a overhead though!), on the other hand the compiler must generate specific-code for each type, so the binary size will be bigger.
+- **Generics** doesn't have an overhead for dispatching (but generic wrappers do have an overhead though!), on the other hand the compiler must generate specific-code for each type, so the binary size will be bigger.
 - **Box dyn** has a dispatching overhead, but the binary size will be much smaller.
 
 But, eventually we could say that **Box dyn** is the **winner** if we talk about performance.
@@ -240,11 +241,11 @@ struct Data {
 
 what is better for the library users? In this case, **Generics** win for sure.
 
-Generics give library users better performance if they don't user wrappers and a few generic types (as usually happens), and it's
+Generics give library users better performance if they don't use wrappers and a few generic types (as usually happens), and it's
 surely more flexible for users.
 
-Actually talking about performance you may say this is contrast with what I said before, and it's true,
-but when talking about library apis we need to consider that most of users will have simpler implementation compared to
+Actually talking about performance you may say this is in contrast with what I said before, and it's true,
+but when talking about library APIs we need to consider that most users will have simpler implementations compared to
 generic wrappers, so we could say that we may have a smaller binary size and less overhead.
 
 ## Conclusions
@@ -252,15 +253,16 @@ generic wrappers, so we could say that we may have a smaller binary size and les
 While using **Box dyn** could look simpler, especially for Rust newbies, and in some cases is better for binary sizes, generics should be preferred instead. Actually it's interesting how the compiler usually gives you this hint
 
 ```txt
-error[E0308]: mismatched types
-  --> src/main.rs:32:23
+error[E0782]: expected a type, found a trait
+  --> src/main.rs:26:3
    |
-32 |     let user = User { greet };'
-   |                       ^^^^^ expected `dyn Greet`, found `Alice`
+26 |   greet: Greet
+   |   ^^^^^
    |
-   = note: expected trait object `(dyn Greet + 'static)`
-                    found struct `Alice`
-   = help: `Alice` implements `Greet` so you could box the found value and coerce it to the trait object `Box<dyn Greet>`, you will have to change the expected type as well
+help: you can add the `dyn` keyword if you want a trait object
+   |
+26 |   greet: dyn Greet
+   |   +++
 ```
 
-as we've seen before, but doesn't mention that Generics could be even more suitable for this purpose, giving newbies a _non-optimal_ hint to deal with this case. Indeed, even myself, I used Box dyn a lot in place of generics in my early days with Rust.
+as we've seen before, but doesn't mention that Generics could be even more suitable for this purpose, giving newbies a _non-optimal_ hint to deal with this case. Indeed, even I used Box dyn a lot in place of generics in my early days with Rust.

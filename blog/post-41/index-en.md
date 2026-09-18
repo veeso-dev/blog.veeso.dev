@@ -17,17 +17,17 @@ So if you don't know, I also develop on the Solana Validator (but please don't l
 
 But how was this possible? Well, basically I've got to explain a bit of the context, so you can understand the problem.
 
-Basically as you may know, validators process a lot of transactions, which are sent to them by the RPC nodes, and these transactions are sent over a QUIC transport, then the transactions are pushed into the pool of transactions, and then the validator processes them, and not just that, but often the transactions are even forwarded to the next validator which have to process them, and so on.
+Basically as you may know, validators process a lot of transactions, which are sent to them by the RPC nodes, and these transactions are sent over a QUIC transport, then the transactions are pushed into the pool of transactions, and then the validator processes them, and not just that, but often the transactions are even forwarded to the next validator which has to process them, and so on.
 
-Up to now, transactions were stored as bytes in a `Vec<u8>`, and dispatched and sent all over around the modules and services.
+Up to now, transactions were stored as bytes in a `Vec<u8>`, and dispatched and sent all around the modules and services.
 
-The data stored into the `Vec<u8>` was actually immutable since the beginning, because we don't want the transactions to be modified of course, but everytime a transaction was used in a different context, it was cloned, causing everytime a lot of allocastions, and thus memory bloat.
+The data stored into the `Vec<u8>` was actually immutable since the beginning, because we don't want the transactions to be modified of course, but every time a transaction was used in a different context, it was cloned, causing every time a lot of allocations, and thus memory bloat.
 
 Consider that validators process thousands of transactions per second, and the quantity of services and modules that use the transactions is quite large, so you can imagine how much memory was wasted by cloning the `Vec<u8>`. Also the lifetime of a transaction is very short, so the memory was not even reused, and thus the memory bloat was even worse.
 
-Luckily a transaction is not huge, it's less than 1230 bytes at least, but considering the thousands of transactions processed per second, the memory usage was quite high.
+Luckily a transaction is not huge, it's less than 1230 bytes, but considering the thousands of transactions processed per second, the memory usage was quite high.
 
-Maybe youre'already thinking about the solution, and that this is a bad design, and you are right; but there are two things we can talk about here:
+Maybe you're already thinking about the solution, and that this is a bad design, and you are right; but there are two things we can talk about here:
 
 1. The solution of course.
 2. Why nobody thought about it before.
@@ -36,7 +36,7 @@ So let's start with the solution.
 
 ## The solution
 
-Probably there's not only solution here, some of them are quite obvious.
+Probably there's more than one solution here, some of them are quite obvious.
 
 ### Cow?
 
@@ -66,7 +66,7 @@ fn main() {
 }
 ```
 
-Do you expect the adddresses to be the same? Well, they are not!
+Do you expect the addresses to be the same? Well, they are not!
 
 ```txt
 Cow: [202, 254, 186, 190]; underlying addr: 0x55fec55b9b10
@@ -76,7 +76,7 @@ Cow Thread: [202, 254, 186, 190]; underlying addr: 0x55fec55b9b30
 Mhm, so just borrow right?
 
 ```rust
-let cow_t = cow.borrow(); // clone the Cow to move into the thread
+let cow_t = cow.borrow(); // borrow the Cow to move into the thread
 ```
 
 We can't do that, because the compiler doesn't know exactly the lifetime of the `Cow`.
@@ -91,9 +91,12 @@ fn main() {
     let cow: Cow<'_, Vec<u8>> = std::borrow::Cow::Owned(bytes.to_vec());
 
     // run a thread
-    std::thread::scope(|_| {
-        let ptr_addr = cow.as_ptr();
-        println!("Cow Thread: {cow:?}; underlying addr: {ptr_addr:p}",);
+    std::thread::scope(|s| {
+        let handle = s.spawn(|| {
+            let ptr_addr = cow.as_ptr();
+            println!("Cow Thread: {cow:?}; underlying addr: {ptr_addr:p}",);
+        });
+        handle.join().unwrap();
     });
 
     let ptr_addr = cow.as_ptr();
@@ -136,23 +139,23 @@ fn main() {
 
 ### Arc Slice T
 
-EDIT: 23th June 2025
+EDIT: 23rd June 2025
 
-Actually, I've recently discovered that `Arc[T]` is actually much better than `Arc<Vec<T>>`.
+Actually, I've recently discovered that `Arc<[T]>` is actually much better than `Arc<Vec<T>>`.
 
-Also it is generally better than `Vec` also when the data is not shared, but just for immutable data, because it avoids the overhead of the `Vec` type, which is not needed when we just need to share immutable data.
+It's also generally better than `Vec` even when the data isn't shared, but just held as immutable data, because it avoids the overhead of the `Vec` type (the extra capacity field), which isn't needed for immutable data.
 
 Why is it better:
 
 - Extremely cheap clone with complexity `O(1)` since it just clones the pointer.
 - Smaller stack size (16 bytes vs 24 bytes for `Vec` on 64-bit systems).
-- Implements `Deref` to `T`, so you can use it as if it was a slice, without the need to dereference it.
+- Implements `Deref` to `[T]`, so you can use it as if it was a slice, without the need to dereference it.
 
 Thank you [sgued@pouet.chapril.org](https://hachyderm.io/@sgued@pouet.chapril.org/114677223492950363) for pointing this out!
 
-Also in case you don't need to share along threads, `Rc` should be preferred over `Arc`, since it is faster and has less overhead, but in this case, we need to share the data across threads, so `Arc` is the way to go.
+Also in case you don't need to share across threads, `Rc` should be preferred over `Arc`, since it is faster and has less overhead, but in this case, we need to share the data across threads, so `Arc` is the way to go.
 
-In case you don't even need `Clone`, you can directly use a `Box<T>`, but it's not the case here.
+In case you don't even need `Clone`, you can directly use a `Box<[T]>`, but it's not the case here.
 
 For more details, you can watch the video [Use Arc Instead of Vec](https://www.youtube.com/watch?v=A4cKi7PTJSs).
 
@@ -160,11 +163,11 @@ For more details, you can watch the video [Use Arc Instead of Vec](https://www.y
 
 The [Bytes crate](https://docs.rs/bytes/latest/bytes/) provides an efficient container for storing and operating on contiguous slices of memory, mainly focused on networking and I/O operations and it allows zero-copy operations, which is exactly what we need here.
 
-So the solution used in the Solana Validator, was as soon as the transaction is received, it is wrapped into a `Bytes` type, and from there on, the `Bytes` is just copied around.
+So the solution used in the Solana Validator, was as soon as the transaction is received, it is wrapped into a `Bytes` type, and from there on, the `Bytes` is just cloned around.
 
 `Bytes` are cheaply clonable and thereby shareable, thanks to the way it works. Basically, whenever a `Bytes` instance is created, it saves the data in the memory and stores a pointer to it, so when we clone a `Bytes` instance, we just clone the pointer and not the data itself, which is why it is so efficient.
 
-If your're a C/C++ developer, this may seem obvious as a solution, but in Rust, we often tend to use `Vec<u8>` for everything, and this is a great example of how using the right data structure can make a huge difference in terms of performance and memory usage.
+If you're a C/C++ developer, this may seem obvious as a solution, but in Rust, we often tend to use `Vec<u8>` for everything, and this is a great example of how using the right data structure can make a huge difference in terms of performance and memory usage.
 
 For more details on how it handles the memory, you can check the [Bytes documentation](https://docs.rs/bytes/latest/bytes/).
 
@@ -172,17 +175,17 @@ For more details on how it handles the memory, you can check the [Bytes document
 
 The most important thing is why nobody thought about it before, and in my opinion, there are many other cases like this, where we tend to ignore the right data structure to use, in order to avoid memory bloat and performance issues.
 
-The main reason that probably involves here is that the Solana Validator has a huge codebase, so it may be hard to keep track of all the data structures used, but at the same time, I think it's because of a bias based on the fact that Solana Validators run on extremely powerful machines, so we tend to think that memory bloat is not a big issue, but in reality, it is.
+The main reason here is probably that the Solana Validator has a huge codebase, so it may be hard to keep track of all the data structures used, but at the same time, I think it's because of a bias based on the fact that Solana Validators run on extremely powerful machines, so we tend to think that memory bloat is not a big issue, but in reality, it is.
 
 If you give a look at the [requirements to run a Solana Validator](https://docs.anza.xyz/operations/requirements/), you can see the requirements are pretty high, and this is the case of plenty of other applications, which usually run on powerful servers.
 
-I've started working on embedded systems, with 16MB of RAM, and at the time performance and memory usage were a big deal, but even now, sometimes, is easy to forget about it.
+I've started working on embedded systems, with 16MB of RAM, and at the time performance and memory usage were a big deal, but even now, sometimes, it's easy to forget about it.
 
 The point is that when we have to deal with thousands of clones per second, the impact on memory usage is huge.
 
 ### Rust makes it easy to forget?
 
-Another issue in my opinion, is that as a Rust developer, we often are proned to think that Rust, since it's considered safe and performant, can **handle everything for us in the best way possible**, but it's not actually true.
+Another issue in my opinion, is that as a Rust developer, we're often prone to think that Rust, since it's considered safe and performant, can **handle everything for us in the best way possible**, but it's not actually true.
 
 Up to now, there's not a single programming language that can implement a perfect memory management, and Rust is not an exception. It's all up to us to implement efficient applications.
 
