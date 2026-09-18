@@ -15,12 +15,15 @@ import lustre/element/html
 
 /// Render the homepage with author bio and the four latest posts.
 pub fn home(posts: List(post.Post(Nil))) -> Element(Nil) {
+  let url = "https://blog.veeso.dev/"
+
   let config =
     page.PageConfig(
       title: "blog.veeso.dev - A blog about Rust, Gleam, and open source software development",
       description: "Rust tech blogger, Gleam blogger, software engineer, and open-source enthusiast. I write about Rust, Gleam, and open source software development. Seen on this week in Rust",
-      url: "https://blog.veeso.dev/",
+      url: url,
       featured_image: option.Some("https://blog.veeso.dev/og_preview.jpeg"),
+      structured_data: option.Some(page.website_structured_data(url)),
     )
 
   page.page(config, [page_content(posts)], element.none())

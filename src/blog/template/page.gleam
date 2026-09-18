@@ -4,12 +4,16 @@ import blog/components
 import blog/components/container
 import blog/template/footer
 import blog/template/topbar
+import gleam/json
 import gleam/option.{type Option}
+import gleam/string
 import lustre/attribute
 import lustre/element.{type Element}
 import lustre/element/html
 
 const site_name = "veeso.dev"
+
+const author_name = "Christian Visintin"
 
 const twitter_handle = "@veeso_dev"
 
@@ -28,6 +32,8 @@ pub type PageConfig {
     url: String,
     /// Optional featured image URL for OG/Twitter card tags.
     featured_image: Option(String),
+    /// Optional serialized JSON-LD structured data.
+    structured_data: Option(String),
   )
 }
 
@@ -41,6 +47,26 @@ pub fn page(
     head(config),
     body(children, before_footer),
   ])
+}
+
+/// Serialize the site's homepage structured data.
+pub fn website_structured_data(url: String) -> String {
+  json.object([
+    #("@context", json.string("https://schema.org")),
+    #("@type", json.string("WebSite")),
+    #("name", json.string(site_name)),
+    #("url", json.string(url)),
+    #("inLanguage", json.string("en")),
+    #(
+      "author",
+      json.object([
+        #("@type", json.string("Person")),
+        #("name", json.string(author_name)),
+      ]),
+    ),
+  ])
+  |> json.to_string
+  |> escape_script_data
 }
 
 fn head(config: PageConfig) -> Element(msg) {
@@ -134,6 +160,7 @@ fn head(config: PageConfig) -> Element(msg) {
       attribute.rel("stylesheet"),
       attribute.href("/blog.css"),
     ]),
+    structured_data(config.structured_data),
     // Umami analytics
     html.script(
       [
@@ -148,6 +175,14 @@ fn head(config: PageConfig) -> Element(msg) {
     // Dark mode detection (inline, runs before render to prevent FOUC)
     html.script([], dark_mode_js),
   ])
+}
+
+fn structured_data(data: Option(String)) -> Element(msg) {
+  case data {
+    option.Some(json) ->
+      html.script([attribute.type_("application/ld+json")], json)
+    option.None -> element.none()
+  }
 }
 
 fn body(
@@ -263,6 +298,10 @@ fn og_meta(property: String, content: String) -> Element(msg) {
     attribute.attribute("property", property),
     attribute.content(content),
   ])
+}
+
+fn escape_script_data(json: String) -> String {
+  string.replace(json, "<", "\\u003c")
 }
 
 const dark_mode_js = "(function(){var t=localStorage.getItem('theme');var d=t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches);if(d){document.documentElement.classList.add('dark');var l=document.getElementById('prism-light');var k=document.getElementById('prism-dark');if(l)l.disabled=true;if(k)k.disabled=false}})()"

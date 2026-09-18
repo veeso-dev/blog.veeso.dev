@@ -25,6 +25,7 @@ pub fn privacy(_posts: List(post.Post(Nil))) -> Element(Nil) {
       description: "How blog.veeso.dev handles your data: cookieless, privacy-first analytics with Umami, EU-hosted, and no tracking cookies.",
       url: "https://blog.veeso.dev/privacy/",
       featured_image: option.Some("https://blog.veeso.dev/og_preview.jpeg"),
+      structured_data: option.None,
     )
 
   page.page(config, [page_content()], element.none())

@@ -19,6 +19,7 @@ pub fn blog(posts: List(post.Post(Nil))) -> Element(Nil) {
       description: "Rust tech blogger, Gleam blogger, software engineer, and open-source enthusiast. I write about Rust, Gleam, and open source software development. Seen on this week in Rust",
       url: "https://blog.veeso.dev/blog/",
       featured_image: option.Some("https://blog.veeso.dev/og_preview.jpeg"),
+      structured_data: option.None,
     )
 
   page.page(config, [page_content(posts)], element.none())

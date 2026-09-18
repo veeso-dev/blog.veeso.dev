@@ -8,12 +8,18 @@ import blog/components/svg
 import blog/template/page
 import blogatto/post
 import gleam/dict
+import gleam/json
 import gleam/list
 import gleam/option
+import gleam/string
+import gleam/time/duration
+import gleam/time/timestamp
 import gleam/uri
 import lustre/attribute
 import lustre/element.{type Element}
 import lustre/element/html
+
+const author_name = "Christian Visintin"
 
 /// Render a full blog post page with featured image, metadata, and share buttons.
 pub fn template(
@@ -26,6 +32,7 @@ pub fn template(
       description: post.description,
       url: post.url,
       featured_image: absolute_featured_image(post),
+      structured_data: option.Some(article_structured_data(post)),
     )
 
   page.page(config, [layout(post)], related_posts(post, all_posts))
@@ -45,6 +52,43 @@ fn absolute_featured_image(post: post.Post(msg)) -> option.Option(String) {
       path -> post.url <> path
     }
   })
+}
+
+fn article_structured_data(post: post.Post(msg)) -> String {
+  let image =
+    post
+    |> absolute_featured_image
+    |> option.unwrap(or: "https://blog.veeso.dev/og_preview.jpeg")
+
+  json.object([
+    #("@context", json.string("https://schema.org")),
+    #("@type", json.string("BlogPosting")),
+    #("headline", json.string(post.title)),
+    #("description", json.string(post.description)),
+    #("url", json.string(post.url)),
+    #(
+      "mainEntityOfPage",
+      json.object([
+        #("@type", json.string("WebPage")),
+        #("@id", json.string(post.url)),
+      ]),
+    ),
+    #(
+      "datePublished",
+      json.string(timestamp.to_rfc3339(post.date, duration.seconds(0))),
+    ),
+    #("inLanguage", json.string("en")),
+    #(
+      "author",
+      json.object([
+        #("@type", json.string("Person")),
+        #("name", json.string(author_name)),
+      ]),
+    ),
+    #("image", json.string(image)),
+  ])
+  |> json.to_string
+  |> string.replace("<", "\\u003c")
 }
 
 fn layout(post: post.Post(msg)) -> Element(msg) {
