@@ -37,7 +37,7 @@ We just need to add windows-sys with a single additional feature for this implem
 
 ```toml
 [dependencies]
-windows-sys = { version = "^0.48" features = [ "Win32_NetworkManagement_WNet" ] }
+windows-sys = { version = "^0.48", features = [ "Win32_NetworkManagement_WNet" ] }
 ```
 
 Now we’re ready to mount the share in our client
@@ -56,8 +56,8 @@ use windows_sys::Win32::NetworkManagement::WNet;
 Then we need also a utility function that takes a String and returns a CString since we’re going to work with raw pointers.
 
 ```rust
-fn to_cstr(s: &str) -> CString {
-    CString::new(s).unwrap()
+fn to_cstr(s: impl AsRef<str>) -> CString {
+    CString::new(s.as_ref()).unwrap()
 }
 ```
 
@@ -71,7 +71,7 @@ fn connect(
     share: &str,
     username: Option<&str>,
     password: Option<&str>
-) -> Result<(), i32>
+) -> Result<(), u32>
 {
     let remote_name = to_cstr(format!("\\\\{server}\\{share}"));
 
@@ -101,7 +101,7 @@ fn connect(
           .map(|password| password.as_ptr())
           .unwrap_or(std::ptr::null());
       WNet::WNetAddConnection2A(
-          &mut resource as *mut WNet::NETRESOURCEA,
+          &mut resources as *mut WNet::NETRESOURCEA,
           password_ptr as *const u8,
           username_ptr as *const u8,
           WNet::CONNECT_INTERACTIVE, // Interactive will show a system dialog in case credentials are wrong to retry with the password. Put 0 if you don't want it
@@ -155,7 +155,7 @@ So as you can see, once we’ve built the full path for the share we’ve mounte
 It’s always important to remember that we need to clean up the share connection before terminating our application. For this purpose we’ve got a simple Windows API call:
 
 ```rust
-fn disconnect(server: &str, share: &str) -> Result<(), i32> {
+fn disconnect(server: &str, share: &str) -> Result<(), u32> {
     let remote_name = to_cstr(format!("\\\\{server}\\{share}"));
 
     let result =
