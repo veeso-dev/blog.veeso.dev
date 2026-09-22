@@ -37,7 +37,7 @@ We just need to add windows-sys with a single additional feature for this implem
 
 ```toml
 [dependencies]
-windows-sys = { version = "^0.48", features = [ "Win32_NetworkManagement_WNet" ] }
+windows-sys = { version = "^0.48", features = ["Win32_NetworkManagement_WNet"] }
 ```
 
 Now we’re ready to mount the share in our client

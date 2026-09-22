@@ -6,7 +6,7 @@ description: "A simple allocator to help you find leaks and memory issues in you
 author: "veeso"
 featured_image: featured.jpeg
 category: rust-internals
-reading_time: "11"
+reading_time: "12"
 ---
 
 A few days ago, I had a memory issue in one of my Rust applications.

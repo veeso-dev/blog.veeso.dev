@@ -6,7 +6,7 @@ description: "Let me show you how async Rust works under the hood"
 author: "veeso"
 featured_image: featured.jpeg
 category: rust-tutorials
-reading_time: "10"
+reading_time: "11"
 ---
 
 ## Introduction
