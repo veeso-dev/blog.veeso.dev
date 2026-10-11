@@ -304,4 +304,5 @@ fn escape_script_data(json: String) -> String {
   string.replace(json, "<", "\\u003c")
 }
 
-const dark_mode_js = "(function(){var t=localStorage.getItem('theme');var d=t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches);if(d){document.documentElement.classList.add('dark');var l=document.getElementById('prism-light');var k=document.getElementById('prism-dark');if(l)l.disabled=true;if(k)k.disabled=false}})()"
+const dark_mode_js =
+  "(function(){var t=localStorage.getItem('theme');var d=t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches);if(d){document.documentElement.classList.add('dark');var l=document.getElementById('prism-light');var k=document.getElementById('prism-dark');if(l)l.disabled=true;if(k)k.disabled=false}})()"
