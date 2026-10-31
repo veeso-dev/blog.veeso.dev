@@ -26,6 +26,8 @@ pub fn template(
   post: post.Post(msg),
   all_posts: List(post.Post(msg)),
 ) -> Element(msg) {
+  let all_other_posts = list.filter(all_posts, fn(p) { p.slug != post.slug })
+
   let config =
     page.PageConfig(
       title: post.title,
@@ -35,7 +37,7 @@ pub fn template(
       structured_data: option.Some(article_structured_data(post)),
     )
 
-  page.page(config, [layout(post)], related_posts(post, all_posts))
+  page.page(config, [layout(post)], related_posts(post, all_other_posts))
 }
 
 /// Resolve the featured image to an absolute URL.
