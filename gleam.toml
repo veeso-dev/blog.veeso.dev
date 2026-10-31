@@ -6,7 +6,7 @@ description = "My personal blog built with Gleam and Lustre."
 licenses = ["MIT", "CC-BY-NC-ND-4.0"]
 
 [dependencies]
-blogatto = ">= 7.0.0 and < 8.0.0"
+blogatto = ">= 8.0.0 and < 9.0.0"
 glailglind = ">= 2.2.0 and < 3.0.0"
 gleam_json = ">= 3.1.0 and < 4.0.0"
 gleam_stdlib = ">= 0.44.0 and < 2.0.0"

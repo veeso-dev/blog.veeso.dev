@@ -181,4 +181,5 @@ fn icon_link_classes() -> attribute.Attribute(msg) {
   ])
 }
 
-const theme_toggle_js = "(function(){var d=document.documentElement;var isDark=d.classList.contains('dark');if(isDark){d.classList.remove('dark');localStorage.setItem('theme','light');var l=document.getElementById('prism-light');var k=document.getElementById('prism-dark');if(l)l.disabled=false;if(k)k.disabled=true}else{d.classList.add('dark');localStorage.setItem('theme','dark');var l=document.getElementById('prism-light');var k=document.getElementById('prism-dark');if(l)l.disabled=true;if(k)k.disabled=false}feather.replace()})()"
+const theme_toggle_js =
+  "(function(){var d=document.documentElement;var isDark=d.classList.contains('dark');if(isDark){d.classList.remove('dark');localStorage.setItem('theme','light');var l=document.getElementById('prism-light');var k=document.getElementById('prism-dark');if(l)l.disabled=false;if(k)k.disabled=true}else{d.classList.add('dark');localStorage.setItem('theme','dark');var l=document.getElementById('prism-light');var k=document.getElementById('prism-dark');if(l)l.disabled=true;if(k)k.disabled=false}feather.replace()})()"
