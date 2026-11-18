@@ -113,6 +113,10 @@ fn head(config: PageConfig) -> Element(msg) {
       attribute.name("fediverse:creator"),
       attribute.content(fediverse_creator),
     ]),
+    html.link([
+      attribute.rel("me"),
+      attribute.href("https://hachyderm.io/@veeso_dev"),
+    ]),
     // Featured image (OG image + twitter large card + preload)
     featured_image_meta(config.featured_image),
     // Favicons
