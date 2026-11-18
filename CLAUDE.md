@@ -76,6 +76,14 @@ Featured images resolve to `/blog/en/{slug}/{path}` for relative paths. Posts ar
 - Gleam >= 1.14.0, Erlang/OTP >= 28
 - Key deps: blogatto >= 2.0.0, lustre >= 5.6.0, glailglind >= 2.2.0 (Tailwind installer)
 
+## Versioning
+
+The `version` field in `gleam.toml` is bumped automatically by the `.githooks/pre-commit` hook on every commit. Never update it manually.
+
+The hook uses the syntax `yyyy.mmdd.hhmm` (current local date and time, e.g. `2026.1117.1451`), with leading zeros stripped from each part because semver forbids them: 5 January 2026 at 09:38 becomes `2026.105.938`, not `2026.0105.0938`.
+
+Enable the hook once per clone with `just setup_githooks`.
+
 ## Deployment
 
 GitHub Actions CI: `test.yml` runs tests + format check; `deploy.yml` builds and deploys to Vercel (production on main push, preview on PRs).

@@ -1,5 +1,5 @@
 name = "blog"
-version = "1.2.0"
+version = "2026.1118.1137"
 links = [{ title = "Website", href = "https://blog.veeso.dev" }]
 repository = { type = "github", user = "veeso-dev", repo = "blog.veeso.dev" }
 description = "My personal blog built with Gleam and Lustre."

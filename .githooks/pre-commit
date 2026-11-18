@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Bump the package version in gleam.toml to yyyy.mmdd.hhmm (local time).
+# Leading zeros are stripped from each part because semver forbids them:
+# 5 January 2026 at 09:38 becomes 2026.105.938.
+set -euo pipefail
+
+cd "$(git rev-parse --show-toplevel)"
+
+year=$(date +%Y)
+month=$((10#$(date +%m)))
+day=$((10#$(date +%d)))
+hour=$((10#$(date +%H)))
+minute=$((10#$(date +%M)))
+version="${year}.$((month * 100 + day)).$((hour * 100 + minute))"
+
+# Only touch the top-level `version` key: the [tailwind] table has its own.
+tmp=$(mktemp)
+trap 'rm -f "$tmp"' EXIT
+awk -v v="$version" '
+  /^\[/ { in_table = 1 }
+  !in_table && /^version = / { print "version = \"" v "\""; next }
+  { print }
+' gleam.toml >"$tmp"
+cat "$tmp" >gleam.toml
+
+git add gleam.toml
